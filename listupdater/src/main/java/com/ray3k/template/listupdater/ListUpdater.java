@@ -65,7 +65,7 @@ public class ListUpdater {
                 updated |= createList("spine", "json", Paths.get("assets/spine.txt").toFile(), SkeletonData.class, resources);
                 updated |= createList("skin", "json", Paths.get("assets/skin.txt").toFile(), Skin.class, resources);
                 updated |= createList("sfx", "mp3", Paths.get("assets/sfx.txt").toFile(), Sound.class, resources);
-                updated |= createList("bgm", "mp3", Paths.get("assets/bgm.txt").toFile(), Music.class, resources);
+                updated |= createList("bgm", "ogg", Paths.get("assets/bgm.txt").toFile(), Music.class, resources);
     
                 writeResources(resources, Paths.get("core/src/main/java/com/ray3k/template/Resources.java").toFile(), new FileHandle(Paths.get("assets/data").toFile()));
     

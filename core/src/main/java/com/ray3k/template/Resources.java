@@ -100,8 +100,8 @@ public class Resources {
         sfx_shot = assetManager.get("sfx/shot.mp3");
         sfx_swoosh = assetManager.get("sfx/swoosh.mp3");
         sfx_tv = assetManager.get("sfx/tv.mp3");
-        bgm_audioSample = assetManager.get("bgm/audio-sample.mp3");
-        bgm_menu = assetManager.get("bgm/menu.mp3");
+        bgm_audioSample = assetManager.get("bgm/audio-sample.ogg");
+        bgm_menu = assetManager.get("bgm/menu.ogg");
     }
 
     public static class SpineLibgdx {
