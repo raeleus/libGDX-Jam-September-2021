@@ -2,6 +2,7 @@ package com.ray3k.template;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
+import com.badlogic.gdx.Input.Buttons;
 import com.badlogic.gdx.Preferences;
 import com.badlogic.gdx.assets.loaders.SkinLoader.SkinParameter;
 import com.badlogic.gdx.audio.Music;
@@ -26,7 +27,7 @@ import com.ray3k.template.transitions.*;
 import static com.ray3k.template.Resources.*;
 
 public class Core extends JamGame {
-    public static final String PROJECT_NAME = "Template Game";
+    public static final String PROJECT_NAME = "Bad Force";
     public static Core core;
     public static Skin skin;
     public static SkeletonRenderer skeletonRenderer;
@@ -37,7 +38,7 @@ public class Core extends JamGame {
     public static CollisionFilter nullCollisionFilter;
     public static CrossPlatformWorker crossPlatformWorker;
     public enum Binding {
-        LEFT, RIGHT, UP, DOWN, SHOOT, SPECIAL, SHIELD;
+        SELECT, MOVE
     }
     public static float bgm;
     public static float sfx;
@@ -46,7 +47,6 @@ public class Core extends JamGame {
     @Override
     public void create() {
         super.create();
-        var file = Gdx.files.internal("spine/libgdx.json");
         core = this;
         
         preferences = Gdx.app.getPreferences(PROJECT_NAME);
@@ -121,12 +121,7 @@ public class Core extends JamGame {
     }
     
     public void setDefaultBindings() {
-        JamScreen.addKeyBinding(Binding.LEFT, Input.Keys.LEFT);
-        JamScreen.addKeyBinding(Binding.RIGHT, Input.Keys.RIGHT);
-        JamScreen.addKeyBinding(Binding.UP, Input.Keys.UP);
-        JamScreen.addKeyBinding(Binding.DOWN, Input.Keys.DOWN);
-        JamScreen.addKeyBinding(Binding.SHOOT, Input.Keys.Z);
-        JamScreen.addKeyBinding(Binding.SHIELD, Input.Keys.X);
-        JamScreen.addKeyBinding(Binding.SPECIAL, Input.Keys.C);
+        JamScreen.addButtonBinding(Binding.SELECT, Buttons.LEFT);
+        JamScreen.addButtonBinding(Binding.MOVE, Buttons.RIGHT);
     }
 }
