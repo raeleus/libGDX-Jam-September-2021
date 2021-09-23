@@ -1,2 +1,16 @@
+spine/actor.json
+spine/blood-cloud.json
+spine/blood-splatter.json
+spine/bomb.json
+spine/coin.json
+spine/explosion.json
+spine/house.json
 spine/libgdx.json
+spine/missile.json
+spine/poison-cloud.json
 spine/ray3k.json
+spine/ship.json
+spine/smoke.json
+spine/spit.json
+spine/thruster-small.json
+spine/thruster.json

@@ -7,8 +7,8 @@
 				"child": {
 					"class": "Image",
 					"name": null,
-					"drawable": "libgdx-animation",
-					"scaling": "none",
+					"drawable": "title",
+					"scaling": "fit",
 					"touchable": "enabled",
 					"visible": true
 				},
@@ -41,12 +41,11 @@
 			},
 			{
 				"child": {
-					"class": "TextButton",
+					"class": "ImageButton",
 					"name": "play",
-					"text": "Play",
 					"style": {
-						"clazz": "com.badlogic.gdx.scenes.scene2d.ui.TextButton",
-						"name": "default"
+						"clazz": "com.badlogic.gdx.scenes.scene2d.ui.ImageButton",
+						"name": "play"
 					},
 					"checked": false,
 					"disabled": false,
@@ -87,12 +86,11 @@
 			},
 			{
 				"child": {
-					"class": "TextButton",
+					"class": "ImageButton",
 					"name": "options",
-					"text": "Options",
 					"style": {
-						"clazz": "com.badlogic.gdx.scenes.scene2d.ui.TextButton",
-						"name": "default"
+						"clazz": "com.badlogic.gdx.scenes.scene2d.ui.ImageButton",
+						"name": "options"
 					},
 					"checked": false,
 					"disabled": false,
@@ -133,12 +131,11 @@
 			},
 			{
 				"child": {
-					"class": "TextButton",
+					"class": "ImageButton",
 					"name": "credits",
-					"text": "Credits",
 					"style": {
-						"clazz": "com.badlogic.gdx.scenes.scene2d.ui.TextButton",
-						"name": "default"
+						"clazz": "com.badlogic.gdx.scenes.scene2d.ui.ImageButton",
+						"name": "credits"
 					},
 					"checked": false,
 					"disabled": false,

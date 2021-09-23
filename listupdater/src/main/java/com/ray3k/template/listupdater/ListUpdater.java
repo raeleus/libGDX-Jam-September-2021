@@ -215,7 +215,7 @@ public class ListUpdater {
                 var abbreviations = new String[] {"b", "cb", "ib", "itb", "l", "lst", "p", "sp", "sb", "s", "splt", "tb", "tf", "tt", "ts", "t", "w"};
                 for (int i = 0; i < classes.length; i++) {
                     var styles = skin.getAll(classes[i]);
-                    for (Object object : styles.entries()) {
+                    if (styles != null) for (Object object : styles.entries()) {
                         var entry = (Entry) object;
                         var variableName = abbreviations[i] + upperCaseFirstLetter(sanitizeVariableName((String) entry.key));
                         typeSpecBuilder.addField(classes[i], variableName, Modifier.PUBLIC, Modifier.STATIC);

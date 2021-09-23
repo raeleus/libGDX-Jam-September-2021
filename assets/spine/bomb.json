@@ -1,0 +1,31 @@
+{
+"skeleton": {
+	"hash": "V2BnzbcnLms",
+	"spine": "4.0.36",
+	"x": -55.61,
+	"y": -51.08,
+	"width": 115,
+	"height": 99,
+	"images": "",
+	"audio": ""
+},
+"bones": [
+	{ "name": "root" }
+],
+"slots": [
+	{ "name": "game/bomb", "bone": "root", "attachment": "game/bomb" }
+],
+"skins": [
+	{
+		"name": "default",
+		"attachments": {
+			"game/bomb": {
+				"game/bomb": { "x": 1.89, "y": -1.58, "width": 115, "height": 99 }
+			}
+		}
+	}
+],
+"animations": {
+	"animation": {}
+}
+}

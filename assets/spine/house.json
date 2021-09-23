@@ -1,0 +1,50 @@
+{
+"skeleton": {
+	"hash": "TYrI+1i4CzY",
+	"spine": "4.0.36",
+	"x": -56.57,
+	"y": -9.99,
+	"width": 117,
+	"height": 49,
+	"images": "",
+	"audio": ""
+},
+"bones": [
+	{ "name": "root" }
+],
+"slots": [
+	{ "name": "house", "bone": "root", "attachment": "house-destroyed" }
+],
+"skins": [
+	{
+		"name": "house-1",
+		"attachments": {
+			"house": {
+				"house": { "name": "game/house-1", "x": 1.93, "y": 14.51, "width": 117, "height": 49 },
+				"house-destroyed": { "name": "game/house-1-destroyed", "x": 1.93, "y": 14.51, "width": 117, "height": 49 }
+			}
+		}
+	},
+	{
+		"name": "house-2",
+		"attachments": {
+			"house": {
+				"house": { "name": "game/house-2", "x": 1.93, "y": 55.8, "width": 71, "height": 127 },
+				"house-destroyed": { "name": "game/house-2-destroyed", "x": 1.93, "y": 55.8, "width": 71, "height": 127 }
+			}
+		}
+	}
+],
+"animations": {
+	"alive": {
+		"slots": {
+			"house": {
+				"attachment": [
+					{ "name": "house" }
+				]
+			}
+		}
+	},
+	"destroyed": {}
+}
+}

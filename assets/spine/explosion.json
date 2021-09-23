@@ -1,0 +1,61 @@
+{
+"skeleton": {
+	"hash": "Ltj62ogYgrs",
+	"spine": "4.0.36",
+	"x": -100,
+	"y": -115,
+	"width": 201,
+	"height": 230,
+	"images": "",
+	"audio": ""
+},
+"bones": [
+	{ "name": "root" }
+],
+"slots": [
+	{ "name": "game/explosion-01", "bone": "root", "attachment": "game/explosion-11" }
+],
+"skins": [
+	{
+		"name": "default",
+		"attachments": {
+			"game/explosion-01": {
+				"game/explosion-01": { "x": 3, "y": -6, "width": 201, "height": 230 },
+				"game/explosion-02": { "x": 0.5, "width": 201, "height": 230 },
+				"game/explosion-03": { "x": 0.5, "width": 201, "height": 230 },
+				"game/explosion-04": { "x": 0.5, "width": 201, "height": 230 },
+				"game/explosion-05": { "x": 0.5, "width": 201, "height": 230 },
+				"game/explosion-06": { "x": 0.5, "width": 201, "height": 230 },
+				"game/explosion-07": { "x": 0.5, "width": 201, "height": 230 },
+				"game/explosion-08": { "x": 0.5, "width": 201, "height": 230 },
+				"game/explosion-09": { "x": 0.5, "width": 201, "height": 230 },
+				"game/explosion-10": { "x": 0.5, "width": 201, "height": 230 },
+				"game/explosion-11": { "x": 0.5, "width": 201, "height": 230 }
+			}
+		}
+	}
+],
+"animations": {
+	"animation": {
+		"slots": {
+			"game/explosion-01": {
+				"attachment": [
+					{ "name": null },
+					{ "time": 0.0667, "name": "game/explosion-01" },
+					{ "time": 0.1, "name": "game/explosion-02" },
+					{ "time": 0.1667, "name": "game/explosion-03" },
+					{ "time": 0.2333, "name": "game/explosion-04" },
+					{ "time": 0.2667, "name": "game/explosion-05" },
+					{ "time": 0.3333, "name": "game/explosion-06" },
+					{ "time": 0.4, "name": "game/explosion-07" },
+					{ "time": 0.4333, "name": "game/explosion-08" },
+					{ "time": 0.5, "name": "game/explosion-09" },
+					{ "time": 0.5667, "name": "game/explosion-10" },
+					{ "time": 0.6, "name": "game/explosion-11" },
+					{ "time": 0.6667, "name": null }
+				]
+			}
+		}
+	}
+}
+}

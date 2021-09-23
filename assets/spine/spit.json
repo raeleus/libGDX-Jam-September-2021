@@ -1,0 +1,51 @@
+{
+"skeleton": { "hash": "L7ZFWi9p6+A", "spine": "4.0.36", "images": "", "audio": "" },
+"bones": [
+	{ "name": "root" }
+],
+"slots": [
+	{ "name": "game/spit-01", "bone": "root" }
+],
+"skins": [
+	{
+		"name": "default",
+		"attachments": {
+			"game/spit-01": {
+				"game/spit-01": { "x": 31.9, "y": 4.56, "width": 88, "height": 96 },
+				"game/spit-02": { "x": 31.9, "y": 4.56, "width": 88, "height": 96 },
+				"game/spit-03": { "x": 31.9, "y": 4.56, "width": 88, "height": 96 },
+				"game/spit-04": { "x": 31.9, "y": 4.56, "width": 88, "height": 96 },
+				"game/spit-05": { "x": 31.9, "y": 4.56, "width": 88, "height": 96 },
+				"game/spit-06": { "x": 31.9, "y": 4.56, "width": 88, "height": 96 },
+				"game/spit-07": { "x": 31.9, "y": 4.56, "width": 88, "height": 96 },
+				"game/spit-08": { "x": 31.9, "y": 4.56, "width": 88, "height": 96 },
+				"game/spit-09": { "x": 31.9, "y": 4.56, "width": 88, "height": 96 },
+				"game/spit-10": { "x": 31.9, "y": 4.56, "width": 88, "height": 96 },
+				"game/spit-11": { "x": 31.9, "y": 4.56, "width": 88, "height": 96 }
+			}
+		}
+	}
+],
+"animations": {
+	"animation": {
+		"slots": {
+			"game/spit-01": {
+				"attachment": [
+					{ "time": 0.0333, "name": "game/spit-01" },
+					{ "time": 0.0667, "name": "game/spit-02" },
+					{ "time": 0.1, "name": "game/spit-03" },
+					{ "time": 0.1333, "name": "game/spit-04" },
+					{ "time": 0.1667, "name": "game/spit-05" },
+					{ "time": 0.2, "name": "game/spit-06" },
+					{ "time": 0.2333, "name": "game/spit-07" },
+					{ "time": 0.2667, "name": "game/spit-08" },
+					{ "time": 0.3, "name": "game/spit-09" },
+					{ "time": 0.3333, "name": "game/spit-10" },
+					{ "time": 0.3667, "name": "game/spit-11" },
+					{ "time": 0.4, "name": null }
+				]
+			}
+		}
+	}
+}
+}

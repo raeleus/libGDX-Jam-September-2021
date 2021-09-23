@@ -133,7 +133,7 @@
 							"growX": false,
 							"growY": false,
 							"alignment": 1,
-							"minWidth": -1,
+							"minWidth": 398,
 							"minHeight": -1,
 							"maxWidth": -1,
 							"maxHeight": -1,
@@ -225,7 +225,7 @@
 							"growX": false,
 							"growY": false,
 							"alignment": 1,
-							"minWidth": -1,
+							"minWidth": 398,
 							"minHeight": -1,
 							"maxWidth": -1,
 							"maxHeight": -1,
@@ -278,12 +278,11 @@
 			},
 			{
 				"child": {
-					"class": "TextButton",
+					"class": "ImageButton",
 					"name": "bindings",
-					"text": "Edit Key Bindings",
 					"style": {
-						"clazz": "com.badlogic.gdx.scenes.scene2d.ui.TextButton",
-						"name": "default"
+						"clazz": "com.badlogic.gdx.scenes.scene2d.ui.ImageButton",
+						"name": "bindings"
 					},
 					"checked": false,
 					"disabled": false,
@@ -324,12 +323,11 @@
 			},
 			{
 				"child": {
-					"class": "TextButton",
+					"class": "ImageButton",
 					"name": "ok",
-					"text": "OK",
 					"style": {
-						"clazz": "com.badlogic.gdx.scenes.scene2d.ui.TextButton",
-						"name": "default"
+						"clazz": "com.badlogic.gdx.scenes.scene2d.ui.ImageButton",
+						"name": "ok"
 					},
 					"checked": false,
 					"disabled": false,

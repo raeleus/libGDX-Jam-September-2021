@@ -1,7 +1,34 @@
-sfx/ahh.mp3
+sfx/assault.mp3
+sfx/bing.mp3
+sfx/building-destroyed.mp3
 sfx/click.mp3
-sfx/libgdx.mp3
-sfx/please don't kill me.mp3
-sfx/shot.mp3
-sfx/swoosh.mp3
-sfx/tv.mp3
+sfx/coin.mp3
+sfx/commander-your-base-is-under-attack.mp3
+sfx/explosion-2.mp3
+sfx/explosion-3.mp3
+sfx/explosion.mp3
+sfx/failure.mp3
+sfx/female-death.mp3
+sfx/launcher.mp3
+sfx/libgdx-beep.mp3
+sfx/libgdx-burst-fire.mp3
+sfx/libgdx-explosion.mp3
+sfx/libgdx-made-with-unity.mp3
+sfx/libgdx-scream.mp3
+sfx/missile.mp3
+sfx/mission-failure.mp3
+sfx/mortar.mp3
+sfx/pouncer.mp3
+sfx/ray3k-it's-in-the-game.mp3
+sfx/ray3k-ray3k.mp3
+sfx/reinforcements-have-arrived.mp3
+sfx/sniper.mp3
+sfx/spit.mp3
+sfx/tank.mp3
+sfx/troop-deploy.mp3
+sfx/victory.mp3
+sfx/witch.mp3
+sfx/zombie death.mp3
+sfx/zombie gargle.mp3
+sfx/zombie-growl.mp3
+sfx/zombie-rally.mp3

@@ -1,0 +1,31 @@
+{
+"skeleton": {
+	"hash": "LdP23bw7YN4",
+	"spine": "4.0.36",
+	"x": -100.9,
+	"y": -75.23,
+	"width": 202,
+	"height": 142,
+	"images": "",
+	"audio": ""
+},
+"bones": [
+	{ "name": "root" }
+],
+"slots": [
+	{ "name": "game/ship", "bone": "root", "attachment": "game/ship" }
+],
+"skins": [
+	{
+		"name": "default",
+		"attachments": {
+			"game/ship": {
+				"game/ship": { "x": 0.1, "y": -4.23, "width": 202, "height": 142 }
+			}
+		}
+	}
+],
+"animations": {
+	"animation": {}
+}
+}

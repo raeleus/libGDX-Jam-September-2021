@@ -1,0 +1,43 @@
+{
+"skeleton": { "hash": "YXcrpVE4MaQ", "spine": "4.0.36", "images": "", "audio": "" },
+"bones": [
+	{ "name": "root" }
+],
+"slots": [
+	{ "name": "game/poison-cloud-01", "bone": "root" }
+],
+"skins": [
+	{
+		"name": "default",
+		"attachments": {
+			"game/poison-cloud-01": {
+				"game/poison-cloud-01": { "x": 12.44, "y": -19.65, "width": 269, "height": 276 },
+				"game/poison-cloud-02": { "x": 12.44, "y": -19.65, "width": 269, "height": 276 },
+				"game/poison-cloud-03": { "x": 12.44, "y": -19.65, "width": 269, "height": 276 },
+				"game/poison-cloud-04": { "x": 12.44, "y": -19.65, "width": 269, "height": 276 },
+				"game/poison-cloud-05": { "x": 12.44, "y": -19.65, "width": 269, "height": 276 },
+				"game/poison-cloud-06": { "x": 12.44, "y": -19.65, "width": 269, "height": 276 },
+				"game/poison-cloud-07": { "x": 12.44, "y": -19.65, "width": 269, "height": 276 }
+			}
+		}
+	}
+],
+"animations": {
+	"animation": {
+		"slots": {
+			"game/poison-cloud-01": {
+				"attachment": [
+					{ "time": 0.0667, "name": "game/poison-cloud-01" },
+					{ "time": 0.1333, "name": "game/poison-cloud-02" },
+					{ "time": 0.1667, "name": "game/poison-cloud-03" },
+					{ "time": 0.2333, "name": "game/poison-cloud-04" },
+					{ "time": 0.3, "name": "game/poison-cloud-05" },
+					{ "time": 0.3667, "name": "game/poison-cloud-06" },
+					{ "time": 0.4, "name": "game/poison-cloud-07" },
+					{ "time": 0.4667, "name": null }
+				]
+			}
+		}
+	}
+}
+}

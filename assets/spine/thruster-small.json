@@ -1,0 +1,40 @@
+{
+"skeleton": { "hash": "8SiBdpj4OcQ", "spine": "4.0.36", "images": "", "audio": "" },
+"bones": [
+	{ "name": "root" }
+],
+"slots": [
+	{ "name": "game/thruster-small-01", "bone": "root" }
+],
+"skins": [
+	{
+		"name": "default",
+		"attachments": {
+			"game/thruster-small-01": {
+				"game/thruster-small-01": { "x": -34.85, "y": 0.91, "width": 73, "height": 20 },
+				"game/thruster-small-02": { "x": -34.85, "y": 0.91, "width": 73, "height": 20 },
+				"game/thruster-small-03": { "x": -34.85, "y": 0.91, "width": 73, "height": 20 },
+				"game/thruster-small-04": { "x": -34.85, "y": 0.91, "width": 73, "height": 20 },
+				"game/thruster-small-05": { "x": -34.85, "y": 0.91, "width": 73, "height": 20 },
+				"game/thruster-small-06": { "x": -34.85, "y": 0.91, "width": 73, "height": 20 }
+			}
+		}
+	}
+],
+"animations": {
+	"animation": {
+		"slots": {
+			"game/thruster-small-01": {
+				"attachment": [
+					{ "name": "game/thruster-small-01" },
+					{ "time": 0.0667, "name": "game/thruster-small-02" },
+					{ "time": 0.1333, "name": "game/thruster-small-03" },
+					{ "time": 0.2, "name": "game/thruster-small-04" },
+					{ "time": 0.2667, "name": "game/thruster-small-05" },
+					{ "time": 0.3333, "name": "game/thruster-small-06" }
+				]
+			}
+		}
+	}
+}
+}

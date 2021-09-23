@@ -49,12 +49,11 @@
 			},
 			{
 				"child": {
-					"class": "TextButton",
+					"class": "ImageButton",
 					"name": "ok",
-					"text": "OK",
 					"style": {
-						"clazz": "com.badlogic.gdx.scenes.scene2d.ui.TextButton",
-						"name": "default"
+						"clazz": "com.badlogic.gdx.scenes.scene2d.ui.ImageButton",
+						"name": "ok"
 					},
 					"checked": false,
 					"disabled": false,

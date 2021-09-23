@@ -109,13 +109,6 @@ public class OriginalGameScreen extends JamScreen {
             vfxManager.update(delta);
         }
         stage.act(delta);
-    
-        if (isBindingJustPressed(Binding.LEFT)) {
-            System.out.println("left");
-        }
-        if (isBindingJustPressed(Binding.UP)) {
-            System.out.println("up");
-        }
         
         fpsLabel.setText(Gdx.graphics.getFramesPerSecond());
     }
@@ -131,7 +124,6 @@ public class OriginalGameScreen extends JamScreen {
         batch.begin();
         viewport.apply();
         batch.setProjectionMatrix(camera.combined);
-        shapeDrawer.setColor(isBindingPressed(Binding.LEFT) && isBindingPressed(Binding.UP) ? Color.ORANGE : Color.GREEN);
         shapeDrawer.filledRectangle(0, 0, viewport.getWorldWidth(), viewport.getWorldHeight());
         shapeDrawer.setColor(Color.BLUE);
         shapeDrawer.setDefaultLineWidth(10);

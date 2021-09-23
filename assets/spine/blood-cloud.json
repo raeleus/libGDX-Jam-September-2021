@@ -1,0 +1,55 @@
+{
+"skeleton": {
+	"hash": "a37i0KSEvDU",
+	"spine": "4.0.36",
+	"x": -105.63,
+	"y": -83.33,
+	"width": 191,
+	"height": 195,
+	"images": "",
+	"audio": ""
+},
+"bones": [
+	{ "name": "root" }
+],
+"slots": [
+	{ "name": "game/blood-cloud-01", "bone": "root", "attachment": "game/blood-cloud-05" }
+],
+"skins": [
+	{
+		"name": "default",
+		"attachments": {
+			"game/blood-cloud-01": {
+				"game/blood-cloud-01": { "x": -10.13, "y": 14.17, "width": 191, "height": 195 },
+				"game/blood-cloud-02": { "x": -10.13, "y": 14.17, "width": 191, "height": 195 },
+				"game/blood-cloud-03": { "x": -10.13, "y": 14.17, "width": 191, "height": 195 },
+				"game/blood-cloud-04": { "x": -10.13, "y": 14.17, "width": 191, "height": 195 },
+				"game/blood-cloud-05": { "x": -10.13, "y": 14.17, "width": 191, "height": 195 },
+				"game/blood-cloud-06": { "x": -10.13, "y": 14.17, "width": 191, "height": 195 },
+				"game/blood-cloud-07": { "x": -10.13, "y": 14.17, "width": 191, "height": 195 },
+				"game/blood-cloud-08": { "x": -10.13, "y": 14.17, "width": 191, "height": 195 }
+			}
+		}
+	}
+],
+"animations": {
+	"animation": {
+		"slots": {
+			"game/blood-cloud-01": {
+				"attachment": [
+					{ "name": null },
+					{ "time": 0.0333, "name": "game/blood-cloud-01" },
+					{ "time": 0.0667, "name": "game/blood-cloud-02" },
+					{ "time": 0.1, "name": "game/blood-cloud-03" },
+					{ "time": 0.1333, "name": "game/blood-cloud-04" },
+					{ "time": 0.1667, "name": "game/blood-cloud-05" },
+					{ "time": 0.2, "name": "game/blood-cloud-06" },
+					{ "time": 0.2333, "name": "game/blood-cloud-07" },
+					{ "time": 0.2667, "name": "game/blood-cloud-08" },
+					{ "time": 0.3, "name": null }
+				]
+			}
+		}
+	}
+}
+}

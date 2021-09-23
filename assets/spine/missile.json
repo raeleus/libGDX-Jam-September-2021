@@ -1,0 +1,31 @@
+{
+"skeleton": {
+	"hash": "c2t8z3RkSnY",
+	"spine": "4.0.36",
+	"x": -28.21,
+	"y": -14.68,
+	"width": 85,
+	"height": 33,
+	"images": "",
+	"audio": ""
+},
+"bones": [
+	{ "name": "root" }
+],
+"slots": [
+	{ "name": "game/missile", "bone": "root", "attachment": "game/missile" }
+],
+"skins": [
+	{
+		"name": "default",
+		"attachments": {
+			"game/missile": {
+				"game/missile": { "x": 14.29, "y": 1.82, "width": 85, "height": 33 }
+			}
+		}
+	}
+],
+"animations": {
+	"animation": {}
+}
+}

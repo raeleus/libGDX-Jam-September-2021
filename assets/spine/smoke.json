@@ -1,0 +1,48 @@
+{
+"skeleton": { "hash": "sc38RKVHucQ", "spine": "4.0.36", "images": "", "audio": "" },
+"bones": [
+	{ "name": "root" }
+],
+"slots": [
+	{ "name": "game/smoke-01", "bone": "root" }
+],
+"skins": [
+	{
+		"name": "default",
+		"attachments": {
+			"game/smoke-01": {
+				"game/smoke-01": { "x": 0.62, "y": 2.97, "width": 50, "height": 55 },
+				"game/smoke-02": { "x": 0.62, "y": 2.97, "width": 50, "height": 55 },
+				"game/smoke-03": { "x": 0.62, "y": 2.97, "width": 50, "height": 55 },
+				"game/smoke-04": { "x": 0.62, "y": 2.97, "width": 50, "height": 55 },
+				"game/smoke-05": { "x": 0.62, "y": 2.97, "width": 50, "height": 55 },
+				"game/smoke-06": { "x": 0.62, "y": 2.97, "width": 50, "height": 55 },
+				"game/smoke-07": { "x": 0.62, "y": 2.97, "width": 50, "height": 55 },
+				"game/smoke-08": { "x": 0.62, "y": 2.97, "width": 50, "height": 55 },
+				"game/smoke-09": { "x": 0.62, "y": 2.97, "width": 50, "height": 55 },
+				"game/smoke-10": { "x": 0.62, "y": 2.97, "width": 50, "height": 55 }
+			}
+		}
+	}
+],
+"animations": {
+	"animation": {
+		"slots": {
+			"game/smoke-01": {
+				"attachment": [
+					{ "time": 0.1, "name": "game/smoke-01" },
+					{ "time": 0.1333, "name": "game/smoke-02" },
+					{ "time": 0.2333, "name": "game/smoke-03" },
+					{ "time": 0.3, "name": "game/smoke-04" },
+					{ "time": 0.4, "name": "game/smoke-06" },
+					{ "time": 0.5, "name": "game/smoke-07" },
+					{ "time": 0.5667, "name": "game/smoke-08" },
+					{ "time": 0.6667, "name": "game/smoke-09" },
+					{ "time": 0.7, "name": "game/smoke-10" },
+					{ "time": 0.8, "name": null }
+				]
+			}
+		}
+	}
+}
+}

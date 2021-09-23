@@ -1,715 +1,1130 @@
 {
-"skeleton": { "hash": "ggdpOYry/WRi0jIKlySToYZciCc", "spine": "3.8.99", "width": 1024, "height": 576, "images": "../output/", "audio": "../output/" },
+"skeleton": {
+	"hash": "ek1+/LSdAno",
+	"spine": "4.0.36",
+	"x": 0.02,
+	"y": -0.01,
+	"width": 1026.77,
+	"height": 576.01,
+	"images": "",
+	"audio": ""
+},
 "bones": [
-	{ "name": "root", "x": 512, "y": 288 },
-	{ "name": "blood-0", "parent": "root", "length": 21.13, "rotation": 1.76, "x": -143.86, "y": 0.75 },
-	{ "name": "blood-1", "parent": "root", "length": 21.13, "rotation": 1.76, "x": -119.16, "y": -11.93 },
-	{ "name": "blood-2", "parent": "root", "length": 21.13, "rotation": 1.76, "x": -85.68, "y": -8.68 },
-	{ "name": "blood-3", "parent": "root", "length": 21.13, "rotation": 1.76, "x": -50.26, "y": -12.58 },
-	{ "name": "blood-4", "parent": "root", "length": 21.13, "rotation": 1.76, "x": -18.41, "y": 4 },
-	{ "name": "blood-5", "parent": "root", "length": 21.13, "rotation": 1.76, "x": 23.19, "y": 14.4 },
-	{ "name": "blood-6", "parent": "root", "length": 21.13, "rotation": 1.76, "x": 34.89, "y": 0.75 },
-	{ "name": "blood-7", "parent": "root", "length": 21.13, "rotation": 1.76, "x": 59.92, "y": 6.6 },
-	{ "name": "blood-8", "parent": "root", "length": 21.13, "rotation": 1.76, "x": 100.87, "y": 6.6 },
-	{ "name": "blood-9", "parent": "root", "length": 21.13, "rotation": 1.76, "x": 125.89, "y": -6.08 },
-	{ "name": "blood-10", "parent": "root", "length": 21.13, "rotation": 1.76, "x": 125.89, "y": 12.77 },
-	{ "name": "blood-11", "parent": "root", "length": 21.13, "rotation": 1.76, "x": 100.87, "y": -6.73 },
-	{ "name": "libgdx-l", "parent": "root", "length": 28.43, "x": -147.29, "y": -1.47 },
-	{ "name": "libgdx-i", "parent": "root", "length": 27.19, "x": -121.95, "y": -0.85 },
-	{ "name": "libgdx-b", "parent": "root", "length": 40.79, "x": -94.14, "y": -2.09 },
-	{ "name": "libgdx-g", "parent": "root", "length": 53.77, "x": -36.05, "y": 0.38 },
-	{ "name": "libgdx-d", "parent": "root", "length": 40.17, "x": 37.5, "y": 1 },
-	{ "name": "libgdx-x", "parent": "root", "length": 48.84, "rotation": 1.45, "x": 107.33, "y": -1.47 },
-	{ "name": "spark-0", "parent": "root", "length": 32.52, "rotation": 1.33, "x": 208.96, "y": -3.06 }
+	{ "name": "root", "shearY": -0.28 },
+	{ "name": "libgdx/libgdx-unity", "parent": "root", "length": 257, "rotation": 0.67, "x": 233.09, "y": 421 },
+	{ "name": "libgdx/libgdx-bullet-hole", "parent": "libgdx/libgdx-unity", "length": 22.79, "rotation": 0.73, "x": 169.71, "y": -281.67 },
+	{ "name": "libgdx/libgdx-bullet-hole2", "parent": "libgdx/libgdx-unity", "length": 22.79, "rotation": 0.73, "x": -8.89, "y": -189.16 },
+	{ "name": "libgdx/libgdx-bullet-hole3", "parent": "libgdx/libgdx-unity", "length": 22.79, "rotation": 0.73, "x": 121.1, "y": -194.01 },
+	{ "name": "libgdx/libgdx-bullet-hole4", "parent": "libgdx/libgdx-unity", "length": 22.79, "rotation": 0.73, "x": 373.68, "y": -163.45 },
+	{ "name": "libgdx/libgdx-bullet-hole5", "parent": "libgdx/libgdx-unity", "length": 22.79, "rotation": 0.73, "x": 334.89, "y": -230.24 },
+	{ "name": "libgdx/libgdx-bullet-hole6", "parent": "libgdx/libgdx-unity", "length": 22.79, "rotation": 0.73, "x": 479.93, "y": -229.92 },
+	{ "name": "libgdx/libgdx-bullet-hole7", "parent": "libgdx/libgdx-unity", "length": 22.79, "rotation": 0.73, "x": 457.56, "y": -198.34 },
+	{ "name": "libgdx/libgdx-explosion (1)", "parent": "root", "length": 150.01, "rotation": -0.38, "x": 513.73, "y": 82 },
+	{ "name": "libgdx/libgdx-rope", "parent": "root", "length": 103.91, "rotation": 0.65, "x": 136.63, "y": -35.89 },
+	{ "name": "libgdx/libgdx-blood (1)", "parent": "root", "length": 90.8, "rotation": 1.47, "x": 657.48, "y": 62.19 },
+	{ "name": "libgdx/libgdx-hit (1)", "parent": "libgdx/libgdx-unity", "length": 20.8, "rotation": 0.13, "x": -7.32, "y": -189.46 },
+	{ "name": "libgdx/libgdx-i", "parent": "root", "length": 78.98, "rotation": 1.08, "x": 217.49, "y": 78.27 },
+	{ "name": "libgdx/libgdx-m17", "parent": "libgdx/libgdx-i", "length": 79.28, "rotation": 0.21, "x": 1.44, "y": -3.29 },
+	{ "name": "libgdx/libgdx-x", "parent": "root", "length": 69.78, "x": 832.48, "y": 75.7 },
+	{ "name": "libgdx/libgdx-trigger", "parent": "libgdx/libgdx-x", "length": 20.56, "rotation": 1.13, "x": 46.45, "y": -3.87 },
+	{ "name": "libgdx/libgdx-hit (1)2", "parent": "libgdx/libgdx-unity", "length": 20.8, "rotation": 0.13, "x": -7.32, "y": -189.46 },
+	{ "name": "libgdx/libgdx-hit (1)3", "parent": "libgdx/libgdx-unity", "length": 20.8, "rotation": 0.13, "x": -7.32, "y": -189.46 },
+	{ "name": "libgdx/libgdx-hit (1)4", "parent": "libgdx/libgdx-unity", "length": 20.8, "rotation": 0.13, "x": -7.32, "y": -189.46 },
+	{ "name": "libgdx/libgdx-hit (1)5", "parent": "libgdx/libgdx-unity", "length": 20.8, "rotation": 0.13, "x": -7.32, "y": -189.46 },
+	{ "name": "libgdx/libgdx-hit (1)6", "parent": "libgdx/libgdx-unity", "length": 20.8, "rotation": 0.13, "x": -7.32, "y": -189.46 },
+	{ "name": "libgdx/libgdx-hit (1)7", "parent": "libgdx/libgdx-unity", "length": 20.8, "rotation": 0.13, "x": -7.32, "y": -189.46 },
+	{ "name": "libgdx/libgdx-hit (1)8", "parent": "libgdx/libgdx-unity", "length": 20.8, "rotation": 0.13, "x": -7.32, "y": -189.46 },
+	{ "name": "libgdx/libgdx-i2", "parent": "root", "length": 78.98, "rotation": 1.08, "x": 217.49, "y": 78.27 },
+	{ "name": "libgdx/libgdx-m18", "parent": "libgdx/libgdx-i2", "length": 79.28, "rotation": 0.21, "x": 1.44, "y": -3.29 },
+	{ "name": "libgdx/libgdx-i3", "parent": "root", "length": 78.98, "rotation": 1.08, "x": 217.49, "y": 78.27 },
+	{ "name": "libgdx/libgdx-m19", "parent": "libgdx/libgdx-i3", "length": 79.28, "rotation": 0.21, "x": 1.44, "y": -3.29 },
+	{ "name": "libgdx/libgdx-i4", "parent": "root", "length": 78.98, "rotation": 1.08, "x": 217.49, "y": 78.27 },
+	{ "name": "libgdx/libgdx-m20", "parent": "libgdx/libgdx-i4", "length": 79.28, "rotation": 0.21, "x": 1.44, "y": -3.29 }
 ],
 "slots": [
-	{ "name": "libgdx-reference", "bone": "root" },
-	{ "name": "white", "bone": "root" },
-	{ "name": "blood-0", "bone": "blood-0", "attachment": "logo/blood-0" },
-	{ "name": "blood-1", "bone": "blood-1", "attachment": "logo/blood-0" },
-	{ "name": "blood-2", "bone": "blood-2", "attachment": "logo/blood-0" },
-	{ "name": "blood-3", "bone": "blood-3", "attachment": "logo/blood-0" },
-	{ "name": "blood-4", "bone": "blood-4", "attachment": "logo/blood-0" },
-	{ "name": "blood-5", "bone": "blood-5", "attachment": "logo/blood-0" },
-	{ "name": "blood-6", "bone": "blood-6", "attachment": "logo/blood-0" },
-	{ "name": "blood-7", "bone": "blood-7", "attachment": "logo/blood-0" },
-	{ "name": "blood-8", "bone": "blood-8", "attachment": "logo/blood-0" },
-	{ "name": "blood-9", "bone": "blood-9", "attachment": "logo/blood-0" },
-	{ "name": "blood-10", "bone": "blood-10", "attachment": "logo/blood-0" },
-	{ "name": "blood-11", "bone": "blood-11", "attachment": "logo/blood-0" },
-	{ "name": "libgdx-l", "bone": "libgdx-l", "attachment": "logo/libgdx-l" },
-	{ "name": "libgdx-i", "bone": "libgdx-i", "attachment": "logo/libgdx-i" },
-	{ "name": "libgdx-b", "bone": "libgdx-b", "attachment": "logo/libgdx-b" },
-	{ "name": "libgdx-g", "bone": "libgdx-g", "attachment": "logo/libgdx-g" },
-	{ "name": "libgdx-d", "bone": "libgdx-d", "attachment": "logo/libgdx-d" },
-	{ "name": "libgdx-x", "bone": "libgdx-x", "attachment": "logo/libgdx-x" },
-	{ "name": "mouth", "bone": "libgdx-x", "attachment": "logo/mouth-a" },
-	{ "name": "spark-0", "bone": "spark-0", "attachment": "logo/spark-0" }
+	{ "name": "clip", "bone": "root", "attachment": "clip" },
+	{ "name": "libgdx/libgdx-template", "bone": "root", "attachment": "libgdx/libgdx-template" },
+	{ "name": "libgdx/libgdx-blood (1)", "bone": "libgdx/libgdx-blood (1)", "attachment": "libgdx/libgdx-blood (1)" },
+	{ "name": "libgdx/libgdx-unity", "bone": "libgdx/libgdx-unity", "attachment": "libgdx/libgdx-unity" },
+	{ "name": "libgdx/libgdx-bullet-hole", "bone": "libgdx/libgdx-bullet-hole", "attachment": "libgdx/libgdx-bullet-hole" },
+	{ "name": "libgdx/libgdx-bullet-hole7", "bone": "libgdx/libgdx-bullet-hole7", "attachment": "libgdx/libgdx-bullet-hole" },
+	{ "name": "libgdx/libgdx-bullet-hole6", "bone": "libgdx/libgdx-bullet-hole6", "attachment": "libgdx/libgdx-bullet-hole" },
+	{ "name": "libgdx/libgdx-bullet-hole5", "bone": "libgdx/libgdx-bullet-hole5", "attachment": "libgdx/libgdx-bullet-hole" },
+	{ "name": "libgdx/libgdx-bullet-hole4", "bone": "libgdx/libgdx-bullet-hole4", "attachment": "libgdx/libgdx-bullet-hole" },
+	{ "name": "libgdx/libgdx-bullet-hole3", "bone": "libgdx/libgdx-bullet-hole3", "attachment": "libgdx/libgdx-bullet-hole" },
+	{ "name": "libgdx/libgdx-bullet-hole2", "bone": "libgdx/libgdx-bullet-hole2", "attachment": "libgdx/libgdx-bullet-hole" },
+	{ "name": "libgdx/libgdx-explosion (1)", "bone": "libgdx/libgdx-explosion (1)", "attachment": "libgdx/libgdx-explosion (1)" },
+	{ "name": "libgdx/libgdx-rope", "bone": "libgdx/libgdx-rope", "attachment": "libgdx/libgdx-rope" },
+	{ "name": "libgdx/libgdx-l", "bone": "libgdx/libgdx-rope", "attachment": "libgdx/libgdx-l" },
+	{ "name": "libgdx/libgdx-m16", "bone": "libgdx/libgdx-rope", "attachment": "libgdx/libgdx-m16" },
+	{ "name": "libgdx/libgdx-hit (1)", "bone": "libgdx/libgdx-hit (1)", "attachment": "libgdx/libgdx-hit (1)" },
+	{ "name": "libgdx/libgdx-hit (1)2", "bone": "libgdx/libgdx-hit (1)2", "attachment": "libgdx/libgdx-hit (1)" },
+	{ "name": "libgdx/libgdx-hit (1)3", "bone": "libgdx/libgdx-hit (1)3", "attachment": "libgdx/libgdx-hit (1)" },
+	{ "name": "libgdx/libgdx-hit (1)4", "bone": "libgdx/libgdx-hit (1)4", "attachment": "libgdx/libgdx-hit (1)" },
+	{ "name": "libgdx/libgdx-hit (1)5", "bone": "libgdx/libgdx-hit (1)5", "attachment": "libgdx/libgdx-hit (1)" },
+	{ "name": "libgdx/libgdx-hit (1)6", "bone": "libgdx/libgdx-hit (1)6", "attachment": "libgdx/libgdx-hit (1)" },
+	{ "name": "libgdx/libgdx-hit (1)7", "bone": "libgdx/libgdx-hit (1)7", "attachment": "libgdx/libgdx-hit (1)" },
+	{ "name": "libgdx/libgdx-hit (1)8", "bone": "libgdx/libgdx-hit (1)8", "attachment": "libgdx/libgdx-hit (1)" },
+	{ "name": "libgdx/libgdx-muzzle (1)", "bone": "libgdx/libgdx-rope", "attachment": "libgdx/libgdx-muzzle (1)" },
+	{ "name": "libgdx/libgdx-i", "bone": "libgdx/libgdx-i", "attachment": "libgdx/libgdx-i" },
+	{ "name": "libgdx/libgdx-i2", "bone": "libgdx/libgdx-i2", "attachment": "libgdx/libgdx-b" },
+	{ "name": "libgdx/libgdx-i3", "bone": "libgdx/libgdx-i3", "attachment": "libgdx/libgdx-g" },
+	{ "name": "libgdx/libgdx-i4", "bone": "libgdx/libgdx-i4", "attachment": "libgdx/libgdx-d" },
+	{ "name": "libgdx/libgdx-m17", "bone": "libgdx/libgdx-m17", "attachment": "libgdx/libgdx-m16" },
+	{ "name": "libgdx/libgdx-m18", "bone": "libgdx/libgdx-m18", "attachment": "libgdx/libgdx-m16" },
+	{ "name": "libgdx/libgdx-m19", "bone": "libgdx/libgdx-m19", "attachment": "libgdx/libgdx-m16" },
+	{ "name": "libgdx/libgdx-m20", "bone": "libgdx/libgdx-m20", "attachment": "libgdx/libgdx-m16" },
+	{ "name": "libgdx/libgdx-x", "bone": "libgdx/libgdx-x", "attachment": "libgdx/libgdx-x" },
+	{ "name": "libgdx/libgdx-trigger", "bone": "libgdx/libgdx-trigger", "attachment": "libgdx/libgdx-trigger" }
 ],
 "skins": [
 	{
 		"name": "default",
 		"attachments": {
-			"blood-0": {
-				"logo/blood-0": { "y": -10.41, "rotation": -1.76, "width": 50, "height": 60 },
-				"logo/blood-1": { "y": -10.41, "rotation": -1.76, "width": 50, "height": 60 },
-				"logo/blood-2": { "y": -10.41, "rotation": -1.76, "width": 50, "height": 60 },
-				"logo/blood-3": { "y": -10.41, "rotation": -1.76, "width": 50, "height": 60 }
+			"clip": {
+				"clip": {
+					"type": "clipping",
+					"end": "clip",
+					"vertexCount": 4,
+					"vertices": [ 0.02, 0.01, -2.78, 576.01, 1024.28, 575.95, 1024.01, -0.02 ],
+					"color": "ce3a3aff"
+				}
 			},
-			"blood-1": {
-				"logo/blood-0": { "y": -10.41, "rotation": -1.76, "width": 50, "height": 60 },
-				"logo/blood-1": { "y": -10.41, "rotation": -1.76, "width": 50, "height": 60 },
-				"logo/blood-2": { "y": -10.41, "rotation": -1.76, "width": 50, "height": 60 },
-				"logo/blood-3": { "y": -10.41, "rotation": -1.76, "width": 50, "height": 60 }
+			"libgdx/libgdx-blood (1)": {
+				"libgdx/libgdx-blood (1)": { "x": 5.68, "y": -1, "rotation": -0.81, "width": 90, "height": 90 },
+				"libgdx/libgdx-blood (2)": { "x": 5.68, "y": -1, "rotation": -0.81, "width": 90, "height": 90 },
+				"libgdx/libgdx-blood (3)": { "x": 5.68, "y": -1, "rotation": -0.81, "width": 90, "height": 90 },
+				"libgdx/libgdx-blood (4)": { "x": 5.68, "y": -1, "rotation": -0.81, "width": 90, "height": 90 }
 			},
-			"blood-2": {
-				"logo/blood-0": { "y": -10.41, "rotation": -1.76, "width": 50, "height": 60 },
-				"logo/blood-1": { "y": -10.41, "rotation": -1.76, "width": 50, "height": 60 },
-				"logo/blood-2": { "y": -10.41, "rotation": -1.76, "width": 50, "height": 60 },
-				"logo/blood-3": { "y": -10.41, "rotation": -1.76, "width": 50, "height": 60 }
+			"libgdx/libgdx-bullet-hole": {
+				"libgdx/libgdx-bullet-hole": { "x": 3.06, "y": 0.17, "rotation": -1.4, "width": 21, "height": 24 }
 			},
-			"blood-3": {
-				"logo/blood-0": { "y": -10.41, "rotation": -1.76, "width": 50, "height": 60 },
-				"logo/blood-1": { "y": -10.41, "rotation": -1.76, "width": 50, "height": 60 },
-				"logo/blood-2": { "y": -10.41, "rotation": -1.76, "width": 50, "height": 60 },
-				"logo/blood-3": { "y": -10.41, "rotation": -1.76, "width": 50, "height": 60 }
+			"libgdx/libgdx-bullet-hole2": {
+				"libgdx/libgdx-bullet-hole": { "x": 3.06, "y": 0.17, "rotation": -1.4, "width": 21, "height": 24 }
 			},
-			"blood-4": {
-				"logo/blood-0": { "y": -10.41, "rotation": -1.76, "width": 50, "height": 60 },
-				"logo/blood-1": { "y": -10.41, "rotation": -1.76, "width": 50, "height": 60 },
-				"logo/blood-2": { "y": -10.41, "rotation": -1.76, "width": 50, "height": 60 },
-				"logo/blood-3": { "y": -10.41, "rotation": -1.76, "width": 50, "height": 60 }
+			"libgdx/libgdx-bullet-hole3": {
+				"libgdx/libgdx-bullet-hole": { "x": 3.06, "y": 0.17, "rotation": -1.4, "width": 21, "height": 24 }
 			},
-			"blood-5": {
-				"logo/blood-0": { "y": -10.41, "rotation": -1.76, "width": 50, "height": 60 },
-				"logo/blood-1": { "y": -10.41, "rotation": -1.76, "width": 50, "height": 60 },
-				"logo/blood-2": { "y": -10.41, "rotation": -1.76, "width": 50, "height": 60 },
-				"logo/blood-3": { "y": -10.41, "rotation": -1.76, "width": 50, "height": 60 }
+			"libgdx/libgdx-bullet-hole4": {
+				"libgdx/libgdx-bullet-hole": { "x": 3.06, "y": 0.17, "rotation": -1.4, "width": 21, "height": 24 }
 			},
-			"blood-6": {
-				"logo/blood-0": { "y": -10.41, "rotation": -1.76, "width": 50, "height": 60 },
-				"logo/blood-1": { "y": -10.41, "rotation": -1.76, "width": 50, "height": 60 },
-				"logo/blood-2": { "y": -10.41, "rotation": -1.76, "width": 50, "height": 60 },
-				"logo/blood-3": { "y": -10.41, "rotation": -1.76, "width": 50, "height": 60 }
+			"libgdx/libgdx-bullet-hole5": {
+				"libgdx/libgdx-bullet-hole": { "x": 3.06, "y": 0.17, "rotation": -1.4, "width": 21, "height": 24 }
 			},
-			"blood-7": {
-				"logo/blood-0": { "y": -10.41, "rotation": -1.76, "width": 50, "height": 60 },
-				"logo/blood-1": { "y": -10.41, "rotation": -1.76, "width": 50, "height": 60 },
-				"logo/blood-2": { "y": -10.41, "rotation": -1.76, "width": 50, "height": 60 },
-				"logo/blood-3": { "y": -10.41, "rotation": -1.76, "width": 50, "height": 60 }
+			"libgdx/libgdx-bullet-hole6": {
+				"libgdx/libgdx-bullet-hole": { "x": 3.06, "y": 0.17, "rotation": -1.4, "width": 21, "height": 24 }
 			},
-			"blood-8": {
-				"logo/blood-0": { "y": -10.41, "rotation": -1.76, "width": 50, "height": 60 },
-				"logo/blood-1": { "y": -10.41, "rotation": -1.76, "width": 50, "height": 60 },
-				"logo/blood-2": { "y": -10.41, "rotation": -1.76, "width": 50, "height": 60 },
-				"logo/blood-3": { "y": -10.41, "rotation": -1.76, "width": 50, "height": 60 }
+			"libgdx/libgdx-bullet-hole7": {
+				"libgdx/libgdx-bullet-hole": { "x": 3.06, "y": 0.17, "rotation": -1.4, "width": 21, "height": 24 }
 			},
-			"blood-9": {
-				"logo/blood-0": { "y": -10.41, "rotation": -1.76, "width": 50, "height": 60 },
-				"logo/blood-1": { "y": -10.41, "rotation": -1.76, "width": 50, "height": 60 },
-				"logo/blood-2": { "y": -10.41, "rotation": -1.76, "width": 50, "height": 60 },
-				"logo/blood-3": { "y": -10.41, "rotation": -1.76, "width": 50, "height": 60 }
+			"libgdx/libgdx-explosion (1)": {
+				"libgdx/libgdx-explosion (1)": { "x": 10.8, "y": 104.08, "rotation": 0.38, "width": 395, "height": 436 },
+				"libgdx/libgdx-explosion (2)": { "x": 10.8, "y": 104.08, "rotation": 0.38, "width": 395, "height": 436 },
+				"libgdx/libgdx-explosion (3)": { "x": 10.8, "y": 104.08, "rotation": 0.38, "width": 395, "height": 436 },
+				"libgdx/libgdx-explosion (4)": { "x": 10.8, "y": 104.08, "rotation": 0.38, "width": 395, "height": 436 },
+				"libgdx/libgdx-explosion (5)": { "x": 10.8, "y": 104.08, "rotation": 0.38, "width": 395, "height": 436 },
+				"libgdx/libgdx-explosion (6)": { "x": 10.8, "y": 104.08, "rotation": 0.38, "width": 395, "height": 436 },
+				"libgdx/libgdx-explosion (7)": { "x": 10.8, "y": 104.08, "rotation": 0.38, "width": 395, "height": 436 },
+				"libgdx/libgdx-explosion (8)": { "x": 10.8, "y": 104.08, "rotation": 0.38, "width": 395, "height": 436 },
+				"libgdx/libgdx-explosion (9)": { "x": 10.8, "y": 104.08, "rotation": 0.38, "width": 395, "height": 436 }
 			},
-			"blood-10": {
-				"logo/blood-0": { "y": -10.41, "rotation": -1.76, "width": 50, "height": 60 },
-				"logo/blood-1": { "y": -10.41, "rotation": -1.76, "width": 50, "height": 60 },
-				"logo/blood-2": { "y": -10.41, "rotation": -1.76, "width": 50, "height": 60 },
-				"logo/blood-3": { "y": -10.41, "rotation": -1.76, "width": 50, "height": 60 }
+			"libgdx/libgdx-hit (1)": {
+				"libgdx/libgdx-hit (1)": { "x": 0.48, "y": -3.11, "rotation": 0.67, "width": 74, "height": 40 },
+				"libgdx/libgdx-hit (2)": { "x": 0.48, "y": -3.11, "rotation": 0.67, "width": 74, "height": 40 },
+				"libgdx/libgdx-hit (3)": { "x": 0.48, "y": -3.11, "rotation": 0.67, "width": 74, "height": 40 },
+				"libgdx/libgdx-hit (4)": { "x": 0.48, "y": -3.11, "rotation": 0.67, "width": 74, "height": 40 },
+				"libgdx/libgdx-hit (5)": { "x": 0.48, "y": -3.11, "rotation": 0.67, "width": 74, "height": 40 },
+				"libgdx/libgdx-hit (6)": { "x": 0.48, "y": -3.11, "rotation": 0.67, "width": 74, "height": 40 },
+				"libgdx/libgdx-hit (7)": { "x": 0.48, "y": -3.11, "rotation": 0.67, "width": 74, "height": 40 },
+				"libgdx/libgdx-hit (8)": { "x": 0.48, "y": -3.11, "rotation": 0.67, "width": 74, "height": 40 },
+				"libgdx/libgdx-hit (9)": { "x": 0.48, "y": -3.11, "rotation": 0.67, "width": 74, "height": 40 }
 			},
-			"blood-11": {
-				"logo/blood-0": { "y": -10.41, "rotation": -1.76, "width": 50, "height": 60 },
-				"logo/blood-1": { "y": -10.41, "rotation": -1.76, "width": 50, "height": 60 },
-				"logo/blood-2": { "y": -10.41, "rotation": -1.76, "width": 50, "height": 60 },
-				"logo/blood-3": { "y": -10.41, "rotation": -1.76, "width": 50, "height": 60 }
+			"libgdx/libgdx-hit (1)2": {
+				"libgdx/libgdx-hit (1)": { "x": 0.48, "y": -3.11, "rotation": 0.67, "width": 74, "height": 40 },
+				"libgdx/libgdx-hit (2)": { "x": 0.48, "y": -3.11, "rotation": 0.67, "width": 74, "height": 40 },
+				"libgdx/libgdx-hit (3)": { "x": 0.48, "y": -3.11, "rotation": 0.67, "width": 74, "height": 40 },
+				"libgdx/libgdx-hit (4)": { "x": 0.48, "y": -3.11, "rotation": 0.67, "width": 74, "height": 40 },
+				"libgdx/libgdx-hit (5)": { "x": 0.48, "y": -3.11, "rotation": 0.67, "width": 74, "height": 40 },
+				"libgdx/libgdx-hit (6)": { "x": 0.48, "y": -3.11, "rotation": 0.67, "width": 74, "height": 40 },
+				"libgdx/libgdx-hit (7)": { "x": 0.48, "y": -3.11, "rotation": 0.67, "width": 74, "height": 40 },
+				"libgdx/libgdx-hit (8)": { "x": 0.48, "y": -3.11, "rotation": 0.67, "width": 74, "height": 40 },
+				"libgdx/libgdx-hit (9)": { "x": 0.48, "y": -3.11, "rotation": 0.67, "width": 74, "height": 40 }
 			},
-			"libgdx-b": {
-				"logo/libgdx-b": { "x": 10.24, "y": 1.86, "width": 51, "height": 60 },
-				"logo/libgdx-b-blood": { "x": 10.24, "y": 1.86, "width": 51, "height": 60 }
+			"libgdx/libgdx-hit (1)3": {
+				"libgdx/libgdx-hit (1)": { "x": 0.48, "y": -3.11, "rotation": 0.67, "width": 74, "height": 40 },
+				"libgdx/libgdx-hit (2)": { "x": 0.48, "y": -3.11, "rotation": 0.67, "width": 74, "height": 40 },
+				"libgdx/libgdx-hit (3)": { "x": 0.48, "y": -3.11, "rotation": 0.67, "width": 74, "height": 40 },
+				"libgdx/libgdx-hit (4)": { "x": 0.48, "y": -3.11, "rotation": 0.67, "width": 74, "height": 40 },
+				"libgdx/libgdx-hit (5)": { "x": 0.48, "y": -3.11, "rotation": 0.67, "width": 74, "height": 40 },
+				"libgdx/libgdx-hit (6)": { "x": 0.48, "y": -3.11, "rotation": 0.67, "width": 74, "height": 40 },
+				"libgdx/libgdx-hit (7)": { "x": 0.48, "y": -3.11, "rotation": 0.67, "width": 74, "height": 40 },
+				"libgdx/libgdx-hit (8)": { "x": 0.48, "y": -3.11, "rotation": 0.67, "width": 74, "height": 40 },
+				"libgdx/libgdx-hit (9)": { "x": 0.48, "y": -3.11, "rotation": 0.67, "width": 74, "height": 40 }
 			},
-			"libgdx-d": {
-				"logo/libgdx-d": { "x": 4.06, "y": -0.58, "width": 72, "height": 60 },
-				"logo/libgdx-d-blood": { "x": 4.06, "y": -0.58, "width": 72, "height": 60 }
+			"libgdx/libgdx-hit (1)4": {
+				"libgdx/libgdx-hit (1)": { "x": 0.48, "y": -3.11, "rotation": 0.67, "width": 74, "height": 40 },
+				"libgdx/libgdx-hit (2)": { "x": 0.48, "y": -3.11, "rotation": 0.67, "width": 74, "height": 40 },
+				"libgdx/libgdx-hit (3)": { "x": 0.48, "y": -3.11, "rotation": 0.67, "width": 74, "height": 40 },
+				"libgdx/libgdx-hit (4)": { "x": 0.48, "y": -3.11, "rotation": 0.67, "width": 74, "height": 40 },
+				"libgdx/libgdx-hit (5)": { "x": 0.48, "y": -3.11, "rotation": 0.67, "width": 74, "height": 40 },
+				"libgdx/libgdx-hit (6)": { "x": 0.48, "y": -3.11, "rotation": 0.67, "width": 74, "height": 40 },
+				"libgdx/libgdx-hit (7)": { "x": 0.48, "y": -3.11, "rotation": 0.67, "width": 74, "height": 40 },
+				"libgdx/libgdx-hit (8)": { "x": 0.48, "y": -3.11, "rotation": 0.67, "width": 74, "height": 40 },
+				"libgdx/libgdx-hit (9)": { "x": 0.48, "y": -3.11, "rotation": 0.67, "width": 74, "height": 40 }
 			},
-			"libgdx-g": {
-				"logo/libgdx-g": { "x": 8.38, "y": -0.94, "width": 72, "height": 60 },
-				"logo/libgdx-g-blood": { "x": 8.38, "y": -0.94, "width": 72, "height": 60 }
+			"libgdx/libgdx-hit (1)5": {
+				"libgdx/libgdx-hit (1)": { "x": 0.48, "y": -3.11, "rotation": 0.67, "width": 74, "height": 40 },
+				"libgdx/libgdx-hit (2)": { "x": 0.48, "y": -3.11, "rotation": 0.67, "width": 74, "height": 40 },
+				"libgdx/libgdx-hit (3)": { "x": 0.48, "y": -3.11, "rotation": 0.67, "width": 74, "height": 40 },
+				"libgdx/libgdx-hit (4)": { "x": 0.48, "y": -3.11, "rotation": 0.67, "width": 74, "height": 40 },
+				"libgdx/libgdx-hit (5)": { "x": 0.48, "y": -3.11, "rotation": 0.67, "width": 74, "height": 40 },
+				"libgdx/libgdx-hit (6)": { "x": 0.48, "y": -3.11, "rotation": 0.67, "width": 74, "height": 40 },
+				"libgdx/libgdx-hit (7)": { "x": 0.48, "y": -3.11, "rotation": 0.67, "width": 74, "height": 40 },
+				"libgdx/libgdx-hit (8)": { "x": 0.48, "y": -3.11, "rotation": 0.67, "width": 74, "height": 40 },
+				"libgdx/libgdx-hit (9)": { "x": 0.48, "y": -3.11, "rotation": 0.67, "width": 74, "height": 40 }
 			},
-			"libgdx-i": {
-				"logo/libgdx-i": { "x": 3.28, "y": 0.62, "width": 21, "height": 60 },
-				"logo/libgdx-i-blood": { "x": 3.28, "y": 0.62, "width": 21, "height": 60 }
+			"libgdx/libgdx-hit (1)6": {
+				"libgdx/libgdx-hit (1)": { "x": 0.48, "y": -3.11, "rotation": 0.67, "width": 74, "height": 40 },
+				"libgdx/libgdx-hit (2)": { "x": 0.48, "y": -3.11, "rotation": 0.67, "width": 74, "height": 40 },
+				"libgdx/libgdx-hit (3)": { "x": 0.48, "y": -3.11, "rotation": 0.67, "width": 74, "height": 40 },
+				"libgdx/libgdx-hit (4)": { "x": 0.48, "y": -3.11, "rotation": 0.67, "width": 74, "height": 40 },
+				"libgdx/libgdx-hit (5)": { "x": 0.48, "y": -3.11, "rotation": 0.67, "width": 74, "height": 40 },
+				"libgdx/libgdx-hit (6)": { "x": 0.48, "y": -3.11, "rotation": 0.67, "width": 74, "height": 40 },
+				"libgdx/libgdx-hit (7)": { "x": 0.48, "y": -3.11, "rotation": 0.67, "width": 74, "height": 40 },
+				"libgdx/libgdx-hit (8)": { "x": 0.48, "y": -3.11, "rotation": 0.67, "width": 74, "height": 40 },
+				"libgdx/libgdx-hit (9)": { "x": 0.48, "y": -3.11, "rotation": 0.67, "width": 74, "height": 40 }
 			},
-			"libgdx-l": {
-				"logo/libgdx-l": { "x": 4.54, "y": 1.12, "width": 20, "height": 60 },
-				"logo/libgdx-l-blood": { "x": 4.54, "y": 1.12, "width": 20, "height": 60 }
+			"libgdx/libgdx-hit (1)7": {
+				"libgdx/libgdx-hit (1)": { "x": 0.48, "y": -3.11, "rotation": 0.67, "width": 74, "height": 40 },
+				"libgdx/libgdx-hit (2)": { "x": 0.48, "y": -3.11, "rotation": 0.67, "width": 74, "height": 40 },
+				"libgdx/libgdx-hit (3)": { "x": 0.48, "y": -3.11, "rotation": 0.67, "width": 74, "height": 40 },
+				"libgdx/libgdx-hit (4)": { "x": 0.48, "y": -3.11, "rotation": 0.67, "width": 74, "height": 40 },
+				"libgdx/libgdx-hit (5)": { "x": 0.48, "y": -3.11, "rotation": 0.67, "width": 74, "height": 40 },
+				"libgdx/libgdx-hit (6)": { "x": 0.48, "y": -3.11, "rotation": 0.67, "width": 74, "height": 40 },
+				"libgdx/libgdx-hit (7)": { "x": 0.48, "y": -3.11, "rotation": 0.67, "width": 74, "height": 40 },
+				"libgdx/libgdx-hit (8)": { "x": 0.48, "y": -3.11, "rotation": 0.67, "width": 74, "height": 40 },
+				"libgdx/libgdx-hit (9)": { "x": 0.48, "y": -3.11, "rotation": 0.67, "width": 74, "height": 40 }
 			},
-			"libgdx-x": {
-				"logo/libgdx-x": { "x": 4.77, "y": 0.8, "rotation": -1.45, "width": 81, "height": 60 },
-				"logo/libgdx-x-blood": { "x": 4.77, "y": 0.8, "rotation": -1.45, "width": 81, "height": 60 }
+			"libgdx/libgdx-hit (1)8": {
+				"libgdx/libgdx-hit (1)": { "x": 0.48, "y": -3.11, "rotation": 0.67, "width": 74, "height": 40 },
+				"libgdx/libgdx-hit (2)": { "x": 0.48, "y": -3.11, "rotation": 0.67, "width": 74, "height": 40 },
+				"libgdx/libgdx-hit (3)": { "x": 0.48, "y": -3.11, "rotation": 0.67, "width": 74, "height": 40 },
+				"libgdx/libgdx-hit (4)": { "x": 0.48, "y": -3.11, "rotation": 0.67, "width": 74, "height": 40 },
+				"libgdx/libgdx-hit (5)": { "x": 0.48, "y": -3.11, "rotation": 0.67, "width": 74, "height": 40 },
+				"libgdx/libgdx-hit (6)": { "x": 0.48, "y": -3.11, "rotation": 0.67, "width": 74, "height": 40 },
+				"libgdx/libgdx-hit (7)": { "x": 0.48, "y": -3.11, "rotation": 0.67, "width": 74, "height": 40 },
+				"libgdx/libgdx-hit (8)": { "x": 0.48, "y": -3.11, "rotation": 0.67, "width": 74, "height": 40 },
+				"libgdx/libgdx-hit (9)": { "x": 0.48, "y": -3.11, "rotation": 0.67, "width": 74, "height": 40 }
 			},
-			"mouth": {
-				"logo/mouth-a": { "x": 5.65, "y": 1.57, "rotation": -1.45, "width": 30, "height": 18 },
-				"logo/mouth-b": { "x": 5.65, "y": 1.57, "rotation": -1.45, "width": 37, "height": 18 },
-				"logo/mouth-c": { "x": 5.65, "y": 1.57, "rotation": -1.45, "width": 33, "height": 22 },
-				"logo/mouth-d": { "x": 5.65, "y": 1.57, "rotation": -1.45, "width": 32, "height": 22 },
-				"logo/mouth-e": { "x": 5.65, "y": 1.57, "rotation": -1.45, "width": 28, "height": 20 },
-				"logo/mouth-f": { "x": 5.65, "y": 1.57, "rotation": -1.45, "width": 31, "height": 16 },
-				"logo/mouth-g": { "x": 5.65, "y": 1.57, "rotation": -1.45, "width": 39, "height": 13 }
+			"libgdx/libgdx-i": {
+				"libgdx/libgdx-b": { "x": 0.89, "y": 0.48, "rotation": -1.08, "width": 39, "height": 51 },
+				"libgdx/libgdx-d": { "x": 0.39, "y": 0.49, "rotation": -1.08, "width": 64, "height": 51 },
+				"libgdx/libgdx-g": { "x": 0.39, "y": 0.49, "rotation": -1.08, "width": 64, "height": 51 },
+				"libgdx/libgdx-i": { "x": 0.16, "y": 0.69, "rotation": -1.08, "width": 15, "height": 51 }
 			},
-			"spark-0": {
-				"logo/spark-0": { "x": 2.34, "y": 2.97, "rotation": -1.33, "width": 50, "height": 50 },
-				"logo/spark-1": { "x": 2.34, "y": 2.97, "rotation": -1.33, "width": 50, "height": 50 },
-				"logo/spark-2": { "x": 2.34, "y": 2.97, "rotation": -1.33, "width": 50, "height": 50 },
-				"logo/spark-3": { "x": 2.34, "y": 2.97, "rotation": -1.33, "width": 50, "height": 50 }
+			"libgdx/libgdx-i2": {
+				"libgdx/libgdx-b": { "x": 0.89, "y": 0.48, "rotation": -1.08, "width": 39, "height": 51 },
+				"libgdx/libgdx-d": { "x": 0.39, "y": 0.49, "rotation": -1.08, "width": 64, "height": 51 },
+				"libgdx/libgdx-g": { "x": 0.39, "y": 0.49, "rotation": -1.08, "width": 64, "height": 51 },
+				"libgdx/libgdx-i": { "x": 0.16, "y": 0.69, "rotation": -1.08, "width": 15, "height": 51 }
+			},
+			"libgdx/libgdx-i3": {
+				"libgdx/libgdx-b": { "x": 0.89, "y": 0.48, "rotation": -1.08, "width": 39, "height": 51 },
+				"libgdx/libgdx-d": { "x": 0.39, "y": 0.49, "rotation": -1.08, "width": 64, "height": 51 },
+				"libgdx/libgdx-g": { "x": 0.39, "y": 0.49, "rotation": -1.08, "width": 64, "height": 51 },
+				"libgdx/libgdx-i": { "x": 0.16, "y": 0.69, "rotation": -1.08, "width": 15, "height": 51 }
+			},
+			"libgdx/libgdx-i4": {
+				"libgdx/libgdx-b": { "x": 0.89, "y": 0.48, "rotation": -1.08, "width": 39, "height": 51 },
+				"libgdx/libgdx-d": { "x": 0.39, "y": 0.49, "rotation": -1.08, "width": 64, "height": 51 },
+				"libgdx/libgdx-g": { "x": 0.39, "y": 0.49, "rotation": -1.08, "width": 64, "height": 51 },
+				"libgdx/libgdx-i": { "x": 0.16, "y": 0.69, "rotation": -1.08, "width": 15, "height": 51 }
+			},
+			"libgdx/libgdx-l": {
+				"libgdx/libgdx-l": { "x": 0.67, "y": -0.12, "rotation": -0.65, "width": 15, "height": 51 }
+			},
+			"libgdx/libgdx-m16": {
+				"libgdx/libgdx-m16": { "x": 27.5, "y": -6.42, "rotation": -0.65, "width": 116, "height": 31 }
+			},
+			"libgdx/libgdx-m17": {
+				"libgdx/libgdx-m16": { "x": 21.57, "y": -1.11, "rotation": -1.29, "width": 116, "height": 31 }
+			},
+			"libgdx/libgdx-m18": {
+				"libgdx/libgdx-m16": { "x": 21.57, "y": -1.11, "rotation": -1.29, "width": 116, "height": 31 }
+			},
+			"libgdx/libgdx-m19": {
+				"libgdx/libgdx-m16": { "x": 21.57, "y": -1.11, "rotation": -1.29, "width": 116, "height": 31 }
+			},
+			"libgdx/libgdx-m20": {
+				"libgdx/libgdx-m16": { "x": 21.57, "y": -1.11, "rotation": -1.29, "width": 116, "height": 31 }
+			},
+			"libgdx/libgdx-muzzle (1)": {
+				"libgdx/libgdx-muzzle (1)": { "x": 132.64, "y": 1.65, "rotation": 0.15, "width": 93, "height": 46 },
+				"libgdx/libgdx-muzzle (2)": { "x": 132.64, "y": 1.65, "rotation": 0.15, "width": 93, "height": 46 },
+				"libgdx/libgdx-muzzle (3)": { "x": 132.64, "y": 1.65, "rotation": 0.15, "width": 93, "height": 46 },
+				"libgdx/libgdx-muzzle (4)": { "x": 132.64, "y": 1.65, "rotation": 0.15, "width": 93, "height": 46 }
+			},
+			"libgdx/libgdx-rope": {
+				"libgdx/libgdx-rope": { "x": 3.48, "y": 320.84, "rotation": -0.65, "width": 7, "height": 601 }
+			},
+			"libgdx/libgdx-template": {
+				"libgdx/libgdx-template": { "x": 512, "y": 288, "width": 1024, "height": 576 }
+			},
+			"libgdx/libgdx-trigger": {
+				"libgdx/libgdx-trigger": { "x": 2.44, "y": 1.73, "rotation": -1.13, "width": 13, "height": 22 }
+			},
+			"libgdx/libgdx-unity": {
+				"libgdx/libgdx-unity": { "x": 277.34, "y": -136.25, "rotation": -0.67, "width": 599, "height": 331 }
+			},
+			"libgdx/libgdx-x": {
+				"libgdx/libgdx-x": { "x": 3.14, "y": 3.57, "width": 78, "height": 53 }
 			}
 		}
 	}
 ],
 "events": {
-	"ahh": { "audio": "ahh.mp3" },
-	"libgdx": { "audio": "libgdx.mp3" },
-	"please don't kill me": { "audio": "please don't kill me.mp3" },
-	"please don't kill me2": { "audio": "please don't kill me.ogg" },
-	"shot": { "audio": "shot.mp3" }
+	"sfx/libgdx-beep": { "audio": "sfx/libgdx-beep.mp3" },
+	"sfx/libgdx-burst-fire": { "audio": "sfx/libgdx-burst-fire.mp3" },
+	"sfx/libgdx-explosion": { "audio": "sfx/libgdx-explosion.mp3" },
+	"sfx/libgdx-made-with-unity": { "audio": "sfx/libgdx-made-with-unity.mp3" },
+	"sfx/libgdx-scream": { "audio": "sfx/libgdx-scream.mp3" }
 },
 "animations": {
 	"animation": {
 		"slots": {
-			"blood-0": {
+			"libgdx/libgdx-blood (1)": {
 				"attachment": [
 					{ "name": null },
-					{ "time": 2.244, "name": "logo/blood-0" },
-					{ "time": 2.3214, "name": "logo/blood-1" },
-					{ "time": 2.3988, "name": "logo/blood-2" },
-					{ "time": 2.4568, "name": "logo/blood-3" }
+					{ "time": 6.6667, "name": "libgdx/libgdx-blood (1)" },
+					{ "time": 7.3333, "name": "libgdx/libgdx-blood (2)" },
+					{ "time": 7.4, "name": "libgdx/libgdx-blood (3)" },
+					{ "time": 7.4667, "name": "libgdx/libgdx-blood (4)" },
+					{ "time": 11.9333, "name": "libgdx/libgdx-blood (4)" }
 				]
 			},
-			"blood-1": {
+			"libgdx/libgdx-bullet-hole": {
 				"attachment": [
 					{ "name": null },
-					{ "time": 2.3214, "name": "logo/blood-0" },
-					{ "time": 2.3988, "name": "logo/blood-1" },
-					{ "time": 2.4762, "name": "logo/blood-2" },
-					{ "time": 2.5536, "name": "logo/blood-3" }
+					{ "time": 1.6333, "name": "libgdx/libgdx-bullet-hole" }
 				]
 			},
-			"blood-2": {
+			"libgdx/libgdx-bullet-hole2": {
 				"attachment": [
 					{ "name": null },
-					{ "time": 2.3988, "name": "logo/blood-0" },
-					{ "time": 2.4762, "name": "logo/blood-1" },
-					{ "time": 2.5536, "name": "logo/blood-2" },
-					{ "time": 2.6309, "name": "logo/blood-3" }
+					{ "time": 1.9667, "name": "libgdx/libgdx-bullet-hole" }
 				]
 			},
-			"blood-3": {
+			"libgdx/libgdx-bullet-hole3": {
 				"attachment": [
 					{ "name": null },
-					{ "time": 2.4762, "name": "logo/blood-0" },
-					{ "time": 2.5536, "name": "logo/blood-1" },
-					{ "time": 2.6309, "name": "logo/blood-2" },
-					{ "time": 2.7083, "name": "logo/blood-3" }
+					{ "time": 2.3, "name": "libgdx/libgdx-bullet-hole" }
 				]
 			},
-			"blood-4": {
+			"libgdx/libgdx-bullet-hole4": {
 				"attachment": [
 					{ "name": null },
-					{ "time": 2.5536, "name": "logo/blood-0" },
-					{ "time": 2.6309, "name": "logo/blood-1" },
-					{ "time": 2.7083, "name": "logo/blood-2" },
-					{ "time": 2.7857, "name": "logo/blood-3" }
+					{ "time": 2.6, "name": "libgdx/libgdx-bullet-hole" }
 				]
 			},
-			"blood-5": {
+			"libgdx/libgdx-bullet-hole5": {
 				"attachment": [
 					{ "name": null },
-					{ "time": 2.6309, "name": "logo/blood-0" },
-					{ "time": 2.7083, "name": "logo/blood-1" },
-					{ "time": 2.7857, "name": "logo/blood-2" },
-					{ "time": 2.8631, "name": "logo/blood-3" }
+					{ "time": 2.9333, "name": "libgdx/libgdx-bullet-hole" }
 				]
 			},
-			"blood-6": {
+			"libgdx/libgdx-bullet-hole6": {
 				"attachment": [
 					{ "name": null },
-					{ "time": 2.7083, "name": "logo/blood-0" },
-					{ "time": 2.7857, "name": "logo/blood-1" },
-					{ "time": 2.8631, "name": "logo/blood-2" },
-					{ "time": 2.9404, "name": "logo/blood-3" }
+					{ "time": 3.2667, "name": "libgdx/libgdx-bullet-hole" }
 				]
 			},
-			"blood-7": {
+			"libgdx/libgdx-bullet-hole7": {
 				"attachment": [
 					{ "name": null },
-					{ "time": 2.7857, "name": "logo/blood-0" },
-					{ "time": 2.8631, "name": "logo/blood-1" },
-					{ "time": 2.9404, "name": "logo/blood-2" },
-					{ "time": 3.0178, "name": "logo/blood-3" }
+					{ "time": 3.6333, "name": "libgdx/libgdx-bullet-hole" }
 				]
 			},
-			"blood-8": {
+			"libgdx/libgdx-explosion (1)": {
 				"attachment": [
 					{ "name": null },
-					{ "time": 2.8631, "name": "logo/blood-0" },
-					{ "time": 2.9404, "name": "logo/blood-1" },
-					{ "time": 3.0178, "name": "logo/blood-2" },
-					{ "time": 3.0952, "name": "logo/blood-3" }
+					{ "time": 6.6667, "name": "libgdx/libgdx-explosion (1)" },
+					{ "time": 6.7333, "name": "libgdx/libgdx-explosion (2)" },
+					{ "time": 6.8, "name": "libgdx/libgdx-explosion (3)" },
+					{ "time": 6.8667, "name": "libgdx/libgdx-explosion (4)" },
+					{ "time": 6.9333, "name": "libgdx/libgdx-explosion (5)" },
+					{ "time": 7, "name": "libgdx/libgdx-explosion (6)" },
+					{ "time": 7.0667, "name": "libgdx/libgdx-explosion (7)" },
+					{ "time": 7.1333, "name": "libgdx/libgdx-explosion (8)" },
+					{ "time": 7.2, "name": "libgdx/libgdx-explosion (9)" },
+					{ "time": 7.2667, "name": null }
 				]
 			},
-			"blood-9": {
+			"libgdx/libgdx-hit (1)": {
 				"attachment": [
 					{ "name": null },
-					{ "time": 2.9404, "name": "logo/blood-0" },
-					{ "time": 3.0178, "name": "logo/blood-1" },
-					{ "time": 3.0952, "name": "logo/blood-2" },
-					{ "time": 3.1726, "name": "logo/blood-3" }
+					{ "time": 1.6333, "name": "libgdx/libgdx-hit (1)" },
+					{ "time": 1.7, "name": "libgdx/libgdx-hit (2)" },
+					{ "time": 1.7667, "name": "libgdx/libgdx-hit (3)" },
+					{ "time": 1.8, "name": null },
+					{ "time": 1.8333, "name": "libgdx/libgdx-hit (4)" },
+					{ "time": 1.8667, "name": null },
+					{ "time": 1.9, "name": "libgdx/libgdx-hit (5)" },
+					{ "time": 1.9333, "name": null },
+					{ "time": 1.9667, "name": "libgdx/libgdx-hit (6)" },
+					{ "time": 2, "name": null },
+					{ "time": 2.0333, "name": "libgdx/libgdx-hit (7)" },
+					{ "time": 2.0667, "name": null },
+					{ "time": 2.1, "name": "libgdx/libgdx-hit (8)" },
+					{ "time": 2.1333, "name": null },
+					{ "time": 2.1667, "name": "libgdx/libgdx-hit (9)" },
+					{ "time": 2.2, "name": null }
 				]
 			},
-			"blood-10": {
+			"libgdx/libgdx-hit (1)2": {
 				"attachment": [
 					{ "name": null },
-					{ "time": 7.6667, "name": "logo/blood-0" },
-					{ "time": 7.7333, "name": "logo/blood-1" },
-					{ "time": 7.8, "name": "logo/blood-2" },
-					{ "time": 7.8667, "name": "logo/blood-3" }
+					{ "time": 1.9667, "name": "libgdx/libgdx-hit (1)" },
+					{ "time": 2.0333, "name": "libgdx/libgdx-hit (2)" },
+					{ "time": 2.1, "name": "libgdx/libgdx-hit (3)" },
+					{ "time": 2.1333, "name": null },
+					{ "time": 2.1667, "name": "libgdx/libgdx-hit (4)" },
+					{ "time": 2.2, "name": null },
+					{ "time": 2.2333, "name": "libgdx/libgdx-hit (5)" },
+					{ "time": 2.2667, "name": null },
+					{ "time": 2.3, "name": "libgdx/libgdx-hit (6)" },
+					{ "time": 2.3333, "name": null },
+					{ "time": 2.3667, "name": "libgdx/libgdx-hit (7)" },
+					{ "time": 2.4, "name": null },
+					{ "time": 2.4333, "name": "libgdx/libgdx-hit (8)" },
+					{ "time": 2.4667, "name": null },
+					{ "time": 2.5, "name": "libgdx/libgdx-hit (9)" },
+					{ "time": 2.5333, "name": null }
 				]
 			},
-			"blood-11": {
+			"libgdx/libgdx-hit (1)3": {
 				"attachment": [
 					{ "name": null },
-					{ "time": 8.3333, "name": "logo/blood-0" },
-					{ "time": 8.4, "name": "logo/blood-1" },
-					{ "time": 8.4667, "name": "logo/blood-2" },
-					{ "time": 8.5333, "name": "logo/blood-3" }
+					{ "time": 2.3, "name": "libgdx/libgdx-hit (1)" },
+					{ "time": 2.3667, "name": "libgdx/libgdx-hit (2)" },
+					{ "time": 2.4333, "name": "libgdx/libgdx-hit (3)" },
+					{ "time": 2.4667, "name": null },
+					{ "time": 2.5, "name": "libgdx/libgdx-hit (4)" },
+					{ "time": 2.5333, "name": null },
+					{ "time": 2.5667, "name": "libgdx/libgdx-hit (5)" },
+					{ "time": 2.6, "name": null },
+					{ "time": 2.6333, "name": "libgdx/libgdx-hit (6)" },
+					{ "time": 2.6667, "name": null },
+					{ "time": 2.7, "name": "libgdx/libgdx-hit (7)" },
+					{ "time": 2.7333, "name": null },
+					{ "time": 2.7667, "name": "libgdx/libgdx-hit (8)" },
+					{ "time": 2.8, "name": null },
+					{ "time": 2.8333, "name": "libgdx/libgdx-hit (9)" },
+					{ "time": 2.8667, "name": null }
 				]
 			},
-			"libgdx-b": {
-				"color": [
-					{ "color": "ffffff00", "curve": "stepped" },
-					{ "time": 0.2333, "color": "ffffff00" },
-					{ "time": 0.6667, "color": "ffffffff", "curve": "stepped" },
-					{ "time": 2.3988, "color": "ffffffff" },
-					{ "time": 2.5729, "color": "ffffff00" }
-				],
-				"attachment": [
-					{ "time": 2.3988, "name": "logo/libgdx-b-blood" }
-				]
-			},
-			"libgdx-d": {
-				"color": [
-					{ "color": "ffffff00", "curve": "stepped" },
-					{ "time": 0.4333, "color": "ffffff00" },
-					{ "time": 0.9, "color": "ffffffff", "curve": "stepped" },
-					{ "time": 2.7857, "color": "ffffffff" },
-					{ "time": 2.9598, "color": "ffffff00" }
-				],
-				"attachment": [
-					{ "time": 2.6309, "name": "logo/libgdx-d-blood" }
-				]
-			},
-			"libgdx-g": {
-				"color": [
-					{ "color": "ffffff00", "curve": "stepped" },
-					{ "time": 0.3333, "color": "ffffff00" },
-					{ "time": 0.7667, "color": "ffffffff", "curve": "stepped" },
-					{ "time": 2.5536, "color": "ffffffff" },
-					{ "time": 2.747, "color": "ffffff00" }
-				],
-				"attachment": [
-					{ "time": 2.4762, "name": "logo/libgdx-g-blood" }
-				]
-			},
-			"libgdx-i": {
-				"color": [
-					{ "color": "ffffff00", "curve": "stepped" },
-					{ "time": 0.1, "color": "ffffff00" },
-					{ "time": 0.5667, "color": "ffffffff", "curve": "stepped" },
-					{ "time": 2.3214, "color": "ffffffff" },
-					{ "time": 2.5149, "color": "ffffff00" }
-				],
-				"attachment": [
-					{ "time": 2.3214, "name": "logo/libgdx-i-blood" }
-				]
-			},
-			"libgdx-l": {
-				"color": [
-					{ "color": "ffffff00" },
-					{ "time": 0.4333, "color": "ffffffff", "curve": "stepped" },
-					{ "time": 2.244, "color": "ffffffff" },
-					{ "time": 2.3795, "color": "ffffff00" }
-				],
-				"attachment": [
-					{ "time": 2.244, "name": "logo/libgdx-l-blood" }
-				]
-			},
-			"libgdx-x": {
-				"color": [
-					{ "color": "ffffff00", "curve": "stepped" },
-					{ "time": 0.5667, "color": "ffffff00" },
-					{ "time": 1, "color": "ffffffff", "curve": "stepped" },
-					{ "time": 8.5667, "color": "ffffffff" },
-					{ "time": 9, "color": "ffffff00" }
-				],
-				"attachment": [
-					{ "time": 2.8631, "name": "logo/libgdx-x-blood" }
-				]
-			},
-			"mouth": {
-				"color": [
-					{ "time": 8.5667, "color": "ffffffff" },
-					{ "time": 9, "color": "ffffff00" }
-				],
+			"libgdx/libgdx-hit (1)4": {
 				"attachment": [
 					{ "name": null },
-					{ "time": 4, "name": "logo/mouth-a" },
-					{ "time": 4.2, "name": "logo/mouth-b" },
-					{ "time": 4.6, "name": "logo/mouth-a" },
-					{ "time": 4.8, "name": "logo/mouth-b" },
-					{ "time": 4.8667, "name": "logo/mouth-c" },
-					{ "time": 5.2667, "name": "logo/mouth-a" },
-					{ "time": 5.3667, "name": "logo/mouth-b" },
-					{ "time": 5.7667, "name": "logo/mouth-c" },
-					{ "time": 5.8667, "name": "logo/mouth-b" },
-					{ "time": 5.9333, "name": "logo/mouth-c" },
-					{ "time": 6, "name": "logo/mouth-b" },
-					{ "time": 6.1333, "name": "logo/mouth-c" },
-					{ "time": 6.3667, "name": "logo/mouth-b" },
-					{ "time": 6.5667, "name": "logo/mouth-c" },
-					{ "time": 6.7667, "name": "logo/mouth-a" },
-					{ "time": 7.8333, "name": "logo/mouth-d" },
-					{ "time": 8.1333, "name": "logo/mouth-a" },
-					{ "time": 8.5, "name": "logo/mouth-d" },
-					{ "time": 8.9, "name": "logo/mouth-a" }
-				]
-			},
-			"spark-0": {
-				"attachment": [
-					{ "name": null },
-					{ "time": 2.1667, "name": "logo/spark-0" },
-					{ "time": 2.186, "name": "logo/spark-1" },
-					{ "time": 2.2054, "name": "logo/spark-2" },
-					{ "time": 2.2247, "name": "logo/spark-3" },
-					{ "time": 2.244, "name": "logo/spark-0" },
-					{ "time": 2.2634, "name": "logo/spark-1" },
-					{ "time": 2.2827, "name": "logo/spark-2" },
-					{ "time": 2.3021, "name": "logo/spark-3" },
-					{ "time": 2.3214, "name": "logo/spark-0" },
-					{ "time": 2.3408, "name": "logo/spark-1" },
-					{ "time": 2.3601, "name": "logo/spark-2" },
-					{ "time": 2.3795, "name": "logo/spark-3" },
-					{ "time": 2.3988, "name": "logo/spark-0" },
-					{ "time": 2.4181, "name": "logo/spark-1" },
-					{ "time": 2.4375, "name": "logo/spark-2" },
-					{ "time": 2.4568, "name": "logo/spark-3" },
-					{ "time": 2.4762, "name": "logo/spark-0" },
-					{ "time": 2.4955, "name": "logo/spark-1" },
-					{ "time": 2.5149, "name": "logo/spark-2" },
-					{ "time": 2.5342, "name": "logo/spark-3" },
-					{ "time": 2.5536, "name": "logo/spark-0" },
-					{ "time": 2.5729, "name": "logo/spark-1" },
-					{ "time": 2.5922, "name": "logo/spark-2" },
-					{ "time": 2.6116, "name": "logo/spark-3" },
-					{ "time": 2.6309, "name": "logo/spark-0" },
-					{ "time": 2.6503, "name": "logo/spark-1" },
-					{ "time": 2.6696, "name": "logo/spark-2" },
-					{ "time": 2.689, "name": "logo/spark-3" },
-					{ "time": 2.7083, "name": "logo/spark-0" },
-					{ "time": 2.7277, "name": "logo/spark-1" },
-					{ "time": 2.747, "name": "logo/spark-2" },
-					{ "time": 2.7667, "name": "logo/spark-3" },
-					{ "time": 2.7857, "name": "logo/spark-0" },
-					{ "time": 2.805, "name": "logo/spark-1" },
-					{ "time": 2.8244, "name": "logo/spark-2" },
-					{ "time": 2.8437, "name": "logo/spark-3" },
-					{ "time": 2.8631, "name": "logo/spark-0" },
-					{ "time": 2.8824, "name": "logo/spark-1" },
-					{ "time": 2.9018, "name": "logo/spark-2" },
-					{ "time": 2.9211, "name": "logo/spark-3" },
-					{ "time": 2.9404, "name": "logo/spark-0" },
-					{ "time": 2.9598, "name": "logo/spark-1" },
-					{ "time": 2.9791, "name": "logo/spark-2" },
-					{ "time": 2.9985, "name": "logo/spark-3" },
+					{ "time": 2.6, "name": "libgdx/libgdx-hit (1)" },
+					{ "time": 2.6667, "name": "libgdx/libgdx-hit (2)" },
+					{ "time": 2.7333, "name": "libgdx/libgdx-hit (3)" },
+					{ "time": 2.7667, "name": null },
+					{ "time": 2.8, "name": "libgdx/libgdx-hit (4)" },
+					{ "time": 2.8333, "name": null },
+					{ "time": 2.8667, "name": "libgdx/libgdx-hit (5)" },
+					{ "time": 2.9, "name": null },
+					{ "time": 2.9333, "name": "libgdx/libgdx-hit (6)" },
+					{ "time": 2.9667, "name": null },
+					{ "time": 3, "name": "libgdx/libgdx-hit (7)" },
 					{ "time": 3.0333, "name": null },
-					{ "time": 7.6667, "name": "logo/spark-0" },
-					{ "time": 7.7, "name": "logo/spark-1" },
-					{ "time": 7.7333, "name": "logo/spark-2" },
-					{ "time": 7.7667, "name": "logo/spark-3" },
-					{ "time": 7.8, "name": null },
-					{ "time": 8.3333, "name": "logo/spark-0" },
-					{ "time": 8.3667, "name": "logo/spark-1" },
-					{ "time": 8.4, "name": "logo/spark-2" },
-					{ "time": 8.4333, "name": "logo/spark-3" },
-					{ "time": 8.4667, "name": null }
+					{ "time": 3.0667, "name": "libgdx/libgdx-hit (8)" },
+					{ "time": 3.1, "name": null },
+					{ "time": 3.1333, "name": "libgdx/libgdx-hit (9)" },
+					{ "time": 3.1667, "name": null }
+				]
+			},
+			"libgdx/libgdx-hit (1)5": {
+				"attachment": [
+					{ "name": null },
+					{ "time": 2.9333, "name": "libgdx/libgdx-hit (1)" },
+					{ "time": 3, "name": "libgdx/libgdx-hit (2)" },
+					{ "time": 3.0667, "name": "libgdx/libgdx-hit (3)" },
+					{ "time": 3.1, "name": null },
+					{ "time": 3.1333, "name": "libgdx/libgdx-hit (4)" },
+					{ "time": 3.1667, "name": null },
+					{ "time": 3.2, "name": "libgdx/libgdx-hit (5)" },
+					{ "time": 3.2333, "name": null },
+					{ "time": 3.2667, "name": "libgdx/libgdx-hit (6)" },
+					{ "time": 3.3, "name": null },
+					{ "time": 3.3333, "name": "libgdx/libgdx-hit (7)" },
+					{ "time": 3.3667, "name": null },
+					{ "time": 3.4, "name": "libgdx/libgdx-hit (8)" },
+					{ "time": 3.4333, "name": null },
+					{ "time": 3.4667, "name": "libgdx/libgdx-hit (9)" },
+					{ "time": 3.5, "name": null }
+				]
+			},
+			"libgdx/libgdx-hit (1)6": {
+				"attachment": [
+					{ "name": null },
+					{ "time": 3.2667, "name": "libgdx/libgdx-hit (1)" },
+					{ "time": 3.3333, "name": "libgdx/libgdx-hit (2)" },
+					{ "time": 3.4, "name": "libgdx/libgdx-hit (3)" },
+					{ "time": 3.4333, "name": null },
+					{ "time": 3.4667, "name": "libgdx/libgdx-hit (4)" },
+					{ "time": 3.5, "name": null },
+					{ "time": 3.5333, "name": "libgdx/libgdx-hit (5)" },
+					{ "time": 3.5667, "name": null },
+					{ "time": 3.6, "name": "libgdx/libgdx-hit (6)" },
+					{ "time": 3.6333, "name": null },
+					{ "time": 3.6667, "name": "libgdx/libgdx-hit (7)" },
+					{ "time": 3.7, "name": null },
+					{ "time": 3.7333, "name": "libgdx/libgdx-hit (8)" },
+					{ "time": 3.7667, "name": null },
+					{ "time": 3.8, "name": "libgdx/libgdx-hit (9)" },
+					{ "time": 3.8333, "name": null }
+				]
+			},
+			"libgdx/libgdx-hit (1)7": {
+				"attachment": [
+					{ "name": null },
+					{ "time": 3.6333, "name": "libgdx/libgdx-hit (1)" },
+					{ "time": 3.7, "name": "libgdx/libgdx-hit (2)" },
+					{ "time": 3.7667, "name": "libgdx/libgdx-hit (3)" },
+					{ "time": 3.8, "name": null },
+					{ "time": 3.8333, "name": "libgdx/libgdx-hit (4)" },
+					{ "time": 3.8667, "name": null },
+					{ "time": 3.9, "name": "libgdx/libgdx-hit (5)" },
+					{ "time": 3.9333, "name": null },
+					{ "time": 3.9667, "name": "libgdx/libgdx-hit (6)" },
+					{ "time": 4, "name": null },
+					{ "time": 4.0333, "name": "libgdx/libgdx-hit (7)" },
+					{ "time": 4.0667, "name": null },
+					{ "time": 4.1, "name": "libgdx/libgdx-hit (8)" },
+					{ "time": 4.1333, "name": null },
+					{ "time": 4.1667, "name": "libgdx/libgdx-hit (9)" },
+					{ "time": 4.2, "name": null }
+				]
+			},
+			"libgdx/libgdx-hit (1)8": {
+				"attachment": [
+					{ "name": null },
+					{ "time": 1.6333, "name": "libgdx/libgdx-hit (1)" },
+					{ "time": 1.7, "name": "libgdx/libgdx-hit (2)" },
+					{ "time": 1.7667, "name": "libgdx/libgdx-hit (3)" },
+					{ "time": 1.8, "name": null },
+					{ "time": 1.8333, "name": "libgdx/libgdx-hit (4)" },
+					{ "time": 1.8667, "name": null },
+					{ "time": 1.9, "name": "libgdx/libgdx-hit (5)" },
+					{ "time": 1.9333, "name": null },
+					{ "time": 1.9667, "name": "libgdx/libgdx-hit (6)" },
+					{ "time": 2, "name": null },
+					{ "time": 2.0333, "name": "libgdx/libgdx-hit (7)" },
+					{ "time": 2.0667, "name": null },
+					{ "time": 2.1, "name": "libgdx/libgdx-hit (8)" },
+					{ "time": 2.1333, "name": null },
+					{ "time": 2.1667, "name": "libgdx/libgdx-hit (9)" },
+					{ "time": 2.2, "name": null }
+				]
+			},
+			"libgdx/libgdx-muzzle (1)": {
+				"attachment": [
+					{ "name": null },
+					{ "time": 1.6, "name": "libgdx/libgdx-muzzle (1)" },
+					{ "time": 1.6667, "name": "libgdx/libgdx-muzzle (2)" },
+					{ "time": 1.7333, "name": "libgdx/libgdx-muzzle (3)" },
+					{ "time": 1.8, "name": "libgdx/libgdx-muzzle (4)" },
+					{ "time": 1.8667, "name": null },
+					{ "time": 1.9333, "name": "libgdx/libgdx-muzzle (1)" },
+					{ "time": 2, "name": "libgdx/libgdx-muzzle (2)" },
+					{ "time": 2.0667, "name": "libgdx/libgdx-muzzle (3)" },
+					{ "time": 2.1333, "name": "libgdx/libgdx-muzzle (4)" },
+					{ "time": 2.2, "name": null },
+					{ "time": 2.2667, "name": "libgdx/libgdx-muzzle (1)" },
+					{ "time": 2.3333, "name": "libgdx/libgdx-muzzle (2)" },
+					{ "time": 2.4, "name": "libgdx/libgdx-muzzle (3)" },
+					{ "time": 2.4667, "name": "libgdx/libgdx-muzzle (4)" },
+					{ "time": 2.5333, "name": null },
+					{ "time": 2.6, "name": "libgdx/libgdx-muzzle (1)" },
+					{ "time": 2.6667, "name": "libgdx/libgdx-muzzle (2)" },
+					{ "time": 2.7333, "name": "libgdx/libgdx-muzzle (3)" },
+					{ "time": 2.8, "name": "libgdx/libgdx-muzzle (4)" },
+					{ "time": 2.8667, "name": null },
+					{ "time": 2.9333, "name": "libgdx/libgdx-muzzle (1)" },
+					{ "time": 3, "name": "libgdx/libgdx-muzzle (2)" },
+					{ "time": 3.0667, "name": "libgdx/libgdx-muzzle (3)" },
+					{ "time": 3.1333, "name": "libgdx/libgdx-muzzle (4)" },
+					{ "time": 3.2, "name": null },
+					{ "time": 3.2667, "name": "libgdx/libgdx-muzzle (1)" },
+					{ "time": 3.3333, "name": "libgdx/libgdx-muzzle (2)" },
+					{ "time": 3.4, "name": "libgdx/libgdx-muzzle (3)" },
+					{ "time": 3.4667, "name": "libgdx/libgdx-muzzle (4)" },
+					{ "time": 3.5333, "name": null },
+					{ "time": 3.6, "name": "libgdx/libgdx-muzzle (1)" },
+					{ "time": 3.6667, "name": "libgdx/libgdx-muzzle (2)" },
+					{ "time": 3.7333, "name": "libgdx/libgdx-muzzle (3)" },
+					{ "time": 3.8, "name": "libgdx/libgdx-muzzle (4)" },
+					{ "time": 3.8667, "name": null },
+					{ "time": 3.9333, "name": "libgdx/libgdx-muzzle (1)" },
+					{ "time": 4, "name": "libgdx/libgdx-muzzle (2)" },
+					{ "time": 4.0667, "name": "libgdx/libgdx-muzzle (3)" },
+					{ "time": 4.1333, "name": "libgdx/libgdx-muzzle (4)" },
+					{ "time": 4.2, "name": null },
+					{ "time": 4.2667, "name": "libgdx/libgdx-muzzle (1)" },
+					{ "time": 4.3333, "name": "libgdx/libgdx-muzzle (2)" },
+					{ "time": 4.4, "name": "libgdx/libgdx-muzzle (3)" },
+					{ "time": 4.4667, "name": "libgdx/libgdx-muzzle (4)" },
+					{ "time": 4.5333, "name": null }
+				]
+			},
+			"libgdx/libgdx-trigger": {
+				"attachment": [
+					{ "time": 6.6667, "name": null }
+				]
+			},
+			"libgdx/libgdx-unity": {
+				"rgba": [
+					{ "color": "ffffff00" },
+					{ "time": 0.1667, "color": "ffffffff" }
+				]
+			},
+			"libgdx/libgdx-x": {
+				"attachment": [
+					{ "time": 6.6667, "name": null }
 				]
 			}
 		},
 		"bones": {
-			"blood-7": {
-				"rotate": [
-					{ "angle": -0.22 }
-				]
-			},
-			"spark-0": {
+			"libgdx/libgdx-rope": {
 				"translate": [
-					{ "x": -393.12, "curve": "stepped" },
-					{ "time": 2.1667, "x": -393.12, "curve": "stepped" },
-					{ "time": 2.244, "x": -352.82, "curve": "stepped" },
-					{ "time": 2.3214, "x": -328.79, "y": -13.95, "curve": "stepped" },
-					{ "time": 2.3988, "x": -297.79, "y": -6.97, "curve": "stepped" },
-					{ "time": 2.4762, "x": -258.27, "y": -14.72, "curve": "stepped" },
-					{ "time": 2.5536, "x": -224.94, "y": 4.65, "curve": "stepped" },
-					{ "time": 2.6309, "x": -185.42, "y": 14.72, "curve": "stepped" },
-					{ "time": 2.7083, "x": -175.34, "curve": "stepped" },
-					{ "time": 2.7857, "x": -144.34, "y": 9.3, "curve": "stepped" },
-					{ "time": 2.8631, "x": -101.72, "y": 4.65, "curve": "stepped" },
-					{ "time": 2.9404, "x": -78.47, "y": -7.75, "curve": "stepped" },
-					{ "time": 7.6667, "x": -81.74, "y": 15.13, "curve": "stepped" },
-					{ "time": 8.3333, "x": -98.89, "y": -3.66 }
+					{ "x": -3.13, "y": 645.63, "curve": "stepped" },
+					{ "time": 1.4, "x": -3.13, "y": 645.63 },
+					{ "time": 4.6667, "x": 0.06, "y": -11.87 }
 				]
 			},
-			"libgdx-x": {
+			"libgdx/libgdx-hit (1)": {
+				"translate": [
+					{ "time": 1.6333, "x": 177.35, "y": -93.76 }
+				]
+			},
+			"libgdx/libgdx-unity": {
 				"rotate": [
-					{ "time": 8.5667 },
-					{ "time": 9, "angle": 70.84 }
+					{ "time": 1.6 },
+					{ "time": 1.6333, "value": -2.73, "curve": "stepped" },
+					{ "time": 1.9333, "value": -2.73 },
+					{ "time": 1.9667, "value": -3.67, "curve": "stepped" },
+					{ "time": 2.2667, "value": -3.67 },
+					{ "time": 2.3, "value": -3.17, "curve": "stepped" },
+					{ "time": 2.5667, "value": -3.17 },
+					{ "time": 2.6, "value": -4.14, "curve": "stepped" },
+					{ "time": 2.9, "value": -4.14 },
+					{ "time": 2.9333, "value": -6.12, "curve": "stepped" },
+					{ "time": 3.2333, "value": -6.12 },
+					{ "time": 3.2667, "value": -7.1, "curve": "stepped" },
+					{ "time": 3.6, "value": -7.1 },
+					{ "time": 3.6333, "value": -6.72 }
 				],
 				"translate": [
-					{ "y": 81.65, "curve": "stepped" },
-					{ "time": 0.5667, "y": 81.65, "curve": 0.043, "c2": 0.26, "c3": 0 },
-					{ "time": 1, "curve": "stepped" },
-					{ "time": 8.5667, "curve": 0.832, "c3": 0.984, "c4": 0.42 },
-					{ "time": 9, "y": -160.13, "curve": "stepped" },
-					{ "time": 10.7, "y": -160.13 }
+					{
+						"time": 6.7667,
+						"curve": [ 6.889, 0, 7.011, 2.45, 7.173, -0.6, 7.058, -478.04 ]
+					},
+					{ "time": 7.1333, "x": 2.45, "y": -505.63 }
 				]
 			},
-			"libgdx-l": {
-				"rotate": [
-					{ "time": 2.244 },
-					{ "time": 2.3795, "angle": 53.15 }
-				],
+			"libgdx/libgdx-hit (1)2": {
 				"translate": [
-					{ "y": 81.65, "curve": 0.043, "c2": 0.26, "c3": 0 },
-					{ "time": 0.4333, "curve": "stepped" },
-					{ "time": 2.244, "curve": 0.646, "c2": 0.03, "c4": 0.3 },
-					{ "time": 2.3795, "y": -180.57 }
+					{ "time": 1.9667, "x": -4.95, "y": -2.06 }
 				]
 			},
-			"libgdx-i": {
-				"rotate": [
-					{ "time": 2.3214 },
-					{ "time": 2.5149, "angle": -73.12 }
-				],
+			"libgdx/libgdx-hit (1)3": {
 				"translate": [
-					{ "y": 81.65, "curve": "stepped" },
-					{ "time": 0.1, "y": 81.65, "curve": 0.043, "c2": 0.26, "c3": 0 },
-					{ "time": 0.5667, "curve": "stepped" },
-					{ "time": 2.3214, "curve": 0.646, "c2": 0.03, "c4": 0.3 },
-					{ "time": 2.5149, "y": -181.35 }
+					{ "time": 2.3, "x": 132.54, "y": -4.92 }
 				]
 			},
-			"libgdx-g": {
-				"rotate": [
-					{ "time": 2.5536 },
-					{ "time": 2.747, "angle": -123.24 }
-				],
+			"libgdx/libgdx-hit (1)4": {
 				"translate": [
-					{ "y": 81.65, "curve": "stepped" },
-					{ "time": 0.3333, "y": 81.65, "curve": 0.043, "c2": 0.26, "c3": 0 },
-					{ "time": 0.7667, "curve": "stepped" },
-					{ "time": 2.5536, "curve": 0.646, "c2": 0.03, "c4": 0.3 },
-					{ "time": 2.747, "y": -180.57 }
+					{ "time": 2.6, "x": 380.01, "y": 24.99 }
 				]
 			},
-			"libgdx-d": {
-				"rotate": [
-					{ "time": 2.7857 },
-					{ "time": 2.9598, "angle": 5.3 }
-				],
+			"libgdx/libgdx-hit (1)5": {
 				"translate": [
-					{ "y": 81.65, "curve": "stepped" },
-					{ "time": 0.4333, "y": 81.65, "curve": 0.043, "c2": 0.26, "c3": 0 },
-					{ "time": 0.9, "curve": "stepped" },
-					{ "time": 2.7857, "curve": 0.646, "c2": 0.03, "c4": 0.3 },
-					{ "time": 2.9598, "y": -183.67 }
+					{ "time": 2.9333, "x": 340.46, "y": -40.15 }
 				]
 			},
-			"libgdx-b": {
-				"rotate": [
-					{ "time": 2.3988 },
-					{ "time": 2.5729, "angle": 16.69 }
-				],
+			"libgdx/libgdx-hit (1)6": {
 				"translate": [
-					{ "y": 81.65, "curve": "stepped" },
-					{ "time": 0.2333, "y": 81.65, "curve": 0.043, "c2": 0.26, "c3": 0 },
-					{ "time": 0.6667, "curve": "stepped" },
-					{ "time": 2.3988, "curve": 0.646, "c2": 0.03, "c4": 0.3 },
-					{ "time": 2.5729, "y": -184.45 }
+					{ "time": 3.2667, "x": 485.53, "y": -41.85 }
+				]
+			},
+			"libgdx/libgdx-hit (1)7": {
+				"translate": [
+					{ "time": 3.6333, "x": 464.29, "y": -11.32 }
+				]
+			},
+			"libgdx/libgdx-hit (1)8": {
+				"translate": [
+					{ "time": 1.6333, "x": 177.35, "y": -93.76 }
+				]
+			},
+			"libgdx/libgdx-i": {
+				"translate": [
+					{ "x": -317.57, "y": -1.35, "curve": "stepped" },
+					{ "time": 2, "x": -317.57, "y": -1.35 },
+					{ "time": 2.0667, "x": -218.22, "y": 4.75 },
+					{ "time": 2.1333, "x": -190.72, "y": -0.12 },
+					{ "time": 2.2, "x": -163.29, "y": 8.19 },
+					{ "time": 2.2667, "x": -135.76, "y": -1.53 },
+					{ "time": 2.3333, "x": -108.35, "y": 11.57 },
+					{ "time": 2.4, "x": -80.81, "y": -1.81 },
+					{ "time": 2.4667, "x": -53.4, "y": 11.29 },
+					{ "time": 2.5333, "x": -25.89, "y": 2.64 },
+					{ "time": 2.6, "x": 1.53, "y": 15.62 },
+					{ "time": 2.6667, "x": 29.06, "y": 4.43 },
+					{ "time": 2.7333, "x": 56.48, "y": 14.96 },
+					{ "time": 2.8, "x": 84, "y": 6.14 },
+					{ "time": 2.8667, "x": 111.43, "y": 15.42 },
+					{ "time": 2.9333, "x": 138.96, "y": 4.16 },
+					{ "time": 3, "x": 166.37, "y": 15.87 },
+					{ "time": 3.0667, "x": 193.88, "y": 9.3 },
+					{ "time": 3.1333, "x": 221.31, "y": 19.6 },
+					{ "time": 3.2, "x": 248.85, "y": 4.5 },
+					{ "time": 3.2667, "x": 276.25, "y": 19.73 },
+					{ "time": 3.3333, "x": 303.77, "y": 10.48 },
+					{ "time": 3.4, "x": 331.16, "y": 28.94 },
+					{ "time": 3.4667, "x": 358.69, "y": 17.93 },
+					{ "time": 3.5333, "x": 386.11, "y": 28.8 },
+					{ "time": 3.6, "x": 413.63, "y": 18.8 },
+					{ "time": 3.6667, "x": 441.04, "y": 31.86 },
+					{ "time": 3.7333, "x": 468.6, "y": 15.5 },
+					{ "time": 3.8, "x": 496.01, "y": 27.45 },
+					{ "time": 3.8667, "x": 523.57, "y": 11.09 },
+					{ "time": 3.9333, "x": 550.97, "y": 25.6 },
+					{ "time": 4, "x": 578.55, "y": 4.28 },
+					{ "time": 4.0667, "x": 605.98, "y": 13.35 },
+					{ "time": 4.1333, "x": 633.5, "y": 3.56 },
+					{ "time": 4.2, "x": 660.89, "y": 20.91 },
+					{ "time": 4.2667, "x": 688.44, "y": 6.06 },
+					{ "time": 4.3333, "x": 715.85, "y": 20.48 },
+					{ "time": 4.4, "x": 743.39, "y": 6.89 },
+					{ "time": 4.4667, "x": 770.8, "y": 19.41 },
+					{ "time": 4.5333, "x": 798.31, "y": 12.94 },
+					{ "time": 4.6, "x": 825.71, "y": 27.83 },
+					{ "time": 4.6667, "x": 853.32 }
+				]
+			},
+			"libgdx/libgdx-m17": {
+				"scale": [
+					{ "time": 2 },
+					{ "time": 2.1333, "x": 0.606 },
+					{ "time": 2.2667 },
+					{ "time": 2.4, "x": 0.606 },
+					{ "time": 2.5333 },
+					{ "time": 2.6667, "x": 0.606 },
+					{ "time": 2.8 },
+					{ "time": 2.9333, "x": 0.606 },
+					{ "time": 3.0667 },
+					{ "time": 3.2, "x": 0.606 },
+					{ "time": 3.3333 },
+					{ "time": 3.4667, "x": 0.606 },
+					{ "time": 3.6 },
+					{ "time": 3.7333, "x": 0.606 },
+					{ "time": 3.8667 },
+					{ "time": 4, "x": 0.606 },
+					{ "time": 4.1333 },
+					{ "time": 4.2667, "x": 0.606 },
+					{ "time": 4.4 },
+					{ "time": 4.5333, "x": 0.606 },
+					{ "time": 4.6667 }
+				]
+			},
+			"libgdx/libgdx-m18": {
+				"scale": [
+					{ "time": 2.6333 },
+					{ "time": 2.7667, "x": 0.606 },
+					{ "time": 2.9 },
+					{ "time": 3.0333, "x": 0.606 },
+					{ "time": 3.1667 },
+					{ "time": 3.3, "x": 0.606 },
+					{ "time": 3.4333 },
+					{ "time": 3.5667, "x": 0.606 },
+					{ "time": 3.7 },
+					{ "time": 3.8333, "x": 0.606 },
+					{ "time": 3.9667 },
+					{ "time": 4.1, "x": 0.606 },
+					{ "time": 4.2333 },
+					{ "time": 4.3667, "x": 0.606 },
+					{ "time": 4.5 },
+					{ "time": 4.6333, "x": 0.606 },
+					{ "time": 4.7667 },
+					{ "time": 4.9, "x": 0.606 },
+					{ "time": 5.0333 },
+					{ "time": 5.1667, "x": 0.606 },
+					{ "time": 5.3 }
+				]
+			},
+			"libgdx/libgdx-i2": {
+				"translate": [
+					{ "x": -316.91, "y": -36.76, "curve": "stepped" },
+					{ "time": 2.6333, "x": -316.91, "y": -36.76 },
+					{ "time": 2.7, "x": -217.55, "y": -30.66 },
+					{ "time": 2.7667, "x": -190.05, "y": -35.53 },
+					{ "time": 2.8333, "x": -162.62, "y": -27.22 },
+					{ "time": 2.9, "x": -135.1, "y": -36.94 },
+					{ "time": 2.9667, "x": -107.69, "y": -23.84 },
+					{ "time": 3.0333, "x": -80.15, "y": -37.22 },
+					{ "time": 3.1, "x": -52.74, "y": -24.12 },
+					{ "time": 3.1667, "x": -25.22, "y": -32.77 },
+					{ "time": 3.2333, "x": 2.19, "y": -19.79 },
+					{ "time": 3.3, "x": 29.72, "y": -30.98 },
+					{ "time": 3.3667, "x": 57.14, "y": -20.44 },
+					{ "time": 3.4333, "x": 84.66, "y": -29.27 },
+					{ "time": 3.5, "x": 112.09, "y": -19.99 },
+					{ "time": 3.5667, "x": 139.62, "y": -31.25 },
+					{ "time": 3.6333, "x": 167.04, "y": -19.54 },
+					{ "time": 3.7, "x": 194.55, "y": -26.11 },
+					{ "time": 3.7667, "x": 221.97, "y": -15.81 },
+					{ "time": 3.8333, "x": 249.52, "y": -30.91 },
+					{ "time": 3.9, "x": 276.92, "y": -15.68 },
+					{ "time": 3.9667, "x": 304.44, "y": -24.93 },
+					{ "time": 4.0333, "x": 331.82, "y": -6.46 },
+					{ "time": 4.1, "x": 359.35, "y": -17.48 },
+					{ "time": 4.1667, "x": 386.77, "y": -6.61 },
+					{ "time": 4.2333, "x": 414.3, "y": -16.61 },
+					{ "time": 4.3, "x": 441.71, "y": -3.54 },
+					{ "time": 4.3667, "x": 469.26, "y": -19.91 },
+					{ "time": 4.4333, "x": 496.68, "y": -7.96 },
+					{ "time": 4.5, "x": 524.23, "y": -24.32 },
+					{ "time": 4.5667, "x": 551.64, "y": -9.81 },
+					{ "time": 4.6333, "x": 579.22, "y": -31.13 },
+					{ "time": 4.7, "x": 606.65, "y": -22.06 },
+					{ "time": 4.7667, "x": 634.17, "y": -31.85 },
+					{ "time": 4.8333, "x": 661.56, "y": -14.49 },
+					{ "time": 4.9, "x": 689.11, "y": -29.35 },
+					{ "time": 4.9667, "x": 716.51, "y": -14.93 },
+					{ "time": 5.0333, "x": 744.05, "y": -28.52 },
+					{ "time": 5.1, "x": 771.47, "y": -16 },
+					{ "time": 5.1667, "x": 798.97, "y": -22.47 },
+					{ "time": 5.2333, "x": 826.37, "y": -7.58 },
+					{ "time": 5.3, "x": 853.98, "y": -35.41 }
+				]
+			},
+			"libgdx/libgdx-m19": {
+				"scale": [
+					{ "time": 2.9333 },
+					{ "time": 3.0667, "x": 0.606 },
+					{ "time": 3.2 },
+					{ "time": 3.3333, "x": 0.606 },
+					{ "time": 3.4667 },
+					{ "time": 3.6, "x": 0.606 },
+					{ "time": 3.7333 },
+					{ "time": 3.8667, "x": 0.606 },
+					{ "time": 4 },
+					{ "time": 4.1333, "x": 0.606 },
+					{ "time": 4.2667 },
+					{ "time": 4.4, "x": 0.606 },
+					{ "time": 4.5333 },
+					{ "time": 4.6667, "x": 0.606 },
+					{ "time": 4.8 },
+					{ "time": 4.9333, "x": 0.606 },
+					{ "time": 5.0667 },
+					{ "time": 5.2, "x": 0.606 },
+					{ "time": 5.3333 },
+					{ "time": 5.4667, "x": 0.606 },
+					{ "time": 5.6 }
+				]
+			},
+			"libgdx/libgdx-i3": {
+				"translate": [
+					{ "x": -317.95, "y": 18.83, "curve": "stepped" },
+					{ "time": 2.9333, "x": -317.95, "y": 18.83 },
+					{ "time": 3, "x": -218.6, "y": 24.93 },
+					{ "time": 3.0667, "x": -191.1, "y": 20.06 },
+					{ "time": 3.1333, "x": -163.67, "y": 28.37 },
+					{ "time": 3.2, "x": -136.14, "y": 18.65 },
+					{ "time": 3.2667, "x": -108.73, "y": 31.75 },
+					{ "time": 3.3333, "x": -81.19, "y": 18.36 },
+					{ "time": 3.4, "x": -53.78, "y": 31.47 },
+					{ "time": 3.4667, "x": -26.26, "y": 22.82 },
+					{ "time": 3.5333, "x": 1.15, "y": 35.8 },
+					{ "time": 3.6, "x": 28.68, "y": 24.61 },
+					{ "time": 3.6667, "x": 56.1, "y": 35.14 },
+					{ "time": 3.7333, "x": 83.62, "y": 26.32 },
+					{ "time": 3.8, "x": 111.05, "y": 35.6 },
+					{ "time": 3.8667, "x": 138.58, "y": 24.34 },
+					{ "time": 3.9333, "x": 165.99, "y": 36.05 },
+					{ "time": 4, "x": 193.5, "y": 29.48 },
+					{ "time": 4.0667, "x": 220.93, "y": 39.78 },
+					{ "time": 4.1333, "x": 248.47, "y": 24.68 },
+					{ "time": 4.2, "x": 275.87, "y": 39.91 },
+					{ "time": 4.2667, "x": 303.39, "y": 30.66 },
+					{ "time": 4.3333, "x": 330.78, "y": 49.12 },
+					{ "time": 4.4, "x": 358.31, "y": 38.11 },
+					{ "time": 4.4667, "x": 385.73, "y": 48.98 },
+					{ "time": 4.5333, "x": 413.25, "y": 38.98 },
+					{ "time": 4.6, "x": 440.66, "y": 52.04 },
+					{ "time": 4.6667, "x": 468.22, "y": 35.68 },
+					{ "time": 4.7333, "x": 495.63, "y": 47.63 },
+					{ "time": 4.8, "x": 523.19, "y": 31.27 },
+					{ "time": 4.8667, "x": 550.59, "y": 45.78 },
+					{ "time": 4.9333, "x": 578.17, "y": 24.46 },
+					{ "time": 5, "x": 605.6, "y": 33.53 },
+					{ "time": 5.0667, "x": 633.12, "y": 23.74 },
+					{ "time": 5.1333, "x": 660.51, "y": 41.09 },
+					{ "time": 5.2, "x": 688.06, "y": 26.24 },
+					{ "time": 5.2667, "x": 715.47, "y": 40.66 },
+					{ "time": 5.3333, "x": 743.01, "y": 27.07 },
+					{ "time": 5.4, "x": 770.42, "y": 39.59 },
+					{ "time": 5.4667, "x": 797.93, "y": 33.12 },
+					{ "time": 5.5333, "x": 825.33, "y": 48.01 },
+					{ "time": 5.6, "x": 852.94, "y": 20.18 }
+				]
+			},
+			"libgdx/libgdx-m20": {
+				"scale": [
+					{ "time": 3.4667 },
+					{ "time": 3.6, "x": 0.606 },
+					{ "time": 3.7333 },
+					{ "time": 3.8667, "x": 0.606 },
+					{ "time": 4 },
+					{ "time": 4.1333, "x": 0.606 },
+					{ "time": 4.2667 },
+					{ "time": 4.4, "x": 0.606 },
+					{ "time": 4.5333 },
+					{ "time": 4.6667, "x": 0.606 },
+					{ "time": 4.8 },
+					{ "time": 4.9333, "x": 0.606 },
+					{ "time": 5.0667 },
+					{ "time": 5.2, "x": 0.606 },
+					{ "time": 5.3333 },
+					{ "time": 5.4667, "x": 0.606 },
+					{ "time": 5.6 },
+					{ "time": 5.7333, "x": 0.606 },
+					{ "time": 5.8667 },
+					{ "time": 6, "x": 0.606 },
+					{ "time": 6.1333 }
+				]
+			},
+			"libgdx/libgdx-i4": {
+				"translate": [
+					{ "x": -317.57, "y": -1.35, "curve": "stepped" },
+					{ "time": 3.4667, "x": -317.57, "y": -1.35 },
+					{ "time": 3.5333, "x": -218.22, "y": 4.75 },
+					{ "time": 3.6, "x": -190.72, "y": -0.12 },
+					{ "time": 3.6667, "x": -163.29, "y": 8.19 },
+					{ "time": 3.7333, "x": -135.76, "y": -1.53 },
+					{ "time": 3.8, "x": -108.35, "y": 11.57 },
+					{ "time": 3.8667, "x": -80.81, "y": -1.81 },
+					{ "time": 3.9333, "x": -53.4, "y": 11.29 },
+					{ "time": 4, "x": -25.89, "y": 2.64 },
+					{ "time": 4.0667, "x": 1.53, "y": 15.62 },
+					{ "time": 4.1333, "x": 29.06, "y": 4.43 },
+					{ "time": 4.2, "x": 56.48, "y": 14.96 },
+					{ "time": 4.2667, "x": 84, "y": 6.14 },
+					{ "time": 4.3333, "x": 111.43, "y": 15.42 },
+					{ "time": 4.4, "x": 138.96, "y": 4.16 },
+					{ "time": 4.4667, "x": 166.37, "y": 15.87 },
+					{ "time": 4.5333, "x": 193.88, "y": 9.3 },
+					{ "time": 4.6, "x": 221.31, "y": 19.6 },
+					{ "time": 4.6667, "x": 248.85, "y": 4.5 },
+					{ "time": 4.7333, "x": 276.25, "y": 19.73 },
+					{ "time": 4.8, "x": 303.77, "y": 10.48 },
+					{ "time": 4.8667, "x": 331.16, "y": 28.94 },
+					{ "time": 4.9333, "x": 358.69, "y": 17.93 },
+					{ "time": 5, "x": 386.11, "y": 28.8 },
+					{ "time": 5.0667, "x": 413.63, "y": 18.8 },
+					{ "time": 5.1333, "x": 441.04, "y": 31.86 },
+					{ "time": 5.2, "x": 468.6, "y": 15.5 },
+					{ "time": 5.2667, "x": 496.01, "y": 27.45 },
+					{ "time": 5.3333, "x": 523.57, "y": 11.09 },
+					{ "time": 5.4, "x": 550.97, "y": 25.6 },
+					{ "time": 5.4667, "x": 578.55, "y": 4.28 },
+					{ "time": 5.5333, "x": 605.98, "y": 13.35 },
+					{ "time": 5.6, "x": 633.5, "y": 3.56 },
+					{ "time": 5.6667, "x": 660.89, "y": 20.91 },
+					{ "time": 5.7333, "x": 688.44, "y": 6.06 },
+					{ "time": 5.8, "x": 715.85, "y": 20.48 },
+					{ "time": 5.8667, "x": 743.39, "y": 6.89 },
+					{ "time": 5.9333, "x": 770.8, "y": 19.41 },
+					{ "time": 6, "x": 798.31, "y": 12.94 },
+					{ "time": 6.0667, "x": 825.71, "y": 27.83 },
+					{ "time": 6.1333, "x": 853.32 }
+				]
+			},
+			"libgdx/libgdx-x": {
+				"translate": [
+					{ "x": -262.99, "y": -133.75, "curve": "stepped" },
+					{ "time": 5.6667, "x": -262.99, "y": -133.75 },
+					{ "time": 6.1333, "x": -262.99 }
+				]
+			},
+			"libgdx/libgdx-trigger": {
+				"translate": [
+					{ "time": 6.1667 },
+					{ "time": 6.2333, "x": 5.53, "y": -6.11 },
+					{ "time": 6.3 }
+				]
+			},
+			"libgdx/libgdx-explosion (1)": {
+				"translate": [
+					{ "time": 6.6667, "x": 55.68, "y": 13.69 }
+				]
+			},
+			"libgdx/libgdx-blood (1)": {
+				"translate": [
+					{ "time": 6.6667, "x": -85.04, "y": 14.67 }
 				]
 			}
 		},
 		"events": [
-			{ "name": "libgdx" },
-			{ "time": 2.1667, "name": "shot" },
-			{ "time": 2.244, "name": "shot" },
-			{ "time": 2.3214, "name": "shot" },
-			{ "time": 2.3988, "name": "shot" },
-			{ "time": 2.4762, "name": "shot" },
-			{ "time": 2.5536, "name": "shot" },
-			{ "time": 2.6309, "name": "shot" },
-			{ "time": 2.7083, "name": "shot" },
-			{ "time": 2.7857, "name": "shot" },
-			{ "time": 2.8631, "name": "shot" },
-			{ "time": 2.9404, "name": "shot" },
-			{ "time": 4, "name": "please don't kill me" },
-			{ "time": 7.6667, "name": "ahh" },
-			{ "time": 7.6667, "name": "shot" },
-			{ "time": 8.3333, "name": "ahh" },
-			{ "time": 8.3333, "name": "shot" }
+			{ "name": "sfx/libgdx-made-with-unity" },
+			{ "time": 1.6, "name": "sfx/libgdx-burst-fire" },
+			{ "time": 1.9333, "name": "sfx/libgdx-burst-fire" },
+			{ "time": 2.2667, "name": "sfx/libgdx-burst-fire" },
+			{ "time": 2.6, "name": "sfx/libgdx-burst-fire" },
+			{ "time": 2.9333, "name": "sfx/libgdx-burst-fire" },
+			{ "time": 3.2667, "name": "sfx/libgdx-burst-fire" },
+			{ "time": 3.6, "name": "sfx/libgdx-burst-fire" },
+			{ "time": 3.9333, "name": "sfx/libgdx-burst-fire" },
+			{ "time": 4.3, "name": "sfx/libgdx-burst-fire" },
+			{ "time": 5.9333, "name": "sfx/libgdx-scream" },
+			{ "time": 6.1667, "name": "sfx/libgdx-beep" },
+			{ "time": 6.5667, "name": "sfx/libgdx-explosion" }
 		]
 	},
 	"stand": {
 		"slots": {
-			"blood-0": {
+			"libgdx/libgdx-blood (1)": {
 				"attachment": [
 					{ "name": null }
 				]
 			},
-			"blood-1": {
+			"libgdx/libgdx-bullet-hole": {
 				"attachment": [
 					{ "name": null }
 				]
 			},
-			"blood-2": {
+			"libgdx/libgdx-bullet-hole2": {
 				"attachment": [
 					{ "name": null }
 				]
 			},
-			"blood-3": {
+			"libgdx/libgdx-bullet-hole3": {
 				"attachment": [
 					{ "name": null }
 				]
 			},
-			"blood-4": {
+			"libgdx/libgdx-bullet-hole4": {
 				"attachment": [
 					{ "name": null }
 				]
 			},
-			"blood-5": {
+			"libgdx/libgdx-bullet-hole5": {
 				"attachment": [
 					{ "name": null }
 				]
 			},
-			"blood-6": {
+			"libgdx/libgdx-bullet-hole6": {
 				"attachment": [
 					{ "name": null }
 				]
 			},
-			"blood-7": {
+			"libgdx/libgdx-bullet-hole7": {
 				"attachment": [
 					{ "name": null }
 				]
 			},
-			"blood-8": {
+			"libgdx/libgdx-explosion (1)": {
 				"attachment": [
 					{ "name": null }
 				]
 			},
-			"blood-9": {
+			"libgdx/libgdx-hit (1)": {
 				"attachment": [
 					{ "name": null }
 				]
 			},
-			"blood-10": {
+			"libgdx/libgdx-hit (1)2": {
 				"attachment": [
 					{ "name": null }
 				]
 			},
-			"blood-11": {
+			"libgdx/libgdx-hit (1)3": {
 				"attachment": [
 					{ "name": null }
 				]
 			},
-			"libgdx-b": {
-				"color": [
+			"libgdx/libgdx-hit (1)4": {
+				"attachment": [
+					{ "name": null }
+				]
+			},
+			"libgdx/libgdx-hit (1)5": {
+				"attachment": [
+					{ "name": null }
+				]
+			},
+			"libgdx/libgdx-hit (1)6": {
+				"attachment": [
+					{ "name": null }
+				]
+			},
+			"libgdx/libgdx-hit (1)7": {
+				"attachment": [
+					{ "name": null }
+				]
+			},
+			"libgdx/libgdx-hit (1)8": {
+				"attachment": [
+					{ "name": null }
+				]
+			},
+			"libgdx/libgdx-muzzle (1)": {
+				"attachment": [
+					{ "name": null }
+				]
+			},
+			"libgdx/libgdx-unity": {
+				"rgba": [
 					{ "color": "ffffff00" }
-				]
-			},
-			"libgdx-d": {
-				"color": [
-					{ "color": "ffffff00" }
-				]
-			},
-			"libgdx-g": {
-				"color": [
-					{ "color": "ffffff00" }
-				]
-			},
-			"libgdx-i": {
-				"color": [
-					{ "color": "ffffff00" }
-				]
-			},
-			"libgdx-l": {
-				"color": [
-					{ "color": "ffffff00" }
-				]
-			},
-			"libgdx-x": {
-				"color": [
-					{ "color": "ffffff00" }
-				]
-			},
-			"mouth": {
-				"attachment": [
-					{ "name": null }
-				]
-			},
-			"spark-0": {
-				"attachment": [
-					{ "name": null }
 				]
 			}
 		},
 		"bones": {
-			"blood-7": {
-				"rotate": [
-					{ "angle": -0.22 }
+			"libgdx/libgdx-rope": {
+				"translate": [
+					{ "x": -3.13, "y": 645.63 }
 				]
 			},
-			"spark-0": {
+			"libgdx/libgdx-i": {
 				"translate": [
-					{ "x": -393.12 }
+					{ "x": -317.57, "y": -1.35 }
 				]
 			},
-			"libgdx-x": {
+			"libgdx/libgdx-i2": {
 				"translate": [
-					{ "y": 81.65 }
+					{ "x": -316.91, "y": -36.76 }
 				]
 			},
-			"libgdx-l": {
+			"libgdx/libgdx-i3": {
 				"translate": [
-					{ "y": 81.65 }
+					{ "x": -317.95, "y": 18.83 }
 				]
 			},
-			"libgdx-i": {
+			"libgdx/libgdx-i4": {
 				"translate": [
-					{ "y": 81.65 }
+					{ "x": -317.57, "y": -1.35 }
 				]
 			},
-			"libgdx-g": {
+			"libgdx/libgdx-x": {
 				"translate": [
-					{ "y": 81.65 }
-				]
-			},
-			"libgdx-d": {
-				"translate": [
-					{ "y": 81.65 }
-				]
-			},
-			"libgdx-b": {
-				"translate": [
-					{ "y": 81.65 }
+					{ "x": -262.99, "y": -133.75 }
 				]
 			}
-		}
+		},
+		"events": [
+			{ "name": "sfx/libgdx-made-with-unity" }
+		]
 	}
 }
 }

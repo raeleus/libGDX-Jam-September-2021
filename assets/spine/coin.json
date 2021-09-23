@@ -1,0 +1,78 @@
+{
+"skeleton": {
+	"hash": "XckojHtfiLs",
+	"spine": "4.0.36",
+	"x": -27.17,
+	"y": -27.31,
+	"width": 63.32,
+	"height": 67.06,
+	"images": "",
+	"audio": ""
+},
+"bones": [
+	{ "name": "root" },
+	{ "name": "bone", "parent": "root" }
+],
+"slots": [
+	{ "name": "game/coin-01", "bone": "bone", "attachment": "game/coin-01" }
+],
+"skins": [
+	{
+		"name": "default",
+		"attachments": {
+			"game/coin-01": {
+				"game/coin-01": { "x": 4.49, "y": 6.22, "scaleX": 0.3119, "scaleY": 0.3119, "width": 203, "height": 215 },
+				"game/coin-02": { "x": 4.49, "y": 6.22, "scaleX": 0.3119, "scaleY": 0.3119, "width": 203, "height": 215 },
+				"game/coin-03": { "x": 4.49, "y": 6.22, "scaleX": 0.3119, "scaleY": 0.3119, "width": 203, "height": 215 },
+				"game/coin-04": { "x": 4.49, "y": 6.22, "scaleX": 0.3119, "scaleY": 0.3119, "width": 203, "height": 215 },
+				"game/coin-05": { "x": 4.49, "y": 6.22, "scaleX": 0.3119, "scaleY": 0.3119, "width": 203, "height": 215 },
+				"game/coin-06": { "x": 4.49, "y": 6.22, "scaleX": 0.3119, "scaleY": 0.3119, "width": 203, "height": 215 }
+			}
+		}
+	}
+],
+"animations": {
+	"animation": {
+		"slots": {
+			"game/coin-01": {
+				"rgba": [
+					{ "color": "ffffff00" },
+					{ "time": 0.1667, "color": "ffffffff", "curve": "stepped" },
+					{ "time": 0.6667, "color": "ffffffff" },
+					{ "time": 1.0667, "color": "ffffff00" }
+				],
+				"attachment": [
+					{ "time": 0.1, "name": "game/coin-02" },
+					{ "time": 0.1667, "name": "game/coin-03" },
+					{ "time": 0.2333, "name": "game/coin-04" },
+					{ "time": 0.3, "name": "game/coin-05" },
+					{ "time": 0.4, "name": "game/coin-06" },
+					{ "time": 0.4667, "name": "game/coin-01" },
+					{ "time": 0.5667, "name": "game/coin-02" },
+					{ "time": 0.6333, "name": "game/coin-03" },
+					{ "time": 0.7, "name": "game/coin-04" },
+					{ "time": 0.7667, "name": "game/coin-05" },
+					{ "time": 0.8667, "name": "game/coin-06" },
+					{ "time": 0.9333, "name": "game/coin-01" },
+					{ "time": 1.0333, "name": "game/coin-02" },
+					{ "time": 1.1, "name": "game/coin-03" },
+					{ "time": 1.1667, "name": "game/coin-04" },
+					{ "time": 1.2333, "name": "game/coin-05" },
+					{ "time": 1.3333, "name": "game/coin-06" },
+					{ "time": 1.4, "name": "game/coin-01" }
+				]
+			}
+		},
+		"bones": {
+			"bone": {
+				"translate": [
+					{
+						"curve": [ 0.356, 0, 0.711, 0, 0.198, 50.56, 0.513, 144.58 ]
+					},
+					{ "time": 1.0667, "y": 149 }
+				]
+			}
+		}
+	}
+}
+}

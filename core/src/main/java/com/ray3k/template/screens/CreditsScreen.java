@@ -5,6 +5,7 @@ import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.Stage;
+import com.badlogic.gdx.scenes.scene2d.ui.ImageButton;
 import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
@@ -31,9 +32,9 @@ public class CreditsScreen extends JamScreen {
         
         sceneBuilder.build(stage, skin, Gdx.files.internal("menus/credits.json"));
         
-        TextButton textButton = stage.getRoot().findActor("ok");
-        textButton.addListener(sndChangeListener);
-        textButton.addListener(new ChangeListener() {
+        ImageButton imageButton = stage.getRoot().findActor("ok");
+        imageButton.addListener(sndChangeListener);
+        imageButton.addListener(new ChangeListener() {
             @Override
             public void changed(ChangeEvent event, Actor actor) {
                 Gdx.input.setInputProcessor(null);

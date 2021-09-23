@@ -1,0 +1,55 @@
+{
+"skeleton": { "hash": "4vZVMl21XSc", "spine": "4.0.36", "images": "", "audio": "" },
+"bones": [
+	{ "name": "root" }
+],
+"slots": [
+	{ "name": "game/blood-splatter-01", "bone": "root" }
+],
+"skins": [
+	{
+		"name": "default",
+		"attachments": {
+			"game/blood-splatter-01": {
+				"game/blood-splatter-01": { "x": 26.59, "y": -15.38, "width": 73, "height": 82 },
+				"game/blood-splatter-02": { "x": 26.59, "y": -15.38, "width": 73, "height": 82 },
+				"game/blood-splatter-03": { "x": 26.59, "y": -15.38, "width": 73, "height": 82 },
+				"game/blood-splatter-04": { "x": 26.59, "y": -15.38, "width": 73, "height": 82 },
+				"game/blood-splatter-05": { "x": 26.59, "y": -15.38, "width": 73, "height": 82 },
+				"game/blood-splatter-06": { "x": 26.59, "y": -15.38, "width": 73, "height": 82 },
+				"game/blood-splatter-07": { "x": 26.59, "y": -15.38, "width": 73, "height": 82 },
+				"game/blood-splatter-08": { "x": 26.59, "y": -15.38, "width": 73, "height": 82 },
+				"game/blood-splatter-09": { "x": 26.59, "y": -15.38, "width": 73, "height": 82 },
+				"game/blood-splatter-10": { "x": 26.59, "y": -15.38, "width": 73, "height": 82 },
+				"game/blood-splatter-11": { "x": 26.59, "y": -15.38, "width": 73, "height": 82 },
+				"game/blood-splatter-12": { "x": 26.59, "y": -15.38, "width": 73, "height": 82 },
+				"game/blood-splatter-13": { "x": 26.59, "y": -15.38, "width": 73, "height": 82 }
+			}
+		}
+	}
+],
+"animations": {
+	"animation": {
+		"slots": {
+			"game/blood-splatter-01": {
+				"attachment": [
+					{ "time": 0.0333, "name": "game/blood-splatter-01" },
+					{ "time": 0.0667, "name": "game/blood-splatter-02" },
+					{ "time": 0.1, "name": "game/blood-splatter-03" },
+					{ "time": 0.1333, "name": "game/blood-splatter-04" },
+					{ "time": 0.1667, "name": "game/blood-splatter-05" },
+					{ "time": 0.2, "name": "game/blood-splatter-06" },
+					{ "time": 0.2333, "name": "game/blood-splatter-07" },
+					{ "time": 0.2667, "name": "game/blood-splatter-08" },
+					{ "time": 0.3, "name": "game/blood-splatter-09" },
+					{ "time": 0.3333, "name": "game/blood-splatter-10" },
+					{ "time": 0.3667, "name": "game/blood-splatter-11" },
+					{ "time": 0.4, "name": "game/blood-splatter-12" },
+					{ "time": 0.4333, "name": "game/blood-splatter-13" },
+					{ "time": 0.4667, "name": null }
+				]
+			}
+		}
+	}
+}
+}

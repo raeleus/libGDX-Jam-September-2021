@@ -1,0 +1,522 @@
+{
+"skeleton": {
+	"hash": "cUT3AHCoVHY",
+	"spine": "4.0.36",
+	"x": -21.29,
+	"y": -2.12,
+	"width": 124.83,
+	"height": 179.42,
+	"images": "",
+	"audio": ""
+},
+"bones": [
+	{ "name": "root" },
+	{ "name": "body", "parent": "root", "length": 48.36, "rotation": 82.34, "x": 2.33, "y": 2.33 },
+	{ "name": "head", "parent": "body", "length": 30.47, "rotation": 0.06, "x": 45.85, "y": 0.48 },
+	{ "name": "hand-left", "parent": "body", "length": 34.53, "rotation": -81.25, "x": 28.84, "y": 4.62 },
+	{ "name": "hand-right", "parent": "body", "length": 24.18, "rotation": -82.34, "x": 29.75, "y": -16.7 },
+	{ "name": "game/flag-pole", "parent": "body", "length": 8.34, "rotation": -81.74, "x": 140.54, "y": 0.88 },
+	{ "name": "game/flag-pole2", "parent": "game/flag-pole", "length": 8.34, "x": 8.34 },
+	{ "name": "game/flag-pole3", "parent": "game/flag-pole2", "length": 8.34, "x": 8.34 },
+	{ "name": "game/flag-pole4", "parent": "game/flag-pole3", "length": 8.34, "x": 8.34 },
+	{ "name": "game/flag-pole5", "parent": "game/flag-pole4", "length": 8.34, "x": 8.34 },
+	{ "name": "game/flag-pole6", "parent": "game/flag-pole5", "length": 8.34, "x": 8.34 },
+	{ "name": "game/flag-pole7", "parent": "game/flag-pole6", "length": 8.34, "x": 8.34 },
+	{ "name": "game/flag-pole8", "parent": "game/flag-pole7", "length": 8.34, "x": 8.34 },
+	{ "name": "game/flag-pole9", "parent": "game/flag-pole8", "length": 8.34, "x": 8.34 },
+	{ "name": "game/flag-pole10", "parent": "game/flag-pole9", "length": 8.34, "x": 8.34 }
+],
+"slots": [
+	{ "name": "game/flag", "bone": "game/flag-pole", "attachment": "game/flag" },
+	{ "name": "game/flag-pole", "bone": "game/flag-pole", "attachment": "game/flag-pole" },
+	{ "name": "body", "bone": "body", "attachment": "body" },
+	{ "name": "head", "bone": "head", "attachment": "head" },
+	{ "name": "hand-right", "bone": "hand-right", "attachment": "hand-right" },
+	{ "name": "weapon", "bone": "hand-left", "attachment": "weapon" },
+	{ "name": "hand-left", "bone": "hand-left", "attachment": "hand-left" },
+	{ "name": "flash", "bone": "hand-left" },
+	{ "name": "projectile", "bone": "hand-left", "attachment": "projectile" },
+	{ "name": "splatter-right", "bone": "body", "attachment": "splatter-right" },
+	{ "name": "splatter-left", "bone": "body", "attachment": "splatter-left" }
+],
+"skins": [
+	{
+		"name": "default",
+		"attachments": {
+			"game/flag": {
+				"game/flag": {
+					"type": "mesh",
+					"uvs": [ 1, 1, 0.84127, 1, 0.71899, 1, 0.55951, 1, 0.41066, 1, 0.2618, 1, 0.1289, 1, 0, 1, 0, 0, 0.11827, 0, 0.25117, 0, 0.40003, 0, 0.55419, 0, 0.70836, 0, 0.84658, 0, 1, 0 ],
+					"triangles": [ 7, 9, 6, 7, 8, 9, 14, 15, 0, 1, 14, 0, 2, 13, 14, 3, 13, 2, 1, 2, 14, 4, 11, 12, 3, 12, 13, 4, 12, 3, 5, 10, 11, 5, 11, 4, 6, 9, 10, 6, 10, 5 ],
+					"vertices": [ 6, 9, 49.26, -26.07, 1.0E-5, 10, 40.92, -26.07, 0.00964, 11, 32.58, -26.07, 0.00315, 12, 24.24, -26.07, 0.2738, 13, 15.9, -26.07, 0.23469, 14, 7.56, -26.07, 0.47871, 8, 7, 52.77, -25.93, 0.00111, 8, 44.43, -25.93, 0.00247, 9, 36.09, -25.93, 0.01305, 10, 27.75, -25.93, 0.05187, 11, 19.41, -25.93, 0.05376, 12, 11.07, -25.93, 0.37571, 13, 2.73, -25.93, 0.18973, 14, -5.61, -25.93, 0.31231, 9, 5, 59.3, -25.82, 1.3E-4, 7, 42.62, -25.82, 0.01346, 8, 34.28, -25.82, 0.02206, 9, 25.94, -25.82, 0.06648, 10, 17.6, -25.82, 0.14863, 11, 9.26, -25.82, 0.15351, 12, 0.92, -25.82, 0.36994, 13, -7.42, -25.82, 0.08939, 14, -15.76, -25.82, 0.13639, 9, 5, 46.06, -25.68, 0.01415, 7, 29.38, -25.68, 0.08428, 8, 21.04, -25.68, 0.1139, 9, 12.7, -25.68, 0.21674, 10, 4.36, -25.68, 0.22452, 11, -3.98, -25.68, 0.16725, 12, -12.32, -25.68, 0.14588, 13, -20.66, -25.68, 0.00911, 14, -29, -25.68, 0.02416, 8, 5, 33.71, -25.55, 0.08586, 7, 17.03, -25.55, 0.24238, 8, 8.69, -25.55, 0.23811, 9, 0.35, -25.55, 0.24384, 10, -7.99, -25.55, 0.10214, 11, -16.33, -25.55, 0.06085, 12, -24.67, -25.55, 0.02561, 14, -41.35, -25.55, 0.00121, 8, 5, 21.35, -25.42, 0.28876, 6, 13.01, -25.42, 0.00102, 7, 4.67, -25.42, 0.37256, 8, -3.67, -25.42, 0.20965, 9, -12.01, -25.42, 0.10226, 10, -20.35, -25.42, 0.01522, 11, -28.69, -25.42, 0.00967, 12, -37.03, -25.42, 8.7E-4, 7, 5, 10.32, -25.3, 0.58216, 6, 1.98, -25.3, 0.00346, 7, -6.36, -25.3, 0.29552, 8, -14.7, -25.3, 0.09648, 9, -23.04, -25.3, 0.02147, 10, -31.38, -25.3, 4.4E-4, 11, -39.72, -25.3, 4.7E-4, 1, 1, 115.56, -2.37, 1, 1, 1, 166.11, 4.43, 1, 7, 5, 9.98, 25.7, 0.3581, 6, 1.64, 25.7, 0.24706, 7, -6.7, 25.7, 0.27023, 8, -15.04, 25.7, 0.07044, 9, -23.38, 25.7, 0.04568, 10, -31.72, 25.7, 0.00801, 12, -48.4, 25.7, 4.8E-4, 8, 5, 21.01, 25.59, 0.12359, 6, 12.67, 25.59, 0.16103, 7, 4.33, 25.59, 0.30336, 8, -4.01, 25.59, 0.18287, 9, -12.35, 25.59, 0.1712, 10, -20.69, 25.59, 0.04809, 11, -29.03, 25.59, 5.1E-4, 12, -37.37, 25.59, 0.00935, 9, 5, 33.36, 25.46, 0.01449, 6, 25.02, 25.46, 0.03986, 7, 16.68, 25.46, 0.15075, 8, 8.34, 25.46, 0.18817, 9, 0, 25.46, 0.37488, 10, -8.34, 25.46, 0.15454, 11, -16.68, 25.46, 0.02133, 12, -25.02, 25.46, 0.05496, 13, -33.36, 25.46, 0.00103, 10, 5, 46.16, 25.32, 2.0E-5, 6, 37.82, 25.32, 0.00233, 7, 29.48, 25.32, 0.02977, 8, 21.14, 25.32, 0.05558, 9, 12.8, 25.32, 0.35152, 10, 4.46, 25.32, 0.23061, 11, -3.88, 25.32, 0.1063, 12, -12.22, 25.32, 0.19164, 13, -20.56, 25.32, 0.02745, 14, -28.9, 25.32, 0.00479, 8, 7, 42.28, 25.18, 0.00132, 8, 33.94, 25.18, 0.00408, 9, 25.6, 25.18, 0.15591, 10, 17.26, 25.18, 0.12265, 11, 8.92, 25.18, 0.12778, 12, 0.58, 25.18, 0.37678, 13, -7.76, 25.18, 0.14484, 14, -16.1, 25.18, 0.06663, 6, 9, 37.07, 25.06, 0.04683, 10, 28.73, 25.06, 0.02858, 11, 20.39, 25.06, 0.04156, 12, 12.05, 25.06, 0.3405, 13, 3.71, 25.06, 0.3, 14, -4.63, 25.06, 0.24254, 6, 9, 49.8, 24.93, 0.01193, 10, 41.46, 24.93, 0.00115, 11, 33.12, 24.93, 0.00204, 12, 24.78, 24.93, 0.22658, 13, 16.44, 24.93, 0.33594, 14, 8.1, 24.93, 0.42235 ],
+					"hull": 16,
+					"edges": [ 14, 16, 0, 30, 16, 18, 12, 14, 12, 18, 18, 20, 10, 12, 20, 10, 20, 22, 8, 10, 22, 8, 22, 24, 6, 8, 24, 6, 24, 26, 4, 6, 26, 4, 26, 28, 28, 30, 0, 2, 2, 4, 28, 2 ],
+					"width": 83,
+					"height": 51
+				}
+			},
+			"game/flag-pole": {
+				"game/flag-pole": { "x": 0.88, "y": -28.46, "rotation": -0.61, "width": 13, "height": 128 }
+			}
+		}
+	},
+	{
+		"name": "assault",
+		"attachments": {
+			"body": {
+				"body": { "name": "game/assault-body", "x": 21.76, "y": -0.12, "rotation": -82.34, "width": 33, "height": 54 }
+			},
+			"flash": {
+				"flash-01": { "name": "game/muzzle-flash-01", "x": 75.55, "y": 15.41, "rotation": -1.09, "width": 39, "height": 23 },
+				"flash-02": { "name": "game/muzzle-flash-02", "x": 75.55, "y": 15.41, "rotation": -1.09, "width": 39, "height": 23 },
+				"flash-03": { "name": "game/muzzle-flash-03", "x": 75.55, "y": 15.41, "rotation": -1.09, "width": 39, "height": 23 },
+				"flash-04": { "name": "game/muzzle-flash-04", "x": 75.55, "y": 15.41, "rotation": -1.09, "width": 39, "height": 23 },
+				"flash-05": { "name": "game/muzzle-flash-05", "x": 75.55, "y": 15.41, "rotation": -1.09, "width": 39, "height": 23 },
+				"flash-06": { "name": "game/muzzle-flash-06", "x": 75.55, "y": 15.41, "rotation": -1.09, "width": 39, "height": 23 },
+				"flash-07": { "name": "game/muzzle-flash-07", "x": 75.55, "y": 15.41, "rotation": -1.09, "width": 39, "height": 23 },
+				"flash-08": { "name": "game/muzzle-flash-08", "x": 75.55, "y": 15.41, "rotation": -1.09, "width": 39, "height": 23 }
+			},
+			"hand-left": {
+				"hand-left": { "name": "game/assault-hand", "x": -0.23, "y": -0.68, "rotation": -1.09, "width": 8, "height": 9 }
+			},
+			"hand-right": {
+				"hand-right": { "name": "game/assault-hand", "x": 1.23, "y": 0.53, "width": 8, "height": 9 }
+			},
+			"head": {
+				"head": { "name": "game/assault-head", "x": 16.69, "y": -0.21, "rotation": -82.41, "width": 30, "height": 45 }
+			},
+			"projectile": {
+				"projectile": { "type": "point", "x": 60.4, "y": 13.59 }
+			},
+			"splatter-left": {
+				"splatter-left": { "type": "point", "x": 26.51, "y": 14.46 }
+			},
+			"splatter-right": {
+				"splatter-right": { "type": "point", "x": 28.93, "y": -14.07 }
+			},
+			"weapon": {
+				"weapon": { "name": "game/assault-weapon", "x": 19.27, "y": 7.81, "rotation": -1.09, "width": 89, "height": 25 }
+			}
+		}
+	},
+	{
+		"name": "exploder",
+		"attachments": {
+			"body": {
+				"body": { "name": "game/exploder-body", "x": 19.24, "y": -0.46, "rotation": -82.34, "width": 44, "height": 48 }
+			},
+			"hand-left": {
+				"hand-left": { "name": "game/zombie-hand", "x": -0.23, "y": -0.68, "rotation": -1.09, "width": 8, "height": 9 }
+			},
+			"hand-right": {
+				"hand-right": { "name": "game/zombie-hand", "x": 1.23, "y": 0.53, "width": 8, "height": 9 }
+			},
+			"head": {
+				"head": { "name": "game/exploder-head", "x": 6.82, "y": -1.95, "rotation": -82.41, "width": 25, "height": 33 }
+			},
+			"projectile": {
+				"projectile": { "type": "point", "x": 1.33, "y": -11.67 }
+			},
+			"splatter-left": {
+				"splatter-left": { "type": "point", "x": 15.22, "y": 20.41 }
+			},
+			"splatter-right": {
+				"splatter-right": { "type": "point", "x": 22.12, "y": -20.44 }
+			}
+		}
+	},
+	{
+		"name": "heavy",
+		"attachments": {
+			"body": {
+				"body": { "name": "game/heavy-body", "x": 21.76, "y": -0.12, "rotation": -82.34, "width": 36, "height": 52 }
+			},
+			"flash": {
+				"flash-01": {
+					"name": "game/muzzle-flash-01",
+					"x": 80,
+					"y": 13.29,
+					"scaleY": 1.681,
+					"rotation": -1.09,
+					"width": 39,
+					"height": 23
+				},
+				"flash-02": {
+					"name": "game/muzzle-flash-02",
+					"x": 80,
+					"y": 13.29,
+					"scaleY": 1.681,
+					"rotation": -1.09,
+					"width": 39,
+					"height": 23
+				},
+				"flash-03": {
+					"name": "game/muzzle-flash-03",
+					"x": 80,
+					"y": 13.29,
+					"scaleY": 1.681,
+					"rotation": -1.09,
+					"width": 39,
+					"height": 23
+				},
+				"flash-04": {
+					"name": "game/muzzle-flash-04",
+					"x": 80,
+					"y": 13.29,
+					"scaleY": 1.681,
+					"rotation": -1.09,
+					"width": 39,
+					"height": 23
+				},
+				"flash-05": {
+					"name": "game/muzzle-flash-05",
+					"x": 80,
+					"y": 13.29,
+					"scaleY": 1.681,
+					"rotation": -1.09,
+					"width": 39,
+					"height": 23
+				},
+				"flash-06": {
+					"name": "game/muzzle-flash-06",
+					"x": 80,
+					"y": 13.29,
+					"scaleY": 1.681,
+					"rotation": -1.09,
+					"width": 39,
+					"height": 23
+				},
+				"flash-07": {
+					"name": "game/muzzle-flash-07",
+					"x": 80,
+					"y": 13.29,
+					"scaleY": 1.681,
+					"rotation": -1.09,
+					"width": 39,
+					"height": 23
+				},
+				"flash-08": {
+					"name": "game/muzzle-flash-08",
+					"x": 80,
+					"y": 13.29,
+					"scaleY": 1.681,
+					"rotation": -1.09,
+					"width": 39,
+					"height": 23
+				}
+			},
+			"hand-left": {
+				"hand-left": { "name": "game/heavy-hand", "x": -0.23, "y": -0.68, "rotation": -1.09, "width": 8, "height": 9 }
+			},
+			"hand-right": {
+				"hand-right": { "name": "game/heavy-hand", "x": 1.23, "y": 0.53, "width": 8, "height": 9 }
+			},
+			"head": {
+				"head": { "name": "game/heavy-head", "x": 16.69, "y": -0.21, "rotation": -82.41, "width": 31, "height": 41 }
+			},
+			"splatter-left": {
+				"splatter-left": { "type": "point", "x": 23.19, "y": 13.61 }
+			},
+			"splatter-right": {
+				"splatter-right": { "type": "point", "x": 26, "y": -13.25 }
+			},
+			"weapon": {
+				"weapon": { "name": "game/heavy-weapon", "x": 19.27, "y": 7.81, "rotation": -1.09, "width": 84, "height": 32 }
+			}
+		}
+	},
+	{
+		"name": "militia",
+		"attachments": {
+			"body": {
+				"body": { "name": "game/militia-body", "x": 21.76, "y": -0.12, "rotation": -82.34, "width": 36, "height": 53 }
+			},
+			"flash": {
+				"flash-01": { "name": "game/muzzle-flash-01", "x": 53.42, "y": 11.51, "width": 39, "height": 23 },
+				"flash-02": { "name": "game/muzzle-flash-02", "x": 53.42, "y": 11.51, "width": 39, "height": 23 },
+				"flash-03": { "name": "game/muzzle-flash-03", "x": 53.42, "y": 11.51, "width": 39, "height": 23 },
+				"flash-04": { "name": "game/muzzle-flash-04", "x": 53.42, "y": 11.51, "width": 39, "height": 23 },
+				"flash-05": { "name": "game/muzzle-flash-05", "x": 53.42, "y": 11.51, "width": 39, "height": 23 },
+				"flash-06": { "name": "game/muzzle-flash-06", "x": 53.42, "y": 11.51, "width": 39, "height": 23 },
+				"flash-07": { "name": "game/muzzle-flash-07", "x": 53.42, "y": 11.51, "width": 39, "height": 23 },
+				"flash-08": { "name": "game/muzzle-flash-08", "x": 53.42, "y": 11.51, "width": 39, "height": 23 }
+			},
+			"hand-left": {
+				"hand-left": { "name": "game/militia-hand", "x": 0.5, "y": -0.01, "rotation": -1.09, "width": 9, "height": 8 }
+			},
+			"hand-right": {
+				"hand-right": { "name": "game/militia-hand", "x": 1.23, "y": 0.53, "width": 9, "height": 8 }
+			},
+			"head": {
+				"head": { "name": "game/militia-head", "x": 16.69, "y": -0.21, "rotation": -82.41, "width": 33, "height": 35 }
+			},
+			"projectile": {
+				"projectile": { "type": "point", "x": 35.1, "y": 9.42 }
+			},
+			"splatter-left": {
+				"splatter-left": { "type": "point", "x": 23.49, "y": 11.43 }
+			},
+			"splatter-right": {
+				"splatter-right": { "type": "point", "x": 26.65, "y": -16.6 }
+			},
+			"weapon": {
+				"weapon": { "name": "game/militia-weapon", "x": 6.06, "y": 1.52, "rotation": -1.09, "width": 56, "height": 29 }
+			}
+		}
+	},
+	{
+		"name": "pouncer",
+		"attachments": {
+			"body": {
+				"body": { "name": "game/pouncer-body", "x": 21.76, "y": -0.12, "rotation": -82.34, "width": 31, "height": 51 }
+			},
+			"hand-left": {
+				"hand-left": { "name": "game/zombie-hand", "x": -0.23, "y": -0.68, "rotation": -1.09, "width": 8, "height": 9 }
+			},
+			"hand-right": {
+				"hand-right": { "name": "game/zombie-hand", "x": 1.23, "y": 0.53, "width": 8, "height": 9 }
+			},
+			"head": {
+				"head": { "name": "game/pouncer-head", "x": 10.18, "y": -1.5, "rotation": -82.41, "width": 27, "height": 37 }
+			},
+			"splatter-left": {
+				"splatter-left": { "type": "point", "x": 23.93, "y": 14.12 }
+			},
+			"splatter-right": {
+				"splatter-right": { "type": "point", "x": 27.19, "y": -13.09 }
+			}
+		}
+	},
+	{
+		"name": "sniper",
+		"attachments": {
+			"body": {
+				"body": { "name": "game/sniper-body", "x": 21.76, "y": -0.12, "rotation": -82.34, "width": 31, "height": 50 }
+			},
+			"flash": {
+				"flash-01": { "name": "game/muzzle-flash-01", "x": 110.56, "y": 13.34, "rotation": -1.09, "width": 39, "height": 23 },
+				"flash-02": { "name": "game/muzzle-flash-02", "x": 110.56, "y": 13.34, "rotation": -1.09, "width": 39, "height": 23 },
+				"flash-03": { "name": "game/muzzle-flash-03", "x": 110.56, "y": 13.34, "rotation": -1.09, "width": 39, "height": 23 },
+				"flash-04": { "name": "game/muzzle-flash-04", "x": 110.56, "y": 13.34, "rotation": -1.09, "width": 39, "height": 23 },
+				"flash-05": { "name": "game/muzzle-flash-05", "x": 110.56, "y": 13.34, "rotation": -1.09, "width": 39, "height": 23 },
+				"flash-06": { "name": "game/muzzle-flash-06", "x": 110.56, "y": 13.34, "rotation": -1.09, "width": 39, "height": 23 },
+				"flash-07": { "name": "game/muzzle-flash-07", "x": 110.56, "y": 13.34, "rotation": -1.09, "width": 39, "height": 23 },
+				"flash-08": { "name": "game/muzzle-flash-08", "x": 110.56, "y": 13.34, "rotation": -1.09, "width": 39, "height": 23 }
+			},
+			"hand-left": {
+				"hand-left": { "name": "game/sniper-hand", "x": -0.23, "y": -0.68, "rotation": -1.09, "width": 8, "height": 8 }
+			},
+			"hand-right": {
+				"hand-right": { "name": "game/sniper-hand", "x": 1.23, "y": 0.53, "width": 8, "height": 8 }
+			},
+			"head": {
+				"head": { "name": "game/sniper-head", "x": 16.69, "y": -0.21, "rotation": -82.41, "width": 31, "height": 36 }
+			},
+			"projectile": {
+				"projectile": { "type": "point", "x": 94.07, "y": 9.46 }
+			},
+			"splatter-left": {
+				"splatter-left": { "type": "point", "x": 20.18, "y": 15.02 }
+			},
+			"splatter-right": {
+				"splatter-right": { "type": "point", "x": 24.27, "y": -13.89 }
+			},
+			"weapon": {
+				"weapon": { "name": "game/sniper-weapon", "x": 37.96, "y": 7.92, "rotation": -1.09, "width": 106, "height": 27 }
+			}
+		}
+	},
+	{
+		"name": "spitter",
+		"attachments": {
+			"body": {
+				"body": { "name": "game/spitter-body", "x": 21.76, "y": -0.12, "rotation": -82.34, "width": 30, "height": 52 }
+			},
+			"hand-left": {
+				"hand-left": { "name": "game/zombie-hand", "x": -0.23, "y": -0.68, "rotation": -1.09, "width": 8, "height": 9 }
+			},
+			"hand-right": {
+				"hand-right": { "name": "game/zombie-hand", "x": 1.23, "y": 0.53, "width": 8, "height": 9 }
+			},
+			"head": {
+				"head": { "name": "game/spitter-head", "x": 19.23, "y": 10.19, "rotation": -82.41, "width": 41, "height": 56 }
+			},
+			"projectile": {
+				"projectile": { "type": "point", "x": 12.83, "y": 21.48 }
+			},
+			"splatter-left": {
+				"splatter-left": { "type": "point", "x": 23.67, "y": 13.07 }
+			},
+			"splatter-right": {
+				"splatter-right": { "type": "point", "x": 26.91, "y": -12.53 }
+			}
+		}
+	},
+	{
+		"name": "witch",
+		"attachments": {
+			"body": {
+				"body": { "name": "game/witch-body", "x": 34.66, "y": 1.62, "rotation": -82.34, "width": 80, "height": 77 }
+			},
+			"hand-left": {
+				"hand-left": { "name": "game/zombie-hand", "x": -0.23, "y": -0.68, "rotation": -1.09, "width": 8, "height": 9 }
+			},
+			"hand-right": {
+				"hand-right": { "name": "game/zombie-hand", "x": 1.23, "y": 0.53, "width": 8, "height": 9 }
+			},
+			"head": {
+				"head": { "name": "game/witch-head", "x": 6.87, "y": -1.94, "rotation": -82.41, "width": 36, "height": 59 }
+			},
+			"splatter-left": {
+				"splatter-left": { "type": "point", "x": 27.51, "y": 16.01 }
+			},
+			"splatter-right": {
+				"splatter-right": { "type": "point", "x": 31.83, "y": -13.08 }
+			}
+		}
+	},
+	{
+		"name": "zombie",
+		"attachments": {
+			"body": {
+				"body": { "name": "game/zombie-body", "x": 21.76, "y": -0.12, "rotation": -82.34, "width": 30, "height": 49 }
+			},
+			"hand-left": {
+				"hand-left": { "name": "game/zombie-hand", "x": -0.23, "y": -0.68, "rotation": -1.09, "width": 8, "height": 9 }
+			},
+			"hand-right": {
+				"hand-right": { "name": "game/zombie-hand", "x": 1.23, "y": 0.53, "width": 8, "height": 9 }
+			},
+			"head": {
+				"head": { "name": "game/zombie-head", "x": 10.18, "y": -1.5, "rotation": -82.41, "width": 27, "height": 29 }
+			},
+			"splatter-left": {
+				"splatter-left": { "type": "point", "x": 25.35, "y": 14.1 }
+			},
+			"splatter-right": {
+				"splatter-right": { "type": "point", "x": 27.73, "y": -12.62 }
+			}
+		}
+	}
+],
+"animations": {
+	"flag": {
+		"bones": {
+			"game/flag-pole2": {
+				"rotate": [
+					{ "value": -2.11 },
+					{ "time": 0.4, "value": 4.55 },
+					{ "time": 0.9, "value": -3.77 },
+					{ "time": 1, "value": -2.11 }
+				]
+			},
+			"game/flag-pole3": {
+				"rotate": [
+					{ "value": -0.45 },
+					{ "time": 0.3, "value": 4.55 },
+					{ "time": 0.8, "value": -3.77 },
+					{ "time": 1, "value": -0.45 }
+				]
+			},
+			"game/flag-pole4": {
+				"rotate": [
+					{ "value": 1.22 },
+					{ "time": 0.2, "value": 4.55 },
+					{ "time": 0.7, "value": -3.77 },
+					{ "time": 1, "value": 1.22 }
+				]
+			},
+			"game/flag-pole5": {
+				"rotate": [
+					{ "value": 2.88 },
+					{ "time": 0.1, "value": 4.55 },
+					{ "time": 0.6, "value": -3.77 },
+					{ "time": 1, "value": 2.88 }
+				]
+			},
+			"game/flag-pole6": {
+				"rotate": [
+					{ "value": 4.55 },
+					{ "time": 0.5, "value": -3.77 },
+					{ "time": 1, "value": 4.55 }
+				]
+			},
+			"game/flag-pole7": {
+				"rotate": [
+					{ "value": 2.88 },
+					{ "time": 0.4, "value": -3.77 },
+					{ "time": 0.9, "value": 4.55 },
+					{ "time": 1, "value": 2.88 }
+				]
+			},
+			"game/flag-pole8": {
+				"rotate": [
+					{ "value": 1.22 },
+					{ "time": 0.3, "value": -3.77 },
+					{ "time": 0.8, "value": 4.55 },
+					{ "time": 1, "value": 1.22 }
+				]
+			},
+			"game/flag-pole9": {
+				"rotate": [
+					{ "value": -0.45 },
+					{ "time": 0.2, "value": -3.77 },
+					{ "time": 0.7, "value": 4.55 },
+					{ "time": 1, "value": -0.45 }
+				]
+			},
+			"game/flag-pole10": {
+				"rotate": [
+					{ "value": -2.11 },
+					{ "time": 0.1, "value": -3.77 },
+					{ "time": 0.6, "value": 4.55 },
+					{ "time": 1, "value": -2.11 }
+				]
+			}
+		}
+	},
+	"shoot": {
+		"slots": {
+			"flash": {
+				"attachment": [
+					{ "time": 0.0333, "name": "flash-01" },
+					{ "time": 0.0667, "name": "flash-02" },
+					{ "time": 0.1, "name": "flash-03" },
+					{ "time": 0.1333, "name": "flash-04" },
+					{ "time": 0.1667, "name": "flash-05" },
+					{ "time": 0.2, "name": "flash-06" },
+					{ "time": 0.2333, "name": "flash-07" },
+					{ "time": 0.2667, "name": "flash-08" },
+					{ "time": 0.3, "name": null }
+				]
+			}
+		},
+		"bones": {
+			"hand-left": {
+				"rotate": [
+					{
+						"curve": [ 0.006, 2.7, 0.111, 11.93 ]
+					},
+					{
+						"time": 0.1667,
+						"value": 11.95,
+						"curve": [ 0.221, 11.97, 0.27, 4.08 ]
+					},
+					{ "time": 0.3 }
+				]
+			}
+		}
+	},
+	"walk": {
+		"bones": {
+			"body": {
+				"rotate": [
+					{ "value": -15.25 },
+					{ "time": 0.2667, "value": 27.08 },
+					{ "time": 0.5, "value": -15.25 }
+				]
+			}
+		}
+	}
+}
+}
