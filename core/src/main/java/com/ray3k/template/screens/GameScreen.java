@@ -6,23 +6,30 @@ import com.badlogic.gdx.InputMultiplexer;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
+import com.badlogic.gdx.graphics.g2d.PolygonBatch;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas.AtlasSprite;
 import com.badlogic.gdx.math.MathUtils;
+import com.badlogic.gdx.math.Polygon;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.InputListener;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.utils.Align;
+import com.badlogic.gdx.utils.Array;
+import com.badlogic.gdx.utils.FloatArray;
+import com.badlogic.gdx.utils.ObjectMap;
 import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.badlogic.gdx.utils.viewport.ScreenViewport;
 import com.crashinvaders.vfx.effects.ChainVfxEffect;
+import com.dongbat.walkable.PathHelper;
 import com.ray3k.template.*;
 import com.ray3k.template.OgmoReader.*;
 import com.ray3k.template.entities.*;
 import com.ray3k.template.screens.DialogPause.*;
 import com.ray3k.template.vfx.*;
+import space.earlygrey.shapedrawer.JoinType;
 import space.earlygrey.shapedrawer.ShapeDrawer;
 
 import static com.ray3k.template.Core.*;
@@ -34,6 +41,8 @@ public class GameScreen extends JamScreen {
     public Stage stage;
     public boolean paused;
     private Label fpsLabel;
+    private PathHelper pathHelper;
+    private FloatArray path = new FloatArray();
     
     @Override
     public void show() {
@@ -93,6 +102,7 @@ public class GameScreen extends JamScreen {
         camera.position.set(viewport.getWorldWidth() / 2, viewport.getWorldHeight() / 2, 0);
     
         entityController.clear();
+        pathHelper = new PathHelper(1024, 576);
         
         var ogmoReader = new OgmoReader();
         ogmoReader.addListener(new OgmoAdapter() {
@@ -101,6 +111,24 @@ public class GameScreen extends JamScreen {
                               String folder) {
                 var decal = new DecalEntity(new AtlasSprite(textures_textures.findRegion("levels/" + Utils.fileName(texture))), centerX, centerY);
                 entityController.add(decal);
+            }
+    
+            @Override
+            public void entity(String name, int id, int x, int y, int width, int height, boolean flippedX,
+                               boolean flippedY, int originX, int originY, int rotation, Array<EntityNode> nodes,
+                               ObjectMap<String, OgmoValue> valuesMap) {
+                if (name.equals("level-bounds")) {
+                    var verts = new FloatArray();
+                    verts.add(x, y);
+                    for (var node : nodes) {
+                        verts.add(node.x, node.y);
+                    }
+                    Polygon polygon = new Polygon(verts.toArray());
+                    var shape = new DebugShapeEntity(polygon);
+                    entityController.add(shape);
+                    
+                    pathHelper.addPolygon(polygon.getTransformedVertices());
+                }
             }
         });
         ogmoReader.readFile(Gdx.files.internal("levels/level-1.json"));
@@ -115,6 +143,7 @@ public class GameScreen extends JamScreen {
         stage.act(delta);
         
         fpsLabel.setText(Gdx.graphics.getFramesPerSecond());
+        pathHelper.findPath(30, 30, mouseX, mouseY, 10, path);
     }
     
     @Override
@@ -129,6 +158,8 @@ public class GameScreen extends JamScreen {
         viewport.apply();
         batch.setProjectionMatrix(camera.combined);
         entityController.draw(paused ? 0 : delta);
+        System.out.println("path = " + path);
+        JamGame.shapeDrawer.path(path, 1f, JoinType.SMOOTH, true);
         batch.end();
         vfxManager.endInputCapture();
         vfxManager.applyEffects();

@@ -14,4 +14,5 @@ dependencies {
     api 'com.github.raeleus:stripe:master-SNAPSHOT'
     implementation 'com.github.tommyettinger:jbump:v1.0.0'
     implementation "com.badlogicgames.gdx-video:gdx-video:1.3.2-SNAPSHOT"
+    implementation 'com.github.tommyettinger:gdxWalkable:c8244ed4b0'
 }

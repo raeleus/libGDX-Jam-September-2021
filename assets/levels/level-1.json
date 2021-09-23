@@ -6,21 +6,6 @@
   "offsetY": 0,
   "layers": [
     {
-      "name": "decals",
-      "_eid": "35982929",
-      "offsetX": 0,
-      "offsetY": 0,
-      "gridCellWidth": 8,
-      "gridCellHeight": 8,
-      "gridCellsX": 128,
-      "gridCellsY": 72,
-      "decals": [
-        {"x": 512, "y": 288, "texture": "starfield.png", "originX": 0.5, "originY": 0.5},
-        {"x": 496, "y": 328, "texture": "level-1.png", "originX": 0.5, "originY": 0.5}
-      ],
-      "folder": ""
-    },
-    {
       "name": "entities",
       "_eid": "35989082",
       "offsetX": 0,
@@ -30,20 +15,6 @@
       "gridCellsX": 128,
       "gridCellsY": 72,
       "entities": [
-        {
-          "name": "level-bounds",
-          "id": 0,
-          "_eid": "36003361",
-          "x": 392,
-          "y": 344,
-          "originX": 4,
-          "originY": 4,
-          "nodes": [
-            {"x": 392, "y": 200},
-            {"x": 600, "y": 200},
-            {"x": 600, "y": 344}
-          ]
-        },
         {"name": "player", "id": 7, "_eid": "36091488", "x": 504, "y": 272, "originX": 15, "originY": 22},
         {
           "name": "zombie",
@@ -96,8 +67,49 @@
             {"x": 416, "y": 312}
           ],
           "values": {"count": 5, "delay": 0}
+        },
+        {
+          "name": "level-bounds",
+          "id": 13,
+          "_eid": "36003361",
+          "x": 392,
+          "y": 344,
+          "nodes": [
+            {"x": 392, "y": 208},
+            {"x": 608, "y": 208},
+            {"x": 608, "y": 344}
+          ]
         }
       ]
+    },
+    {
+      "name": "decals",
+      "_eid": "35982929",
+      "offsetX": 0,
+      "offsetY": 0,
+      "gridCellWidth": 8,
+      "gridCellHeight": 8,
+      "gridCellsX": 128,
+      "gridCellsY": 72,
+      "decals": [
+        {
+          "x": 512,
+          "y": 288,
+          "texture": "starfield.png",
+          "originX": 0.5,
+          "originY": 0.5,
+          "values": {"panning": false}
+        },
+        {
+          "x": 498,
+          "y": 328,
+          "texture": "level-1.png",
+          "originX": 0.5,
+          "originY": 0.5,
+          "values": {"panning": true}
+        }
+      ],
+      "folder": ""
     }
   ]
 }

@@ -1,22 +1,21 @@
 package com.ray3k.template.entities;
 
-import com.badlogic.gdx.graphics.g2d.TextureAtlas.AtlasSprite;
+import com.badlogic.gdx.graphics.Color;
+import com.badlogic.gdx.math.Polygon;
 import com.dongbat.jbump.Collisions;
 import com.dongbat.jbump.Response.Result;
 import com.ray3k.template.*;
 
-public class DecalEntity extends Entity {
-    private AtlasSprite region;
+public class DebugShapeEntity extends Entity {
+    private Polygon polygon;
     
-    public DecalEntity(AtlasSprite region, int centerX, int centerY) {
-        this.region = region;
-        x = centerX - region.getWidth() / 2f;
-        y = centerY - region.getHeight() / 2f;
+    public DebugShapeEntity(Polygon polygon) {
+        this.polygon = polygon;
+        depth = -100;
     }
     
     @Override
     public void create() {
-    
     }
     
     @Override
@@ -31,8 +30,8 @@ public class DecalEntity extends Entity {
     
     @Override
     public void draw(float delta) {
-        region.setPosition(x, y);
-        region.draw(JamGame.batch);
+        JamGame.shapeDrawer.setColor(Color.RED);
+        JamGame.shapeDrawer.polygon(polygon.getTransformedVertices());
     }
     
     @Override
