@@ -1,2 +1,3 @@
 bgm/audio-sample.ogg
+bgm/game.ogg
 bgm/menu.ogg

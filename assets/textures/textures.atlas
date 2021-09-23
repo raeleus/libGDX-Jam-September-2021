@@ -431,6 +431,45 @@ bounds:1249,2020,27,29
 rotate:90
 
 textures_2.png
+size:4096,4096
+filter:Linear,Linear
+pma:true
+levels/level-1
+bounds:798,3864,217,258
+rotate:90
+levels/level-10
+bounds:1,3957,795,124
+levels/level-11
+bounds:1058,3850,627,231
+levels/level-12
+bounds:1687,3833,261,248
+levels/level-13
+bounds:2364,3223,502,507
+rotate:90
+levels/level-14
+bounds:907,3397,807,434
+levels/level-15
+bounds:3444,3136,637,539
+levels/level-2
+bounds:1,3549,442,406
+levels/level-3
+bounds:1716,3285,646,487
+levels/level-4
+bounds:445,3419,460,443
+levels/level-5
+bounds:1950,3774,803,307
+levels/level-6
+bounds:2873,3172,569,503
+levels/level-7
+bounds:3391,3677,465,404
+levels/level-8
+bounds:2755,3727,634,354
+levels/level-9
+bounds:1,2902,903,515
+levels/starfield
+bounds:906,2707,1024,576
+
+textures_3.png
 size:2048,2048
 filter:Linear,Linear
 pma:true
@@ -563,7 +602,7 @@ offsets:0,0,599,331
 libgdx/libgdx-x
 bounds:1546,1662,78,53
 
-textures_3.png
+textures_4.png
 size:1024,1024
 filter:Linear,Linear
 pma:true
@@ -579,7 +618,7 @@ bounds:1,348,622,616
 ray3k/ray3k-website
 bounds:1,966,705,37
 
-textures_4.png
+textures_5.png
 size:2048,2048
 filter:Linear,Linear
 bindings-button

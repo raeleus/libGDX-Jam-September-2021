@@ -38,7 +38,7 @@ public class Core extends JamGame {
     public static CollisionFilter nullCollisionFilter;
     public static CrossPlatformWorker crossPlatformWorker;
     public enum Binding {
-        SELECT, MOVE
+        SELECT, MOVE, ZOOM_IN, ZOOM_OUT
     }
     public static float bgm;
     public static float sfx;
@@ -123,5 +123,7 @@ public class Core extends JamGame {
     public void setDefaultBindings() {
         JamScreen.addButtonBinding(Binding.SELECT, Buttons.LEFT);
         JamScreen.addButtonBinding(Binding.MOVE, Buttons.RIGHT);
+        JamScreen.addScrollBinding(Binding.ZOOM_IN, JamScreen.SCROLL_UP);
+        JamScreen.addScrollBinding(Binding.ZOOM_OUT, JamScreen.SCROLL_DOWN);
     }
 }

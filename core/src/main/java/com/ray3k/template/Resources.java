@@ -92,6 +92,8 @@ public class Resources {
 
     public static Music bgm_audioSample;
 
+    public static Music bgm_game;
+
     public static Music bgm_menu;
 
     public static void loadResources(AssetManager assetManager) {
@@ -246,6 +248,7 @@ public class Resources {
         sfx_zombieGrowl = assetManager.get("sfx/zombie-growl.mp3");
         sfx_zombieRally = assetManager.get("sfx/zombie-rally.mp3");
         bgm_audioSample = assetManager.get("bgm/audio-sample.ogg");
+        bgm_game = assetManager.get("bgm/game.ogg");
         bgm_menu = assetManager.get("bgm/menu.ogg");
     }
 
