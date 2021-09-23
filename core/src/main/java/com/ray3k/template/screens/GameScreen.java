@@ -6,8 +6,6 @@ import com.badlogic.gdx.InputMultiplexer;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
-import com.badlogic.gdx.graphics.Pixmap.Format;
-import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.InputListener;
@@ -17,18 +15,14 @@ import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.utils.Align;
 import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.badlogic.gdx.utils.viewport.ScreenViewport;
-import com.badlogic.gdx.utils.viewport.Viewport;
 import com.crashinvaders.vfx.effects.ChainVfxEffect;
-import com.crashinvaders.vfx.framebuffer.VfxFrameBuffer;
 import com.ray3k.template.*;
 import com.ray3k.template.entities.*;
-import com.ray3k.template.screens.DialogDebug.*;
 import com.ray3k.template.screens.DialogPause.*;
 import com.ray3k.template.vfx.*;
 import space.earlygrey.shapedrawer.ShapeDrawer;
 
 import static com.ray3k.template.Core.*;
-import static com.ray3k.template.JamGame.*;
 
 public class GameScreen extends JamScreen {
     public static GameScreen gameScreen;
@@ -37,10 +31,6 @@ public class GameScreen extends JamScreen {
     public boolean paused;
     private ChainVfxEffect vfxEffect;
     private Label fpsLabel;
-    private VfxFrameBuffer vfxFrameBuffer;
-    public static Viewport innerViewport;
-    public static final int WORLD_WIDTH = 1024;
-    public static final int WORLD_HEIGHT = 576;
     
     @Override
     public void show() {
@@ -87,8 +77,6 @@ public class GameScreen extends JamScreen {
                 return super.keyDown(event, keycode);
             }
         });
-        
-        stage.addListener(new DebugListener());
     
         shapeDrawer = new ShapeDrawer(batch, skin.getRegion("white"));
         shapeDrawer.setPixelSize(.5f);
@@ -96,10 +84,8 @@ public class GameScreen extends JamScreen {
         InputMultiplexer inputMultiplexer = new InputMultiplexer(stage, this);
         Gdx.input.setInputProcessor(inputMultiplexer);
     
-        viewport = new FitViewport(WORLD_WIDTH, WORLD_HEIGHT);
         camera = new OrthographicCamera();
-        innerViewport = new FitViewport(WORLD_WIDTH, WORLD_HEIGHT, camera);
-        innerViewport.update(WORLD_WIDTH, WORLD_HEIGHT);
+        viewport = new FitViewport(1024, 576, camera);
     
         entityController.clear();
         BallTestEntity ballTestEntity = new BallTestEntity();
@@ -108,12 +94,9 @@ public class GameScreen extends JamScreen {
     
         for (int i = 0; i < 10; i++) {
             ballTestEntity = new BallTestEntity();
-            ballTestEntity.setPosition(MathUtils.random(WORLD_WIDTH), WORLD_HEIGHT);
+            ballTestEntity.setPosition(MathUtils.random(viewport.getWorldWidth()), MathUtils.random(viewport.getWorldHeight()));
             entityController.add(ballTestEntity);
         }
-        vfxFrameBuffer = new VfxFrameBuffer(Format.RGB888);
-        vfxFrameBuffer.initialize(WORLD_WIDTH, WORLD_HEIGHT);
-        vfxManager.resize(WORLD_WIDTH, WORLD_HEIGHT);
     }
     
     @Override
@@ -123,12 +106,6 @@ public class GameScreen extends JamScreen {
             vfxManager.update(delta);
         }
         stage.act(delta);
-    
-        if (isBindingJustPressed(Binding.SELECT)) {
-            System.out.println("select");
-        } else if (isBindingJustPressed(Binding.MOVE)) {
-            System.out.println("move");
-        }
         
         fpsLabel.setText(Gdx.graphics.getFramesPerSecond());
     }
@@ -136,45 +113,35 @@ public class GameScreen extends JamScreen {
     @Override
     public void draw(float delta) {
         batch.setBlendFunction(GL20.GL_ONE, GL20.GL_ONE_MINUS_SRC_ALPHA);
-        batch.setColor(Color.WHITE);
-        batch.begin();
+        
         vfxManager.cleanUpBuffers();
         vfxManager.beginInputCapture();
         Gdx.gl.glClearColor(BG_COLOR.r, BG_COLOR.g, BG_COLOR.b, 1);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
-        innerViewport.apply();
+        batch.begin();
+        viewport.apply();
         batch.setProjectionMatrix(camera.combined);
-        shapeDrawer.setColor(isBindingPressed(Binding.SELECT) && isBindingPressed(Binding.MOVE) ? Color.ORANGE : Color.GREEN);
-        shapeDrawer.filledRectangle(0, 0, WORLD_WIDTH, WORLD_HEIGHT);
+        shapeDrawer.setColor(Color.GREEN);
+        shapeDrawer.filledRectangle(0, 0, viewport.getWorldWidth(), viewport.getWorldHeight());
         shapeDrawer.setColor(Color.BLUE);
         shapeDrawer.setDefaultLineWidth(10);
-        shapeDrawer.rectangle(0, 0, WORLD_WIDTH, WORLD_HEIGHT);
+        shapeDrawer.rectangle(0, 0, viewport.getWorldWidth(), viewport.getWorldHeight());
         entityController.draw(paused ? 0 : delta);
         batch.end();
         vfxManager.endInputCapture();
         vfxManager.applyEffects();
-        vfxManager.renderToFbo(vfxFrameBuffer);
-
-        batch.begin();
-        viewport.apply();
-        batch.setProjectionMatrix(viewport.getCamera().combined);
-        Gdx.gl.glClearColor(Color.PURPLE.r, Color.PURPLE.g, Color.PURPLE.b, 1);
-        Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
-        var region = new TextureRegion(vfxFrameBuffer.getTexture());
-        region.flip(false, true);
-        batch.draw(region, 0, 0);
-        batch.end();
-        batch.disableBlending();
-        
+        vfxManager.renderToScreen();
+    
         batch.setBlendFunction(GL20.GL_SRC_ALPHA, GL20.GL_ONE_MINUS_SRC_ALPHA);
-        stage.getViewport().apply();
         stage.draw();
     }
     
     @Override
     public void resize(int width, int height) {
         if (width + height != 0) {
-            viewport.update(width, height, true);
+            vfxManager.resize(width, height);
+            viewport.update(width, height);
+        
             stage.getViewport().update(width, height, true);
         }
     }
@@ -182,7 +149,6 @@ public class GameScreen extends JamScreen {
     @Override
     public void dispose() {
         vfxEffect.dispose();
-        vfxFrameBuffer.dispose();
     }
     
     @Override
@@ -191,6 +157,5 @@ public class GameScreen extends JamScreen {
         vfxManager.removeAllEffects();
         vfxEffect.dispose();
         entityController.dispose();
-        vfxFrameBuffer.dispose();
     }
 }
