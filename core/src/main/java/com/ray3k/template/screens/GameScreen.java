@@ -7,10 +7,7 @@ import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas.AtlasSprite;
-import com.badlogic.gdx.math.Interpolation;
-import com.badlogic.gdx.math.MathUtils;
-import com.badlogic.gdx.math.Polygon;
-import com.badlogic.gdx.math.Vector3;
+import com.badlogic.gdx.math.*;
 import com.badlogic.gdx.scenes.scene2d.Action;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.InputListener;
@@ -19,6 +16,7 @@ import com.badlogic.gdx.scenes.scene2d.actions.Actions;
 import com.badlogic.gdx.scenes.scene2d.actions.TemporalAction;
 import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
+import com.badlogic.gdx.scenes.scene2d.utils.DragListener;
 import com.badlogic.gdx.utils.Align;
 import com.badlogic.gdx.utils.Array;
 import com.badlogic.gdx.utils.FloatArray;
@@ -54,6 +52,7 @@ public class GameScreen extends JamScreen {
     public float newCameraX;
     public float newCameraY;
     public Action zoomAction;
+    public Action panAction;
     private static final Vector3 vector3Temp = new Vector3();
     
     @Override
@@ -112,6 +111,51 @@ public class GameScreen extends JamScreen {
         camera = new OrthographicCamera();
         viewport = new FitViewport(1024, 576, camera);
         camera.position.set(viewport.getWorldWidth() / 2, viewport.getWorldHeight() / 2, 0);
+        
+        stage.addListener(new DragListener() {
+            float cameraXstart;
+            float cameraYstart;
+            float xStart;
+            float yStart;
+            float cameraXlast;
+            float cameraYlast;
+    
+            @Override
+            public void dragStart(InputEvent event, float x, float y, int pointer) {
+                xStart = x;
+                yStart = y;
+                cameraXstart = camera.position.x;
+                cameraYstart = camera.position.y;
+                stage.getRoot().removeAction(panAction);
+            }
+    
+            @Override
+            public void drag(InputEvent event, float x, float y, int pointer) {
+                cameraXlast = camera.position.x;
+                cameraYlast = camera.position.y;
+                camera.position.set(cameraXstart + (xStart - x) * camera.zoom, cameraYstart + (yStart - y) * camera.zoom, 0);
+            }
+    
+            @Override
+            public void dragStop(InputEvent event, float x, float y, int pointer) {
+                float velocityX = MathUtils.clamp(camera.position.x - cameraXlast, -10, 10);
+                float velocityY = MathUtils.clamp(camera.position.y - cameraYlast, -10, 10);
+                
+                panAction = new Action() {
+                    Vector2 vector2 = new Vector2(velocityX, velocityY);
+                    @Override
+                    public boolean act(float delta) {
+                        camera.position.x += vector2.x;
+                        camera.position.y += vector2.y;
+        
+                        vector2.setLength(Utils.approach(vector2.len(), 0, 10f * delta));
+                        if (MathUtils.isZero(vector2.len())) return true;
+                        else return false;
+                    }
+                };
+                stage.addAction(panAction);
+            }
+        });
     
         entityController.clear();
         pathHelper = new PathHelper(1024, 576);
@@ -174,8 +218,6 @@ public class GameScreen extends JamScreen {
                 float newZoom = ZOOMS[zoomIndex];
                 oldCameraX = camera.position.x;
                 oldCameraY = camera.position.y;
-//                newCameraX = oldCameraX - ((mouseX - oldCameraX) * (newZoom - 1));
-//                newCameraY = oldCameraY - ((mouseY - oldCameraY) * (newZoom - 1));
                 newCameraX = oldCameraX - (newZoom - oldZoom) * (mouseX - oldCameraX) / oldZoom;
                 newCameraY = oldCameraY - (newZoom - oldZoom) * (mouseY - oldCameraY) / oldZoom;
                 stage.getRoot().removeAction(zoomAction);
