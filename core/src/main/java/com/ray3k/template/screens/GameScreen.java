@@ -164,8 +164,9 @@ public class GameScreen extends JamScreen {
         ogmoReader.addListener(new OgmoAdapter() {
             @Override
             public void decal(int centerX, int centerY, float scaleX, float scaleY, int rotation, String texture,
-                              String folder) {
+                              String folder, ObjectMap<String, OgmoValue> valuesMap) {
                 var decal = new DecalEntity(new AtlasSprite(textures_textures.findRegion("levels/" + Utils.fileName(texture))), centerX, centerY);
+                decal.panning = valuesMap.get("panning").asBoolean();
                 entityController.add(decal);
             }
     
