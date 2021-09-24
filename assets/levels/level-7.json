@@ -1,0 +1,122 @@
+{
+  "ogmoVersion": "3.4.0",
+  "width": 1024,
+  "height": 576,
+  "offsetX": 0,
+  "offsetY": 0,
+  "layers": [
+    {
+      "name": "entities",
+      "_eid": "35989082",
+      "offsetX": 0,
+      "offsetY": 0,
+      "gridCellWidth": 8,
+      "gridCellHeight": 8,
+      "gridCellsX": 128,
+      "gridCellsY": 72,
+      "entities": [
+        {
+          "name": "level-bounds",
+          "id": 0,
+          "_eid": "36003361",
+          "x": 288,
+          "y": 400,
+          "nodes": [
+            {"x": 288, "y": 112},
+            {"x": 264, "y": 112},
+            {"x": 264, "y": 400}
+          ]
+        },
+        {
+          "name": "level-bounds",
+          "id": 1,
+          "_eid": "36003361",
+          "x": 288,
+          "y": 112,
+          "nodes": [
+            {"x": 768, "y": 112},
+            {"x": 768, "y": 128},
+            {"x": 288, "y": 128}
+          ]
+        },
+        {
+          "name": "level-bounds",
+          "id": 2,
+          "_eid": "36003361",
+          "x": 752,
+          "y": 128,
+          "nodes": [
+            {"x": 768, "y": 128},
+            {"x": 768, "y": 400},
+            {"x": 752, "y": 400}
+          ]
+        },
+        {
+          "name": "level-bounds",
+          "id": 3,
+          "_eid": "36003361",
+          "x": 768,
+          "y": 400,
+          "nodes": [
+            {"x": 264, "y": 400},
+            {"x": 264, "y": 424},
+            {"x": 768, "y": 424}
+          ]
+        },
+        {
+          "name": "level-bounds",
+          "id": 4,
+          "_eid": "36003361",
+          "x": 376,
+          "y": 224,
+          "nodes": [
+            {"x": 376, "y": 304},
+            {"x": 432, "y": 304},
+            {"x": 432, "y": 224}
+          ]
+        },
+        {
+          "name": "level-bounds",
+          "id": 5,
+          "_eid": "36003361",
+          "x": 608,
+          "y": 224,
+          "nodes": [
+            {"x": 664, "y": 224},
+            {"x": 664, "y": 304},
+            {"x": 608, "y": 304}
+          ]
+        }
+      ]
+    },
+    {
+      "name": "decals",
+      "_eid": "35982929",
+      "offsetX": 0,
+      "offsetY": 0,
+      "gridCellWidth": 8,
+      "gridCellHeight": 8,
+      "gridCellsX": 128,
+      "gridCellsY": 72,
+      "decals": [
+        {
+          "x": 512,
+          "y": 288,
+          "texture": "starfield.png",
+          "originX": 0.5,
+          "originY": 0.5,
+          "values": {"panning": true}
+        },
+        {
+          "x": 520,
+          "y": 328,
+          "texture": "level-7.png",
+          "originX": 0.5,
+          "originY": 0.5,
+          "values": {"panning": true}
+        }
+      ],
+      "folder": ""
+    }
+  ]
+}

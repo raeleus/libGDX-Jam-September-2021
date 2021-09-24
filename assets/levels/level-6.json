@@ -1,0 +1,110 @@
+{
+  "ogmoVersion": "3.4.0",
+  "width": 1024,
+  "height": 576,
+  "offsetX": 0,
+  "offsetY": 0,
+  "layers": [
+    {
+      "name": "entities",
+      "_eid": "35989082",
+      "offsetX": 0,
+      "offsetY": 0,
+      "gridCellWidth": 8,
+      "gridCellHeight": 8,
+      "gridCellsX": 128,
+      "gridCellsY": 72,
+      "entities": [
+        {
+          "name": "level-bounds",
+          "id": 0,
+          "_eid": "36003361",
+          "x": 784,
+          "y": 480,
+          "nodes": [
+            {"x": 224, "y": 480},
+            {"x": 224, "y": 536},
+            {"x": 784, "y": 536}
+          ]
+        },
+        {
+          "name": "level-bounds",
+          "id": 1,
+          "_eid": "36003361",
+          "x": 240,
+          "y": 480,
+          "nodes": [
+            {"x": 184, "y": 480},
+            {"x": 184, "y": 336},
+            {"x": 240, "y": 336}
+          ]
+        },
+        {
+          "name": "level-bounds",
+          "id": 2,
+          "_eid": "36003361",
+          "x": 152,
+          "y": 344,
+          "nodes": [
+            {"x": 592, "y": 344},
+            {"x": 600, "y": 32},
+            {"x": 152, "y": 32}
+          ]
+        },
+        {
+          "name": "level-bounds",
+          "id": 3,
+          "_eid": "36003361",
+          "x": 592,
+          "y": 32,
+          "nodes": [
+            {"x": 784, "y": 32},
+            {"x": 784, "y": -8},
+            {"x": 592, "y": -8}
+          ]
+        },
+        {
+          "name": "level-bounds",
+          "id": 4,
+          "_eid": "36003361",
+          "x": 760,
+          "y": 480,
+          "nodes": [
+            {"x": 760, "y": 32},
+            {"x": 816, "y": 32},
+            {"x": 792, "y": 480}
+          ]
+        }
+      ]
+    },
+    {
+      "name": "decals",
+      "_eid": "35982929",
+      "offsetX": 0,
+      "offsetY": 0,
+      "gridCellWidth": 8,
+      "gridCellHeight": 8,
+      "gridCellsX": 128,
+      "gridCellsY": 72,
+      "decals": [
+        {
+          "x": 512,
+          "y": 288,
+          "texture": "starfield.png",
+          "originX": 0.5,
+          "originY": 0.5,
+          "values": {"panning": true}
+        },
+        {
+          "x": 496,
+          "y": 272,
+          "texture": "level-6.png",
+          "originX": 0.5,
+          "originY": 0.5,
+          "values": {"panning": true}
+        }
+      ],
+      "folder": ""
+    }
+  ]
+}

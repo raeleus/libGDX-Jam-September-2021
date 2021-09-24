@@ -4,6 +4,7 @@ import com.badlogic.gdx.graphics.g2d.TextureAtlas.AtlasSprite;
 import com.dongbat.jbump.Collisions;
 import com.dongbat.jbump.Response.Result;
 import com.ray3k.template.*;
+import com.ray3k.template.screens.*;
 
 public class DecalEntity extends Entity {
     private AtlasSprite region;
@@ -12,6 +13,7 @@ public class DecalEntity extends Entity {
         this.region = region;
         x = centerX - region.getWidth() / 2f;
         y = centerY - region.getHeight() / 2f;
+        depth = GameScreen.DECAL_DEPTH;
     }
     
     @Override

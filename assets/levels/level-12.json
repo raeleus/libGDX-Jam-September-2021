@@ -1,0 +1,98 @@
+{
+  "ogmoVersion": "3.4.0",
+  "width": 1024,
+  "height": 576,
+  "offsetX": 0,
+  "offsetY": 0,
+  "layers": [
+    {
+      "name": "entities",
+      "_eid": "35989082",
+      "offsetX": 0,
+      "offsetY": 0,
+      "gridCellWidth": 8,
+      "gridCellHeight": 8,
+      "gridCellsX": 128,
+      "gridCellsY": 72,
+      "entities": [
+        {
+          "name": "level-bounds",
+          "id": 0,
+          "_eid": "36003361",
+          "x": 384,
+          "y": 176,
+          "nodes": [
+            {"x": 384, "y": 400},
+            {"x": 352, "y": 400},
+            {"x": 352, "y": 176}
+          ]
+        },
+        {
+          "name": "level-bounds",
+          "id": 1,
+          "_eid": "36003361",
+          "x": 384,
+          "y": 368,
+          "nodes": [
+            {"x": 656, "y": 368},
+            {"x": 656, "y": 400},
+            {"x": 384, "y": 400}
+          ]
+        },
+        {
+          "name": "level-bounds",
+          "id": 2,
+          "_eid": "36003361",
+          "x": 656,
+          "y": 368,
+          "nodes": [
+            {"x": 632, "y": 368},
+            {"x": 632, "y": 160},
+            {"x": 656, "y": 160}
+          ]
+        },
+        {
+          "name": "level-bounds",
+          "id": 3,
+          "_eid": "36003361",
+          "x": 632,
+          "y": 176,
+          "nodes": [
+            {"x": 320, "y": 176},
+            {"x": 320, "y": 128},
+            {"x": 632, "y": 128}
+          ]
+        }
+      ]
+    },
+    {
+      "name": "decals",
+      "_eid": "35982929",
+      "offsetX": 0,
+      "offsetY": 0,
+      "gridCellWidth": 8,
+      "gridCellHeight": 8,
+      "gridCellsX": 128,
+      "gridCellsY": 72,
+      "decals": [
+        {
+          "x": 512,
+          "y": 288,
+          "texture": "starfield.png",
+          "originX": 0.5,
+          "originY": 0.5,
+          "values": {"panning": true}
+        },
+        {
+          "x": 512,
+          "y": 296,
+          "texture": "level-12.png",
+          "originX": 0.5,
+          "originY": 0.5,
+          "values": {"panning": true}
+        }
+      ],
+      "folder": ""
+    }
+  ]
+}

@@ -5,13 +5,14 @@ import com.badlogic.gdx.math.Polygon;
 import com.dongbat.jbump.Collisions;
 import com.dongbat.jbump.Response.Result;
 import com.ray3k.template.*;
+import com.ray3k.template.screens.*;
 
 public class DebugShapeEntity extends Entity {
     private Polygon polygon;
     
     public DebugShapeEntity(Polygon polygon) {
         this.polygon = polygon;
-        depth = -100;
+        depth = GameScreen.DEBUG_DEPTH;
     }
     
     @Override

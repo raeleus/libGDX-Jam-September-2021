@@ -1,4 +1,5 @@
 {
+  "debugging" : true,
   "jump velocity" : 10.0,
   "name" : "Raeleus",
   "god mode" : true,

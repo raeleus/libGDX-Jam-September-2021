@@ -102,6 +102,7 @@ public class Resources {
         SpineActor.animationData = assetManager.get("spine/actor.json-animation");
         SpineActor.animationFlag = SpineActor.skeletonData.findAnimation("flag");
         SpineActor.animationShoot = SpineActor.skeletonData.findAnimation("shoot");
+        SpineActor.animationStand = SpineActor.skeletonData.findAnimation("stand");
         SpineActor.animationWalk = SpineActor.skeletonData.findAnimation("walk");
         SpineActor.skinDefault = SpineActor.skeletonData.findSkin("default");
         SpineActor.skinAssault = SpineActor.skeletonData.findSkin("assault");
@@ -148,6 +149,11 @@ public class Resources {
         SpineMissile.animationData = assetManager.get("spine/missile.json-animation");
         SpineMissile.animationAnimation = SpineMissile.skeletonData.findAnimation("animation");
         SpineMissile.skinDefault = SpineMissile.skeletonData.findSkin("default");
+        SpineMove.skeletonData = assetManager.get("spine/move.json");
+        SpineMove.animationData = assetManager.get("spine/move.json-animation");
+        SpineMove.animationError = SpineMove.skeletonData.findAnimation("error");
+        SpineMove.animationMove = SpineMove.skeletonData.findAnimation("move");
+        SpineMove.skinDefault = SpineMove.skeletonData.findSkin("default");
         SpinePoisonCloud.skeletonData = assetManager.get("spine/poison-cloud.json");
         SpinePoisonCloud.animationData = assetManager.get("spine/poison-cloud.json-animation");
         SpinePoisonCloud.animationAnimation = SpinePoisonCloud.skeletonData.findAnimation("animation");
@@ -261,6 +267,8 @@ public class Resources {
 
         public static Animation animationShoot;
 
+        public static Animation animationStand;
+
         public static Animation animationWalk;
 
         public static com.esotericsoftware.spine.Skin skinDefault;
@@ -366,6 +374,18 @@ public class Resources {
         public static AnimationStateData animationData;
 
         public static Animation animationAnimation;
+
+        public static com.esotericsoftware.spine.Skin skinDefault;
+    }
+
+    public static class SpineMove {
+        public static SkeletonData skeletonData;
+
+        public static AnimationStateData animationData;
+
+        public static Animation animationError;
+
+        public static Animation animationMove;
 
         public static com.esotericsoftware.spine.Skin skinDefault;
     }
@@ -515,6 +535,8 @@ public class Resources {
     }
 
     public static class Values {
+        public static boolean debugging = true;
+
         public static float jumpVelocity = 10.0f;
 
         public static String name = "Raeleus";

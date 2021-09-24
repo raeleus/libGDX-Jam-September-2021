@@ -1,0 +1,146 @@
+{
+  "ogmoVersion": "3.4.0",
+  "width": 1024,
+  "height": 576,
+  "offsetX": 0,
+  "offsetY": 0,
+  "layers": [
+    {
+      "name": "entities",
+      "_eid": "35989082",
+      "offsetX": 0,
+      "offsetY": 0,
+      "gridCellWidth": 8,
+      "gridCellHeight": 8,
+      "gridCellsX": 128,
+      "gridCellsY": 72,
+      "entities": [
+        {
+          "name": "level-bounds",
+          "id": 0,
+          "_eid": "36003361",
+          "x": 208,
+          "y": 352,
+          "nodes": [
+            {"x": 208, "y": 160},
+            {"x": 184, "y": 160},
+            {"x": 184, "y": 352}
+          ]
+        },
+        {
+          "name": "level-bounds",
+          "id": 1,
+          "_eid": "36003361",
+          "x": 208,
+          "y": 160,
+          "nodes": [
+            {"x": 376, "y": 160},
+            {"x": 376, "y": 176},
+            {"x": 208, "y": 176}
+          ]
+        },
+        {
+          "name": "level-bounds",
+          "id": 2,
+          "_eid": "36003361",
+          "x": 352,
+          "y": 168,
+          "nodes": [
+            {"x": 352, "y": 232},
+            {"x": 632, "y": 232},
+            {"x": 632, "y": 168}
+          ]
+        },
+        {
+          "name": "level-bounds",
+          "id": 3,
+          "_eid": "36003361",
+          "x": 608,
+          "y": 168,
+          "nodes": [
+            {"x": 608, "y": 128},
+            {"x": 856, "y": 128},
+            {"x": 856, "y": 168}
+          ]
+        },
+        {
+          "name": "level-bounds",
+          "id": 4,
+          "_eid": "36003361",
+          "x": 816,
+          "y": 168,
+          "nodes": [
+            {"x": 864, "y": 168},
+            {"x": 864, "y": 352},
+            {"x": 816, "y": 352}
+          ]
+        },
+        {
+          "name": "level-bounds",
+          "id": 5,
+          "_eid": "36003361",
+          "x": 816,
+          "y": 344,
+          "nodes": [
+            {"x": 632, "y": 344},
+            {"x": 632, "y": 384},
+            {"x": 816, "y": 384}
+          ]
+        },
+        {
+          "name": "level-bounds",
+          "id": 6,
+          "_eid": "36003361",
+          "x": 632,
+          "y": 384,
+          "nodes": [
+            {"x": 632, "y": 296},
+            {"x": 352, "y": 296},
+            {"x": 352, "y": 384}
+          ]
+        },
+        {
+          "name": "level-bounds",
+          "id": 7,
+          "_eid": "36003361",
+          "x": 352,
+          "y": 352,
+          "nodes": [
+            {"x": 160, "y": 352},
+            {"x": 160, "y": 384},
+            {"x": 352, "y": 384}
+          ]
+        }
+      ]
+    },
+    {
+      "name": "decals",
+      "_eid": "35982929",
+      "offsetX": 0,
+      "offsetY": 0,
+      "gridCellWidth": 8,
+      "gridCellHeight": 8,
+      "gridCellsX": 128,
+      "gridCellsY": 72,
+      "decals": [
+        {
+          "x": 512,
+          "y": 280,
+          "texture": "starfield.png",
+          "originX": 0.5,
+          "originY": 0.5,
+          "values": {"panning": true}
+        },
+        {
+          "x": 512,
+          "y": 280,
+          "texture": "level-11.png",
+          "originX": 0.5,
+          "originY": 0.5,
+          "values": {"panning": true}
+        }
+      ],
+      "folder": ""
+    }
+  ]
+}

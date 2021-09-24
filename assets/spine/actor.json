@@ -1,11 +1,11 @@
 {
 "skeleton": {
-	"hash": "cUT3AHCoVHY",
+	"hash": "3yXXostiegs",
 	"spine": "4.0.36",
-	"x": -21.29,
-	"y": -2.12,
-	"width": 124.83,
-	"height": 179.42,
+	"x": -32,
+	"y": -20.5,
+	"width": 135.08,
+	"height": 197.79,
 	"images": "",
 	"audio": ""
 },
@@ -27,6 +27,7 @@
 	{ "name": "game/flag-pole10", "parent": "game/flag-pole9", "length": 8.34, "x": 8.34 }
 ],
 "slots": [
+	{ "name": "game/shadow", "bone": "root", "attachment": "game/shadow" },
 	{ "name": "game/flag", "bone": "game/flag-pole", "attachment": "game/flag" },
 	{ "name": "game/flag-pole", "bone": "game/flag-pole", "attachment": "game/flag-pole" },
 	{ "name": "body", "bone": "body", "attachment": "body" },
@@ -57,6 +58,9 @@
 			},
 			"game/flag-pole": {
 				"game/flag-pole": { "x": 0.88, "y": -28.46, "rotation": -0.61, "width": 13, "height": 128 }
+			},
+			"game/shadow": {
+				"game/shadow": { "x": 1.5, "y": 2, "width": 67, "height": 45 }
 			}
 		}
 	},
@@ -507,6 +511,7 @@
 			}
 		}
 	},
+	"stand": {},
 	"walk": {
 		"bones": {
 			"body": {

@@ -6,10 +6,7 @@ import com.badlogic.gdx.InputMultiplexer;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
-import com.badlogic.gdx.graphics.g2d.PolygonBatch;
-import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas.AtlasSprite;
-import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.math.Polygon;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.InputListener;
@@ -22,14 +19,11 @@ import com.badlogic.gdx.utils.FloatArray;
 import com.badlogic.gdx.utils.ObjectMap;
 import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.badlogic.gdx.utils.viewport.ScreenViewport;
-import com.crashinvaders.vfx.effects.ChainVfxEffect;
 import com.dongbat.walkable.PathHelper;
 import com.ray3k.template.*;
 import com.ray3k.template.OgmoReader.*;
 import com.ray3k.template.entities.*;
 import com.ray3k.template.screens.DialogPause.*;
-import com.ray3k.template.vfx.*;
-import space.earlygrey.shapedrawer.JoinType;
 import space.earlygrey.shapedrawer.ShapeDrawer;
 
 import static com.ray3k.template.Core.*;
@@ -41,8 +35,11 @@ public class GameScreen extends JamScreen {
     public Stage stage;
     public boolean paused;
     private Label fpsLabel;
-    private PathHelper pathHelper;
-    private FloatArray path = new FloatArray();
+    public PathHelper pathHelper;
+    public static final int DECAL_DEPTH = 1000;
+    public static final int PLAYER_DEPTH = 10;
+    public static final int ENEMY_DEPTH = 50;
+    public static final int DEBUG_DEPTH = -1000;
     
     @Override
     public void show() {
@@ -128,10 +125,14 @@ public class GameScreen extends JamScreen {
                     entityController.add(shape);
                     
                     pathHelper.addPolygon(polygon.getTransformedVertices());
+                } else if (name.equals("player")) {
+                    var soldier = new SoldierEntity();
+                    soldier.setPosition(x, y);
+                    entityController.add(soldier);
                 }
             }
         });
-        ogmoReader.readFile(Gdx.files.internal("levels/level-1.json"));
+        ogmoReader.readFile(Gdx.files.internal("levels/level-2.json"));
     }
     
     @Override
@@ -143,7 +144,6 @@ public class GameScreen extends JamScreen {
         stage.act(delta);
         
         fpsLabel.setText(Gdx.graphics.getFramesPerSecond());
-        pathHelper.findPath(30, 30, mouseX, mouseY, 10, path);
     }
     
     @Override
@@ -158,8 +158,6 @@ public class GameScreen extends JamScreen {
         viewport.apply();
         batch.setProjectionMatrix(camera.combined);
         entityController.draw(paused ? 0 : delta);
-        System.out.println("path = " + path);
-        JamGame.shapeDrawer.path(path, 1f, JoinType.SMOOTH, true);
         batch.end();
         vfxManager.endInputCapture();
         vfxManager.applyEffects();
