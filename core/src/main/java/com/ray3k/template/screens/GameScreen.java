@@ -7,10 +7,16 @@ import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas.AtlasSprite;
+import com.badlogic.gdx.math.Interpolation;
+import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.math.Polygon;
+import com.badlogic.gdx.math.Vector3;
+import com.badlogic.gdx.scenes.scene2d.Action;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.InputListener;
 import com.badlogic.gdx.scenes.scene2d.Stage;
+import com.badlogic.gdx.scenes.scene2d.actions.Actions;
+import com.badlogic.gdx.scenes.scene2d.actions.TemporalAction;
 import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.utils.Align;
@@ -40,6 +46,15 @@ public class GameScreen extends JamScreen {
     public static final int PLAYER_DEPTH = 10;
     public static final int ENEMY_DEPTH = 50;
     public static final int DEBUG_DEPTH = -1000;
+    public static final float[] ZOOMS = {1f, .9f, .7f, .6f, .5f};
+    public int zoomIndex = 0;
+    public float oldZoom;
+    public float oldCameraX;
+    public float oldCameraY;
+    public float newCameraX;
+    public float newCameraY;
+    public Action zoomAction;
+    private static final Vector3 vector3Temp = new Vector3();
     
     @Override
     public void show() {
@@ -138,6 +153,42 @@ public class GameScreen extends JamScreen {
     @Override
     public void act(float delta) {
         if (!paused) {
+            boolean updateZoom = false;
+            if (isBindingJustPressed(Binding.ZOOM_IN)) {
+                if (zoomIndex < ZOOMS.length - 1) {
+                    zoomIndex++;
+                    if (zoomIndex >= ZOOMS.length) zoomIndex = ZOOMS.length - 1;
+                    updateZoom = true;
+                }
+                
+            } else if (isBindingJustPressed(Binding.ZOOM_OUT)) {
+                if (zoomIndex > 0) {
+                    zoomIndex--;
+                    if (zoomIndex < 0) zoomIndex = 0;
+                    updateZoom = true;
+                }
+            }
+            
+            if (updateZoom) {
+                oldZoom = camera.zoom;
+                float newZoom = ZOOMS[zoomIndex];
+                oldCameraX = camera.position.x;
+                oldCameraY = camera.position.y;
+//                newCameraX = oldCameraX - ((mouseX - oldCameraX) * (newZoom - 1));
+//                newCameraY = oldCameraY - ((mouseY - oldCameraY) * (newZoom - 1));
+                newCameraX = oldCameraX - (newZoom - oldZoom) * (mouseX - oldCameraX) / oldZoom;
+                newCameraY = oldCameraY - (newZoom - oldZoom) * (mouseY - oldCameraY) / oldZoom;
+                stage.getRoot().removeAction(zoomAction);
+                zoomAction = Actions.sequence(Actions.delay(.1f), new TemporalAction(1f, Interpolation.smooth) {
+                    @Override
+                    protected void update(float percent) {
+                        camera.zoom = MathUtils.lerp(oldZoom, newZoom, percent);
+                        camera.position.set(MathUtils.lerp(oldCameraX, newCameraX, percent), MathUtils.lerp(oldCameraY, newCameraY, percent), 0);
+                    }
+                });
+                stage.addAction(zoomAction);
+            }
+            
             entityController.act(delta);
             vfxManager.update(delta);
         }
