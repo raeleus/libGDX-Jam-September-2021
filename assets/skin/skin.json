@@ -11,6 +11,24 @@
 		"b": 0,
 		"a": 1
 	},
+	"gray": {
+		"r": 0.5133333,
+		"g": 0.5133333,
+		"b": 0.5133333,
+		"a": 1
+	},
+	"light-gray": {
+		"r": 0.91,
+		"g": 0.91,
+		"b": 0.91,
+		"a": 1
+	},
+	"red": {
+		"r": 1,
+		"g": 0,
+		"b": 0,
+		"a": 1
+	},
 	"white": {
 		"r": 1,
 		"g": 1,
@@ -23,6 +41,25 @@
 		"region": "slider",
 		"minWidth": 398,
 		"minHeight": 43
+	}
+},
+"com.badlogic.gdx.scenes.scene2d.ui.Skin$TintedDrawable": {
+	"black": {
+		"name": "white",
+		"color": {
+			"r": 0,
+			"g": 0,
+			"b": 0,
+			"a": 1
+		}
+	},
+	"gray": {
+		"name": "white",
+		"color": "gray"
+	},
+	"light-gray": {
+		"name": "white",
+		"color": "light-gray"
 	}
 },
 "com.ray3k.tenpatch.TenPatchDrawable": {
@@ -259,6 +296,21 @@
 		"fontColor": "black",
 		"up": "text-button-10",
 		"pressedOffsetY": -2
+	},
+	"toggle": {
+		"font": "font",
+		"fontColor": "black",
+		"checkedFontColor": "red",
+		"pressedOffsetY": -2
+	}
+},
+"com.badlogic.gdx.scenes.scene2d.ui.TextField$TextFieldStyle": {
+	"default": {
+		"font": "font",
+		"fontColor": "black",
+		"background": "light-gray",
+		"cursor": "black",
+		"selection": "gray"
 	}
 },
 "com.badlogic.gdx.scenes.scene2d.ui.TextTooltip$TextTooltipStyle": {

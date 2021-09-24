@@ -27,6 +27,7 @@ import com.dongbat.walkable.PathHelper;
 import com.ray3k.template.*;
 import com.ray3k.template.OgmoReader.*;
 import com.ray3k.template.entities.*;
+import com.ray3k.template.screens.DialogDebug.*;
 import com.ray3k.template.screens.DialogPause.*;
 import space.earlygrey.shapedrawer.ShapeDrawer;
 
@@ -98,6 +99,20 @@ public class GameScreen extends JamScreen {
                         }
                     });
                 }
+                
+                if (!paused && keycode == Keys.F10) {
+                    paused = true;
+                    
+                    DialogDebug dialogDebug = new DialogDebug() {
+                        @Override
+                        public void hide(Action action) {
+                            super.hide(action);
+                            paused = false;
+                        }
+                    };
+                    dialogDebug.show(stage);
+                }
+                
                 return super.keyDown(event, keycode);
             }
         });

@@ -4,16 +4,18 @@ import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.utils.FloatArray;
 import com.dongbat.jbump.Collisions;
 import com.dongbat.jbump.Response.Result;
+import com.ray3k.template.Resources.*;
 import com.ray3k.template.screens.*;
 import space.earlygrey.shapedrawer.JoinType;
 
 import static com.ray3k.template.Core.*;
 import static com.ray3k.template.Resources.SpineActor.*;
+import static com.ray3k.template.Resources.Values.*;
 import static com.ray3k.template.screens.GameScreen.*;
 
 public class SoldierEntity extends Entity {
     private static final FloatArray floatArray = new FloatArray();
-    private FloatArray debugPath;
+    private FloatArray movePath;
     
     @Override
     public void create() {
@@ -34,9 +36,9 @@ public class SoldierEntity extends Entity {
         if (gameScreen.isBindingJustPressed(Binding.MOVE)) {
             gameScreen.pathHelper.findPath(x, y, gameScreen.mouseX, gameScreen.mouseY, 1, floatArray);
             
-            if (debugPath == null) debugPath = new FloatArray();
-            debugPath.clear();
-            debugPath.addAll(floatArray);
+            if (movePath == null) movePath = new FloatArray();
+            movePath.clear();
+            movePath.addAll(floatArray);
             
             if (floatArray.size > 0) {
                 var arrow = new MoveArrowEntity(gameScreen.mouseX, gameScreen.mouseY);
@@ -46,12 +48,18 @@ public class SoldierEntity extends Entity {
                 entityController.add(error);
             }
         }
+        
+        if (movePath != null && movePath.size > 0) {
+        
+        }
     }
     
     @Override
     public void draw(float delta) {
-        shapeDrawer.setColor(Color.RED);
-        if (debugPath != null) shapeDrawer.path(debugPath, 1f, JoinType.SMOOTH, true);
+        if (debugging) {
+            shapeDrawer.setColor(Color.RED);
+            if (movePath != null) shapeDrawer.path(movePath, 1f, JoinType.SMOOTH, true);
+        }
     }
     
     @Override

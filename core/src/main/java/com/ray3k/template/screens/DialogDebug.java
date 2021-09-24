@@ -30,19 +30,4 @@ public class DialogDebug extends Dialog {
         stage.setScrollFocus(getContentTable().findActor("scrollPane"));
         return this;
     }
-    
-    public static class DebugListener extends InputListener {
-        DialogDebug dialog;
-        @Override
-        public boolean keyDown(InputEvent event, int keycode) {
-            if (keycode == Keys.F10) {
-                if (dialog == null) {
-                    dialog = new DialogDebug();
-                }
-                if (dialog.getParent() == null) dialog.show(event.getStage());
-                return true;
-            }
-            return super.keyDown(event, keycode);
-        }
-    }
 }
