@@ -229,24 +229,31 @@ public class GameScreen extends JamScreen {
                     
                     pathHelper.addPolygon(polygon.getTransformedVertices());
                 } else if (name.equals("player")) {
-                    var leader = new SoldierEntity();
-                    leader.team = valuesMap.get("team").asInt();
-                    leader.setPosition(x, y);
-                    entityController.add(leader);
-                    soldiers.add(leader);
-                    
-                    temp.set(20, 0);
-                    for (int i = 0; i < soldierSquadSize - 1; i++) {
-                        temp.rotateDeg(360f / (soldierSquadSize - 1));
-                        var soldier = new SoldierEntity();
-                        soldier.team = valuesMap.get("team").asInt();
-                        soldier.targetOffsetX = temp.x;
-                        soldier.targetOffsetY = temp.y;
-                        soldier.setPosition(x + temp.x, y + temp.y);
-                        soldier.parent = leader;
-                        leader.children.add(soldier);
-                        soldiers.add(soldier);
-                        entityController.add(soldier);
+                    int team = valuesMap.get("team").asInt();
+                    if (team <= saveData.teams) {
+                        var soldierType = saveData.types[team - 1];
+                        
+                        var leader = new SoldierEntity();
+                        leader.team = team;
+                        leader.setPosition(x, y);
+                        leader.soldierType = soldierType;
+                        entityController.add(leader);
+                        soldiers.add(leader);
+    
+                        temp.set(20, 0);
+                        for (int i = 0; i < soldierSquadSize - 1; i++) {
+                            temp.rotateDeg(360f / (soldierSquadSize - 1));
+                            var soldier = new SoldierEntity();
+                            soldier.team = team;
+                            soldier.targetOffsetX = temp.x;
+                            soldier.targetOffsetY = temp.y;
+                            soldier.setPosition(x + temp.x, y + temp.y);
+                            soldier.soldierType = soldierType;
+                            soldier.parent = leader;
+                            leader.children.add(soldier);
+                            soldiers.add(soldier);
+                            entityController.add(soldier);
+                        }
                     }
                 } else if (name.equals("house")) {
                     var house = new HouseEntity();

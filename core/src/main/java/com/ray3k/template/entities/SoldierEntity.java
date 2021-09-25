@@ -1,5 +1,6 @@
 package com.ray3k.template.entities;
 
+import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.math.Vector2;
@@ -36,6 +37,12 @@ public class SoldierEntity extends Entity {
     private int easterEggCount;
     private int health;
     private float friction;
+    public enum SoldierType {
+        MILITIA, ASSAULT, SNIPER, HEAVY
+    }
+    public SoldierType soldierType;
+    private Sound dieSound;
+    private float moveSpeed;
     
     @Override
     public void create() {
@@ -44,7 +51,29 @@ public class SoldierEntity extends Entity {
         health = soldierHealth;
         setSkeletonData(skeletonData, animationData);
         animationState.setAnimation(0, animationStand, false);
-        skeleton.setSkin(skinAssault);
+        switch (soldierType) {
+            case MILITIA:
+                skeleton.setSkin(skinMilitia);
+                dieSound = sfx_militiaDie;
+                moveSpeed = militiaMoveSpeed;
+                break;
+            case ASSAULT:
+                skeleton.setSkin(skinAssault);
+                dieSound = sfx_assaultDie;
+                moveSpeed = assaultMoveSpeed;
+                break;
+            case HEAVY:
+                skeleton.setSkin(skinHeavy);
+                dieSound = sfx_heavyDie;
+                moveSpeed = heavyMoveSpeed;
+                break;
+            case SNIPER:
+                skeleton.setSkin(skinSniper);
+                dieSound = sfx_sniperDie;
+                moveSpeed = sniperMoveSpeed;
+                break;
+        }
+        
         skeleton.setScale(.25f, .25f);
         depth = GameScreen.ACTOR_DEPTH;
         
@@ -161,7 +190,7 @@ public class SoldierEntity extends Entity {
         }
         
         if (hurtTimer <= 0 && movePath != null && movePath.size > 1) {
-            moveTowardsTarget(assaultMoveSpeed, movePath.get(0), movePath.get(1));
+            moveTowardsTarget(moveSpeed, movePath.get(0), movePath.get(1));
             if (animationState.getCurrent(0).getAnimation() != animationWalk) {
                 animationState.setAnimation(0, animationWalk, true);
                 animationState.getCurrent(0).setDelay(MathUtils.random(.5f));
@@ -199,7 +228,7 @@ public class SoldierEntity extends Entity {
         health -= damage;
         if (health <= 0) {
             destroy = true;
-            sfx_assaultDie.play(sfx);
+            dieSound.play(sfx);
         } else {
             hurtTimer = soldierHurtDelay;
             setMotion(soldierHurtSpeed, direction);
@@ -270,19 +299,77 @@ public class SoldierEntity extends Entity {
         
         if (easterEggCount < 5) {
             var selection = MathUtils.random(2);
-            switch (selection) {
-                case 0:
-                    sfx_assaultSelected1.play(sfx);
+    
+            switch (soldierType) {
+                case MILITIA:
+                    switch (selection) {
+                        case 0:
+                            sfx_militiaSelected1.play(sfx);
+                            break;
+                        case 1:
+                            sfx_militiaSelected2.play(sfx);
+                            break;
+                        case 2:
+                            sfx_militiaSelected3.play(sfx);
+                            break;
+                    }
                     break;
-                case 1:
-                    sfx_assaultSelected2.play(sfx);
+                case ASSAULT:
+                    switch (selection) {
+                        case 0:
+                            sfx_assaultSelected1.play(sfx);
+                            break;
+                        case 1:
+                            sfx_assaultSelected2.play(sfx);
+                            break;
+                        case 2:
+                            sfx_assaultSelected3.play(sfx);
+                            break;
+                    }
                     break;
-                case 2:
-                    sfx_assaultSelected3.play(sfx);
+                case HEAVY:
+                    switch (selection) {
+                        case 0:
+                            sfx_heavySelected1.play(sfx);
+                            break;
+                        case 1:
+                            sfx_heavySelected2.play(sfx);
+                            break;
+                        case 2:
+                            sfx_heavySelected3.play(sfx);
+                            break;
+                    }
+                    break;
+                case SNIPER:
+                    switch (selection) {
+                        case 0:
+                            sfx_sniperSelected1.play(sfx);
+                            break;
+                        case 1:
+                            sfx_sniperSelected2.play(sfx);
+                            break;
+                        case 2:
+                            sfx_sniperSelected3.play(sfx);
+                            break;
+                    }
                     break;
             }
         } else {
-            sfx_assaultEasterEgg.play(sfx);
+            switch (soldierType) {
+                case MILITIA:
+                    sfx_militiaEasterEgg.play(sfx);
+                    break;
+                case ASSAULT:
+                    sfx_assaultEasterEgg.play(sfx);
+                    break;
+                case HEAVY:
+                    sfx_heavyEasterEgg.play(sfx);
+                    break;
+                case SNIPER:
+                    sfx_sniperEasterEgg.play(sfx);
+                    break;
+            }
+            
             easterEggCount = 0;
         }
     }

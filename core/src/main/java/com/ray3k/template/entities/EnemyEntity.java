@@ -177,7 +177,7 @@ public class EnemyEntity extends Entity {
                 }
             } else if (other instanceof HouseEntity) {
                 var otherHouse = (HouseEntity) other;
-                if (otherHouse.hurtTimer <= 0) {
+                if (targetingHouse && otherHouse.hurtTimer <= 0) {
                     otherHouse.hurt(zombieDamage);
                     sfx_slash.play(sfx);
                 }

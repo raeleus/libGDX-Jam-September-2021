@@ -1,7 +1,10 @@
 {
   "debug walkable" : false,
   "debug jbump" : false,
-  "assault move speed" : [0.0, 1000.0, 100.0],
+  "militia move speed" : [0.0, 1000.0, 100.0],
+  "assault move speed" : [0.0, 1000.0, 120.0],
+  "sniper move speed" : [0.0, 1000.0, 100.0],
+  "heavy move speed" : [0.0, 1000.0, 80.0],
   "soldier squad size": 6,
   "soldier hurt delay": [0.0, 5.0, 0.5],
   "soldier hurt speed": [0.0, 1000.0, 400],

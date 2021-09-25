@@ -638,9 +638,21 @@ public class Resources {
 
         public static boolean debugJbump = false;
 
+        public static Range militiaMoveSpeedRange = new Range(0.0f, 1000.0f);
+
+        public static float militiaMoveSpeed = 100.0f;
+
         public static Range assaultMoveSpeedRange = new Range(0.0f, 1000.0f);
 
-        public static float assaultMoveSpeed = 100.0f;
+        public static float assaultMoveSpeed = 120.0f;
+
+        public static Range sniperMoveSpeedRange = new Range(0.0f, 1000.0f);
+
+        public static float sniperMoveSpeed = 100.0f;
+
+        public static Range heavyMoveSpeedRange = new Range(0.0f, 1000.0f);
+
+        public static float heavyMoveSpeed = 80.0f;
 
         public static int soldierSquadSize = 6;
 

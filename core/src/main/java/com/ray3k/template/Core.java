@@ -44,6 +44,7 @@ public class Core extends JamGame {
     public static float bgm;
     public static float sfx;
     public static Preferences preferences;
+    public static SaveData saveData;
     
     @Override
     public void create() {
@@ -80,6 +81,8 @@ public class Core extends JamGame {
         }));
         defaultTransition = Transitions.colorFade(Color.BLACK);
         defaultTransitionDuration = .5f;
+        
+        saveData = new SaveData();
     }
     
     @Override
