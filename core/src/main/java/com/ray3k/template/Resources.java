@@ -102,6 +102,7 @@ public class Resources {
         SpineActor.animationData = assetManager.get("spine/actor.json-animation");
         SpineActor.animationFlagBlue = SpineActor.skeletonData.findAnimation("flag-blue");
         SpineActor.animationFlagGreen = SpineActor.skeletonData.findAnimation("flag-green");
+        SpineActor.animationFlagNone = SpineActor.skeletonData.findAnimation("flag-none");
         SpineActor.animationFlagOrange = SpineActor.skeletonData.findAnimation("flag-orange");
         SpineActor.animationFlagPurple = SpineActor.skeletonData.findAnimation("flag-purple");
         SpineActor.animationSelectedBlue = SpineActor.skeletonData.findAnimation("selected-blue");
@@ -275,6 +276,8 @@ public class Resources {
         public static Animation animationFlagBlue;
 
         public static Animation animationFlagGreen;
+
+        public static Animation animationFlagNone;
 
         public static Animation animationFlagOrange;
 
@@ -569,6 +572,8 @@ public class Resources {
         public static Range soldierMoveSpeedRange = new Range(0.0f, 1000.0f);
 
         public static float soldierMoveSpeed = 100.0f;
+
+        public static int soldierSquadSize = 6;
     }
 
     public static class Range {

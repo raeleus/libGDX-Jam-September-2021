@@ -34,6 +34,7 @@ import space.earlygrey.shapedrawer.ShapeDrawer;
 
 import static com.ray3k.template.Core.*;
 import static com.ray3k.template.Resources.*;
+import static com.ray3k.template.Resources.Values.*;
 
 public class GameScreen extends JamScreen {
     public static GameScreen gameScreen;
@@ -42,9 +43,8 @@ public class GameScreen extends JamScreen {
     public boolean paused;
     private Label fpsLabel;
     public PathHelper pathHelper;
-    public static final int DECAL_DEPTH = 1000;
-    public static final int PLAYER_DEPTH = 10;
-    public static final int ENEMY_DEPTH = 50;
+    public static final int DECAL_DEPTH = 1000000;
+    public static final int ACTOR_DEPTH = 10;
     public static final int DEBUG_DEPTH = -1000;
     public static final float[] ZOOMS = {1f, .9f, .7f, .6f, .5f};
     public int zoomIndex = 0;
@@ -56,13 +56,15 @@ public class GameScreen extends JamScreen {
     public Action zoomAction;
     public Action panAction;
     public SoldierEntity selectedSoldier;
-    public boolean justTapped;
+    private static final Vector2 temp = new Vector2();
+    public Array<SoldierEntity> soldiers = new Array<>();
     
     @Override
     public void show() {
         super.show();
     
         bgm_game.setLooping(true);
+        bgm_game.setVolume(bgm);
         bgm_game.play();
         
         gameScreen = this;
@@ -132,7 +134,23 @@ public class GameScreen extends JamScreen {
         stage.addListener(new ClickListener(Buttons.LEFT) {
             @Override
             public void clicked(InputEvent event, float x, float y) {
-                justTapped = true;
+                if (soldiers.size > 0) {
+                    var closest = soldiers.get(0);
+                    var distance = Utils.pointDistance(closest.x, closest.y, mouseX, mouseY);
+                    for (int i = 1; i < soldiers.size; i++) {
+                        var soldier = soldiers.get(i);
+                        var newDistance = Utils.pointDistance(soldier.x, soldier.y, mouseX, mouseY);
+                        if (newDistance < distance) {
+                            distance = newDistance;
+                            closest = soldier;
+                        }
+                    }
+                    if (distance < 30) {
+                        selectedSoldier = closest.parent == null ? closest : closest.parent;
+                    } else {
+                        selectedSoldier = null;
+                    }
+                }
             }
         });
         
@@ -210,10 +228,25 @@ public class GameScreen extends JamScreen {
                     
                     pathHelper.addPolygon(polygon.getTransformedVertices());
                 } else if (name.equals("player")) {
-                    var soldier = new SoldierEntity();
-                    soldier.team = valuesMap.get("team").asInt();
-                    soldier.setPosition(x, y);
-                    entityController.add(soldier);
+                    var leader = new SoldierEntity();
+                    leader.team = valuesMap.get("team").asInt();
+                    leader.setPosition(x, y);
+                    entityController.add(leader);
+                    soldiers.add(leader);
+                    
+                    temp.set(20, 0);
+                    for (int i = 0; i < soldierSquadSize - 1; i++) {
+                        temp.rotateDeg(360f / (soldierSquadSize - 1));
+                        var soldier = new SoldierEntity();
+                        soldier.team = valuesMap.get("team").asInt();
+                        soldier.targetOffsetX = temp.x;
+                        soldier.targetOffsetY = temp.y;
+                        soldier.setPosition(x + temp.x, y + temp.y);
+                        soldier.parent = leader;
+                        leader.children.add(soldier);
+                        soldiers.add(soldier);
+                        entityController.add(soldier);
+                    }
                 }
             }
         });
@@ -260,7 +293,6 @@ public class GameScreen extends JamScreen {
             entityController.act(delta);
             vfxManager.update(delta);
         }
-        justTapped = false;
         stage.act(delta);
         
         fpsLabel.setText(Gdx.graphics.getFramesPerSecond());
