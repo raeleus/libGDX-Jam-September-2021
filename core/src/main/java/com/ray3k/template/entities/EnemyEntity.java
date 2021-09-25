@@ -53,14 +53,25 @@ public class EnemyEntity extends Entity {
         var bestDistance = Float.MAX_VALUE;
         for (var soldier : gameScreen.soldiers) {
             var distance = Utils.pointDistance(x, y, soldier.x, soldier.y);
-            if (distance < bestDistance) {
+            if (distance < enemyToPlayerMinDistance && distance < bestDistance) {
                 closestSolder = soldier;
                 bestDistance = distance;
             }
         }
+        
         if (closestSolder != null) target = closestSolder;
         else {
-        
+            bestDistance = Float.MAX_VALUE;
+            HouseEntity closestHouse = null;
+            for (var house : gameScreen.houses) {
+                var distance = Utils.pointDistance(x, y, house.x, house.y);
+                if (distance < bestDistance) {
+                    closestHouse = house;
+                    bestDistance = distance;
+                }
+            }
+            
+            if (closestHouse != null) target = closestHouse;
         }
         
         if (target != null) {

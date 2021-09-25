@@ -260,7 +260,7 @@ public class GameScreen extends JamScreen {
                             house.skeleton.setSkin(SpineHouse.skinHouse2);
                             break;
                     }
-                    pathHelper.addRect(house.getCollisionBoxLeft(), house.getCollisionBoxBottom(), house.bboxWidth, house.bboxHeight);
+                    //pathHelper.addRect(house.getCollisionBoxLeft(), house.getCollisionBoxBottom(), house.bboxWidth, house.bboxHeight);
                 } else if (name.equals("zombie")) {
                     var spawner = new EnemyShipSpawner();
                     spawner.setPosition(x, y);

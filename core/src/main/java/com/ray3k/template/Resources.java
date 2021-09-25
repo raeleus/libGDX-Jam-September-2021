@@ -588,6 +588,10 @@ public class Resources {
 
         public static float zombieMoveSpeed = 75.0f;
 
+        public static Range enemyToPlayerMinDistanceRange = new Range(0.0f, 1000.0f);
+
+        public static float enemyToPlayerMinDistance = 200.0f;
+
         public static Range shipSpeedRange = new Range(0.0f, 1000.0f);
 
         public static float shipSpeed = 50.0f;

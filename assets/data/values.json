@@ -4,6 +4,7 @@
   "assault move speed" : [0.0, 1000.0, 100.0],
   "soldier squad size": 6,
   "zombie move speed" : [0.0, 1000.0, 75.0],
+  "enemy to player min distance" : [0.0, 1000.0, 200.0],
   "ship speed": [0.0, 1000.0, 50.0],
   "ship spawn delay": [0.0, 5, 0.4]
 }
