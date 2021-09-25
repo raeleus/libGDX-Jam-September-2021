@@ -63,7 +63,7 @@ public class EntityController implements Disposable {
             entity.y += entity.deltaY * delta;
             
             if (entity.moveTargetActivated) {
-                if (MathUtils.isZero(Utils.pointDistance(entity.x, entity.y, entity.moveTargetX, entity.moveTargetY), 1)) entity.moveTargetActivated = false;
+                if (MathUtils.isZero(Utils.pointDistance(entity.x, entity.y, entity.moveTargetX, entity.moveTargetY))) entity.moveTargetActivated = false;
             }
             
             if (entity.skeleton != null) {

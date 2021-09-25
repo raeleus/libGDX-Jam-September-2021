@@ -1,6 +1,7 @@
 package com.ray3k.template.entities;
 
 import com.badlogic.gdx.graphics.Color;
+import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.utils.Array;
 import com.badlogic.gdx.utils.FloatArray;
@@ -146,11 +147,16 @@ public class SoldierEntity extends Entity {
         }
         
         if (movePath != null && movePath.size > 1) {
-            moveTowardsTarget(soldierMoveSpeed, movePath.get(0), movePath.get(1));
+            moveTowardsTarget(assaultMoveSpeed, movePath.get(0), movePath.get(1));
+            if (animationState.getCurrent(0).getAnimation() != animationWalk) {
+                animationState.setAnimation(0, animationWalk, true);
+                animationState.getCurrent(0).setDelay(MathUtils.random(.5f));
+            }
             
             if (Utils.pointDistance(x, y, movePath.get(0), movePath.get(1)) < .01f) {
                 movePath.removeRange(0, 1);
                 if (movePath.size == 0) setSpeed(0);
+                animationState.setAnimation(0, animationStand, false);
             }
         }
         

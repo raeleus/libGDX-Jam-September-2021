@@ -264,6 +264,7 @@ public class GameScreen extends JamScreen {
                 } else if (name.equals("zombie")) {
                     var spawner = new EnemyShipSpawner();
                     spawner.setPosition(x, y);
+                    spawner.count = valuesMap.get("count").asInt();
                     spawner.delay = valuesMap.get("delay").asFloat();
                     spawner.type = EnemyShipSpawner.class;//todo:change this;
                     spawner.targetX = nodes.first().x;

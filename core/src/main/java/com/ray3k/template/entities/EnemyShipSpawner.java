@@ -10,6 +10,7 @@ import static com.ray3k.template.Resources.*;
 import static com.ray3k.template.screens.GameScreen.*;
 
 public class EnemyShipSpawner extends Entity {
+    public int count;
     public float delay;
     public Class type;
     public float targetX;
@@ -43,6 +44,7 @@ public class EnemyShipSpawner extends Entity {
             ship.setPosition(x, y);
             ship.targetX = targetX;
             ship.targetY = targetY;
+            ship.count = count;
             entityController.add(ship);
             
             destroy = true;

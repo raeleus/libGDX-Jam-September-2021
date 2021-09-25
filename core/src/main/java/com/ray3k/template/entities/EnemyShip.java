@@ -5,6 +5,7 @@ import com.dongbat.jbump.Collisions;
 import com.dongbat.jbump.Response.Result;
 import com.ray3k.template.*;
 
+import static com.ray3k.template.Core.*;
 import static com.ray3k.template.Resources.SpineShip.*;
 import static com.ray3k.template.Resources.Values.*;
 import static com.ray3k.template.screens.GameScreen.*;
@@ -13,6 +14,8 @@ public class EnemyShip extends Entity {
     public float targetX;
     public float targetY;
     public boolean triggered;
+    public int count;
+    private float timer;
     
     @Override
     public void create() {
@@ -37,6 +40,19 @@ public class EnemyShip extends Entity {
             triggered = true;
             animationState.setAnimation(1, animationNoThruster, false);
             setSpeed(0);
+            
+            timer = shipSpawnDelay;
+        }
+        
+        if (triggered) {
+            timer -= delta;
+            if (timer <= 0 && count > 0) {
+                var enemy = new EnemyEntity();
+                enemy.setPosition(x, y);
+                entityController.add(enemy);
+                timer = shipSpawnDelay;
+                count--;
+            }
         }
     }
     

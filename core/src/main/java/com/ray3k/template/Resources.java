@@ -578,15 +578,23 @@ public class Resources {
 
         public static boolean debugJbump = false;
 
-        public static Range soldierMoveSpeedRange = new Range(0.0f, 1000.0f);
+        public static Range assaultMoveSpeedRange = new Range(0.0f, 1000.0f);
 
-        public static float soldierMoveSpeed = 100.0f;
+        public static float assaultMoveSpeed = 100.0f;
 
         public static int soldierSquadSize = 6;
+
+        public static Range zombieMoveSpeedRange = new Range(0.0f, 1000.0f);
+
+        public static float zombieMoveSpeed = 75.0f;
 
         public static Range shipSpeedRange = new Range(0.0f, 1000.0f);
 
         public static float shipSpeed = 50.0f;
+
+        public static Range shipSpawnDelayRange = new Range(0.0f, 5.0f);
+
+        public static float shipSpawnDelay = 0.4f;
     }
 
     public static class Range {
