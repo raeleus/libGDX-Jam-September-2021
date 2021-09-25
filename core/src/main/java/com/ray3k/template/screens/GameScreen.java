@@ -147,6 +147,7 @@ public class GameScreen extends JamScreen {
                     }
                     if (distance < 30) {
                         selectedSoldier = closest.parent == null ? closest : closest.parent;
+                        selectedSoldier.playSelectedSound();
                     } else {
                         selectedSoldier = null;
                     }

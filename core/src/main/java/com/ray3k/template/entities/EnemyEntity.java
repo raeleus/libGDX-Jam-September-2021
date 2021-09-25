@@ -13,6 +13,7 @@ import com.ray3k.template.screens.*;
 import space.earlygrey.shapedrawer.JoinType;
 
 import static com.ray3k.template.Core.*;
+import static com.ray3k.template.Resources.*;
 import static com.ray3k.template.Resources.SpineActor.*;
 import static com.ray3k.template.Resources.Values.*;
 import static com.ray3k.template.screens.GameScreen.*;
@@ -134,13 +135,20 @@ public class EnemyEntity extends Entity {
         for (int i = 0; i < collisions.size(); i++) {
             var collision = collisions.get(i);
     
-            if (collision.other.userData instanceof EnemyEntity) {
-                var otherSoldier = (EnemyEntity) collision.other.userData;
+            var other = collision.other.userData;
+            if (other instanceof EnemyEntity) {
+                var otherEnemy = (EnemyEntity) other;
                 temp.set(x, y);
-                temp.sub(otherSoldier.x, otherSoldier.y);
+                temp.sub(otherEnemy.x, otherEnemy.y);
                 temp.setLength(1);
                 x += temp.x;
                 y += temp.y;
+            } else if (other instanceof SoldierEntity) {
+                var otherSoldier = (SoldierEntity) other;
+                if (otherSoldier.hurtTimer <= 0) {
+                    otherSoldier.hurt(zombieDamage, Utils.pointDirection(x, y, otherSoldier.x, otherSoldier.y));
+                    sfx_slash.play(sfx);
+                }
             }
         }
     }
@@ -150,6 +158,7 @@ public class EnemyEntity extends Entity {
         public Response filter(Item item, Item other) {
             if (other.userData instanceof WallEntity) return Response.slide;
             if (other.userData instanceof EnemyEntity) return Response.cross;
+            if (other.userData instanceof  SoldierEntity) return Response.cross;
             return null;
         }
     }

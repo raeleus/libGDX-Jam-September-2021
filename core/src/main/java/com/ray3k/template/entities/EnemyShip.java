@@ -47,6 +47,7 @@ public class EnemyShip extends Entity {
         if (triggered) {
             timer -= delta;
             if (timer <= 0 && count > 0) {
+                Resources.sfx_troopDeploy.play(sfx);
                 var enemy = new EnemyEntity();
                 enemy.setPosition(x, y);
                 entityController.add(enemy);

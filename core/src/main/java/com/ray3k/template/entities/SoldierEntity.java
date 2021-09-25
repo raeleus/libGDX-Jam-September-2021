@@ -16,6 +16,7 @@ import com.ray3k.template.screens.*;
 import space.earlygrey.shapedrawer.JoinType;
 
 import static com.ray3k.template.Core.*;
+import static com.ray3k.template.Resources.*;
 import static com.ray3k.template.Resources.SpineActor.*;
 import static com.ray3k.template.Resources.Values.*;
 import static com.ray3k.template.screens.GameScreen.*;
@@ -27,14 +28,17 @@ public class SoldierEntity extends Entity {
     private float targetY;
     public float targetOffsetX;
     public float targetOffsetY;
-    
+    public float hurtTimer;
     public int team;
     public SoldierEntity parent;
     public Array<SoldierEntity> children = new Array<>();
     private static final Vector2 temp = new Vector2();
+    private int easterEggCount;
+    private int health;
     
     @Override
     public void create() {
+        health = soldierHealth;
         setSkeletonData(skeletonData, animationData);
         animationState.setAnimation(0, animationStand, false);
         skeleton.setSkin(skinAssault);
@@ -71,12 +75,16 @@ public class SoldierEntity extends Entity {
         if (parent == null) {
             if (team == 1 && gameScreen.isBindingJustPressed(Binding.TEAM_1)) {
                 gameScreen.selectedSoldier = this;
+                playSelectedSound();
             } else if (team == 2 && gameScreen.isBindingJustPressed(Binding.TEAM_2)) {
                 gameScreen.selectedSoldier = this;
+                playSelectedSound();
             } else if (team == 3 && gameScreen.isBindingJustPressed(Binding.TEAM_3)) {
                 gameScreen.selectedSoldier = this;
+                playSelectedSound();
             } else if (team == 4 && gameScreen.isBindingJustPressed(Binding.TEAM_4)) {
                 gameScreen.selectedSoldier = this;
+                playSelectedSound();
             } else if (gameScreen.isBindingJustPressed(Binding.DESELECT)) {
                 gameScreen.selectedSoldier = null;
             }
@@ -98,6 +106,7 @@ public class SoldierEntity extends Entity {
             if (animationState.getCurrent(2) == null || animationState.getCurrent(2).getAnimation() != animation) animationState.setAnimation(2, animation, true);
         } else {
             animationState.setEmptyAnimation(2, 0);
+            easterEggCount = 0;
         }
         
         if (selected && gameScreen.isBindingJustPressed(Binding.MOVE) && parent == null) {
@@ -114,9 +123,11 @@ public class SoldierEntity extends Entity {
         
                     var arrow = new MoveArrowEntity(gameScreen.mouseX, gameScreen.mouseY);
                     entityController.add(arrow);
+                    sfx_click.play(sfx);
                 } else {
                     var error = new MoveErrorEntity(gameScreen.mouseX, gameScreen.mouseY);
                     entityController.add(error);
+                    sfx_click.play(sfx);
                 }
             } catch (Exception e) {
                 e.printStackTrace();
@@ -160,7 +171,24 @@ public class SoldierEntity extends Entity {
             }
         }
         
+        if (hurtTimer > 0) {
+            hurtTimer -= delta;
+            if (hurtTimer <= 0) {
+                hurtTimer = 0;
+            }
+        }
+        
         depth = ACTOR_DEPTH + y * .1f;
+    }
+    
+    public void hurt(int damage, float direction) {
+        health -= damage;
+        if (health <= 0) {
+            destroy = true;
+            sfx_assaultDie.play(sfx);
+        } else {
+            hurtTimer = soldierHurtDelay;
+        }
     }
     
     @Override
@@ -178,7 +206,7 @@ public class SoldierEntity extends Entity {
     
     @Override
     public void destroy() {
-    
+        gameScreen.soldiers.removeValue(this, true);
     }
     
     @Override
@@ -220,4 +248,26 @@ public class SoldierEntity extends Entity {
     }
     
     public final static SoldierCollisionFilter soldierCollisionFilter = new SoldierCollisionFilter();
+    
+    public void playSelectedSound() {
+        easterEggCount++;
+        
+        if (easterEggCount < 5) {
+            var selection = MathUtils.random(2);
+            switch (selection) {
+                case 0:
+                    sfx_assaultSelected1.play(sfx);
+                    break;
+                case 1:
+                    sfx_assaultSelected2.play(sfx);
+                    break;
+                case 2:
+                    sfx_assaultSelected3.play(sfx);
+                    break;
+            }
+        } else {
+            sfx_assaultEasterEgg.play(sfx);
+            easterEggCount = 0;
+        }
+    }
 }

@@ -22,6 +22,16 @@ public class Resources {
 
     public static Skin skin_skin;
 
+    public static Sound sfx_assaultDie;
+
+    public static Sound sfx_assaultEasterEgg;
+
+    public static Sound sfx_assaultSelected1;
+
+    public static Sound sfx_assaultSelected2;
+
+    public static Sound sfx_assaultSelected3;
+
     public static Sound sfx_assault;
 
     public static Sound sfx_bing;
@@ -44,7 +54,15 @@ public class Resources {
 
     public static Sound sfx_femaleDeath;
 
-    public static Sound sfx_launcher;
+    public static Sound sfx_heavyDie;
+
+    public static Sound sfx_heavyEasterEgg;
+
+    public static Sound sfx_heavySelected1;
+
+    public static Sound sfx_heavySelected2;
+
+    public static Sound sfx_heavySelected3;
 
     public static Sound sfx_libgdxBeep;
 
@@ -55,6 +73,16 @@ public class Resources {
     public static Sound sfx_libgdxMadeWithUnity;
 
     public static Sound sfx_libgdxScream;
+
+    public static Sound sfx_militiaDie;
+
+    public static Sound sfx_militiaEasterEgg;
+
+    public static Sound sfx_militiaSelected1;
+
+    public static Sound sfx_militiaSelected2;
+
+    public static Sound sfx_militiaSelected3;
 
     public static Sound sfx_missile;
 
@@ -69,6 +97,18 @@ public class Resources {
     public static Sound sfx_ray3kRay3k;
 
     public static Sound sfx_reinforcementsHaveArrived;
+
+    public static Sound sfx_slash;
+
+    public static Sound sfx_sniperDie;
+
+    public static Sound sfx_sniperEasterEgg;
+
+    public static Sound sfx_sniperSelected1;
+
+    public static Sound sfx_sniperSelected2;
+
+    public static Sound sfx_sniperSelected3;
 
     public static Sound sfx_sniper;
 
@@ -232,6 +272,11 @@ public class Resources {
         SkinSkinStyles.tfDefault = skin_skin.get("default", TextField.TextFieldStyle.class);
         SkinSkinStyles.ttDefault = skin_skin.get("default", TextTooltip.TextTooltipStyle.class);
         SkinSkinStyles.wDefault = skin_skin.get("default", Window.WindowStyle.class);
+        sfx_assaultDie = assetManager.get("sfx/assault-die.mp3");
+        sfx_assaultEasterEgg = assetManager.get("sfx/assault-easter-egg.mp3");
+        sfx_assaultSelected1 = assetManager.get("sfx/assault-selected-1.mp3");
+        sfx_assaultSelected2 = assetManager.get("sfx/assault-selected-2.mp3");
+        sfx_assaultSelected3 = assetManager.get("sfx/assault-selected-3.mp3");
         sfx_assault = assetManager.get("sfx/assault.mp3");
         sfx_bing = assetManager.get("sfx/bing.mp3");
         sfx_buildingDestroyed = assetManager.get("sfx/building-destroyed.mp3");
@@ -243,12 +288,21 @@ public class Resources {
         sfx_explosion = assetManager.get("sfx/explosion.mp3");
         sfx_failure = assetManager.get("sfx/failure.mp3");
         sfx_femaleDeath = assetManager.get("sfx/female-death.mp3");
-        sfx_launcher = assetManager.get("sfx/launcher.mp3");
+        sfx_heavyDie = assetManager.get("sfx/heavy-die.mp3");
+        sfx_heavyEasterEgg = assetManager.get("sfx/heavy-easter-egg.mp3");
+        sfx_heavySelected1 = assetManager.get("sfx/heavy-selected-1.mp3");
+        sfx_heavySelected2 = assetManager.get("sfx/heavy-selected-2.mp3");
+        sfx_heavySelected3 = assetManager.get("sfx/heavy-selected-3.mp3");
         sfx_libgdxBeep = assetManager.get("sfx/libgdx-beep.mp3");
         sfx_libgdxBurstFire = assetManager.get("sfx/libgdx-burst-fire.mp3");
         sfx_libgdxExplosion = assetManager.get("sfx/libgdx-explosion.mp3");
         sfx_libgdxMadeWithUnity = assetManager.get("sfx/libgdx-made-with-unity.mp3");
         sfx_libgdxScream = assetManager.get("sfx/libgdx-scream.mp3");
+        sfx_militiaDie = assetManager.get("sfx/militia-die.mp3");
+        sfx_militiaEasterEgg = assetManager.get("sfx/militia-easter-egg.mp3");
+        sfx_militiaSelected1 = assetManager.get("sfx/militia-selected-1.mp3");
+        sfx_militiaSelected2 = assetManager.get("sfx/militia-selected-2.mp3");
+        sfx_militiaSelected3 = assetManager.get("sfx/militia-selected-3.mp3");
         sfx_missile = assetManager.get("sfx/missile.mp3");
         sfx_missionFailure = assetManager.get("sfx/mission-failure.mp3");
         sfx_mortar = assetManager.get("sfx/mortar.mp3");
@@ -256,6 +310,12 @@ public class Resources {
         sfx_ray3kItsInTheGame = assetManager.get("sfx/ray3k-it's-in-the-game.mp3");
         sfx_ray3kRay3k = assetManager.get("sfx/ray3k-ray3k.mp3");
         sfx_reinforcementsHaveArrived = assetManager.get("sfx/reinforcements-have-arrived.mp3");
+        sfx_slash = assetManager.get("sfx/slash.mp3");
+        sfx_sniperDie = assetManager.get("sfx/sniper-die.mp3");
+        sfx_sniperEasterEgg = assetManager.get("sfx/sniper-easter-egg.mp3");
+        sfx_sniperSelected1 = assetManager.get("sfx/sniper-selected-1.mp3");
+        sfx_sniperSelected2 = assetManager.get("sfx/sniper-selected-2.mp3");
+        sfx_sniperSelected3 = assetManager.get("sfx/sniper-selected-3.mp3");
         sfx_sniper = assetManager.get("sfx/sniper.mp3");
         sfx_spit = assetManager.get("sfx/spit.mp3");
         sfx_tank = assetManager.get("sfx/tank.mp3");
@@ -584,9 +644,17 @@ public class Resources {
 
         public static int soldierSquadSize = 6;
 
+        public static Range soldierHurtDelayRange = new Range(0.0f, 5.0f);
+
+        public static float soldierHurtDelay = 0.5f;
+
+        public static int soldierHealth = 10;
+
         public static Range zombieMoveSpeedRange = new Range(0.0f, 1000.0f);
 
         public static float zombieMoveSpeed = 75.0f;
+
+        public static int zombieDamage = 2;
 
         public static Range enemyToPlayerMinDistanceRange = new Range(0.0f, 1000.0f);
 
