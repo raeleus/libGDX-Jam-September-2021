@@ -32,8 +32,16 @@ public class SoldierEntity extends Entity {
         animationState.apply(skeleton);skeleton.updateWorldTransform();
         skeletonBounds.update(skeleton, true);
         setCollisionBox(skeleton.findSlot("bbox"), skeletonBounds, nullCollisionFilter);
-        team = 1;
-        animationState.setAnimation(1, animationFlagBlue, true);
+    
+        if (team == 1) {
+            animationState.setAnimation(1, animationFlagBlue, true);
+        } else if (team == 2) {
+            animationState.setAnimation(1, animationFlagGreen, true);
+        } else if (team == 3) {
+            animationState.setAnimation(1, animationFlagOrange, true);
+        } else if (team == 4) {
+            animationState.setAnimation(1, animationFlagPurple, true);
+        }
     }
     
     @Override
@@ -45,37 +53,21 @@ public class SoldierEntity extends Entity {
     public void act(float delta) {
         if (team == 1 && gameScreen.isBindingJustPressed(Binding.TEAM_1)) {
             gameScreen.selectedSoldier = this;
-            animationState.setAnimation(2, animationSelectedBlue, true);
         } else if (team == 2 && gameScreen.isBindingJustPressed(Binding.TEAM_2)) {
             gameScreen.selectedSoldier = this;
-            animationState.setAnimation(2, animationSelectedGreen, true);
         } else if (team == 3 && gameScreen.isBindingJustPressed(Binding.TEAM_3)) {
             gameScreen.selectedSoldier = this;
-            animationState.setAnimation(2, animationSelectedOrange, true);
         } else if (team == 4 && gameScreen.isBindingJustPressed(Binding.TEAM_4)) {
             gameScreen.selectedSoldier = this;
-            animationState.setAnimation(2, animationSelectedPurple, true);
         } else if (gameScreen.isBindingJustPressed(Binding.DESELECT)) {
             gameScreen.selectedSoldier = null;
-            animationState.setEmptyAnimation(2, 0);
         }
         
         var selected = gameScreen.selectedSoldier == this;
         
         if (!selected && gameScreen.justTapped && Utils.pointDistance(x, y, gameScreen.mouseX, gameScreen.mouseY) < 50) {
-            if (gameScreen.selectedSoldier != null) gameScreen.selectedSoldier.animationState.setEmptyAnimation(2, 0);
             gameScreen.selectedSoldier = this;
             selected = true;
-    
-            if (team == 1) {
-                animationState.setAnimation(2, animationSelectedBlue, true);
-            } else if (team == 2) {
-                animationState.setAnimation(2, animationSelectedGreen, true);
-            } else if (team == 3) {
-                animationState.setAnimation(2, animationSelectedOrange, true);
-            } else if (team == 4) {
-                animationState.setAnimation(2, animationSelectedPurple, true);
-            }
         }
     
         Animation animation = null;
@@ -89,9 +81,9 @@ public class SoldierEntity extends Entity {
             } else if (team == 4) {
                 animation = animationSelectedPurple;
             }
-            if (animationState.getCurrent(2).getAnimation() != animation) animationState.setAnimation(2, animation, true);
+            if (animationState.getCurrent(2) == null || animationState.getCurrent(2).getAnimation() != animation) animationState.setAnimation(2, animation, true);
         } else {
-            animationState.setEmptyAnimation(0, 0);
+            animationState.setEmptyAnimation(2, 0);
         }
         
         if (selected && gameScreen.isBindingJustPressed(Binding.MOVE)) {

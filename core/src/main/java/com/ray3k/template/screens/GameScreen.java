@@ -211,6 +211,7 @@ public class GameScreen extends JamScreen {
                     pathHelper.addPolygon(polygon.getTransformedVertices());
                 } else if (name.equals("player")) {
                     var soldier = new SoldierEntity();
+                    soldier.team = valuesMap.get("team").asInt();
                     soldier.setPosition(x, y);
                     entityController.add(soldier);
                 }

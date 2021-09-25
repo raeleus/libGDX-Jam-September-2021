@@ -75,7 +75,46 @@
             {"x": 608, "y": 224}
           ]
         },
-        {"name": "player", "id": 5, "_eid": "36091488", "x": 360, "y": 168, "originX": 15, "originY": 22}
+        {
+          "name": "player",
+          "id": 5,
+          "_eid": "36091488",
+          "x": 360,
+          "y": 168,
+          "originX": 15,
+          "originY": 22,
+          "values": {"team": 1}
+        },
+        {
+          "name": "player",
+          "id": 6,
+          "_eid": "36091488",
+          "x": 656,
+          "y": 160,
+          "originX": 15,
+          "originY": 22,
+          "values": {"team": 2}
+        },
+        {
+          "name": "player",
+          "id": 7,
+          "_eid": "36091488",
+          "x": 352,
+          "y": 392,
+          "originX": 15,
+          "originY": 22,
+          "values": {"team": 3}
+        },
+        {
+          "name": "player",
+          "id": 8,
+          "_eid": "36091488",
+          "x": 656,
+          "y": 392,
+          "originX": 15,
+          "originY": 22,
+          "values": {"team": 4}
+        }
       ]
     },
     {
