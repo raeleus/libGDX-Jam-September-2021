@@ -1,9 +1,11 @@
 package com.ray3k.template.entities;
 
 import com.badlogic.gdx.graphics.Color;
+import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.utils.FloatArray;
 import com.dongbat.jbump.Collisions;
 import com.dongbat.jbump.Response.Result;
+import com.ray3k.template.*;
 import com.ray3k.template.screens.*;
 import space.earlygrey.shapedrawer.JoinType;
 
@@ -25,6 +27,10 @@ public class SoldierEntity extends Entity {
         skeleton.setSkin(skinAssault);
         skeleton.setScale(.25f, .25f);
         depth = GameScreen.PLAYER_DEPTH;
+        
+        animationState.apply(skeleton);skeleton.updateWorldTransform();
+        skeletonBounds.update(skeleton, true);
+        setCollisionBox(skeleton.findSlot("bbox"), skeletonBounds, nullCollisionFilter);
     }
     
     @Override
@@ -37,13 +43,13 @@ public class SoldierEntity extends Entity {
         if (gameScreen.isBindingJustPressed(Binding.MOVE)) {
             targetX = gameScreen.mouseX;
             targetY = gameScreen.mouseY;
-            gameScreen.pathHelper.findPath(x, y, targetX, targetY, 1, floatArray);
-            
-            if (movePath == null) movePath = new FloatArray();
-            movePath.clear();
-            movePath.addAll(floatArray);
+            gameScreen.pathHelper.findPath(x, y, targetX, targetY, 20, floatArray);
             
             if (floatArray.size > 0) {
+                if (movePath == null) movePath = new FloatArray();
+                movePath.clear();
+                movePath.addAll(floatArray);
+                
                 var arrow = new MoveArrowEntity(gameScreen.mouseX, gameScreen.mouseY);
                 entityController.add(arrow);
             } else {
@@ -60,9 +66,14 @@ public class SoldierEntity extends Entity {
     
     @Override
     public void draw(float delta) {
-        if (debugging) {
+        if (debugWalkable) {
             shapeDrawer.setColor(Color.RED);
             if (movePath != null) shapeDrawer.path(movePath, 1f, JoinType.SMOOTH, true);
+        }
+        if (debugJbump) {
+            shapeDrawer.setColor(Color.BLUE);
+            var rect = world.getRect(item);
+            shapeDrawer.rectangle(rect.x, rect.y, rect.w, rect.h);
         }
     }
     

@@ -541,7 +541,9 @@ public class Resources {
     }
 
     public static class Values {
-        public static boolean debugging = false;
+        public static boolean debugWalkable = false;
+
+        public static boolean debugJbump = false;
 
         public static Range soldierMoveSpeedRange = new Range(0.0f, 100.0f);
 

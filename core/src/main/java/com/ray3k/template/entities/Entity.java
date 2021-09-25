@@ -81,7 +81,7 @@ public abstract class Entity {
         moveTargetSpeed = speed;
         moveTargetX = targetX;
         moveTargetY = targetY;
-        moveTargetActivated = !MathUtils.isEqual(x, moveTargetX) || !MathUtils.isEqual(y, moveTargetY);
+        moveTargetActivated = !MathUtils.isEqual(x, moveTargetX) && !MathUtils.isEqual(y, moveTargetY);
         if (!moveTargetActivated) setSpeed(0);
         return moveTargetActivated;
     }
@@ -195,8 +195,7 @@ public abstract class Entity {
                 if (verts[i+1] > maxY) maxY = verts[i+1];
             }
         }
-        
-        setCollisionBox(minX, minY, maxX - minX, maxY - minY, collisionFilter);
+        setCollisionBox(minX - x, minY - y, maxX - minX, maxY - minY, collisionFilter);
     }
     
     public boolean isOutside(float left, float bottom, float width, float height, float border) {

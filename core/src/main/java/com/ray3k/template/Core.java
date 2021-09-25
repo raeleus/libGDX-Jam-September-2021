@@ -63,8 +63,8 @@ public class Core extends JamGame {
         entityController = new EntityController();
         
         world = new World<>(100);
-        defaultCollisionFilter = (item, other) -> Response.bounce;
-        nullCollisionFilter = (Item, Other) -> null;
+        defaultCollisionFilter = (item, other) -> Response.slide;
+        nullCollisionFilter = (item, other) -> null;
         
         sndChangeListener = new ChangeListener() {
             @Override

@@ -1,6 +1,6 @@
 {
 "skeleton": {
-	"hash": "3yXXostiegs",
+	"hash": "P0r9HhnBvzI",
 	"spine": "4.0.36",
 	"x": -32,
 	"y": -20.5,
@@ -38,12 +38,20 @@
 	{ "name": "flash", "bone": "hand-left" },
 	{ "name": "projectile", "bone": "hand-left", "attachment": "projectile" },
 	{ "name": "splatter-right", "bone": "body", "attachment": "splatter-right" },
-	{ "name": "splatter-left", "bone": "body", "attachment": "splatter-left" }
+	{ "name": "splatter-left", "bone": "body", "attachment": "splatter-left" },
+	{ "name": "bbox", "bone": "root", "attachment": "bbox" }
 ],
 "skins": [
 	{
 		"name": "default",
 		"attachments": {
+			"bbox": {
+				"bbox": {
+					"type": "boundingbox",
+					"vertexCount": 4,
+					"vertices": [ -15.41, -8.83, -16.16, 20.28, 27.88, 20.28, 25.64, -8.83 ]
+				}
+			},
 			"game/flag": {
 				"game/flag": {
 					"type": "mesh",
