@@ -114,6 +114,26 @@
           "originX": 15,
           "originY": 22,
           "values": {"team": 4}
+        },
+        {
+          "name": "house",
+          "id": 9,
+          "_eid": "57925105",
+          "x": 512,
+          "y": 144,
+          "originX": 58,
+          "originY": 24,
+          "values": {"skin": "house1"}
+        },
+        {
+          "name": "house",
+          "id": 10,
+          "_eid": "57925105",
+          "x": 520,
+          "y": 368,
+          "originX": 58,
+          "originY": 24,
+          "values": {"skin": "house2"}
         }
       ]
     },

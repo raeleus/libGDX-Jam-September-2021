@@ -58,6 +58,7 @@ public class GameScreen extends JamScreen {
     public SoldierEntity selectedSoldier;
     private static final Vector2 temp = new Vector2();
     public Array<SoldierEntity> soldiers = new Array<>();
+    public Array<HouseEntity> houses = new Array<>();
     
     @Override
     public void show() {
@@ -223,7 +224,7 @@ public class GameScreen extends JamScreen {
                         verts.add(node.x, node.y);
                     }
                     Polygon polygon = new Polygon(verts.toArray());
-                    var shape = new DebugShapeEntity(polygon);
+                    var shape = new WallEntity(polygon);
                     entityController.add(shape);
                     
                     pathHelper.addPolygon(polygon.getTransformedVertices());
@@ -247,6 +248,20 @@ public class GameScreen extends JamScreen {
                         soldiers.add(soldier);
                         entityController.add(soldier);
                     }
+                } else if (name.equals("house")) {
+                    var house = new HouseEntity();
+                    house.setPosition(x, y);
+                    houses.add(house);
+                    entityController.add(house);
+                    switch (valuesMap.get("skin").asString()) {
+                        case "house1":
+                            house.skeleton.setSkin(SpineHouse.skinHouse1);
+                            break;
+                        case "house2":
+                            house.skeleton.setSkin(SpineHouse.skinHouse2);
+                            break;
+                    }
+                    pathHelper.addRect(house.getCollisionBoxLeft(), house.getCollisionBoxBottom(), house.bboxWidth, house.bboxHeight);
                 }
             }
         });

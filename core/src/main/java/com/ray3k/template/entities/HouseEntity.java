@@ -1,31 +1,27 @@
 package com.ray3k.template.entities;
 
 import com.badlogic.gdx.graphics.Color;
-import com.badlogic.gdx.math.Polygon;
-import com.dongbat.jbump.CollisionFilter;
 import com.dongbat.jbump.Collisions;
-import com.dongbat.jbump.Item;
-import com.dongbat.jbump.Response;
 import com.dongbat.jbump.Response.Result;
 import com.ray3k.template.*;
-import com.ray3k.template.screens.*;
 
 import static com.ray3k.template.Core.*;
+import static com.ray3k.template.Resources.SpineHouse.*;
 import static com.ray3k.template.Resources.Values.*;
+import static com.ray3k.template.screens.GameScreen.*;
 
-public class DebugShapeEntity extends Entity {
-    private Polygon polygon;
-    
-    public DebugShapeEntity(Polygon polygon) {
-        this.polygon = polygon;
-        depth = GameScreen.DEBUG_DEPTH;
-    }
-    
+public class HouseEntity extends Entity {
     @Override
     public void create() {
-        var rectangle = polygon.getBoundingRectangle();
-        setPosition(rectangle.x, rectangle.y);
-        setCollisionBox(0, 0, rectangle.width, rectangle.height, Core.nullCollisionFilter);
+        setSkeletonData(skeletonData, animationData);
+        animationState.setAnimation(0, animationAlive, false);
+        skeleton.setScale(.5f, .5f);
+        depth = ACTOR_DEPTH  + y * .1f;
+        
+        animationState.apply(skeleton);
+        skeleton.updateWorldTransform();
+        skeletonBounds.update(skeleton, true);
+        setCollisionBox(skeleton.findSlot("bbox"), skeletonBounds, Core.nullCollisionFilter);
     }
     
     @Override
@@ -42,7 +38,8 @@ public class DebugShapeEntity extends Entity {
     public void draw(float delta) {
         if (debugWalkable) {
             JamGame.shapeDrawer.setColor(Color.RED);
-            JamGame.shapeDrawer.polygon(polygon.getTransformedVertices());
+            var rect = world.getRect(item);
+            shapeDrawer.rectangle(rect.x, rect.y, rect.w, rect.h);
         }
         if (debugJbump) {
             JamGame.shapeDrawer.setColor(Color.BLUE);

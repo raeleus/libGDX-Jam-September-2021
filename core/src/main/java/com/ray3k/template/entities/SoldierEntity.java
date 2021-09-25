@@ -39,7 +39,8 @@ public class SoldierEntity extends Entity {
         skeleton.setScale(.25f, .25f);
         depth = GameScreen.ACTOR_DEPTH;
         
-        animationState.apply(skeleton);skeleton.updateWorldTransform();
+        animationState.apply(skeleton);
+        skeleton.updateWorldTransform();
         skeletonBounds.update(skeleton, true);
         setCollisionBox(skeleton.findSlot("bbox"), skeletonBounds, soldierCollisionFilter);
     
@@ -194,7 +195,7 @@ public class SoldierEntity extends Entity {
     public static class SoldierCollisionFilter implements CollisionFilter {
         @Override
         public Response filter(Item item, Item other) {
-            if (other.userData instanceof DebugShapeEntity) return Response.slide;
+            if (other.userData instanceof WallEntity) return Response.slide;
             if (other.userData instanceof SoldierEntity) {
                 var soldier = (SoldierEntity) item.userData;
                 var otherSoldier = (SoldierEntity) other.userData;

@@ -1,6 +1,6 @@
 {
 "skeleton": {
-	"hash": "TYrI+1i4CzY",
+	"hash": "/e8BzDpSQQM",
 	"spine": "4.0.37",
 	"x": -56.57,
 	"y": -9.99,
@@ -13,9 +13,22 @@
 	{ "name": "root" }
 ],
 "slots": [
-	{ "name": "house", "bone": "root", "attachment": "house-destroyed" }
+	{ "name": "house", "bone": "root", "attachment": "house-destroyed" },
+	{ "name": "bbox", "bone": "root", "attachment": "bbox" }
 ],
 "skins": [
+	{
+		"name": "default",
+		"attachments": {
+			"bbox": {
+				"bbox": {
+					"type": "boundingbox",
+					"vertexCount": 4,
+					"vertices": [ -26.88, 16.55, -26.88, -11.8, 28.33, -11.8, 27.58, 16.55 ]
+				}
+			}
+		}
+	},
 	{
 		"name": "house-1",
 		"attachments": {
@@ -42,6 +55,17 @@
 				"attachment": [
 					{ "name": "house" }
 				]
+			}
+		},
+		"deform": {
+			"default": {
+				"bbox": {
+					"bbox": [
+						{
+							"vertices": [ -25.36407, -2.23801, -28.34802, 8.20604, 26.10999, 9.69801, 25.36395, -1.49202 ]
+						}
+					]
+				}
 			}
 		}
 	},
