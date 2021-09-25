@@ -10,12 +10,12 @@ import com.badlogic.gdx.scenes.scene2d.ui.ScrollPane;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.badlogic.gdx.scenes.scene2d.ui.Slider;
 import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
+import com.badlogic.gdx.scenes.scene2d.ui.TextField;
 import com.badlogic.gdx.scenes.scene2d.ui.TextTooltip;
 import com.badlogic.gdx.scenes.scene2d.ui.Window;
 import com.esotericsoftware.spine.Animation;
 import com.esotericsoftware.spine.AnimationStateData;
 import com.esotericsoftware.spine.SkeletonData;
-import java.lang.String;
 
 public class Resources {
     public static TextureAtlas textures_textures;
@@ -216,7 +216,9 @@ public class Resources {
         SkinSkinStyles.lDefault = skin_skin.get("default", Label.LabelStyle.class);
         SkinSkinStyles.spDefault = skin_skin.get("default", ScrollPane.ScrollPaneStyle.class);
         SkinSkinStyles.sDefaultHorizontal = skin_skin.get("default-horizontal", Slider.SliderStyle.class);
+        SkinSkinStyles.tbToggle = skin_skin.get("toggle", TextButton.TextButtonStyle.class);
         SkinSkinStyles.tbDefault = skin_skin.get("default", TextButton.TextButtonStyle.class);
+        SkinSkinStyles.tfDefault = skin_skin.get("default", TextField.TextFieldStyle.class);
         SkinSkinStyles.ttDefault = skin_skin.get("default", TextTooltip.TextTooltipStyle.class);
         SkinSkinStyles.wDefault = skin_skin.get("default", Window.WindowStyle.class);
         sfx_assault = assetManager.get("sfx/assault.mp3");
@@ -527,7 +529,11 @@ public class Resources {
 
         public static Slider.SliderStyle sDefaultHorizontal;
 
+        public static TextButton.TextButtonStyle tbToggle;
+
         public static TextButton.TextButtonStyle tbDefault;
+
+        public static TextField.TextFieldStyle tfDefault;
 
         public static TextTooltip.TextTooltipStyle ttDefault;
 
@@ -535,19 +541,11 @@ public class Resources {
     }
 
     public static class Values {
-        public static boolean debugging = true;
+        public static boolean debugging = false;
 
-        public static float jumpVelocity = 10.0f;
+        public static Range soldierMoveSpeedRange = new Range(0.0f, 100.0f);
 
-        public static String name = "Raeleus";
-
-        public static boolean godMode = true;
-
-        public static int id = 10;
-
-        public static Range speedLimitRange = new Range(0.0f, 10.0f);
-
-        public static float speedLimit = 5.0f;
+        public static float soldierMoveSpeed = 50.0f;
     }
 
     public static class Range {

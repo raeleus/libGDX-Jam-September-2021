@@ -4,7 +4,6 @@ import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.utils.FloatArray;
 import com.dongbat.jbump.Collisions;
 import com.dongbat.jbump.Response.Result;
-import com.ray3k.template.Resources.*;
 import com.ray3k.template.screens.*;
 import space.earlygrey.shapedrawer.JoinType;
 
@@ -16,6 +15,8 @@ import static com.ray3k.template.screens.GameScreen.*;
 public class SoldierEntity extends Entity {
     private static final FloatArray floatArray = new FloatArray();
     private FloatArray movePath;
+    private float targetX;
+    private float targetY;
     
     @Override
     public void create() {
@@ -34,7 +35,9 @@ public class SoldierEntity extends Entity {
     @Override
     public void act(float delta) {
         if (gameScreen.isBindingJustPressed(Binding.MOVE)) {
-            gameScreen.pathHelper.findPath(x, y, gameScreen.mouseX, gameScreen.mouseY, 1, floatArray);
+            targetX = gameScreen.mouseX;
+            targetY = gameScreen.mouseY;
+            gameScreen.pathHelper.findPath(x, y, targetX, targetY, 1, floatArray);
             
             if (movePath == null) movePath = new FloatArray();
             movePath.clear();
@@ -49,8 +52,9 @@ public class SoldierEntity extends Entity {
             }
         }
         
-        if (movePath != null && movePath.size > 0) {
-        
+        if (movePath != null && movePath.size > 1) {
+            moveTowardsTarget(soldierMoveSpeed, movePath.get(0), movePath.get(1));
+            if (!moveTargetActivated) movePath.removeRange(0, 1);
         }
     }
     

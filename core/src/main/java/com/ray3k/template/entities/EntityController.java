@@ -1,5 +1,6 @@
 package com.ray3k.template.entities;
 
+import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.utils.Array;
 import com.badlogic.gdx.utils.Disposable;
 import com.dongbat.jbump.Rect;
@@ -47,11 +48,26 @@ public class EntityController implements Disposable {
         
         //simulate physics and call act methods
         for (Entity entity : sortedEntities) {
+            float startX = entity.x;
+            float startY = entity.y;
+            
+            if (entity.moveTargetActivated) {
+                entity.moveTowards(entity.moveTargetSpeed, entity.moveTargetX, entity.moveTargetY, delta);
+            }
+            
             entity.deltaX += entity.gravityX * delta;
             entity.deltaY += entity.gravityY * delta;
             
             entity.x += entity.deltaX * delta;
             entity.y += entity.deltaY * delta;
+            
+            if (entity.moveTargetActivated) {
+                if (startX < entity.moveTargetX && entity.x > entity.moveTargetX || 
+                        startX > entity.moveTargetX && entity.x < entity.moveTargetX) entity.x = entity.moveTargetX;
+                if (startY < entity.moveTargetY && entity.y > entity.moveTargetY ||
+                        startY > entity.moveTargetY && entity.y < entity.moveTargetY) entity.y = entity.moveTargetY;
+                if (MathUtils.isEqual(entity.x, entity.moveTargetX) && MathUtils.isEqual(entity.y,entity.moveTargetY)) entity.moveTargetActivated = false;
+            }
             
             if (entity.skeleton != null) {
                 entity.skeleton.setPosition(entity.x, entity.y);

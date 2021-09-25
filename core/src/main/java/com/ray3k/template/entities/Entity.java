@@ -1,6 +1,7 @@
 package com.ray3k.template.entities;
 
 import com.badlogic.gdx.graphics.Color;
+import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.math.Vector2;
 import com.dongbat.jbump.CollisionFilter;
 import com.dongbat.jbump.Collisions;
@@ -21,6 +22,10 @@ public abstract class Entity {
     public CollisionFilter collisionFilter;
     public float x;
     public float y;
+    public float moveTargetX;
+    public float moveTargetY;
+    public float moveTargetSpeed;
+    public boolean moveTargetActivated;
     public float bboxX;
     public float bboxY;
     public float bboxWidth;
@@ -70,6 +75,19 @@ public abstract class Entity {
         temp1.set(x, y);
         temp1.sub(this.x, this.y);
         setMotion(Math.min(speed, temp1.len() / delta), temp1.angleDeg());
+    }
+    
+    public boolean moveTowardsTarget(float speed, float targetX, float targetY) {
+        moveTargetSpeed = speed;
+        moveTargetX = targetX;
+        moveTargetY = targetY;
+        moveTargetActivated = !MathUtils.isEqual(x, moveTargetX) || !MathUtils.isEqual(y, moveTargetY);
+        if (!moveTargetActivated) setSpeed(0);
+        return moveTargetActivated;
+    }
+    
+    public void moveTowardsTarget(boolean activated) {
+        moveTargetActivated = activated;
     }
     
     public void setPosition(float x, float y) {
