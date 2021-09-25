@@ -1,6 +1,7 @@
 package com.ray3k.template.entities;
 
 import com.badlogic.gdx.graphics.Color;
+import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.utils.Array;
 import com.badlogic.gdx.utils.FloatArray;
 import com.dongbat.jbump.CollisionFilter;
@@ -28,6 +29,7 @@ public class SoldierEntity extends Entity {
     public int team;
     public SoldierEntity parent;
     public Array<SoldierEntity> children = new Array<>();
+    private static final Vector2 temp = new Vector2();
     
     @Override
     public void create() {
@@ -173,7 +175,20 @@ public class SoldierEntity extends Entity {
     
     @Override
     public void collision(Collisions collisions) {
+        for (int i = 0; i < collisions.size(); i++) {
+            var collision = collisions.get(i);
     
+            if (collision.other.userData instanceof SoldierEntity) {
+                var otherSoldier = (SoldierEntity) collision.other.userData;
+                if (parent != null) {
+                    temp.set(x, y);
+                    temp.sub(otherSoldier.x, otherSoldier.y);
+                    temp.setLength(1);
+                    x += temp.x;
+                    y += temp.y;
+                }
+            }
+        }
     }
     
     public static class SoldierCollisionFilter implements CollisionFilter {
@@ -185,7 +200,7 @@ public class SoldierEntity extends Entity {
                 var otherSoldier = (SoldierEntity) other.userData;
                 if (soldier.parent != null && soldier.parent == otherSoldier) {
                     return Response.slide;
-                } else return null;
+                } else return Response.cross;
             }
             return null;
         }
