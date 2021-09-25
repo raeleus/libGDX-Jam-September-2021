@@ -158,7 +158,7 @@ public class EnemyEntity extends Entity {
     public static class EnemyCollisionFilter implements CollisionFilter {
         @Override
         public Response filter(Item item, Item other) {
-            if (other.userData instanceof WallEntity) return Response.slide;
+            if (other.userData instanceof WallEntity) return Response.bounce;
             if (other.userData instanceof EnemyEntity) return Response.cross;
             if (other.userData instanceof  SoldierEntity) return Response.cross;
             return null;

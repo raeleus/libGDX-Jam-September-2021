@@ -249,12 +249,12 @@ public class SoldierEntity extends Entity {
     public static class SoldierCollisionFilter implements CollisionFilter {
         @Override
         public Response filter(Item item, Item other) {
-            if (other.userData instanceof WallEntity) return Response.slide;
+            if (other.userData instanceof WallEntity) return Response.bounce;
             if (other.userData instanceof SoldierEntity) {
                 var soldier = (SoldierEntity) item.userData;
                 var otherSoldier = (SoldierEntity) other.userData;
                 if (soldier.parent != null && soldier.parent == otherSoldier) {
-                    return Response.slide;
+                    return Response.bounce;
                 } else return Response.cross;
             }
             return null;
