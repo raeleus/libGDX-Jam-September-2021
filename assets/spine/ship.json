@@ -1,11 +1,11 @@
 {
 "skeleton": {
-	"hash": "LdP23bw7YN4",
+	"hash": "A2rXJiD7jTY",
 	"spine": "4.0.37",
-	"x": -100.9,
-	"y": -75.23,
-	"width": 202,
-	"height": 142,
+	"x": -250.62,
+	"y": -70.75,
+	"width": 274.14,
+	"height": 142.8,
 	"images": "",
 	"audio": ""
 },
@@ -13,19 +13,139 @@
 	{ "name": "root" }
 ],
 "slots": [
-	{ "name": "game/ship", "bone": "root", "attachment": "game/ship" }
+	{ "name": "game/ship", "bone": "root", "attachment": "game/ship" },
+	{ "name": "game/thruster-01", "bone": "root", "attachment": "game/thruster-07" },
+	{ "name": "game/thruster-small-01", "bone": "root", "attachment": "game/thruster-small-07" },
+	{ "name": "game/thruster-small-02", "bone": "root", "attachment": "game/thruster-small-07" }
 ],
 "skins": [
 	{
 		"name": "default",
 		"attachments": {
 			"game/ship": {
-				"game/ship": { "x": 0.1, "y": -4.23, "width": 202, "height": 142 }
+				"game/ship": { "x": -77.48, "y": 0.25, "width": 202, "height": 142 }
+			},
+			"game/thruster-01": {
+				"game/thruster-01": { "x": -214.12, "y": -1.36, "width": 73, "height": 41 },
+				"game/thruster-02": { "x": -214.12, "y": -1.36, "width": 73, "height": 41 },
+				"game/thruster-03": { "x": -214.12, "y": -1.36, "width": 73, "height": 41 },
+				"game/thruster-04": { "x": -214.12, "y": -1.36, "width": 73, "height": 41 },
+				"game/thruster-05": { "x": -214.12, "y": -1.36, "width": 73, "height": 41 },
+				"game/thruster-06": { "x": -214.12, "y": -1.36, "width": 73, "height": 41 },
+				"game/thruster-07": { "path": "game/thruster-06", "x": -214.12, "y": -1.36, "width": 73, "height": 41 }
+			},
+			"game/thruster-small-01": {
+				"game/thruster-small-01": { "x": -129.08, "y": 62.05, "width": 73, "height": 20 },
+				"game/thruster-small-02": { "path": "game/thruster-small-01", "x": -129.08, "y": 62.05, "width": 73, "height": 20 },
+				"game/thruster-small-03": { "path": "game/thruster-small-02", "x": -129.08, "y": 62.05, "width": 73, "height": 20 },
+				"game/thruster-small-04": { "path": "game/thruster-small-03", "x": -129.08, "y": 62.05, "width": 73, "height": 20 },
+				"game/thruster-small-05": { "path": "game/thruster-small-04", "x": -129.08, "y": 62.05, "width": 73, "height": 20 },
+				"game/thruster-small-06": { "path": "game/thruster-small-05", "x": -129.08, "y": 62.05, "width": 73, "height": 20 },
+				"game/thruster-small-07": { "path": "game/thruster-small-06", "x": -129.08, "y": 62.05, "width": 73, "height": 20 }
+			},
+			"game/thruster-small-02": {
+				"game/thruster-small-01": { "x": -128.33, "y": -60.29, "width": 73, "height": 20 },
+				"game/thruster-small-02": { "path": "game/thruster-small-01", "x": -128.33, "y": -60.29, "width": 73, "height": 20 },
+				"game/thruster-small-03": { "path": "game/thruster-small-02", "x": -128.33, "y": -60.29, "width": 73, "height": 20 },
+				"game/thruster-small-04": { "path": "game/thruster-small-03", "x": -128.33, "y": -60.29, "width": 73, "height": 20 },
+				"game/thruster-small-05": { "path": "game/thruster-small-04", "x": -128.33, "y": -60.29, "width": 73, "height": 20 },
+				"game/thruster-small-06": { "path": "game/thruster-small-05", "x": -128.33, "y": -60.29, "width": 73, "height": 20 },
+				"game/thruster-small-07": { "path": "game/thruster-small-06", "x": -128.33, "y": -60.29, "width": 73, "height": 20 }
 			}
 		}
 	}
 ],
 "animations": {
-	"animation": {}
+	"animation": {
+		"slots": {
+			"game/ship": {
+				"rgba": [
+					{ "color": "00000000" },
+					{ "time": 1, "color": "000000ff" },
+					{ "time": 6, "color": "ffffffff" }
+				]
+			},
+			"game/thruster-01": {
+				"rgba": [
+					{ "color": "00000000" },
+					{ "time": 1, "color": "000000ff" },
+					{ "time": 6, "color": "ffffffff" }
+				]
+			},
+			"game/thruster-small-01": {
+				"rgba": [
+					{ "color": "00000000" },
+					{ "time": 1, "color": "000000ff" },
+					{ "time": 6, "color": "ffffffff" }
+				]
+			},
+			"game/thruster-small-02": {
+				"rgba": [
+					{ "color": "00000000" },
+					{ "time": 1, "color": "000000ff" },
+					{ "time": 6, "color": "ffffffff" }
+				]
+			}
+		}
+	},
+	"no-thruster": {
+		"slots": {
+			"game/thruster-01": {
+				"attachment": [
+					{ "name": null }
+				]
+			},
+			"game/thruster-small-01": {
+				"attachment": [
+					{ "name": null }
+				]
+			},
+			"game/thruster-small-02": {
+				"attachment": [
+					{ "name": null }
+				]
+			}
+		}
+	},
+	"thruster": {
+		"slots": {
+			"game/thruster-01": {
+				"attachment": [
+					{ "name": "game/thruster-01" },
+					{ "time": 0.0667, "name": "game/thruster-02" },
+					{ "time": 0.1, "name": "game/thruster-03" },
+					{ "time": 0.1667, "name": "game/thruster-04" },
+					{ "time": 0.2, "name": "game/thruster-05" },
+					{ "time": 0.2667, "name": "game/thruster-06" },
+					{ "time": 0.3, "name": "game/thruster-07" },
+					{ "time": 0.3667, "name": "game/thruster-01" }
+				]
+			},
+			"game/thruster-small-01": {
+				"attachment": [
+					{ "name": "game/thruster-small-01" },
+					{ "time": 0.0667, "name": "game/thruster-small-02" },
+					{ "time": 0.1, "name": "game/thruster-small-03" },
+					{ "time": 0.1667, "name": "game/thruster-small-04" },
+					{ "time": 0.2, "name": "game/thruster-small-05" },
+					{ "time": 0.2667, "name": "game/thruster-small-06" },
+					{ "time": 0.3, "name": "game/thruster-small-07" },
+					{ "time": 0.3667, "name": "game/thruster-small-01" }
+				]
+			},
+			"game/thruster-small-02": {
+				"attachment": [
+					{ "name": "game/thruster-small-04" },
+					{ "time": 0.0667, "name": "game/thruster-small-05" },
+					{ "time": 0.1, "name": "game/thruster-small-06" },
+					{ "time": 0.1667, "name": "game/thruster-small-07" },
+					{ "time": 0.2, "name": "game/thruster-small-01" },
+					{ "time": 0.2667, "name": "game/thruster-small-02" },
+					{ "time": 0.3, "name": "game/thruster-small-03" },
+					{ "time": 0.3667, "name": "game/thruster-small-04" }
+				]
+			}
+		}
+	}
 }
 }

@@ -146,6 +146,7 @@ public class Resources {
         SpineHouse.animationData = assetManager.get("spine/house.json-animation");
         SpineHouse.animationAlive = SpineHouse.skeletonData.findAnimation("alive");
         SpineHouse.animationDestroyed = SpineHouse.skeletonData.findAnimation("destroyed");
+        SpineHouse.skinDefault = SpineHouse.skeletonData.findSkin("default");
         SpineHouse.skinHouse1 = SpineHouse.skeletonData.findSkin("house-1");
         SpineHouse.skinHouse2 = SpineHouse.skeletonData.findSkin("house-2");
         SpineLibgdx.skeletonData = assetManager.get("spine/libgdx.json");
@@ -174,6 +175,8 @@ public class Resources {
         SpineShip.skeletonData = assetManager.get("spine/ship.json");
         SpineShip.animationData = assetManager.get("spine/ship.json-animation");
         SpineShip.animationAnimation = SpineShip.skeletonData.findAnimation("animation");
+        SpineShip.animationNoThruster = SpineShip.skeletonData.findAnimation("no-thruster");
+        SpineShip.animationThruster = SpineShip.skeletonData.findAnimation("thruster");
         SpineShip.skinDefault = SpineShip.skeletonData.findSkin("default");
         SpineSmoke.skeletonData = assetManager.get("spine/smoke.json");
         SpineSmoke.animationData = assetManager.get("spine/smoke.json-animation");
@@ -377,6 +380,8 @@ public class Resources {
 
         public static Animation animationDestroyed;
 
+        public static com.esotericsoftware.spine.Skin skinDefault;
+
         public static com.esotericsoftware.spine.Skin skinHouse1;
 
         public static com.esotericsoftware.spine.Skin skinHouse2;
@@ -444,6 +449,10 @@ public class Resources {
         public static AnimationStateData animationData;
 
         public static Animation animationAnimation;
+
+        public static Animation animationNoThruster;
+
+        public static Animation animationThruster;
 
         public static com.esotericsoftware.spine.Skin skinDefault;
     }
@@ -574,6 +583,10 @@ public class Resources {
         public static float soldierMoveSpeed = 100.0f;
 
         public static int soldierSquadSize = 6;
+
+        public static Range shipSpeedRange = new Range(0.0f, 1000.0f);
+
+        public static float shipSpeed = 50.0f;
     }
 
     public static class Range {

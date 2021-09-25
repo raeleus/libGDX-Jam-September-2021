@@ -11,6 +11,7 @@ import com.badlogic.gdx.graphics.g2d.TextureAtlas.AtlasSprite;
 import com.badlogic.gdx.math.*;
 import com.badlogic.gdx.scenes.scene2d.Action;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
+import com.badlogic.gdx.scenes.scene2d.InputEvent.Type;
 import com.badlogic.gdx.scenes.scene2d.InputListener;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.actions.Actions;
@@ -44,7 +45,8 @@ public class GameScreen extends JamScreen {
     private Label fpsLabel;
     public PathHelper pathHelper;
     public static final int DECAL_DEPTH = 1000000;
-    public static final int ACTOR_DEPTH = 10;
+    public static final int ACTOR_DEPTH = 100;
+    public static final int SHIP_DEPTH = 10;
     public static final int DEBUG_DEPTH = -1000;
     public static final float[] ZOOMS = {1f, .9f, .7f, .6f, .5f};
     public int zoomIndex = 0;
@@ -59,14 +61,11 @@ public class GameScreen extends JamScreen {
     private static final Vector2 temp = new Vector2();
     public Array<SoldierEntity> soldiers = new Array<>();
     public Array<HouseEntity> houses = new Array<>();
+    public boolean playedSiren;
     
     @Override
     public void show() {
         super.show();
-    
-        bgm_game.setLooping(true);
-        bgm_game.setVolume(bgm);
-        bgm_game.play();
         
         gameScreen = this;
         BG_COLOR.set(Color.PINK);
@@ -262,6 +261,14 @@ public class GameScreen extends JamScreen {
                             break;
                     }
                     pathHelper.addRect(house.getCollisionBoxLeft(), house.getCollisionBoxBottom(), house.bboxWidth, house.bboxHeight);
+                } else if (name.equals("zombie")) {
+                    var spawner = new EnemyShipSpawner();
+                    spawner.setPosition(x, y);
+                    spawner.delay = valuesMap.get("delay").asFloat();
+                    spawner.type = EnemyShipSpawner.class;//todo:change this;
+                    spawner.targetX = nodes.first().x;
+                    spawner.targetY = nodes.first().y;
+                    entityController.add(spawner);
                 }
             }
         });

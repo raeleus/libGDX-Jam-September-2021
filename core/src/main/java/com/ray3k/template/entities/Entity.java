@@ -81,7 +81,7 @@ public abstract class Entity {
         moveTargetSpeed = speed;
         moveTargetX = targetX;
         moveTargetY = targetY;
-        moveTargetActivated = !MathUtils.isEqual(x, moveTargetX) && !MathUtils.isEqual(y, moveTargetY);
+        moveTargetActivated = !MathUtils.isEqual(x, moveTargetX) || !MathUtils.isEqual(y, moveTargetY);
         if (!moveTargetActivated) setSpeed(0);
         return moveTargetActivated;
     }
