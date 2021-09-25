@@ -10,6 +10,7 @@ import com.dongbat.jbump.Item;
 import com.dongbat.jbump.Response;
 import com.dongbat.jbump.Response.Result;
 import com.esotericsoftware.spine.Animation;
+import com.ray3k.template.*;
 import com.ray3k.template.screens.*;
 import space.earlygrey.shapedrawer.JoinType;
 
@@ -108,6 +109,7 @@ public class SoldierEntity extends Entity {
                     if (movePath == null) movePath = new FloatArray();
                     movePath.clear();
                     movePath.addAll(floatArray);
+                    movePath.removeRange(0, 1);
         
                     var arrow = new MoveArrowEntity(gameScreen.mouseX, gameScreen.mouseY);
                     entityController.add(arrow);
@@ -145,7 +147,11 @@ public class SoldierEntity extends Entity {
         
         if (movePath != null && movePath.size > 1) {
             moveTowardsTarget(soldierMoveSpeed, movePath.get(0), movePath.get(1));
-            if (!moveTargetActivated) movePath.removeRange(0, 1);
+            
+            if (Utils.pointDistance(x, y, movePath.get(0), movePath.get(1)) < .01f) {
+                movePath.removeRange(0, 1);
+                if (movePath.size == 0) setSpeed(0);
+            }
         }
         
         depth = ACTOR_DEPTH + y * .1f;

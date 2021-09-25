@@ -4,6 +4,7 @@ import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.utils.Array;
 import com.badlogic.gdx.utils.Disposable;
 import com.dongbat.jbump.Rect;
+import com.ray3k.template.*;
 
 import java.util.Comparator;
 
@@ -62,11 +63,7 @@ public class EntityController implements Disposable {
             entity.y += entity.deltaY * delta;
             
             if (entity.moveTargetActivated) {
-                if (startX < entity.moveTargetX && entity.x > entity.moveTargetX || 
-                        startX > entity.moveTargetX && entity.x < entity.moveTargetX) entity.x = entity.moveTargetX;
-                if (startY < entity.moveTargetY && entity.y > entity.moveTargetY ||
-                        startY > entity.moveTargetY && entity.y < entity.moveTargetY) entity.y = entity.moveTargetY;
-                if (MathUtils.isEqual(entity.x, entity.moveTargetX) && MathUtils.isEqual(entity.y,entity.moveTargetY)) entity.moveTargetActivated = false;
+                if (MathUtils.isZero(Utils.pointDistance(entity.x, entity.y, entity.moveTargetX, entity.moveTargetY), 1)) entity.moveTargetActivated = false;
             }
             
             if (entity.skeleton != null) {

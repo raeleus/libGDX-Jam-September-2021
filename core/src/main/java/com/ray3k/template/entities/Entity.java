@@ -72,15 +72,24 @@ public abstract class Entity {
     }
     
     public void moveTowards(float speed, float x, float y, float delta) {
-        temp1.set(x, y);
-        temp1.sub(this.x, this.y);
-        setMotion(Math.min(speed, temp1.len() / delta), temp1.angleDeg());
+        if (MathUtils.isEqual(this.x, x)) this.x = x;
+        if (MathUtils.isEqual(this.y, y)) this.y = y;
+        
+        if (MathUtils.isEqual(this.x, x) && MathUtils.isEqual(this.y, y)) {
+            deltaX = 0;
+            deltaY = 0;
+        } else {
+            temp1.set(x, y);
+            temp1.sub(this.x, this.y);
+            setMotion(Math.min(speed, temp1.len() / delta), temp1.angleDeg());
+        }
     }
     
     public boolean moveTowardsTarget(float speed, float targetX, float targetY) {
         moveTargetSpeed = speed;
         moveTargetX = targetX;
         moveTargetY = targetY;
+        
         moveTargetActivated = !MathUtils.isEqual(x, moveTargetX) || !MathUtils.isEqual(y, moveTargetY);
         if (!moveTargetActivated) setSpeed(0);
         return moveTargetActivated;
