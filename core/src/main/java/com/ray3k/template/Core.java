@@ -3,6 +3,7 @@ package com.ray3k.template;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.Input.Buttons;
+import com.badlogic.gdx.Input.Keys;
 import com.badlogic.gdx.Preferences;
 import com.badlogic.gdx.assets.loaders.SkinLoader.SkinParameter;
 import com.badlogic.gdx.audio.Music;
@@ -38,7 +39,7 @@ public class Core extends JamGame {
     public static CollisionFilter nullCollisionFilter;
     public static CrossPlatformWorker crossPlatformWorker;
     public enum Binding {
-        SELECT, MOVE, ZOOM_IN, ZOOM_OUT
+        MOVE, ZOOM_IN, ZOOM_OUT, TEAM_1, TEAM_2, TEAM_3, TEAM_4, DESELECT
     }
     public static float bgm;
     public static float sfx;
@@ -121,9 +122,13 @@ public class Core extends JamGame {
     }
     
     public void setDefaultBindings() {
-        JamScreen.addButtonBinding(Binding.SELECT, Buttons.LEFT);
         JamScreen.addButtonBinding(Binding.MOVE, Buttons.RIGHT);
         JamScreen.addScrollBinding(Binding.ZOOM_IN, JamScreen.SCROLL_UP);
         JamScreen.addScrollBinding(Binding.ZOOM_OUT, JamScreen.SCROLL_DOWN);
+        JamScreen.addKeyBinding(Binding.TEAM_1, Keys.NUM_1);
+        JamScreen.addKeyBinding(Binding.TEAM_2, Keys.NUM_2);
+        JamScreen.addKeyBinding(Binding.TEAM_3, Keys.NUM_3);
+        JamScreen.addKeyBinding(Binding.TEAM_4, Keys.NUM_4);
+        JamScreen.addKeyBinding(Binding.DESELECT, Keys.SPACE);
     }
 }

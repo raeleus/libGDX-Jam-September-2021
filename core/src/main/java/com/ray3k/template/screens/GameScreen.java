@@ -1,6 +1,7 @@
 package com.ray3k.template.screens;
 
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.Input.Buttons;
 import com.badlogic.gdx.Input.Keys;
 import com.badlogic.gdx.InputMultiplexer;
 import com.badlogic.gdx.graphics.Color;
@@ -16,6 +17,7 @@ import com.badlogic.gdx.scenes.scene2d.actions.Actions;
 import com.badlogic.gdx.scenes.scene2d.actions.TemporalAction;
 import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
+import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.scenes.scene2d.utils.DragListener;
 import com.badlogic.gdx.utils.Align;
 import com.badlogic.gdx.utils.Array;
@@ -27,7 +29,6 @@ import com.dongbat.walkable.PathHelper;
 import com.ray3k.template.*;
 import com.ray3k.template.OgmoReader.*;
 import com.ray3k.template.entities.*;
-import com.ray3k.template.screens.DialogDebug.*;
 import com.ray3k.template.screens.DialogPause.*;
 import space.earlygrey.shapedrawer.ShapeDrawer;
 
@@ -54,7 +55,8 @@ public class GameScreen extends JamScreen {
     public float newCameraY;
     public Action zoomAction;
     public Action panAction;
-    private static final Vector3 vector3Temp = new Vector3();
+    public SoldierEntity selectedSoldier;
+    public boolean justTapped;
     
     @Override
     public void show() {
@@ -127,6 +129,13 @@ public class GameScreen extends JamScreen {
         viewport = new FitViewport(1024, 576, camera);
         camera.position.set(viewport.getWorldWidth() / 2, viewport.getWorldHeight() / 2, 0);
         
+        stage.addListener(new ClickListener(Buttons.LEFT) {
+            @Override
+            public void clicked(InputEvent event, float x, float y) {
+                justTapped = true;
+            }
+        });
+        
         stage.addListener(new DragListener() {
             float cameraXstart;
             float cameraYstart;
@@ -134,7 +143,7 @@ public class GameScreen extends JamScreen {
             float yStart;
             float cameraXlast;
             float cameraYlast;
-    
+
             @Override
             public void dragStart(InputEvent event, float x, float y, int pointer) {
                 xStart = x;
@@ -143,26 +152,26 @@ public class GameScreen extends JamScreen {
                 cameraYstart = camera.position.y;
                 stage.getRoot().removeAction(panAction);
             }
-    
+
             @Override
             public void drag(InputEvent event, float x, float y, int pointer) {
                 cameraXlast = camera.position.x;
                 cameraYlast = camera.position.y;
                 camera.position.set(cameraXstart + (xStart - x) * camera.zoom, cameraYstart + (yStart - y) * camera.zoom, 0);
             }
-    
+
             @Override
             public void dragStop(InputEvent event, float x, float y, int pointer) {
                 float velocityX = MathUtils.clamp(camera.position.x - cameraXlast, -10, 10);
                 float velocityY = MathUtils.clamp(camera.position.y - cameraYlast, -10, 10);
-                
+
                 panAction = new Action() {
                     Vector2 vector2 = new Vector2(velocityX, velocityY);
                     @Override
                     public boolean act(float delta) {
                         camera.position.x += vector2.x;
                         camera.position.y += vector2.y;
-        
+
                         vector2.setLength(Utils.approach(vector2.len(), 0, 10f * delta));
                         if (MathUtils.isZero(vector2.len())) return true;
                         else return false;
@@ -250,6 +259,7 @@ public class GameScreen extends JamScreen {
             entityController.act(delta);
             vfxManager.update(delta);
         }
+        justTapped = false;
         stage.act(delta);
         
         fpsLabel.setText(Gdx.graphics.getFramesPerSecond());

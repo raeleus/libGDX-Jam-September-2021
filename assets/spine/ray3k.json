@@ -1,5 +1,5 @@
 {
-"skeleton": { "hash": "BjXuX9fTjrQ", "spine": "4.0.36", "width": 1024, "height": 576, "images": "", "audio": "" },
+"skeleton": { "hash": "BjXuX9fTjrQ", "spine": "4.0.37", "width": 1024, "height": 576, "images": "", "audio": "" },
 "bones": [
 	{ "name": "root" },
 	{ "name": "ring", "parent": "root", "length": 100.8, "x": 506.77, "y": 287.21, "scaleY": 0.62 },

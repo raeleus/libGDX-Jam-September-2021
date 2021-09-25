@@ -100,7 +100,14 @@ public class Resources {
         textures_textures = assetManager.get("textures/textures.atlas");
         SpineActor.skeletonData = assetManager.get("spine/actor.json");
         SpineActor.animationData = assetManager.get("spine/actor.json-animation");
-        SpineActor.animationFlag = SpineActor.skeletonData.findAnimation("flag");
+        SpineActor.animationFlagBlue = SpineActor.skeletonData.findAnimation("flag-blue");
+        SpineActor.animationFlagGreen = SpineActor.skeletonData.findAnimation("flag-green");
+        SpineActor.animationFlagOrange = SpineActor.skeletonData.findAnimation("flag-orange");
+        SpineActor.animationFlagPurple = SpineActor.skeletonData.findAnimation("flag-purple");
+        SpineActor.animationSelectedBlue = SpineActor.skeletonData.findAnimation("selected-blue");
+        SpineActor.animationSelectedGreen = SpineActor.skeletonData.findAnimation("selected-green");
+        SpineActor.animationSelectedOrange = SpineActor.skeletonData.findAnimation("selected-orange");
+        SpineActor.animationSelectedPurple = SpineActor.skeletonData.findAnimation("selected-purple");
         SpineActor.animationShoot = SpineActor.skeletonData.findAnimation("shoot");
         SpineActor.animationStand = SpineActor.skeletonData.findAnimation("stand");
         SpineActor.animationWalk = SpineActor.skeletonData.findAnimation("walk");
@@ -265,7 +272,21 @@ public class Resources {
 
         public static AnimationStateData animationData;
 
-        public static Animation animationFlag;
+        public static Animation animationFlagBlue;
+
+        public static Animation animationFlagGreen;
+
+        public static Animation animationFlagOrange;
+
+        public static Animation animationFlagPurple;
+
+        public static Animation animationSelectedBlue;
+
+        public static Animation animationSelectedGreen;
+
+        public static Animation animationSelectedOrange;
+
+        public static Animation animationSelectedPurple;
 
         public static Animation animationShoot;
 
@@ -545,9 +566,9 @@ public class Resources {
 
         public static boolean debugJbump = false;
 
-        public static Range soldierMoveSpeedRange = new Range(0.0f, 100.0f);
+        public static Range soldierMoveSpeedRange = new Range(0.0f, 1000.0f);
 
-        public static float soldierMoveSpeed = 50.0f;
+        public static float soldierMoveSpeed = 100.0f;
     }
 
     public static class Range {

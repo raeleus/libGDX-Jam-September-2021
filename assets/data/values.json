@@ -1,5 +1,5 @@
 {
   "debug walkable" : false,
   "debug jbump" : false,
-  "soldier move speed" : [0.0, 100.0, 50.0]
+  "soldier move speed" : [0.0, 1000.0, 100.0]
 }

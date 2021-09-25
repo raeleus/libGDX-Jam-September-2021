@@ -1,7 +1,7 @@
 {
 "skeleton": {
-	"hash": "P0r9HhnBvzI",
-	"spine": "4.0.36",
+	"hash": "u1PiSoj9g3s",
+	"spine": "4.0.37",
 	"x": -32,
 	"y": -20.5,
 	"width": 135.08,
@@ -30,11 +30,11 @@
 	{ "name": "game/shadow", "bone": "root", "attachment": "game/shadow" },
 	{ "name": "game/flag", "bone": "game/flag-pole", "attachment": "game/flag" },
 	{ "name": "game/flag-pole", "bone": "game/flag-pole", "attachment": "game/flag-pole" },
-	{ "name": "body", "bone": "body", "attachment": "body" },
-	{ "name": "head", "bone": "head", "attachment": "head" },
-	{ "name": "hand-right", "bone": "hand-right", "attachment": "hand-right" },
-	{ "name": "weapon", "bone": "hand-left", "attachment": "weapon" },
-	{ "name": "hand-left", "bone": "hand-left", "attachment": "hand-left" },
+	{ "name": "body", "bone": "body", "dark": "000000", "attachment": "body" },
+	{ "name": "head", "bone": "head", "dark": "000000", "attachment": "head" },
+	{ "name": "hand-right", "bone": "hand-right", "dark": "000000", "attachment": "hand-right" },
+	{ "name": "weapon", "bone": "hand-left", "dark": "000000", "attachment": "weapon" },
+	{ "name": "hand-left", "bone": "hand-left", "dark": "000000", "attachment": "hand-left" },
 	{ "name": "flash", "bone": "hand-left" },
 	{ "name": "projectile", "bone": "hand-left", "attachment": "projectile" },
 	{ "name": "splatter-right", "bone": "body", "attachment": "splatter-right" },
@@ -56,7 +56,7 @@
 				"game/flag": {
 					"type": "mesh",
 					"uvs": [ 1, 1, 0.84127, 1, 0.71899, 1, 0.55951, 1, 0.41066, 1, 0.2618, 1, 0.1289, 1, 0, 1, 0, 0, 0.11827, 0, 0.25117, 0, 0.40003, 0, 0.55419, 0, 0.70836, 0, 0.84658, 0, 1, 0 ],
-					"triangles": [ 7, 9, 6, 7, 8, 9, 14, 15, 0, 1, 14, 0, 2, 13, 14, 3, 13, 2, 1, 2, 14, 4, 11, 12, 3, 12, 13, 4, 12, 3, 5, 10, 11, 5, 11, 4, 6, 9, 10, 6, 10, 5 ],
+					"triangles": [ 7, 8, 9, 7, 9, 6, 1, 14, 0, 14, 15, 0, 1, 2, 14, 3, 13, 2, 2, 13, 14, 4, 12, 3, 3, 12, 13, 4, 11, 12, 5, 11, 4, 5, 10, 11, 6, 10, 5, 6, 9, 10 ],
 					"vertices": [ 6, 9, 49.26, -26.07, 1.0E-5, 10, 40.92, -26.07, 0.00964, 11, 32.58, -26.07, 0.00315, 12, 24.24, -26.07, 0.2738, 13, 15.9, -26.07, 0.23469, 14, 7.56, -26.07, 0.47871, 8, 7, 52.77, -25.93, 0.00111, 8, 44.43, -25.93, 0.00247, 9, 36.09, -25.93, 0.01305, 10, 27.75, -25.93, 0.05187, 11, 19.41, -25.93, 0.05376, 12, 11.07, -25.93, 0.37571, 13, 2.73, -25.93, 0.18973, 14, -5.61, -25.93, 0.31231, 9, 5, 59.3, -25.82, 1.3E-4, 7, 42.62, -25.82, 0.01346, 8, 34.28, -25.82, 0.02206, 9, 25.94, -25.82, 0.06648, 10, 17.6, -25.82, 0.14863, 11, 9.26, -25.82, 0.15351, 12, 0.92, -25.82, 0.36994, 13, -7.42, -25.82, 0.08939, 14, -15.76, -25.82, 0.13639, 9, 5, 46.06, -25.68, 0.01415, 7, 29.38, -25.68, 0.08428, 8, 21.04, -25.68, 0.1139, 9, 12.7, -25.68, 0.21674, 10, 4.36, -25.68, 0.22452, 11, -3.98, -25.68, 0.16725, 12, -12.32, -25.68, 0.14588, 13, -20.66, -25.68, 0.00911, 14, -29, -25.68, 0.02416, 8, 5, 33.71, -25.55, 0.08586, 7, 17.03, -25.55, 0.24238, 8, 8.69, -25.55, 0.23811, 9, 0.35, -25.55, 0.24384, 10, -7.99, -25.55, 0.10214, 11, -16.33, -25.55, 0.06085, 12, -24.67, -25.55, 0.02561, 14, -41.35, -25.55, 0.00121, 8, 5, 21.35, -25.42, 0.28876, 6, 13.01, -25.42, 0.00102, 7, 4.67, -25.42, 0.37256, 8, -3.67, -25.42, 0.20965, 9, -12.01, -25.42, 0.10226, 10, -20.35, -25.42, 0.01522, 11, -28.69, -25.42, 0.00967, 12, -37.03, -25.42, 8.7E-4, 7, 5, 10.32, -25.3, 0.58216, 6, 1.98, -25.3, 0.00346, 7, -6.36, -25.3, 0.29552, 8, -14.7, -25.3, 0.09648, 9, -23.04, -25.3, 0.02147, 10, -31.38, -25.3, 4.4E-4, 11, -39.72, -25.3, 4.7E-4, 1, 1, 115.56, -2.37, 1, 1, 1, 166.11, 4.43, 1, 7, 5, 9.98, 25.7, 0.3581, 6, 1.64, 25.7, 0.24706, 7, -6.7, 25.7, 0.27023, 8, -15.04, 25.7, 0.07044, 9, -23.38, 25.7, 0.04568, 10, -31.72, 25.7, 0.00801, 12, -48.4, 25.7, 4.8E-4, 8, 5, 21.01, 25.59, 0.12359, 6, 12.67, 25.59, 0.16103, 7, 4.33, 25.59, 0.30336, 8, -4.01, 25.59, 0.18287, 9, -12.35, 25.59, 0.1712, 10, -20.69, 25.59, 0.04809, 11, -29.03, 25.59, 5.1E-4, 12, -37.37, 25.59, 0.00935, 9, 5, 33.36, 25.46, 0.01449, 6, 25.02, 25.46, 0.03986, 7, 16.68, 25.46, 0.15075, 8, 8.34, 25.46, 0.18817, 9, 0, 25.46, 0.37488, 10, -8.34, 25.46, 0.15454, 11, -16.68, 25.46, 0.02133, 12, -25.02, 25.46, 0.05496, 13, -33.36, 25.46, 0.00103, 10, 5, 46.16, 25.32, 2.0E-5, 6, 37.82, 25.32, 0.00233, 7, 29.48, 25.32, 0.02977, 8, 21.14, 25.32, 0.05558, 9, 12.8, 25.32, 0.35152, 10, 4.46, 25.32, 0.23061, 11, -3.88, 25.32, 0.1063, 12, -12.22, 25.32, 0.19164, 13, -20.56, 25.32, 0.02745, 14, -28.9, 25.32, 0.00479, 8, 7, 42.28, 25.18, 0.00132, 8, 33.94, 25.18, 0.00408, 9, 25.6, 25.18, 0.15591, 10, 17.26, 25.18, 0.12265, 11, 8.92, 25.18, 0.12778, 12, 0.58, 25.18, 0.37678, 13, -7.76, 25.18, 0.14484, 14, -16.1, 25.18, 0.06663, 6, 9, 37.07, 25.06, 0.04683, 10, 28.73, 25.06, 0.02858, 11, 20.39, 25.06, 0.04156, 12, 12.05, 25.06, 0.3405, 13, 3.71, 25.06, 0.3, 14, -4.63, 25.06, 0.24254, 6, 9, 49.8, 24.93, 0.01193, 10, 41.46, 24.93, 0.00115, 11, 33.12, 24.93, 0.00204, 12, 24.78, 24.93, 0.22658, 13, 16.44, 24.93, 0.33594, 14, 8.1, 24.93, 0.42235 ],
 					"hull": 16,
 					"edges": [ 14, 16, 0, 30, 16, 18, 12, 14, 12, 18, 18, 20, 10, 12, 20, 10, 20, 22, 8, 10, 22, 8, 22, 24, 6, 8, 24, 6, 24, 26, 4, 6, 26, 4, 26, 28, 28, 30, 0, 2, 2, 4, 28, 2 ],
@@ -412,7 +412,14 @@
 	}
 ],
 "animations": {
-	"flag": {
+	"flag-blue": {
+		"slots": {
+			"game/flag": {
+				"rgba": [
+					{ "color": "0200ffff" }
+				]
+			}
+		},
 		"bones": {
 			"game/flag-pole2": {
 				"rotate": [
@@ -483,6 +490,408 @@
 					{ "time": 0.1, "value": -3.77 },
 					{ "time": 0.6, "value": 4.55 },
 					{ "time": 1, "value": -2.11 }
+				]
+			}
+		}
+	},
+	"flag-green": {
+		"slots": {
+			"game/flag": {
+				"rgba": [
+					{ "color": "00ff11ff" }
+				]
+			}
+		},
+		"bones": {
+			"game/flag-pole2": {
+				"rotate": [
+					{ "value": -2.11 },
+					{ "time": 0.4, "value": 4.55 },
+					{ "time": 0.9, "value": -3.77 },
+					{ "time": 1, "value": -2.11 }
+				]
+			},
+			"game/flag-pole3": {
+				"rotate": [
+					{ "value": -0.45 },
+					{ "time": 0.3, "value": 4.55 },
+					{ "time": 0.8, "value": -3.77 },
+					{ "time": 1, "value": -0.45 }
+				]
+			},
+			"game/flag-pole4": {
+				"rotate": [
+					{ "value": 1.22 },
+					{ "time": 0.2, "value": 4.55 },
+					{ "time": 0.7, "value": -3.77 },
+					{ "time": 1, "value": 1.22 }
+				]
+			},
+			"game/flag-pole5": {
+				"rotate": [
+					{ "value": 2.88 },
+					{ "time": 0.1, "value": 4.55 },
+					{ "time": 0.6, "value": -3.77 },
+					{ "time": 1, "value": 2.88 }
+				]
+			},
+			"game/flag-pole6": {
+				"rotate": [
+					{ "value": 4.55 },
+					{ "time": 0.5, "value": -3.77 },
+					{ "time": 1, "value": 4.55 }
+				]
+			},
+			"game/flag-pole7": {
+				"rotate": [
+					{ "value": 2.88 },
+					{ "time": 0.4, "value": -3.77 },
+					{ "time": 0.9, "value": 4.55 },
+					{ "time": 1, "value": 2.88 }
+				]
+			},
+			"game/flag-pole8": {
+				"rotate": [
+					{ "value": 1.22 },
+					{ "time": 0.3, "value": -3.77 },
+					{ "time": 0.8, "value": 4.55 },
+					{ "time": 1, "value": 1.22 }
+				]
+			},
+			"game/flag-pole9": {
+				"rotate": [
+					{ "value": -0.45 },
+					{ "time": 0.2, "value": -3.77 },
+					{ "time": 0.7, "value": 4.55 },
+					{ "time": 1, "value": -0.45 }
+				]
+			},
+			"game/flag-pole10": {
+				"rotate": [
+					{ "value": -2.11 },
+					{ "time": 0.1, "value": -3.77 },
+					{ "time": 0.6, "value": 4.55 },
+					{ "time": 1, "value": -2.11 }
+				]
+			}
+		}
+	},
+	"flag-orange": {
+		"slots": {
+			"game/flag": {
+				"rgba": [
+					{ "color": "ffa100ff" }
+				]
+			}
+		},
+		"bones": {
+			"game/flag-pole2": {
+				"rotate": [
+					{ "value": -2.11 },
+					{ "time": 0.4, "value": 4.55 },
+					{ "time": 0.9, "value": -3.77 },
+					{ "time": 1, "value": -2.11 }
+				]
+			},
+			"game/flag-pole3": {
+				"rotate": [
+					{ "value": -0.45 },
+					{ "time": 0.3, "value": 4.55 },
+					{ "time": 0.8, "value": -3.77 },
+					{ "time": 1, "value": -0.45 }
+				]
+			},
+			"game/flag-pole4": {
+				"rotate": [
+					{ "value": 1.22 },
+					{ "time": 0.2, "value": 4.55 },
+					{ "time": 0.7, "value": -3.77 },
+					{ "time": 1, "value": 1.22 }
+				]
+			},
+			"game/flag-pole5": {
+				"rotate": [
+					{ "value": 2.88 },
+					{ "time": 0.1, "value": 4.55 },
+					{ "time": 0.6, "value": -3.77 },
+					{ "time": 1, "value": 2.88 }
+				]
+			},
+			"game/flag-pole6": {
+				"rotate": [
+					{ "value": 4.55 },
+					{ "time": 0.5, "value": -3.77 },
+					{ "time": 1, "value": 4.55 }
+				]
+			},
+			"game/flag-pole7": {
+				"rotate": [
+					{ "value": 2.88 },
+					{ "time": 0.4, "value": -3.77 },
+					{ "time": 0.9, "value": 4.55 },
+					{ "time": 1, "value": 2.88 }
+				]
+			},
+			"game/flag-pole8": {
+				"rotate": [
+					{ "value": 1.22 },
+					{ "time": 0.3, "value": -3.77 },
+					{ "time": 0.8, "value": 4.55 },
+					{ "time": 1, "value": 1.22 }
+				]
+			},
+			"game/flag-pole9": {
+				"rotate": [
+					{ "value": -0.45 },
+					{ "time": 0.2, "value": -3.77 },
+					{ "time": 0.7, "value": 4.55 },
+					{ "time": 1, "value": -0.45 }
+				]
+			},
+			"game/flag-pole10": {
+				"rotate": [
+					{ "value": -2.11 },
+					{ "time": 0.1, "value": -3.77 },
+					{ "time": 0.6, "value": 4.55 },
+					{ "time": 1, "value": -2.11 }
+				]
+			}
+		}
+	},
+	"flag-purple": {
+		"slots": {
+			"game/flag": {
+				"rgba": [
+					{ "color": "8d00ffff" }
+				]
+			}
+		},
+		"bones": {
+			"game/flag-pole2": {
+				"rotate": [
+					{ "value": -2.11 },
+					{ "time": 0.4, "value": 4.55 },
+					{ "time": 0.9, "value": -3.77 },
+					{ "time": 1, "value": -2.11 }
+				]
+			},
+			"game/flag-pole3": {
+				"rotate": [
+					{ "value": -0.45 },
+					{ "time": 0.3, "value": 4.55 },
+					{ "time": 0.8, "value": -3.77 },
+					{ "time": 1, "value": -0.45 }
+				]
+			},
+			"game/flag-pole4": {
+				"rotate": [
+					{ "value": 1.22 },
+					{ "time": 0.2, "value": 4.55 },
+					{ "time": 0.7, "value": -3.77 },
+					{ "time": 1, "value": 1.22 }
+				]
+			},
+			"game/flag-pole5": {
+				"rotate": [
+					{ "value": 2.88 },
+					{ "time": 0.1, "value": 4.55 },
+					{ "time": 0.6, "value": -3.77 },
+					{ "time": 1, "value": 2.88 }
+				]
+			},
+			"game/flag-pole6": {
+				"rotate": [
+					{ "value": 4.55 },
+					{ "time": 0.5, "value": -3.77 },
+					{ "time": 1, "value": 4.55 }
+				]
+			},
+			"game/flag-pole7": {
+				"rotate": [
+					{ "value": 2.88 },
+					{ "time": 0.4, "value": -3.77 },
+					{ "time": 0.9, "value": 4.55 },
+					{ "time": 1, "value": 2.88 }
+				]
+			},
+			"game/flag-pole8": {
+				"rotate": [
+					{ "value": 1.22 },
+					{ "time": 0.3, "value": -3.77 },
+					{ "time": 0.8, "value": 4.55 },
+					{ "time": 1, "value": 1.22 }
+				]
+			},
+			"game/flag-pole9": {
+				"rotate": [
+					{ "value": -0.45 },
+					{ "time": 0.2, "value": -3.77 },
+					{ "time": 0.7, "value": 4.55 },
+					{ "time": 1, "value": -0.45 }
+				]
+			},
+			"game/flag-pole10": {
+				"rotate": [
+					{ "value": -2.11 },
+					{ "time": 0.1, "value": -3.77 },
+					{ "time": 0.6, "value": 4.55 },
+					{ "time": 1, "value": -2.11 }
+				]
+			}
+		}
+	},
+	"selected-blue": {
+		"slots": {
+			"body": {
+				"rgba2": [
+					{ "light": "9d9cffff", "dark": "00007f" },
+					{ "time": 1, "light": "0200ffff", "dark": "0200ff" },
+					{ "time": 2, "light": "9d9cffff", "dark": "00007f" }
+				]
+			},
+			"hand-left": {
+				"rgba2": [
+					{ "light": "9d9cffff", "dark": "00007f" },
+					{ "time": 1, "light": "0200ffff", "dark": "0200ff" },
+					{ "time": 2, "light": "9d9cffff", "dark": "00007f" }
+				]
+			},
+			"hand-right": {
+				"rgba2": [
+					{ "light": "9d9cffff", "dark": "00007f" },
+					{ "time": 1, "light": "0200ffff", "dark": "0200ff" },
+					{ "time": 2, "light": "9d9cffff", "dark": "00007f" }
+				]
+			},
+			"head": {
+				"rgba2": [
+					{ "light": "9d9cffff", "dark": "00007f" },
+					{ "time": 1, "light": "0200ffff", "dark": "0200ff" },
+					{ "time": 2, "light": "9d9cffff", "dark": "00007f" }
+				]
+			},
+			"weapon": {
+				"rgba2": [
+					{ "light": "9d9cffff", "dark": "00007f" },
+					{ "time": 1, "light": "0200ffff", "dark": "0200ff" },
+					{ "time": 2, "light": "9d9cffff", "dark": "00007f" }
+				]
+			}
+		}
+	},
+	"selected-green": {
+		"slots": {
+			"body": {
+				"rgba2": [
+					{ "light": "74ff7dff", "dark": "008709" },
+					{ "time": 1, "light": "00ff11ff", "dark": "00ff11" },
+					{ "time": 2, "light": "74ff7dff", "dark": "008709" }
+				]
+			},
+			"hand-left": {
+				"rgba2": [
+					{ "light": "74ff7dff", "dark": "008709" },
+					{ "time": 1, "light": "00ff11ff", "dark": "00ff11" },
+					{ "time": 2, "light": "74ff7dff", "dark": "008709" }
+				]
+			},
+			"hand-right": {
+				"rgba2": [
+					{ "light": "74ff7dff", "dark": "008709" },
+					{ "time": 1, "light": "00ff11ff", "dark": "00ff11" },
+					{ "time": 2, "light": "74ff7dff", "dark": "008709" }
+				]
+			},
+			"head": {
+				"rgba2": [
+					{ "light": "74ff7dff", "dark": "008709" },
+					{ "time": 1, "light": "00ff11ff", "dark": "00ff11" },
+					{ "time": 2, "light": "74ff7dff", "dark": "008709" }
+				]
+			},
+			"weapon": {
+				"rgba2": [
+					{ "light": "74ff7dff", "dark": "008709" },
+					{ "time": 1, "light": "00ff11ff", "dark": "00ff11" },
+					{ "time": 2, "light": "74ff7dff", "dark": "008709" }
+				]
+			}
+		}
+	},
+	"selected-orange": {
+		"slots": {
+			"body": {
+				"rgba2": [
+					{ "light": "ffcd78ff", "dark": "885600" },
+					{ "time": 1, "light": "ffa100ff", "dark": "ffa100" },
+					{ "time": 2, "light": "ffcd78ff", "dark": "885600" }
+				]
+			},
+			"hand-left": {
+				"rgba2": [
+					{ "light": "ffcd78ff", "dark": "885600" },
+					{ "time": 1, "light": "ffa100ff", "dark": "ffa100" },
+					{ "time": 2, "light": "ffcd78ff", "dark": "885600" }
+				]
+			},
+			"hand-right": {
+				"rgba2": [
+					{ "light": "ffcd78ff", "dark": "885600" },
+					{ "time": 1, "light": "ffa100ff", "dark": "ffa100" },
+					{ "time": 2, "light": "ffcd78ff", "dark": "885600" }
+				]
+			},
+			"head": {
+				"rgba2": [
+					{ "light": "ffcd78ff", "dark": "885600" },
+					{ "time": 1, "light": "ffa100ff", "dark": "ffa100" },
+					{ "time": 2, "light": "ffcd78ff", "dark": "885600" }
+				]
+			},
+			"weapon": {
+				"rgba2": [
+					{ "light": "ffcd78ff", "dark": "885600" },
+					{ "time": 1, "light": "ffa100ff", "dark": "ffa100" },
+					{ "time": 2, "light": "ffcd78ff", "dark": "885600" }
+				]
+			}
+		}
+	},
+	"selected-purple": {
+		"slots": {
+			"body": {
+				"rgba2": [
+					{ "light": "c67fffff", "dark": "4c0089" },
+					{ "time": 1, "light": "8d00ffff", "dark": "8d00ff" },
+					{ "time": 2, "light": "c67fffff", "dark": "4c0089" }
+				]
+			},
+			"hand-left": {
+				"rgba2": [
+					{ "light": "c67fffff", "dark": "4c0089" },
+					{ "time": 1, "light": "8d00ffff", "dark": "8d00ff" },
+					{ "time": 2, "light": "c67fffff", "dark": "4c0089" }
+				]
+			},
+			"hand-right": {
+				"rgba2": [
+					{ "light": "c67fffff", "dark": "4c0089" },
+					{ "time": 1, "light": "8d00ffff", "dark": "8d00ff" },
+					{ "time": 2, "light": "c67fffff", "dark": "4c0089" }
+				]
+			},
+			"head": {
+				"rgba2": [
+					{ "light": "c67fffff", "dark": "4c0089" },
+					{ "time": 1, "light": "8d00ffff", "dark": "8d00ff" },
+					{ "time": 2, "light": "c67fffff", "dark": "4c0089" }
+				]
+			},
+			"weapon": {
+				"rgba2": [
+					{ "light": "c67fffff", "dark": "4c0089" },
+					{ "time": 1, "light": "8d00ffff", "dark": "8d00ff" },
+					{ "time": 2, "light": "c67fffff", "dark": "4c0089" }
 				]
 			}
 		}
