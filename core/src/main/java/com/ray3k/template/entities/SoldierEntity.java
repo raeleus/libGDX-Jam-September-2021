@@ -35,6 +35,7 @@ public class SoldierEntity extends Entity {
     private static final Vector2 temp = new Vector2();
     private int easterEggCount;
     private int health;
+    private float friction;
     
     @Override
     public void create() {
@@ -48,7 +49,7 @@ public class SoldierEntity extends Entity {
         animationState.apply(skeleton);
         skeleton.updateWorldTransform();
         skeletonBounds.update(skeleton, true);
-        setCollisionBox(skeleton.findSlot("bbox"), skeletonBounds, soldierCollisionFilter);
+        setCollisionBox(-5, -5, 10, 10, soldierCollisionFilter);
     
         if (parent == null) {
             if (team == 1) {
@@ -114,7 +115,7 @@ public class SoldierEntity extends Entity {
             targetY = gameScreen.mouseY + targetOffsetY;
 
             try {
-                gameScreen.pathHelper.findPath(x, y, targetX, targetY, 20, floatArray);
+                gameScreen.pathHelper.findPath(x, y, targetX, targetY, 8, floatArray);
                 if (floatArray.size > 0) {
                     if (movePath == null) movePath = new FloatArray();
                     movePath.clear();
@@ -139,11 +140,11 @@ public class SoldierEntity extends Entity {
             targetY = parent.y + targetOffsetY;
     
             try {
-                gameScreen.pathHelper.findPath(x, y, targetX, targetY, 5, floatArray);
+                gameScreen.pathHelper.findPath(x, y, targetX, targetY, 8, floatArray);
                 if (floatArray.size == 0) {
                     targetX = parent.x;
                     targetY = parent.y;
-                    gameScreen.pathHelper.findPath(x, y, targetX, targetY, 5, floatArray);
+                    gameScreen.pathHelper.findPath(x, y, targetX, targetY, 8, floatArray);
                 }
     
                 if (floatArray.size > 0) {
@@ -157,7 +158,7 @@ public class SoldierEntity extends Entity {
             }
         }
         
-        if (movePath != null && movePath.size > 1) {
+        if (hurtTimer <= 0 && movePath != null && movePath.size > 1) {
             moveTowardsTarget(assaultMoveSpeed, movePath.get(0), movePath.get(1));
             if (animationState.getCurrent(0).getAnimation() != animationWalk) {
                 animationState.setAnimation(0, animationWalk, true);
@@ -175,8 +176,19 @@ public class SoldierEntity extends Entity {
             hurtTimer -= delta;
             if (hurtTimer <= 0) {
                 hurtTimer = 0;
+                friction = 0;
+                gameScreen.pathHelper.findPath(x, y, targetX, targetY, 8, floatArray);
+    
+                if (floatArray.size > 0) {
+                    if (movePath == null) movePath = new FloatArray();
+                    movePath.clear();
+                    movePath.addAll(floatArray);
+                    movePath.removeRange(0, 1);
+                }
             }
         }
+        
+        setSpeed(Utils.approach(getSpeed(), 0, friction * delta));
         
         depth = ACTOR_DEPTH + y * .1f;
     }
@@ -188,6 +200,8 @@ public class SoldierEntity extends Entity {
             sfx_assaultDie.play(sfx);
         } else {
             hurtTimer = soldierHurtDelay;
+            setMotion(soldierHurtSpeed, direction);
+            friction = soldierHurtFriction;
         }
     }
     

@@ -38,7 +38,7 @@ public class EnemyEntity extends Entity {
         animationState.apply(skeleton);
         skeleton.updateWorldTransform();
         skeletonBounds.update(skeleton, true);
-        setCollisionBox(skeleton.findSlot("bbox"), skeletonBounds, enemyCollisionFilter);
+        setCollisionBox(-5, -5, 10, 10, enemyCollisionFilter);
     }
     
     @Override
@@ -53,10 +53,12 @@ public class EnemyEntity extends Entity {
         SoldierEntity closestSolder = null;
         var bestDistance = Float.MAX_VALUE;
         for (var soldier : gameScreen.soldiers) {
-            var distance = Utils.pointDistance(x, y, soldier.x, soldier.y);
-            if (distance < enemyToPlayerMinDistance && distance < bestDistance) {
-                closestSolder = soldier;
-                bestDistance = distance;
+            if (soldier.hurtTimer <= 0) {
+                var distance = Utils.pointDistance(x, y, soldier.x, soldier.y);
+                if (distance < enemyToPlayerMinDistance && distance < bestDistance) {
+                    closestSolder = soldier;
+                    bestDistance = distance;
+                }
             }
         }
         
@@ -80,7 +82,7 @@ public class EnemyEntity extends Entity {
             targetY = target.y;
     
             try {
-                gameScreen.pathHelper.findPath(x, y, targetX, targetY, 5, floatArray);
+                gameScreen.pathHelper.findPath(x, y, targetX, targetY, 8, floatArray);
     
                 if (floatArray.size > 0) {
                     if (movePath == null) movePath = new FloatArray();

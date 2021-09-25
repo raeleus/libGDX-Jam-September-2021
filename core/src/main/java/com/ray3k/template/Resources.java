@@ -648,6 +648,14 @@ public class Resources {
 
         public static float soldierHurtDelay = 0.5f;
 
+        public static Range soldierHurtSpeedRange = new Range(0.0f, 1000.0f);
+
+        public static float soldierHurtSpeed = 400.0f;
+
+        public static Range soldierHurtFrictionRange = new Range(0.0f, 1000.0f);
+
+        public static float soldierHurtFriction = 1000.0f;
+
         public static int soldierHealth = 10;
 
         public static Range zombieMoveSpeedRange = new Range(0.0f, 1000.0f);

@@ -22,6 +22,7 @@ public class DialogDebug extends Dialog {
             scrollPane.setFadeScrollBars(false);
             scrollPane.setFlickScroll(false);
             getContentTable().add(scrollPane);
+            getContentTable().layout();
         }
     }
     
