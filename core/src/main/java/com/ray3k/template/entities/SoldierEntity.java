@@ -39,6 +39,8 @@ public class SoldierEntity extends Entity {
     
     @Override
     public void create() {
+        targetX = x;
+        targetY = y;
         health = soldierHealth;
         setSkeletonData(skeletonData, animationData);
         animationState.setAnimation(0, animationStand, false);

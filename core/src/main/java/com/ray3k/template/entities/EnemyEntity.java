@@ -23,6 +23,7 @@ public class EnemyEntity extends Entity {
     private FloatArray movePath;
     private float targetX;
     private float targetY;
+    private boolean targetingHouse;
     
     private static final Vector2 temp = new Vector2();
     
@@ -62,19 +63,42 @@ public class EnemyEntity extends Entity {
             }
         }
         
-        if (closestSolder != null) target = closestSolder;
+        if (closestSolder != null) {
+            target = closestSolder;
+            targetingHouse = false;
+        }
         else {
             bestDistance = Float.MAX_VALUE;
             HouseEntity closestHouse = null;
             for (var house : gameScreen.houses) {
-                var distance = Utils.pointDistance(x, y, house.x, house.y);
-                if (distance < bestDistance) {
-                    closestHouse = house;
-                    bestDistance = distance;
+                if (house.health > 0) {
+                    var distance = Utils.pointDistance(x, y, house.x, house.y);
+                    if (distance < bestDistance) {
+                        closestHouse = house;
+                        bestDistance = distance;
+                    }
                 }
             }
             
-            if (closestHouse != null) target = closestHouse;
+            if (closestHouse != null) {
+                target = closestHouse;
+                targetingHouse = true;
+            } else {
+                bestDistance = Float.MAX_VALUE;
+                closestHouse = null;
+                for (var house : gameScreen.houses) {
+                    var distance = Utils.pointDistance(x, y, house.x, house.y);
+                    if (distance < bestDistance) {
+                        closestHouse = house;
+                        bestDistance = distance;
+                    }
+                }
+    
+                if (closestHouse != null) {
+                    target = closestHouse;
+                    targetingHouse = true;
+                }
+            }
         }
         
         if (target != null) {
@@ -151,6 +175,12 @@ public class EnemyEntity extends Entity {
                     otherSoldier.hurt(zombieDamage, Utils.pointDirection(x, y, otherSoldier.x, otherSoldier.y));
                     sfx_slash.play(sfx);
                 }
+            } else if (other instanceof HouseEntity) {
+                var otherHouse = (HouseEntity) other;
+                if (otherHouse.hurtTimer <= 0) {
+                    otherHouse.hurt(zombieDamage);
+                    sfx_slash.play(sfx);
+                }
             }
         }
     }
@@ -161,6 +191,7 @@ public class EnemyEntity extends Entity {
             if (other.userData instanceof WallEntity) return Response.bounce;
             if (other.userData instanceof EnemyEntity) return Response.cross;
             if (other.userData instanceof  SoldierEntity) return Response.cross;
+            if (other.userData instanceof  HouseEntity) return Response.cross;
             return null;
         }
     }

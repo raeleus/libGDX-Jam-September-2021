@@ -675,6 +675,12 @@ public class Resources {
         public static Range shipSpawnDelayRange = new Range(0.0f, 5.0f);
 
         public static float shipSpawnDelay = 0.4f;
+
+        public static int houseHealth = 10;
+
+        public static Range houseHurtDelayRange = new Range(0.0f, 5.0f);
+
+        public static float houseHurtDelay = 0.5f;
     }
 
     public static class Range {

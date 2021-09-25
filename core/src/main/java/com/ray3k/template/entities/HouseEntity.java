@@ -11,8 +11,12 @@ import static com.ray3k.template.Resources.Values.*;
 import static com.ray3k.template.screens.GameScreen.*;
 
 public class HouseEntity extends Entity {
+    public int health;
+    public float hurtTimer;
+    
     @Override
     public void create() {
+        health = houseHealth;
         setSkeletonData(skeletonData, animationData);
         animationState.setAnimation(0, animationAlive, false);
         skeleton.setScale(.5f, .5f);
@@ -31,7 +35,9 @@ public class HouseEntity extends Entity {
     
     @Override
     public void act(float delta) {
-    
+        if (health > 0 && hurtTimer > 0) {
+            hurtTimer -= delta;
+        }
     }
     
     @Override
@@ -61,5 +67,16 @@ public class HouseEntity extends Entity {
     @Override
     public void collision(Collisions collisions) {
     
+    }
+    
+    public void hurt(int damage) {
+        health -= damage;
+        hurtTimer = houseHurtDelay;
+        if (health <= 0) {
+            animationState.setAnimation(0, animationDestroyed, false);
+            Resources.sfx_explosion.play(sfx);
+        } else {
+        
+        }
     }
 }
