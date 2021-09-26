@@ -661,6 +661,8 @@ public class Resources {
 
         public static float militiaShotRange = 100.0f;
 
+        public static int militiaSquadSize = 6;
+
         public static Range assaultMoveSpeedRange = new Range(0.0f, 1000.0f);
 
         public static float assaultMoveSpeed = 120.0f;
@@ -673,13 +675,15 @@ public class Resources {
 
         public static Range assaultShotRangeRange = new Range(0.0f, 1000.0f);
 
-        public static float assaultShotRange = 100.0f;
+        public static float assaultShotRange = 150.0f;
+
+        public static int assaultSquadSize = 6;
 
         public static Range sniperMoveSpeedRange = new Range(0.0f, 1000.0f);
 
         public static float sniperMoveSpeed = 100.0f;
 
-        public static int sniperDamage = 6;
+        public static int sniperDamage = 8;
 
         public static float sniperShotDelayBottom = 1.2f;
 
@@ -687,23 +691,33 @@ public class Resources {
 
         public static Range sniperShotRangeRange = new Range(0.0f, 1000.0f);
 
-        public static float sniperShotRange = 100.0f;
+        public static float sniperShotRange = 450.0f;
+
+        public static int sniperSquadSize = 2;
 
         public static Range heavyMoveSpeedRange = new Range(0.0f, 1000.0f);
 
-        public static float heavyMoveSpeed = 80.0f;
+        public static float heavyMoveSpeed = 40.0f;
 
-        public static int heavyDamage = 5;
+        public static int heavyDamage = 6;
 
         public static float heavyShotDelayBottom = 1.3f;
 
-        public static float heavyShotDelayTop = 1.3f;
+        public static float heavyShotDelayTop = 1.5f;
 
         public static Range heavyShotRangeRange = new Range(0.0f, 1000.0f);
 
-        public static float heavyShotRange = 100.0f;
+        public static float heavyShotRange = 220.0f;
 
-        public static int soldierSquadSize = 6;
+        public static Range heavySplashRangeRange = new Range(0.0f, 1000.0f);
+
+        public static float heavySplashRange = 50.0f;
+
+        public static Range heavyMissileDelayRange = new Range(0.0f, 1000.0f);
+
+        public static float heavyMissileDelay = 0.5f;
+
+        public static int heavySquadSize = 3;
 
         public static Range soldierHurtDelayRange = new Range(0.0f, 5.0f);
 

@@ -95,7 +95,12 @@ public class GameScreen extends JamScreen {
                         public void resume() {
                             paused = false;
                         }
-                    
+    
+                        @Override
+                        public void restart() {
+                            core.transition(new GameScreen());
+                        }
+    
                         @Override
                         public void quit() {
                             core.transition(new MenuScreen());
@@ -229,7 +234,7 @@ public class GameScreen extends JamScreen {
                     pathHelper.addPolygon(polygon.getTransformedVertices());
                 } else if (name.equals("player")) {
                     int team = valuesMap.get("team").asInt();
-                    if (team <= saveData.teams) {
+                    if (saveData.types[team - 1] != null) {
                         var soldierType = saveData.types[team - 1];
                         
                         var leader = new SoldierEntity();
@@ -240,8 +245,28 @@ public class GameScreen extends JamScreen {
                         soldiers.add(leader);
     
                         temp.set(20, 0);
-                        for (int i = 0; i < soldierSquadSize - 1; i++) {
-                            temp.rotateDeg(360f / (soldierSquadSize - 1));
+                        float squadSize;
+                        switch (soldierType) {
+                            case ASSAULT:
+                                squadSize = assaultSquadSize;
+                                break;
+                            case MILITIA:
+                                squadSize = militiaSquadSize;
+                                break;
+                            case SNIPER:
+                                squadSize = sniperSquadSize;
+                                break;
+                            case HEAVY:
+                                squadSize = heavySquadSize;
+                                break;
+                            default:
+                                squadSize = militiaSquadSize;
+                                break;
+                        }
+                        squadSize += saveData.squadSize[team - 1];
+                        
+                        for (int i = 0; i < squadSize - 1; i++) {
+                            temp.rotateDeg(360f / (squadSize - 1));
                             var soldier = new SoldierEntity();
                             soldier.team = team;
                             soldier.targetOffsetX = temp.x;
@@ -326,6 +351,25 @@ public class GameScreen extends JamScreen {
                 Gdx.input.setInputProcessor(stage);
                 levelComplete = true;
                 saveData.level++;
+                
+                boolean[] killTeam = {true, true, true, true};
+                for (var soldier : soldiers) {
+                    killTeam[soldier.team - 1] = false;
+                }
+                
+                for (int team = 0; team < 4; team++) {
+                    if (killTeam[team]) {
+                        //clear team and upgrades
+                        saveData.types[team] = null;
+                        saveData.moveSpeed[team] = 0;
+                        saveData.damage[team] = 0;
+                        saveData.range[team] = 0;
+                        saveData.health[team] = 0;
+                        saveData.splash[team] = 0;
+                        saveData.squadSize[team] = 0;
+                    }
+                }
+                
                 stage.addAction(Actions.sequence(new TemporalAction(2.0f) {
                     @Override
                     protected void update(float percent) {
@@ -371,7 +415,7 @@ public class GameScreen extends JamScreen {
                     
                     var textButton = new TextButton("Upgrade Team 1", skin);
                     table.add(textButton);
-                    if (saveData.teams < 1) textButton.setDisabled(true);
+                    if (saveData.types[0] == null) textButton.setDisabled(true);
                     textButton.addListener(new ChangeListener() {
                         @Override
                         public void changed(ChangeEvent event, Actor actor) {
@@ -385,7 +429,7 @@ public class GameScreen extends JamScreen {
                     
                     textButton = new TextButton("Upgrade Team 2", skin);
                     table.add(textButton);
-                    if (saveData.teams < 2) textButton.setDisabled(true);
+                    if (saveData.types[1] == null) textButton.setDisabled(true);
                     textButton.addListener(new ChangeListener() {
                         @Override
                         public void changed(ChangeEvent event, Actor actor) {
@@ -400,7 +444,7 @@ public class GameScreen extends JamScreen {
                     table.row();
                     textButton = new TextButton("Upgrade Team 3", skin);
                     table.add(textButton);
-                    if (saveData.teams < 3) textButton.setDisabled(true);
+                    if (saveData.types[2] == null) textButton.setDisabled(true);
                     textButton.addListener(new ChangeListener() {
                         @Override
                         public void changed(ChangeEvent event, Actor actor) {
@@ -414,7 +458,7 @@ public class GameScreen extends JamScreen {
                     
                     textButton = new TextButton("Upgrade Team 4", skin);
                     table.add(textButton);
-                    if (saveData.teams < 4) textButton.setDisabled(true);
+                    if (saveData.types[3] == null) textButton.setDisabled(true);
                     textButton.addListener(new ChangeListener() {
                         @Override
                         public void changed(ChangeEvent event, Actor actor) {
@@ -431,16 +475,27 @@ public class GameScreen extends JamScreen {
                     dialog.show(stage);
                 })));
             } else if (!levelComplete) {
-                levelComplete = true;
-                for (int i = 0; i < houses.size; i++) {
-                    var house = houses.get(i);
-                    if (house.health > 0) {
-                        levelComplete = false;
+                boolean hasSoldiers = false;
+                boolean hasHouses = false;
+    
+                for (var soldier : soldiers) {
+                    if (!soldier.destroy) {
+                        hasSoldiers = true;
                         break;
                     }
                 }
                 
-                if (levelComplete) {
+                for (int i = 0; i < houses.size; i++) {
+                    var house = houses.get(i);
+                    if (house.health > 0) {
+                        hasHouses = true;
+                        break;
+                    }
+                }
+                
+                if (!hasHouses || !hasSoldiers) {
+                    levelComplete = true;
+                    
                     stage.addAction(Actions.sequence(new TemporalAction(2.0f) {
                         @Override
                         protected void update(float percent) {
@@ -476,6 +531,7 @@ public class GameScreen extends JamScreen {
             onChange(imageButton, () -> {
                 saveData.types[team - 1] = SoldierType.ASSAULT;
                 saveData.coins -= 3;
+                sfx_click.play(sfx);
                 dialog.hide();
             });
             
@@ -484,6 +540,7 @@ public class GameScreen extends JamScreen {
             onChange(imageButton, () -> {
                 saveData.types[team - 1] = SoldierType.SNIPER;
                 saveData.coins -= 3;
+                sfx_click.play(sfx);
                 dialog.hide();
             });
             
@@ -492,13 +549,17 @@ public class GameScreen extends JamScreen {
             onChange(imageButton, () -> {
                 saveData.types[team - 1] = SoldierType.HEAVY;
                 saveData.coins -= 3;
+                sfx_click.play(sfx);
                 dialog.hide();
             });
             
             root.row();
             var textButton = new TextButton("Cancel", skin);
             root.add(textButton);
-            onChange(textButton, dialog::hide);
+            onChange(textButton, () -> {
+                sfx_click.play(sfx);
+                dialog.hide();
+            });
         } else {
             var label = new Label("Not enough coinage!", skin);
             root.add(label);

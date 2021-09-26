@@ -263,20 +263,37 @@ public class SoldierEntity extends Entity {
                 }
             }
         }
-    
+        
         if (targetedEnemy != null && hurtTimer <= 0) {
             if (shotTimer > 0) {
                 shotTimer -= delta;
             }
-    
+
             if (shotTimer <= 0) {
-                float direction = Utils.pointDirection(x, y, targetedEnemy.x, targetedEnemy.y);
-                if (direction > 90 && direction < 270) skeleton.setScaleX(-Math.abs(skeleton.getScaleX()));
-                else skeleton.setScaleX(Math.abs(skeleton.getScaleX()));
-                targetedEnemy.hurt(damage, direction);
-                shotTimer = shotDelay;
-                shotSound.play(sfx);
-                animationState.setAnimation(3, animationShoot, false);
+                if (soldierType != SoldierType.HEAVY) {
+                    float direction = Utils.pointDirection(x, y, targetedEnemy.x, targetedEnemy.y);
+                    if (direction > 90 && direction < 270) skeleton.setScaleX(-Math.abs(skeleton.getScaleX()));
+                    else skeleton.setScaleX(Math.abs(skeleton.getScaleX()));
+                    targetedEnemy.hurt(damage, direction);
+                    shotTimer = shotDelay;
+                    shotSound.play(sfx);
+                    animationState.setAnimation(3, animationShoot, false);
+                } else {
+                    if (animationState.getCurrent(0).getAnimation() != animationWalk) {
+                        float direction = Utils.pointDirection(x, y, targetedEnemy.x, targetedEnemy.y);
+                        if (direction > 90 && direction < 270) skeleton.setScaleX(-Math.abs(skeleton.getScaleX()));
+                        else skeleton.setScaleX(Math.abs(skeleton.getScaleX()));
+                        shotTimer = shotDelay;
+                        shotSound.play(sfx);
+                        animationState.setAnimation(3, animationShoot, false);
+                        var missile = new HeavyMissileEntity();
+                        missile.damage = heavyDamage;
+                        missile.splashRange = heavySplashRange;
+                        missile.target = targetedEnemy;
+                        missile.timer = heavyMissileDelay;
+                        entityController.add(missile);
+                    }
+                }
             }
         }
         
@@ -318,6 +335,8 @@ public class SoldierEntity extends Entity {
     @Override
     public void destroy() {
         gameScreen.soldiers.removeValue(this, true);
+        
+        //reassign leader
         if (parent == null) {
             SoldierEntity newParent = null;
             for (var child : children) {

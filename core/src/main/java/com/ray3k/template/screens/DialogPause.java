@@ -50,6 +50,18 @@ public class DialogPause extends Dialog {
                 detectInput = false;
             }
         });
+    
+        textButton = new TextButton("Restart", skin);
+        table.add(textButton);
+        textButton.addListener(sndChangeListener);
+        textButton.addListener(new ChangeListener() {
+            @Override
+            public void changed(ChangeEvent event, Actor actor) {
+                fire(new RestartEvent());
+                hide();
+                detectInput = false;
+            }
+        });
         
         textButton = new TextButton("Quit", skin);
         table.add(textButton);
@@ -100,6 +112,10 @@ public class DialogPause extends Dialog {
     
     }
     
+    public static class RestartEvent extends Event {
+    
+    }
+    
     public static abstract class PauseListener implements EventListener {
         @Override
         public boolean handle(Event event) {
@@ -109,12 +125,16 @@ public class DialogPause extends Dialog {
             } else if (event instanceof QuitEvent) {
                 quit();
                 return true;
+            } else if (event instanceof RestartEvent) {
+                restart();
+                return true;
             } else {
                 return false;
             }
         }
         
         public abstract void resume();
+        public abstract  void restart();
         public abstract void quit();
     }
 }
