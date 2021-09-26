@@ -94,7 +94,7 @@
           "texture": "starfield.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"panning": true}
+          "values": {"panning": false}
         },
         {
           "x": 512,

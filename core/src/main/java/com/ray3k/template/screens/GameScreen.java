@@ -645,7 +645,7 @@ public class GameScreen extends JamScreen {
                 sfx_click.play(sfx);
                 dialog.hide();
             });
-        } else if (saveData.types[team - 1] == SoldierType.ASSAULT && saveData.coins >= 3) {
+        } else if (saveData.types[team - 1] == SoldierType.ASSAULT && saveData.coins >= 2) {
             var table = new Table();
             root.add(table);
     
@@ -654,7 +654,7 @@ public class GameScreen extends JamScreen {
                 table.add(textButton);
                 onChange(textButton, () -> {
                     saveData.moveSpeed[team - 1]++;
-                    saveData.coins -= 3;
+                    saveData.coins -= 2;
                     sfx_click.play(sfx);
                     dialog.hide();
                 });
@@ -665,7 +665,7 @@ public class GameScreen extends JamScreen {
                 table.add(textButton);
                 onChange(textButton, () -> {
                     saveData.health[team - 1]++;
-                    saveData.coins -= 3;
+                    saveData.coins -= 2;
                     sfx_click.play(sfx);
                     dialog.hide();
                 });
@@ -678,7 +678,7 @@ public class GameScreen extends JamScreen {
                 sfx_click.play(sfx);
                 dialog.hide();
             });
-        } else if (saveData.types[team - 1] == SoldierType.SNIPER && saveData.coins >= 3) {
+        } else if (saveData.types[team - 1] == SoldierType.SNIPER && saveData.coins >= 2) {
             var table = new Table();
             root.add(table);
     
@@ -687,7 +687,7 @@ public class GameScreen extends JamScreen {
                 table.add(textButton);
                 onChange(textButton, () -> {
                     saveData.damage[team - 1]++;
-                    saveData.coins -= 3;
+                    saveData.coins -= 2;
                     sfx_click.play(sfx);
                     dialog.hide();
                 });
@@ -698,7 +698,7 @@ public class GameScreen extends JamScreen {
                 table.add(textButton);
                 onChange(textButton, () -> {
                     saveData.range[team - 1]++;
-                    saveData.coins -= 3;
+                    saveData.coins -= 2;
                     sfx_click.play(sfx);
                     dialog.hide();
                 });
@@ -711,7 +711,7 @@ public class GameScreen extends JamScreen {
                 sfx_click.play(sfx);
                 dialog.hide();
             });
-        } else if (saveData.types[team - 1] == SoldierType.HEAVY && saveData.coins >= 3) {
+        } else if (saveData.types[team - 1] == SoldierType.HEAVY && saveData.coins >= 2) {
             var table = new Table();
             root.add(table);
     
@@ -720,7 +720,7 @@ public class GameScreen extends JamScreen {
                 table.add(textButton);
                 onChange(textButton, () -> {
                     saveData.splash[team - 1]++;
-                    saveData.coins -= 3;
+                    saveData.coins -= 2;
                     sfx_click.play(sfx);
                     dialog.hide();
                 });
@@ -731,7 +731,7 @@ public class GameScreen extends JamScreen {
                 table.add(textButton);
                 onChange(textButton, () -> {
                     saveData.squadSize[team - 1]++;
-                    saveData.coins -= 3;
+                    saveData.coins -= 2;
                     sfx_click.play(sfx);
                     dialog.hide();
                 });
