@@ -11,6 +11,12 @@
 		"b": 0,
 		"a": 1
 	},
+	"dark-gray": {
+		"r": 0.14666666,
+		"g": 0.14373332,
+		"b": 0.14373332,
+		"a": 1
+	},
 	"gray": {
 		"r": 0.5133333,
 		"g": 0.5133333,
@@ -80,8 +86,7 @@
 		"offsetYspeed": 0,
 		"frameDuration": 0.03,
 		"regions": [],
-		"playMode": 2,
-		"crushMode": 0
+		"playMode": 2
 	},
 	"coin": {
 		"region": "coin-01",
@@ -107,8 +112,7 @@
 			"coin-05",
 			"coin-06"
 		],
-		"playMode": 2,
-		"crushMode": 0
+		"playMode": 2
 	},
 	"marquee": {
 		"region": "marquee-01",
@@ -131,8 +135,7 @@
 			"marquee-02",
 			"marquee-03"
 		],
-		"playMode": 2,
-		"crushMode": 0
+		"playMode": 2
 	},
 	"text-button-10": {
 		"region": "text-button",
@@ -151,8 +154,27 @@
 		"offsetYspeed": 0,
 		"frameDuration": 0.03,
 		"regions": [],
-		"playMode": 2,
-		"crushMode": 0
+		"playMode": 2
+	},
+	"text-button-disabled": {
+		"region": "text-button",
+		"color": "dark-gray",
+		"horizontalStretchAreas": [ 12, 251 ],
+		"verticalStretchAreas": [ 29, 95 ],
+		"tiling": false,
+		"minWidth": 267,
+		"minHeight": 107,
+		"rightWidth": 14,
+		"leftWidth": 11,
+		"bottomHeight": 29,
+		"topHeight": 12,
+		"offsetX": 0,
+		"offsetY": 0,
+		"offsetXspeed": 0,
+		"offsetYspeed": 0,
+		"frameDuration": 0.03,
+		"regions": [],
+		"playMode": 2
 	}
 },
 "com.badlogic.gdx.scenes.scene2d.ui.ImageButton$ImageButtonStyle": {
@@ -295,6 +317,7 @@
 		"font": "font",
 		"fontColor": "black",
 		"up": "text-button-10",
+		"disabled": "text-button-disabled",
 		"pressedOffsetY": -2
 	},
 	"toggle": {

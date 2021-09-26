@@ -1,6 +1,6 @@
 {
 "skeleton": {
-	"hash": "XckojHtfiLs",
+	"hash": "40hM2bfVjGo",
 	"spine": "4.0.37",
 	"x": -27.17,
 	"y": -27.31,
@@ -14,7 +14,7 @@
 	{ "name": "bone", "parent": "root" }
 ],
 "slots": [
-	{ "name": "game/coin-01", "bone": "bone", "attachment": "game/coin-01" }
+	{ "name": "game/coin-01", "bone": "bone", "color": "ffffff00", "attachment": "game/coin-01" }
 ],
 "skins": [
 	{
@@ -31,6 +31,9 @@
 		}
 	}
 ],
+"events": {
+	"sfx/coin": { "audio": "sfx/coin.mp3" }
+},
 "animations": {
 	"animation": {
 		"slots": {
@@ -72,7 +75,10 @@
 					{ "time": 1.0667, "y": 149 }
 				]
 			}
-		}
+		},
+		"events": [
+			{ "name": "sfx/coin" }
+		]
 	}
 }
 }

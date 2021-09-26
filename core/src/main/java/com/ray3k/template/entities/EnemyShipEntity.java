@@ -4,13 +4,14 @@ import com.badlogic.gdx.math.MathUtils;
 import com.dongbat.jbump.Collisions;
 import com.dongbat.jbump.Response.Result;
 import com.ray3k.template.*;
+import com.ray3k.template.screens.*;
 
 import static com.ray3k.template.Core.*;
 import static com.ray3k.template.Resources.SpineShip.*;
 import static com.ray3k.template.Resources.Values.*;
 import static com.ray3k.template.screens.GameScreen.*;
 
-public class EnemyShip extends Entity {
+public class EnemyShipEntity extends Entity {
     public float targetX;
     public float targetY;
     public boolean triggered;
@@ -49,11 +50,14 @@ public class EnemyShip extends Entity {
             if (timer <= 0 && count > 0) {
                 Resources.sfx_troopDeploy.play(sfx);
                 var enemy = new EnemyEntity();
+                gameScreen.enemies.add(enemy);
                 enemy.setPosition(x, y);
                 entityController.add(enemy);
                 timer = shipSpawnDelay;
                 count--;
+                if (count == 0) gameScreen.ships--;
             }
+            
         }
     }
     

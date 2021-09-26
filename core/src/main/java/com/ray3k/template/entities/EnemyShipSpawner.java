@@ -3,7 +3,6 @@ package com.ray3k.template.entities;
 import com.badlogic.gdx.scenes.scene2d.actions.Actions;
 import com.dongbat.jbump.Collisions;
 import com.dongbat.jbump.Response.Result;
-import com.ray3k.template.screens.*;
 
 import static com.ray3k.template.Core.*;
 import static com.ray3k.template.Resources.*;
@@ -40,7 +39,7 @@ public class EnemyShipSpawner extends Entity {
                 gameScreen.playedSiren = true;
             }
     
-            var ship = new EnemyShip();
+            var ship = new EnemyShipEntity();
             ship.setPosition(x, y);
             ship.targetX = targetX;
             ship.targetY = targetY;

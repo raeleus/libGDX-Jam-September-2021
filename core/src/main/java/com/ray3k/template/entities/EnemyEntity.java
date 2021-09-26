@@ -1,6 +1,7 @@
 package com.ray3k.template.entities;
 
 import com.badlogic.gdx.graphics.Color;
+import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.utils.FloatArray;
 import com.dongbat.jbump.CollisionFilter;
@@ -24,11 +25,18 @@ public class EnemyEntity extends Entity {
     private float targetX;
     private float targetY;
     private boolean targetingHouse;
+    public int health;
+    public float hurtTimer;
+    public float friction;
+    public float moveSpeed;
     
     private static final Vector2 temp = new Vector2();
     
     @Override
     public void create() {
+        health = zombieHealth;
+        moveSpeed = zombieMoveSpeed;
+        
         setSkeletonData(skeletonData, animationData);
         animationState.setAnimation(0, animationStand, false);
         animationState.setAnimation(1, animationFlagNone, false);
@@ -120,7 +128,7 @@ public class EnemyEntity extends Entity {
         }
         
         if (movePath != null && movePath.size > 1) {
-            moveTowardsTarget(zombieMoveSpeed, movePath.get(0), movePath.get(1));
+            moveTowardsTarget(moveSpeed, movePath.get(0), movePath.get(1));
             if (animationState.getCurrent(0).getAnimation() != animationWalk) animationState.setAnimation(0, animationWalk, true);
             
             if (Utils.pointDistance(x, y, movePath.get(0), movePath.get(1)) < .01f) {
@@ -129,6 +137,38 @@ public class EnemyEntity extends Entity {
                 animationState.setAnimation(0, animationStand, true);
             }
         }
+    
+        if (hurtTimer <= 0 && movePath != null && movePath.size > 1) {
+            moveTowardsTarget(moveSpeed, movePath.get(0), movePath.get(1));
+            if (animationState.getCurrent(0).getAnimation() != animationWalk) {
+                animationState.setAnimation(0, animationWalk, true);
+                animationState.getCurrent(0).setDelay(MathUtils.random(.5f));
+            }
+        
+            if (Utils.pointDistance(x, y, movePath.get(0), movePath.get(1)) < .01f) {
+                movePath.removeRange(0, 1);
+                if (movePath.size == 0) setSpeed(0);
+                animationState.setAnimation(0, animationStand, false);
+            }
+        }
+    
+        if (hurtTimer > 0) {
+            hurtTimer -= delta;
+            if (hurtTimer <= 0) {
+                hurtTimer = 0;
+                friction = 0;
+                gameScreen.pathHelper.findPath(x, y, targetX, targetY, 8, floatArray);
+            
+                if (floatArray.size > 0) {
+                    if (movePath == null) movePath = new FloatArray();
+                    movePath.clear();
+                    movePath.addAll(floatArray);
+                    movePath.removeRange(0, 1);
+                }
+            }
+        }
+        
+        setSpeed(Utils.approach(getSpeed(), 0, friction * delta));
         
         depth = ACTOR_DEPTH + y * .1f;
     }
@@ -148,7 +188,7 @@ public class EnemyEntity extends Entity {
     
     @Override
     public void destroy() {
-    
+        gameScreen.enemies.removeValue(this, true);
     }
     
     @Override
@@ -197,4 +237,21 @@ public class EnemyEntity extends Entity {
     }
     
     public final static EnemyCollisionFilter enemyCollisionFilter = new EnemyCollisionFilter();
+    
+    public void hurt(float damage, float direction) {
+        health -= damage;
+        if (health <= 0) {
+            destroy = true;
+            sfx_zombieDeath.play(sfx);
+        } else {
+            hurtTimer = soldierHurtDelay;
+            setMotion(soldierHurtSpeed, direction);
+            friction = soldierHurtFriction;
+            if (direction > 90 && direction < 270) {
+                animationState.setAnimation(1, animationHurtLeft, false);
+            } else {
+                animationState.setAnimation(1, animationHurtRight, false);
+            }
+        }
+    }
 }

@@ -84,6 +84,8 @@ public class Resources {
 
     public static Sound sfx_militiaSelected3;
 
+    public static Sound sfx_militia;
+
     public static Sound sfx_missile;
 
     public static Sound sfx_missionFailure;
@@ -145,6 +147,8 @@ public class Resources {
         SpineActor.animationFlagNone = SpineActor.skeletonData.findAnimation("flag-none");
         SpineActor.animationFlagOrange = SpineActor.skeletonData.findAnimation("flag-orange");
         SpineActor.animationFlagPurple = SpineActor.skeletonData.findAnimation("flag-purple");
+        SpineActor.animationHurtLeft = SpineActor.skeletonData.findAnimation("hurt-left");
+        SpineActor.animationHurtRight = SpineActor.skeletonData.findAnimation("hurt-right");
         SpineActor.animationSelectedBlue = SpineActor.skeletonData.findAnimation("selected-blue");
         SpineActor.animationSelectedGreen = SpineActor.skeletonData.findAnimation("selected-green");
         SpineActor.animationSelectedOrange = SpineActor.skeletonData.findAnimation("selected-orange");
@@ -303,6 +307,7 @@ public class Resources {
         sfx_militiaSelected1 = assetManager.get("sfx/militia-selected-1.mp3");
         sfx_militiaSelected2 = assetManager.get("sfx/militia-selected-2.mp3");
         sfx_militiaSelected3 = assetManager.get("sfx/militia-selected-3.mp3");
+        sfx_militia = assetManager.get("sfx/militia.mp3");
         sfx_missile = assetManager.get("sfx/missile.mp3");
         sfx_missionFailure = assetManager.get("sfx/mission-failure.mp3");
         sfx_mortar = assetManager.get("sfx/mortar.mp3");
@@ -345,6 +350,10 @@ public class Resources {
         public static Animation animationFlagOrange;
 
         public static Animation animationFlagPurple;
+
+        public static Animation animationHurtLeft;
+
+        public static Animation animationHurtRight;
 
         public static Animation animationSelectedBlue;
 
@@ -642,17 +651,57 @@ public class Resources {
 
         public static float militiaMoveSpeed = 100.0f;
 
+        public static int militiaDamage = 2;
+
+        public static float militiaShotDelayBottom = 0.8f;
+
+        public static float militiaShotDelayTop = 0.9f;
+
+        public static Range militiaShotRangeRange = new Range(0.0f, 1000.0f);
+
+        public static float militiaShotRange = 100.0f;
+
         public static Range assaultMoveSpeedRange = new Range(0.0f, 1000.0f);
 
         public static float assaultMoveSpeed = 120.0f;
+
+        public static int assaultDamage = 3;
+
+        public static float assaultShotDelayBottom = 0.8f;
+
+        public static float assaultShotDelayTop = 0.8f;
+
+        public static Range assaultShotRangeRange = new Range(0.0f, 1000.0f);
+
+        public static float assaultShotRange = 100.0f;
 
         public static Range sniperMoveSpeedRange = new Range(0.0f, 1000.0f);
 
         public static float sniperMoveSpeed = 100.0f;
 
+        public static int sniperDamage = 6;
+
+        public static float sniperShotDelayBottom = 1.2f;
+
+        public static float sniperShotDelayTop = 1.2f;
+
+        public static Range sniperShotRangeRange = new Range(0.0f, 1000.0f);
+
+        public static float sniperShotRange = 100.0f;
+
         public static Range heavyMoveSpeedRange = new Range(0.0f, 1000.0f);
 
         public static float heavyMoveSpeed = 80.0f;
+
+        public static int heavyDamage = 5;
+
+        public static float heavyShotDelayBottom = 1.3f;
+
+        public static float heavyShotDelayTop = 1.3f;
+
+        public static Range heavyShotRangeRange = new Range(0.0f, 1000.0f);
+
+        public static float heavyShotRange = 100.0f;
 
         public static int soldierSquadSize = 6;
 
@@ -675,6 +724,20 @@ public class Resources {
         public static float zombieMoveSpeed = 75.0f;
 
         public static int zombieDamage = 2;
+
+        public static int zombieHealth = 6;
+
+        public static Range enemyHurtDelayRange = new Range(0.0f, 5.0f);
+
+        public static float enemyHurtDelay = 0.5f;
+
+        public static Range enemyHurtSpeedRange = new Range(0.0f, 1000.0f);
+
+        public static float enemyHurtSpeed = 400.0f;
+
+        public static Range enemyHurtFrictionRange = new Range(0.0f, 1000.0f);
+
+        public static float enemyHurtFriction = 1000.0f;
 
         public static Range enemyToPlayerMinDistanceRange = new Range(0.0f, 1000.0f);
 

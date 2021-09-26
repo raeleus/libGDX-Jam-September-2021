@@ -43,7 +43,19 @@ public class SoldierEntity extends Entity {
     public SoldierType soldierType;
     private Sound dieSound;
     private float moveSpeed;
+    private float shotTimer;
+    private float shotDelay;
+    private Sound shotSound;
+    private float shotRange;
+    private float damage;
     
+    /*
+    tracks
+    0 walk, stand, hurt
+    1 flag
+    2 team
+    3 gun
+     */
     @Override
     public void create() {
         targetX = x;
@@ -56,23 +68,40 @@ public class SoldierEntity extends Entity {
                 skeleton.setSkin(skinMilitia);
                 dieSound = sfx_militiaDie;
                 moveSpeed = militiaMoveSpeed;
+                shotDelay = MathUtils.random(militiaShotDelayBottom, militiaShotDelayTop);
+                shotSound = sfx_militia;
+                shotRange = militiaShotRange;
+                damage = militiaDamage;
                 break;
             case ASSAULT:
                 skeleton.setSkin(skinAssault);
                 dieSound = sfx_assaultDie;
                 moveSpeed = assaultMoveSpeed;
+                shotDelay = MathUtils.random(assaultShotDelayBottom, assaultShotDelayTop);
+                shotSound = sfx_assault;
+                shotRange = assaultShotRange;
+                damage= assaultDamage;
                 break;
             case HEAVY:
                 skeleton.setSkin(skinHeavy);
                 dieSound = sfx_heavyDie;
                 moveSpeed = heavyMoveSpeed;
+                shotDelay = MathUtils.random(heavyShotDelayBottom, heavyShotDelayTop);
+                shotSound = sfx_missile;
+                shotRange = heavyShotRange;
+                damage = heavyDamage;
                 break;
             case SNIPER:
                 skeleton.setSkin(skinSniper);
                 dieSound = sfx_sniperDie;
                 moveSpeed = sniperMoveSpeed;
+                shotDelay = MathUtils.random(sniperShotDelayBottom, sniperShotDelayTop);
+                shotSound = sfx_sniper;
+                shotRange = sniperShotRange;
+                damage = sniperDamage;
                 break;
         }
+        shotTimer = MathUtils.random(shotDelay);
         
         skeleton.setScale(.25f, .25f);
         depth = GameScreen.ACTOR_DEPTH;
@@ -218,6 +247,34 @@ public class SoldierEntity extends Entity {
                 }
             }
         }
+    
+        EnemyEntity targetedEnemy = null;
+        float bestDistance = Float.MAX_VALUE;
+        for (var enemy : gameScreen.enemies) {
+            float distance = Utils.pointDistance(x, y, enemy.x,enemy.y);
+            if (distance < shotRange) {
+                if (distance < bestDistance) {
+                    targetedEnemy = enemy;
+                    bestDistance = distance;
+                }
+            }
+        }
+    
+        if (targetedEnemy != null) {
+            if (shotTimer > 0) {
+                shotTimer -= delta;
+            }
+    
+            if (shotTimer <= 0) {
+                float direction = Utils.pointDirection(x, y, targetedEnemy.x, targetedEnemy.y);
+                if (direction > 90 && direction < 270) skeleton.setScaleX(-Math.abs(skeleton.getScaleX()));
+                else skeleton.setScaleX(Math.abs(skeleton.getScaleX()));
+                targetedEnemy.hurt(damage, direction);
+                shotTimer = shotDelay;
+                shotSound.play(sfx);
+                animationState.setAnimation(3, animationShoot, false);
+            }
+        }
         
         setSpeed(Utils.approach(getSpeed(), 0, friction * delta));
         
@@ -233,6 +290,11 @@ public class SoldierEntity extends Entity {
             hurtTimer = soldierHurtDelay;
             setMotion(soldierHurtSpeed, direction);
             friction = soldierHurtFriction;
+            if (direction > 90 && direction < 270 && skeleton.getScaleX() > 0) {
+                animationState.setAnimation(0, animationHurtLeft, false);
+            } else {
+                animationState.setAnimation(0, animationHurtRight, false);
+            }
         }
     }
     

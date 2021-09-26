@@ -11,19 +11,14 @@ import com.badlogic.gdx.graphics.g2d.TextureAtlas.AtlasSprite;
 import com.badlogic.gdx.math.*;
 import com.badlogic.gdx.scenes.scene2d.Action;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
-import com.badlogic.gdx.scenes.scene2d.InputEvent.Type;
 import com.badlogic.gdx.scenes.scene2d.InputListener;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.actions.Actions;
 import com.badlogic.gdx.scenes.scene2d.actions.TemporalAction;
-import com.badlogic.gdx.scenes.scene2d.ui.Label;
-import com.badlogic.gdx.scenes.scene2d.ui.Table;
+import com.badlogic.gdx.scenes.scene2d.ui.*;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.scenes.scene2d.utils.DragListener;
-import com.badlogic.gdx.utils.Align;
-import com.badlogic.gdx.utils.Array;
-import com.badlogic.gdx.utils.FloatArray;
-import com.badlogic.gdx.utils.ObjectMap;
+import com.badlogic.gdx.utils.*;
 import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.badlogic.gdx.utils.viewport.ScreenViewport;
 import com.dongbat.walkable.PathHelper;
@@ -62,6 +57,9 @@ public class GameScreen extends JamScreen {
     public Array<SoldierEntity> soldiers = new Array<>();
     public Array<HouseEntity> houses = new Array<>();
     public boolean playedSiren;
+    public Array<EnemyEntity> enemies = new Array<>();
+    public int ships;
+    public boolean levelComplete;
     
     @Override
     public void show() {
@@ -278,10 +276,11 @@ public class GameScreen extends JamScreen {
                     spawner.targetX = nodes.first().x;
                     spawner.targetY = nodes.first().y;
                     entityController.add(spawner);
+                    ships++;
                 }
             }
         });
-        ogmoReader.readFile(Gdx.files.internal("levels/level-2.json"));
+        ogmoReader.readFile(Gdx.files.internal("levels/level-" + saveData.level + ".json"));
     }
     
     @Override
@@ -323,6 +322,95 @@ public class GameScreen extends JamScreen {
             
             entityController.act(delta);
             vfxManager.update(delta);
+            
+            if (!levelComplete && enemies.size == 0 && ships == 0) {
+                levelComplete = true;
+                saveData.level++;
+                stage.addAction(Actions.sequence(new TemporalAction(2.0f) {
+                    @Override
+                    protected void update(float percent) {
+                        bgm_game.setVolume(bgm * (1 - percent));
+                    }
+                }, Actions.run(() -> bgm_game.stop())));
+                
+                for (int i = 0; i < houses.size; i++) {
+                    var house = houses.get(i);
+                    if (house.health > 0) {
+                        var coin = new CoinEntity();
+                        coin.setPosition(house.x, house.y);
+                        entityController.add(coin);
+                        coin.animationState.getCurrent(0).setDelay(1 + .7f * i);
+                        saveData.coins++;
+                    }
+                }
+                
+                stage.addAction(Actions.delay(2 + .7f * houses.size, Actions.run(() -> {
+                    Dialog dialog = new Dialog("", skin) {
+                        @Override
+                        protected void result(Object object) {
+                            if (saveData.level <= 15) Gdx.app.postRunnable(() -> Core.core.transition(new GameScreen()));
+                            else Gdx.app.postRunnable(() -> Core.core.transition(new CreditsScreen()));
+                        }
+                    };
+                    
+                    var root = dialog.getContentTable();
+                    
+                    var table = new Table();
+                    root.add(table);
+                    
+                    var image = new Image(skin, "coin");
+                    image.setScaling(Scaling.fit);
+                    table.add(image).size(100, 100);
+                    
+                    var label = new Label("x" + saveData.coins, skin);
+                    table.add(label);
+                    
+                    root.row();
+                    table = new Table();
+                    root.add(table);
+                    
+                    var textButton = new TextButton("Upgrade Team 1\nCost: 3", skin);
+                    table.add(textButton);
+                    if (saveData.teams < 1 || saveData.coins < 3) textButton.setDisabled(true);
+                    
+                    textButton = new TextButton("Upgrade Team 2\nCost: 3", skin);
+                    table.add(textButton);
+                    if (saveData.teams < 2 || saveData.coins < 3) textButton.setDisabled(true);
+    
+                    table.row();
+                    textButton = new TextButton("Upgrade Team 3\nCost: 3", skin);
+                    table.add(textButton);
+                    if (saveData.teams < 3 || saveData.coins < 3) textButton.setDisabled(true);
+                    
+                    textButton = new TextButton("Upgrade Team 4\nCost: 3", skin);
+                    table.add(textButton);
+                    if (saveData.teams < 4 || saveData.coins < 3) textButton.setDisabled(true);
+                    
+                    dialog.button("Next Level");
+                    
+                    dialog.show(stage);
+                })));
+            } else if (!levelComplete) {
+                levelComplete = true;
+                for (int i = 0; i < houses.size; i++) {
+                    var house = houses.get(i);
+                    if (house.health > 0) {
+                        levelComplete = false;
+                        break;
+                    }
+                }
+                
+                if (levelComplete) {
+                    stage.addAction(Actions.sequence(new TemporalAction(2.0f) {
+                        @Override
+                        protected void update(float percent) {
+                            bgm_game.setVolume(bgm * (1 - percent));
+                        }
+                    }, Actions.run(() -> bgm_game.stop()), Actions.run(() -> {
+                        Gdx.app.postRunnable(() -> Core.core.transition(new GameScreen()));
+                    })));
+                }
+            }
         }
         stage.act(delta);
         

@@ -74,7 +74,7 @@ public class HouseEntity extends Entity {
         hurtTimer = houseHurtDelay;
         if (health <= 0) {
             animationState.setAnimation(0, animationDestroyed, false);
-            Resources.sfx_explosion.play(sfx);
+            Resources.sfx_buildingDestroyed.play(sfx);
         } else {
         
         }

@@ -29,6 +29,7 @@ sfx/militia-easter-egg.mp3
 sfx/militia-selected-1.mp3
 sfx/militia-selected-2.mp3
 sfx/militia-selected-3.mp3
+sfx/militia.mp3
 sfx/missile.mp3
 sfx/mission-failure.mp3
 sfx/mortar.mp3

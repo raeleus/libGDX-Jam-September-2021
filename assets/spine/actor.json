@@ -1,6 +1,6 @@
 {
 "skeleton": {
-	"hash": "sdeOf4Zyuc8",
+	"hash": "p26x4VShsKA",
 	"spine": "4.0.37",
 	"x": -32,
 	"y": -20.5,
@@ -24,7 +24,16 @@
 	{ "name": "game/flag-pole7", "parent": "game/flag-pole6", "length": 8.34, "x": 8.34 },
 	{ "name": "game/flag-pole8", "parent": "game/flag-pole7", "length": 8.34, "x": 8.34 },
 	{ "name": "game/flag-pole9", "parent": "game/flag-pole8", "length": 8.34, "x": 8.34 },
-	{ "name": "game/flag-pole10", "parent": "game/flag-pole9", "length": 8.34, "x": 8.34 }
+	{ "name": "game/flag-pole10", "parent": "game/flag-pole9", "length": 8.34, "x": 8.34 },
+	{
+		"name": "splatter",
+		"parent": "body",
+		"length": 60.44,
+		"rotation": 1.41,
+		"x": 26.8,
+		"y": -3.06,
+		"transform": "noRotationOrReflection"
+	}
 ],
 "slots": [
 	{ "name": "game/shadow", "bone": "root", "attachment": "game/shadow" },
@@ -37,9 +46,8 @@
 	{ "name": "hand-left", "bone": "hand-left", "dark": "000000", "attachment": "hand-left" },
 	{ "name": "flash", "bone": "hand-left" },
 	{ "name": "projectile", "bone": "hand-left", "attachment": "projectile" },
-	{ "name": "splatter-right", "bone": "body", "attachment": "splatter-right" },
-	{ "name": "splatter-left", "bone": "body", "attachment": "splatter-left" },
-	{ "name": "bbox", "bone": "root", "attachment": "bbox" }
+	{ "name": "bbox", "bone": "root", "attachment": "bbox" },
+	{ "name": "game/blood-splatter-01", "bone": "splatter" }
 ],
 "skins": [
 	{
@@ -51,6 +59,21 @@
 					"vertexCount": 4,
 					"vertices": [ -15.41, -8.83, -16.16, 20.28, 27.88, 20.28, 25.64, -8.83 ]
 				}
+			},
+			"game/blood-splatter-01": {
+				"game/blood-splatter-01": { "x": 36.03, "y": -21.78, "rotation": -1.41, "width": 73, "height": 82 },
+				"game/blood-splatter-02": { "x": 36.03, "y": -21.78, "rotation": -1.41, "width": 73, "height": 82 },
+				"game/blood-splatter-03": { "x": 36.03, "y": -21.78, "rotation": -1.41, "width": 73, "height": 82 },
+				"game/blood-splatter-04": { "x": 36.03, "y": -21.78, "rotation": -1.41, "width": 73, "height": 82 },
+				"game/blood-splatter-05": { "x": 36.03, "y": -21.78, "rotation": -1.41, "width": 73, "height": 82 },
+				"game/blood-splatter-06": { "x": 36.03, "y": -21.78, "rotation": -1.41, "width": 73, "height": 82 },
+				"game/blood-splatter-07": { "x": 36.03, "y": -21.78, "rotation": -1.41, "width": 73, "height": 82 },
+				"game/blood-splatter-08": { "x": 36.03, "y": -21.78, "rotation": -1.41, "width": 73, "height": 82 },
+				"game/blood-splatter-09": { "x": 36.03, "y": -21.78, "rotation": -1.41, "width": 73, "height": 82 },
+				"game/blood-splatter-10": { "x": 36.03, "y": -21.78, "rotation": -1.41, "width": 73, "height": 82 },
+				"game/blood-splatter-11": { "x": 36.03, "y": -21.78, "rotation": -1.41, "width": 73, "height": 82 },
+				"game/blood-splatter-12": { "x": 36.03, "y": -21.78, "rotation": -1.41, "width": 73, "height": 82 },
+				"game/blood-splatter-13": { "x": 36.03, "y": -21.78, "rotation": -1.41, "width": 73, "height": 82 }
 			},
 			"game/flag": {
 				"game/flag": {
@@ -100,12 +123,6 @@
 			"projectile": {
 				"projectile": { "type": "point", "x": 60.4, "y": 13.59 }
 			},
-			"splatter-left": {
-				"splatter-left": { "type": "point", "x": 26.51, "y": 14.46 }
-			},
-			"splatter-right": {
-				"splatter-right": { "type": "point", "x": 28.93, "y": -14.07 }
-			},
 			"weapon": {
 				"weapon": { "name": "game/assault-weapon", "x": 19.27, "y": 7.81, "rotation": -1.09, "width": 89, "height": 25 }
 			}
@@ -128,12 +145,6 @@
 			},
 			"projectile": {
 				"projectile": { "type": "point", "x": 1.33, "y": -11.67 }
-			},
-			"splatter-left": {
-				"splatter-left": { "type": "point", "x": 15.22, "y": 20.41 }
-			},
-			"splatter-right": {
-				"splatter-right": { "type": "point", "x": 22.12, "y": -20.44 }
 			}
 		}
 	},
@@ -226,12 +237,6 @@
 			"head": {
 				"head": { "name": "game/heavy-head", "x": 16.69, "y": -0.21, "rotation": -82.41, "width": 31, "height": 41 }
 			},
-			"splatter-left": {
-				"splatter-left": { "type": "point", "x": 23.19, "y": 13.61 }
-			},
-			"splatter-right": {
-				"splatter-right": { "type": "point", "x": 26, "y": -13.25 }
-			},
 			"weapon": {
 				"weapon": { "name": "game/heavy-weapon", "x": 19.27, "y": 7.81, "rotation": -1.09, "width": 84, "height": 32 }
 			}
@@ -265,12 +270,6 @@
 			"projectile": {
 				"projectile": { "type": "point", "x": 35.1, "y": 9.42 }
 			},
-			"splatter-left": {
-				"splatter-left": { "type": "point", "x": 23.49, "y": 11.43 }
-			},
-			"splatter-right": {
-				"splatter-right": { "type": "point", "x": 26.65, "y": -16.6 }
-			},
 			"weapon": {
 				"weapon": { "name": "game/militia-weapon", "x": 6.06, "y": 1.52, "rotation": -1.09, "width": 56, "height": 29 }
 			}
@@ -290,12 +289,6 @@
 			},
 			"head": {
 				"head": { "name": "game/pouncer-head", "x": 10.18, "y": -1.5, "rotation": -82.41, "width": 27, "height": 37 }
-			},
-			"splatter-left": {
-				"splatter-left": { "type": "point", "x": 23.93, "y": 14.12 }
-			},
-			"splatter-right": {
-				"splatter-right": { "type": "point", "x": 27.19, "y": -13.09 }
 			}
 		}
 	},
@@ -327,12 +320,6 @@
 			"projectile": {
 				"projectile": { "type": "point", "x": 94.07, "y": 9.46 }
 			},
-			"splatter-left": {
-				"splatter-left": { "type": "point", "x": 20.18, "y": 15.02 }
-			},
-			"splatter-right": {
-				"splatter-right": { "type": "point", "x": 24.27, "y": -13.89 }
-			},
 			"weapon": {
 				"weapon": { "name": "game/sniper-weapon", "x": 37.96, "y": 7.92, "rotation": -1.09, "width": 106, "height": 27 }
 			}
@@ -355,12 +342,6 @@
 			},
 			"projectile": {
 				"projectile": { "type": "point", "x": 12.83, "y": 21.48 }
-			},
-			"splatter-left": {
-				"splatter-left": { "type": "point", "x": 23.67, "y": 13.07 }
-			},
-			"splatter-right": {
-				"splatter-right": { "type": "point", "x": 26.91, "y": -12.53 }
 			}
 		}
 	},
@@ -378,12 +359,6 @@
 			},
 			"head": {
 				"head": { "name": "game/witch-head", "x": 6.87, "y": -1.94, "rotation": -82.41, "width": 36, "height": 59 }
-			},
-			"splatter-left": {
-				"splatter-left": { "type": "point", "x": 27.51, "y": 16.01 }
-			},
-			"splatter-right": {
-				"splatter-right": { "type": "point", "x": 31.83, "y": -13.08 }
 			}
 		}
 	},
@@ -401,12 +376,6 @@
 			},
 			"head": {
 				"head": { "name": "game/zombie-head", "x": 10.18, "y": -1.5, "rotation": -82.41, "width": 27, "height": 29 }
-			},
-			"splatter-left": {
-				"splatter-left": { "type": "point", "x": 25.35, "y": 14.1 }
-			},
-			"splatter-right": {
-				"splatter-right": { "type": "point", "x": 27.73, "y": -12.62 }
 			}
 		}
 	}
@@ -750,6 +719,57 @@
 					{ "time": 0.1, "value": -3.77 },
 					{ "time": 0.6, "value": 4.55 },
 					{ "time": 1, "value": -2.11 }
+				]
+			}
+		}
+	},
+	"hurt-left": {
+		"slots": {
+			"game/blood-splatter-01": {
+				"attachment": [
+					{ "name": "game/blood-splatter-01" },
+					{ "time": 0.0333, "name": "game/blood-splatter-02" },
+					{ "time": 0.0667, "name": "game/blood-splatter-03" },
+					{ "time": 0.1, "name": "game/blood-splatter-04" },
+					{ "time": 0.1333, "name": "game/blood-splatter-05" },
+					{ "time": 0.1667, "name": "game/blood-splatter-06" },
+					{ "time": 0.2, "name": "game/blood-splatter-07" },
+					{ "time": 0.2333, "name": "game/blood-splatter-08" },
+					{ "time": 0.2667, "name": "game/blood-splatter-09" },
+					{ "time": 0.3, "name": "game/blood-splatter-10" },
+					{ "time": 0.3333, "name": "game/blood-splatter-11" },
+					{ "time": 0.3667, "name": "game/blood-splatter-12" },
+					{ "time": 0.4, "name": "game/blood-splatter-13" },
+					{ "time": 0.4333, "name": null }
+				]
+			}
+		},
+		"bones": {
+			"splatter": {
+				"scale": [
+					{ "x": -1 }
+				]
+			}
+		}
+	},
+	"hurt-right": {
+		"slots": {
+			"game/blood-splatter-01": {
+				"attachment": [
+					{ "name": "game/blood-splatter-01" },
+					{ "time": 0.0333, "name": "game/blood-splatter-02" },
+					{ "time": 0.0667, "name": "game/blood-splatter-03" },
+					{ "time": 0.1, "name": "game/blood-splatter-04" },
+					{ "time": 0.1333, "name": "game/blood-splatter-05" },
+					{ "time": 0.1667, "name": "game/blood-splatter-06" },
+					{ "time": 0.2, "name": "game/blood-splatter-07" },
+					{ "time": 0.2333, "name": "game/blood-splatter-08" },
+					{ "time": 0.2667, "name": "game/blood-splatter-09" },
+					{ "time": 0.3, "name": "game/blood-splatter-10" },
+					{ "time": 0.3333, "name": "game/blood-splatter-11" },
+					{ "time": 0.3667, "name": "game/blood-splatter-12" },
+					{ "time": 0.4, "name": "game/blood-splatter-13" },
+					{ "time": 0.4333, "name": null }
 				]
 			}
 		}
