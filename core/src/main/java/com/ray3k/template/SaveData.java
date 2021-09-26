@@ -5,7 +5,7 @@ import com.ray3k.template.entities.SoldierEntity.*;
 public class SaveData {
     public SoldierType[] types = {SoldierType.ASSAULT, SoldierType.SNIPER, null, null};
     public int coins = 0;
-    public int level = 6;
+    public int level = 7;
     public int reinforcedLevel = 0;
     public int[] moveSpeed = {0, 0, 0, 0};//assault
     public int[] damage = {0, 0, 0, 0};//sniper

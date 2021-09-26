@@ -4,7 +4,7 @@
   "height": 576,
   "offsetX": 0,
   "offsetY": 0,
-  "values": {"reinforcements": false},
+  "values": {"reinforcements": true},
   "layers": [
     {
       "name": "entities",
@@ -87,6 +87,164 @@
             {"x": 664, "y": 304},
             {"x": 608, "y": 304}
           ]
+        },
+        {
+          "name": "zombie",
+          "id": 7,
+          "_eid": "35988912",
+          "x": 928,
+          "y": -40,
+          "originX": 13,
+          "originY": 14,
+          "nodes": [
+            {"x": 720, "y": 160}
+          ],
+          "values": {"count": 35, "delay": 5}
+        },
+        {
+          "name": "zombie",
+          "id": 8,
+          "_eid": "35988912",
+          "x": 184,
+          "y": -48,
+          "originX": 13,
+          "originY": 14,
+          "nodes": [
+            {"x": 312, "y": 152}
+          ],
+          "values": {"count": 35, "delay": 5}
+        },
+        {
+          "name": "zombie",
+          "id": 9,
+          "_eid": "35988912",
+          "x": 160,
+          "y": 656,
+          "originX": 13,
+          "originY": 14,
+          "nodes": [
+            {"x": 320, "y": 368}
+          ],
+          "values": {"count": 35, "delay": 5}
+        },
+        {
+          "name": "zombie",
+          "id": 10,
+          "_eid": "35988912",
+          "x": 1080,
+          "y": 264,
+          "originX": 13,
+          "originY": 14,
+          "nodes": [
+            {"x": 720, "y": 264}
+          ],
+          "values": {"count": 35, "delay": 30}
+        },
+        {
+          "name": "zombie",
+          "id": 11,
+          "_eid": "35988912",
+          "x": -72,
+          "y": 288,
+          "originX": 13,
+          "originY": 14,
+          "nodes": [
+            {"x": 312, "y": 272}
+          ],
+          "values": {"count": 35, "delay": 30}
+        },
+        {
+          "name": "zombie",
+          "id": 12,
+          "_eid": "35988912",
+          "x": 536,
+          "y": -56,
+          "originX": 13,
+          "originY": 14,
+          "nodes": [
+            {"x": 528, "y": 144}
+          ],
+          "values": {"count": 35, "delay": 30}
+        },
+        {
+          "name": "house",
+          "id": 14,
+          "_eid": "57925105",
+          "x": 472,
+          "y": 232,
+          "originX": 58,
+          "originY": 24,
+          "values": {"skin": "house1"}
+        },
+        {
+          "name": "house",
+          "id": 15,
+          "_eid": "57925105",
+          "x": 560,
+          "y": 232,
+          "originX": 58,
+          "originY": 24,
+          "values": {"skin": "house1"}
+        },
+        {
+          "name": "house",
+          "id": 16,
+          "_eid": "57925105",
+          "x": 472,
+          "y": 280,
+          "originX": 58,
+          "originY": 24,
+          "values": {"skin": "house1"}
+        },
+        {
+          "name": "house",
+          "id": 17,
+          "_eid": "57925105",
+          "x": 560,
+          "y": 280,
+          "originX": 58,
+          "originY": 24,
+          "values": {"skin": "house1"}
+        },
+        {
+          "name": "player",
+          "id": 18,
+          "_eid": "36091488",
+          "x": 424,
+          "y": 176,
+          "originX": 15,
+          "originY": 22,
+          "values": {"team": 1}
+        },
+        {
+          "name": "player",
+          "id": 19,
+          "_eid": "36091488",
+          "x": 624,
+          "y": 176,
+          "originX": 15,
+          "originY": 22,
+          "values": {"team": 2}
+        },
+        {
+          "name": "player",
+          "id": 20,
+          "_eid": "36091488",
+          "x": 416,
+          "y": 352,
+          "originX": 15,
+          "originY": 22,
+          "values": {"team": 4}
+        },
+        {
+          "name": "player",
+          "id": 21,
+          "_eid": "36091488",
+          "x": 632,
+          "y": 344,
+          "originX": 15,
+          "originY": 22,
+          "values": {"team": 3}
         }
       ]
     },
