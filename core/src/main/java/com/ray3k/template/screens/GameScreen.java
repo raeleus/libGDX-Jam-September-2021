@@ -432,131 +432,136 @@ public class GameScreen extends JamScreen {
             if (!levelComplete && enemies.size == 0 && ships == 0) {
                 Gdx.input.setInputProcessor(stage);
                 levelComplete = true;
-                saveData.level++;
-                stage.getRoot().clearListeners();
                 
-                boolean[] killTeam = {true, true, true, true};
-                for (var soldier : soldiers) {
-                    killTeam[soldier.team - 1] = false;
-                }
-                
-                for (int team = 0; team < 4; team++) {
-                    if (killTeam[team]) {
-                        //clear team and upgrades
-                        saveData.types[team] = null;
-                        saveData.moveSpeed[team] = 0;
-                        saveData.damage[team] = 0;
-                        saveData.range[team] = 0;
-                        saveData.health[team] = 0;
-                        saveData.splash[team] = 0;
-                        saveData.squadSize[team] = 0;
-                    }
-                }
-                
-                stage.addAction(Actions.sequence(new TemporalAction(2.0f) {
-                    @Override
-                    protected void update(float percent) {
-                        bgm_game.setVolume(bgm * (1 - percent));
-                    }
-                }, Actions.run(() -> bgm_game.stop())));
-                
-                for (int i = 0; i < houses.size; i++) {
-                    var house = houses.get(i);
-                    if (house.health > 0) {
-                        var coin = new CoinEntity();
-                        coin.setPosition(house.x, house.y);
-                        entityController.add(coin);
-                        coin.animationState.getCurrent(0).setDelay(1 + .7f * i);
-                        saveData.coins++;
-                    }
-                }
-                
-                stage.addAction(Actions.delay(2 + .7f * houses.size, Actions.run(() -> {
-                    Dialog dialog = new Dialog("", skin) {
-                        @Override
-                        protected void result(Object object) {
-                            if (saveData.level <= 15) Gdx.app.postRunnable(() -> Core.core.transition(new GameScreen()));
-                            else Gdx.app.postRunnable(() -> Core.core.transition(new CreditsScreen()));
-                        }
-                    };
-                    
-                    var root = dialog.getContentTable();
-                    
-                    var table = new Table();
-                    root.add(table);
-                    
-                    var image = new Image(skin, "coin");
-                    image.setScaling(Scaling.fit);
-                    table.add(image).size(100, 100);
-                    
-                    var label = new Label("x" + saveData.coins, skin);
-                    table.add(label);
-                    
-                    root.row();
-                    table = new Table();
-                    root.add(table);
-                    
-                    var textButton = new TextButton("Upgrade Team 1", skin);
-                    table.add(textButton);
-                    if (saveData.types[0] == null) textButton.setDisabled(true);
-                    textButton.addListener(new ChangeListener() {
-                        @Override
-                        public void changed(ChangeEvent event, Actor actor) {
-                            dialog.hide();
-                            showUpgradeDialog(1, () -> {
-                                dialog.show(stage);
-                                label.setText("x" + saveData.coins);
-                            });
-                        }
-                    });
-                    
-                    textButton = new TextButton("Upgrade Team 2", skin);
-                    table.add(textButton);
-                    if (saveData.types[1] == null) textButton.setDisabled(true);
-                    textButton.addListener(new ChangeListener() {
-                        @Override
-                        public void changed(ChangeEvent event, Actor actor) {
-                            dialog.hide();
-                            showUpgradeDialog(2, () -> {
-                                dialog.show(stage);
-                                label.setText("x" + saveData.coins);
-                            });
-                        }
-                    });
+                if (saveData.level == 15) Gdx.app.postRunnable(() -> Core.core.transition(new CreditsScreen()));
+                else {
+                    saveData.level++;
+                    stage.getRoot().clearListeners();
     
-                    table.row();
-                    textButton = new TextButton("Upgrade Team 3", skin);
-                    table.add(textButton);
-                    if (saveData.types[2] == null) textButton.setDisabled(true);
-                    textButton.addListener(new ChangeListener() {
-                        @Override
-                        public void changed(ChangeEvent event, Actor actor) {
-                            dialog.hide();
-                            showUpgradeDialog(3, () -> {
-                                dialog.show(stage);
-                                label.setText("x" + saveData.coins);
-                            });
+                    boolean[] killTeam = {true, true, true, true};
+                    for (var soldier : soldiers) {
+                        killTeam[soldier.team - 1] = false;
+                    }
+    
+                    for (int team = 0; team < 4; team++) {
+                        if (killTeam[team]) {
+                            //clear team and upgrades
+                            saveData.types[team] = null;
+                            saveData.moveSpeed[team] = 0;
+                            saveData.damage[team] = 0;
+                            saveData.range[team] = 0;
+                            saveData.health[team] = 0;
+                            saveData.splash[team] = 0;
+                            saveData.squadSize[team] = 0;
                         }
-                    });
-                    
-                    textButton = new TextButton("Upgrade Team 4", skin);
-                    table.add(textButton);
-                    if (saveData.types[3] == null) textButton.setDisabled(true);
-                    textButton.addListener(new ChangeListener() {
+                    }
+    
+                    stage.addAction(Actions.sequence(new TemporalAction(2.0f) {
                         @Override
-                        public void changed(ChangeEvent event, Actor actor) {
-                            dialog.hide();
-                            showUpgradeDialog(4, () -> {
-                                dialog.show(stage);
-                                label.setText("x" + saveData.coins);
-                            });
+                        protected void update(float percent) {
+                            bgm_game.setVolume(bgm * (1 - percent));
                         }
-                    });
-                    
-                    dialog.button("Next Level");
-                    
-                    dialog.show(stage);
-                })));
+                    }, Actions.run(() -> bgm_game.stop())));
+    
+                    for (int i = 0; i < houses.size; i++) {
+                        var house = houses.get(i);
+                        if (house.health > 0) {
+                            var coin = new CoinEntity();
+                            coin.setPosition(house.x, house.y);
+                            entityController.add(coin);
+                            coin.animationState.getCurrent(0).setDelay(1 + .7f * i);
+                            saveData.coins++;
+                        }
+                    }
+    
+                    stage.addAction(Actions.delay(2 + .7f * houses.size, Actions.run(() -> {
+                        Dialog dialog = new Dialog("", skin) {
+                            @Override
+                            protected void result(Object object) {
+                                if (saveData.level <= 15)
+                                    Gdx.app.postRunnable(() -> Core.core.transition(new GameScreen()));
+                                else Gdx.app.postRunnable(() -> Core.core.transition(new CreditsScreen()));
+                            }
+                        };
+        
+                        var root = dialog.getContentTable();
+        
+                        var table = new Table();
+                        root.add(table);
+        
+                        var image = new Image(skin, "coin");
+                        image.setScaling(Scaling.fit);
+                        table.add(image).size(100, 100);
+        
+                        var label = new Label("x" + saveData.coins, skin);
+                        table.add(label);
+        
+                        root.row();
+                        table = new Table();
+                        root.add(table);
+        
+                        var textButton = new TextButton("Upgrade Team 1", skin);
+                        table.add(textButton);
+                        if (saveData.types[0] == null) textButton.setDisabled(true);
+                        textButton.addListener(new ChangeListener() {
+                            @Override
+                            public void changed(ChangeEvent event, Actor actor) {
+                                dialog.hide();
+                                showUpgradeDialog(1, () -> {
+                                    dialog.show(stage);
+                                    label.setText("x" + saveData.coins);
+                                });
+                            }
+                        });
+        
+                        textButton = new TextButton("Upgrade Team 2", skin);
+                        table.add(textButton);
+                        if (saveData.types[1] == null) textButton.setDisabled(true);
+                        textButton.addListener(new ChangeListener() {
+                            @Override
+                            public void changed(ChangeEvent event, Actor actor) {
+                                dialog.hide();
+                                showUpgradeDialog(2, () -> {
+                                    dialog.show(stage);
+                                    label.setText("x" + saveData.coins);
+                                });
+                            }
+                        });
+        
+                        table.row();
+                        textButton = new TextButton("Upgrade Team 3", skin);
+                        table.add(textButton);
+                        if (saveData.types[2] == null) textButton.setDisabled(true);
+                        textButton.addListener(new ChangeListener() {
+                            @Override
+                            public void changed(ChangeEvent event, Actor actor) {
+                                dialog.hide();
+                                showUpgradeDialog(3, () -> {
+                                    dialog.show(stage);
+                                    label.setText("x" + saveData.coins);
+                                });
+                            }
+                        });
+        
+                        textButton = new TextButton("Upgrade Team 4", skin);
+                        table.add(textButton);
+                        if (saveData.types[3] == null) textButton.setDisabled(true);
+                        textButton.addListener(new ChangeListener() {
+                            @Override
+                            public void changed(ChangeEvent event, Actor actor) {
+                                dialog.hide();
+                                showUpgradeDialog(4, () -> {
+                                    dialog.show(stage);
+                                    label.setText("x" + saveData.coins);
+                                });
+                            }
+                        });
+        
+                        dialog.button("Next Level");
+        
+                        dialog.show(stage);
+                    })));
+                }
             } else if (!levelComplete) {
                 boolean hasSoldiers = false;
                 boolean hasHouses = false;

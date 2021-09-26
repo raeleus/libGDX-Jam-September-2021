@@ -389,6 +389,8 @@ public class SoldierEntity extends Entity {
                     x += temp.x;
                     y += temp.y;
                 }
+            } else if (collision.other.userData instanceof KillEntity) {
+                destroy = true;
             }
         }
     }
@@ -404,6 +406,7 @@ public class SoldierEntity extends Entity {
                     return Response.bounce;
                 } else return Response.cross;
             }
+            if (other.userData instanceof KillEntity) return Response.cross;
             return null;
         }
     }

@@ -165,6 +165,7 @@ public class Resources {
         SpineActor.skinPouncer = SpineActor.skeletonData.findSkin("pouncer");
         SpineActor.skinSniper = SpineActor.skeletonData.findSkin("sniper");
         SpineActor.skinSpitter = SpineActor.skeletonData.findSkin("spitter");
+        SpineActor.skinTank = SpineActor.skeletonData.findSkin("tank");
         SpineActor.skinWitch = SpineActor.skeletonData.findSkin("witch");
         SpineActor.skinZombie = SpineActor.skeletonData.findSkin("zombie");
         SpineBloodCloud.skeletonData = assetManager.get("spine/blood-cloud.json");
@@ -387,6 +388,8 @@ public class Resources {
         public static com.esotericsoftware.spine.Skin skinSniper;
 
         public static com.esotericsoftware.spine.Skin skinSpitter;
+
+        public static com.esotericsoftware.spine.Skin skinTank;
 
         public static com.esotericsoftware.spine.Skin skinWitch;
 
@@ -772,11 +775,11 @@ public class Resources {
 
         public static Range tankMoveSpeedRange = new Range(0.0f, 1000.0f);
 
-        public static float tankMoveSpeed = 75.0f;
+        public static float tankMoveSpeed = 15.0f;
 
-        public static int tankDamage = 2;
+        public static int tankDamage = 5;
 
-        public static int tankHealth = 6;
+        public static int tankHealth = 4000;
 
         public static Range witchMoveSpeedRange = new Range(0.0f, 1000.0f);
 

@@ -87,8 +87,8 @@ public class EnemyEntity extends Entity {
                 health = tankHealth;
                 moveSpeed = tankMoveSpeed;
                 damage = tankDamage;
-                skeleton.setSkin(skinZombie);//todo: fix this
-                skeleton.setScale(.25f, .25f);
+                skeleton.setSkin(skinTank);
+                skeleton.setScale(.75f, .75f);
                 break;
         }
         

@@ -1,11 +1,11 @@
 {
 "skeleton": {
-	"hash": "b662mgojolI",
+	"hash": "1CrHiPSx3sM",
 	"spine": "4.0.37",
 	"x": -32,
-	"y": -20.5,
+	"y": -22.12,
 	"width": 135.08,
-	"height": 197.79,
+	"height": 199.42,
 	"images": "",
 	"audio": ""
 },
@@ -362,6 +362,26 @@
 			},
 			"head": {
 				"head": { "name": "game/spitter-head", "x": 19.23, "y": 10.19, "rotation": -82.41, "width": 41, "height": 56 }
+			},
+			"projectile": {
+				"projectile": { "type": "point", "x": 12.83, "y": 21.48 }
+			}
+		}
+	},
+	{
+		"name": "tank",
+		"attachments": {
+			"body": {
+				"body": { "name": "game/tank-body", "x": 21.76, "y": -0.12, "rotation": -82.34, "width": 74, "height": 92 }
+			},
+			"hand-left": {
+				"hand-left": { "name": "game/tank-hand", "x": -9.78, "y": -2.69, "rotation": -1.09, "width": 28, "height": 30 }
+			},
+			"hand-right": {
+				"hand-right": { "name": "game/tank-hand", "x": 12.93, "y": 2.72, "width": 28, "height": 30 }
+			},
+			"head": {
+				"head": { "name": "game/tank-head", "x": 27.35, "y": -0.89, "rotation": -82.41, "width": 38, "height": 42 }
 			},
 			"projectile": {
 				"projectile": { "type": "point", "x": 12.83, "y": 21.48 }

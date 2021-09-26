@@ -267,6 +267,265 @@
             {"x": 160, "y": 448},
             {"x": 288, "y": 448}
           ]
+        },
+        {
+          "name": "house",
+          "id": 21,
+          "_eid": "57925105",
+          "x": 776,
+          "y": 216,
+          "originX": 58,
+          "originY": 24,
+          "values": {"skin": "house2"}
+        },
+        {
+          "name": "house",
+          "id": 22,
+          "_eid": "57925105",
+          "x": 776,
+          "y": 328,
+          "originX": 58,
+          "originY": 24,
+          "values": {"skin": "house2"}
+        },
+        {
+          "name": "house",
+          "id": 23,
+          "_eid": "57925105",
+          "x": 584,
+          "y": 56,
+          "originX": 58,
+          "originY": 24,
+          "values": {"skin": "house2"}
+        },
+        {
+          "name": "house",
+          "id": 24,
+          "_eid": "57925105",
+          "x": 456,
+          "y": 48,
+          "originX": 58,
+          "originY": 24,
+          "values": {"skin": "house2"}
+        },
+        {
+          "name": "house",
+          "id": 25,
+          "_eid": "57925105",
+          "x": 232,
+          "y": 216,
+          "originX": 58,
+          "originY": 24,
+          "values": {"skin": "house2"}
+        },
+        {
+          "name": "house",
+          "id": 26,
+          "_eid": "57925105",
+          "x": 240,
+          "y": 352,
+          "originX": 58,
+          "originY": 24,
+          "values": {"skin": "house2"}
+        },
+        {
+          "name": "house",
+          "id": 27,
+          "_eid": "57925105",
+          "x": 472,
+          "y": 480,
+          "originX": 58,
+          "originY": 24,
+          "values": {"skin": "house2"}
+        },
+        {
+          "name": "house",
+          "id": 28,
+          "_eid": "57925105",
+          "x": 552,
+          "y": 480,
+          "originX": 58,
+          "originY": 24,
+          "values": {"skin": "house2"}
+        },
+        {
+          "name": "player",
+          "id": 29,
+          "_eid": "36091488",
+          "x": 240,
+          "y": 280,
+          "originX": 15,
+          "originY": 22,
+          "values": {"team": 1}
+        },
+        {
+          "name": "player",
+          "id": 30,
+          "_eid": "36091488",
+          "x": 784,
+          "y": 272,
+          "originX": 15,
+          "originY": 22,
+          "values": {"team": 3}
+        },
+        {
+          "name": "player",
+          "id": 31,
+          "_eid": "36091488",
+          "x": 520,
+          "y": 64,
+          "originX": 15,
+          "originY": 22,
+          "values": {"team": 2}
+        },
+        {
+          "name": "player",
+          "id": 32,
+          "_eid": "36091488",
+          "x": 512,
+          "y": 472,
+          "originX": 15,
+          "originY": 22,
+          "values": {"team": 4}
+        },
+        {
+          "name": "tank",
+          "id": 33,
+          "_eid": "36086267",
+          "x": 896,
+          "y": -40,
+          "originX": 19,
+          "originY": 21,
+          "nodes": [
+            {"x": 520, "y": 280}
+          ],
+          "values": {"count": 1, "delay": 5}
+        },
+        {
+          "name": "kill",
+          "id": 34,
+          "_eid": "69917960",
+          "x": 336,
+          "y": -56,
+          "originX": 4,
+          "originY": 4,
+          "nodes": [
+            {"x": 336, "y": 8},
+            {"x": 744, "y": 16},
+            {"x": 744, "y": -56}
+          ]
+        },
+        {
+          "name": "kill",
+          "id": 35,
+          "_eid": "69917960",
+          "x": 640,
+          "y": -80,
+          "originX": 4,
+          "originY": 4,
+          "nodes": [
+            {"x": 640, "y": 192},
+            {"x": 864, "y": 192},
+            {"x": 848, "y": -80}
+          ]
+        },
+        {
+          "name": "kill",
+          "id": 36,
+          "_eid": "69917960",
+          "x": 840,
+          "y": 112,
+          "originX": 4,
+          "originY": 4,
+          "nodes": [
+            {"x": 840, "y": 456},
+            {"x": 904, "y": 456},
+            {"x": 880, "y": 112}
+          ]
+        },
+        {
+          "name": "kill",
+          "id": 37,
+          "_eid": "69917960",
+          "x": 920,
+          "y": 376,
+          "originX": 4,
+          "originY": 4,
+          "nodes": [
+            {"x": 656, "y": 376},
+            {"x": 656, "y": 536},
+            {"x": 928, "y": 544}
+          ]
+        },
+        {
+          "name": "kill",
+          "id": 38,
+          "_eid": "69917960",
+          "x": 608,
+          "y": 384,
+          "originX": 4,
+          "originY": 4,
+          "nodes": [
+            {"x": 616, "y": 600},
+            {"x": 688, "y": 592},
+            {"x": 680, "y": 384}
+          ]
+        },
+        {
+          "name": "kill",
+          "id": 39,
+          "_eid": "69917960",
+          "x": 656,
+          "y": 528,
+          "originX": 4,
+          "originY": 4,
+          "nodes": [
+            {"x": 320, "y": 528},
+            {"x": 336, "y": 632},
+            {"x": 664, "y": 616}
+          ]
+        },
+        {
+          "name": "kill",
+          "id": 40,
+          "_eid": "69917960",
+          "x": 136,
+          "y": 416,
+          "originX": 4,
+          "originY": 4,
+          "nodes": [
+            {"x": 408, "y": 416},
+            {"x": 400, "y": 656},
+            {"x": 128, "y": 632}
+          ]
+        },
+        {
+          "name": "kill",
+          "id": 41,
+          "_eid": "69917960",
+          "x": 96,
+          "y": 136,
+          "originX": 4,
+          "originY": 4,
+          "nodes": [
+            {"x": 184, "y": 136},
+            {"x": 176, "y": 456},
+            {"x": 96, "y": 456}
+          ]
+        },
+        {
+          "name": "kill",
+          "id": 42,
+          "_eid": "69917960",
+          "x": 152,
+          "y": -32,
+          "originX": 4,
+          "originY": 4,
+          "nodes": [
+            {"x": 152, "y": 176},
+            {"x": 352, "y": 176},
+            {"x": 360, "y": -32}
+          ]
         }
       ]
     },
