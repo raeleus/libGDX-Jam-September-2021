@@ -3,6 +3,7 @@ package com.ray3k.template.entities;
 import com.badlogic.gdx.scenes.scene2d.actions.Actions;
 import com.dongbat.jbump.Collisions;
 import com.dongbat.jbump.Response.Result;
+import com.ray3k.template.entities.EnemyEntity.*;
 
 import static com.ray3k.template.Core.*;
 import static com.ray3k.template.Resources.*;
@@ -11,7 +12,7 @@ import static com.ray3k.template.screens.GameScreen.*;
 public class EnemyShipSpawner extends Entity {
     public int count;
     public float delay;
-    public Class type;
+    public EnemyType enemyType;
     public float targetX;
     public float targetY;
     
@@ -44,6 +45,7 @@ public class EnemyShipSpawner extends Entity {
             ship.targetX = targetX;
             ship.targetY = targetY;
             ship.count = count;
+            ship.enemyType = enemyType;
             entityController.add(ship);
             
             destroy = true;

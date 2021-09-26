@@ -741,6 +741,54 @@ public class Resources {
 
         public static int zombieHealth = 6;
 
+        public static Range pouncerMoveSpeedRange = new Range(0.0f, 1000.0f);
+
+        public static float pouncerMoveSpeed = 75.0f;
+
+        public static int pouncerDamage = 2;
+
+        public static int pouncerHealth = 6;
+
+        public static Range tankMoveSpeedRange = new Range(0.0f, 1000.0f);
+
+        public static float tankMoveSpeed = 75.0f;
+
+        public static int tankDamage = 2;
+
+        public static int tankHealth = 6;
+
+        public static Range witchMoveSpeedRange = new Range(0.0f, 1000.0f);
+
+        public static float witchMoveSpeed = 75.0f;
+
+        public static int witchDamage = 2;
+
+        public static int witchHealth = 6;
+
+        public static Range spitterMoveSpeedRange = new Range(0.0f, 1000.0f);
+
+        public static float spitterMoveSpeed = 75.0f;
+
+        public static int spitterDamage = 2;
+
+        public static int spitterHealth = 6;
+
+        public static Range spitterRangeRange = new Range(0.0f, 1000.0f);
+
+        public static float spitterRange = 50.0f;
+
+        public static Range exploderMoveSpeedRange = new Range(0.0f, 1000.0f);
+
+        public static float exploderMoveSpeed = 75.0f;
+
+        public static int exploderDamage = 2;
+
+        public static int exploderHealth = 6;
+
+        public static Range exploderRangeRange = new Range(0.0f, 1000.0f);
+
+        public static float exploderRange = 100.0f;
+
         public static Range enemyHurtDelayRange = new Range(0.0f, 5.0f);
 
         public static float enemyHurtDelay = 0.5f;

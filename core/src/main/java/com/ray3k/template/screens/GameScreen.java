@@ -23,6 +23,7 @@ import com.dongbat.walkable.PathHelper;
 import com.ray3k.template.*;
 import com.ray3k.template.OgmoReader.*;
 import com.ray3k.template.entities.*;
+import com.ray3k.template.entities.EnemyEntity.*;
 import com.ray3k.template.entities.SoldierEntity.*;
 import com.ray3k.template.screens.DialogPause.*;
 import space.earlygrey.shapedrawer.ShapeDrawer;
@@ -88,12 +89,25 @@ public class GameScreen extends JamScreen {
                 if (!paused && keycode == Keys.ESCAPE) {
                     paused = true;
                 
+                    stage.addAction(Actions.sequence(new TemporalAction(1f) {
+                        @Override
+                        protected void update(float percent) {
+                            bgm_game.setVolume(bgm * (1 - percent));
+                        }
+                    }, Actions.run(() -> bgm_game.pause())));
+                    
                     DialogPause dialogPause = new DialogPause(GameScreen.this);
                     dialogPause.show(stage);
                     dialogPause.addListener(new PauseListener() {
                         @Override
                         public void resume() {
                             paused = false;
+                            stage.addAction(Actions.sequence(Actions.run(() -> bgm_game.play()), new TemporalAction(1f) {
+                                @Override
+                                protected void update(float percent) {
+                                    bgm_game.setVolume(bgm * (1 - percent));
+                                }
+                            }));
                         }
     
                         @Override
@@ -104,6 +118,7 @@ public class GameScreen extends JamScreen {
                         @Override
                         public void quit() {
                             core.transition(new MenuScreen());
+                            bgm_game.stop();
                         }
                     });
                 }
@@ -298,7 +313,17 @@ public class GameScreen extends JamScreen {
                     spawner.setPosition(x, y);
                     spawner.count = valuesMap.get("count").asInt();
                     spawner.delay = valuesMap.get("delay").asFloat();
-                    spawner.type = EnemyShipSpawner.class;//todo:change this;
+                    spawner.enemyType = EnemyType.ZOMBIE;
+                    spawner.targetX = nodes.first().x;
+                    spawner.targetY = nodes.first().y;
+                    entityController.add(spawner);
+                    ships++;
+                } else if (name.equals("exploder")) {
+                    var spawner = new EnemyShipSpawner();
+                    spawner.setPosition(x, y);
+                    spawner.count = valuesMap.get("count").asInt();
+                    spawner.delay = valuesMap.get("delay").asFloat();
+                    spawner.enemyType = EnemyType.EXPLODER;
                     spawner.targetX = nodes.first().x;
                     spawner.targetY = nodes.first().y;
                     entityController.add(spawner);
@@ -351,6 +376,7 @@ public class GameScreen extends JamScreen {
                 Gdx.input.setInputProcessor(stage);
                 levelComplete = true;
                 saveData.level++;
+                stage.getRoot().clearListeners();
                 
                 boolean[] killTeam = {true, true, true, true};
                 for (var soldier : soldiers) {
@@ -495,6 +521,8 @@ public class GameScreen extends JamScreen {
                 
                 if (!hasHouses || !hasSoldiers) {
                     levelComplete = true;
+    
+                    stage.getRoot().clearListeners();
                     
                     stage.addAction(Actions.sequence(new TemporalAction(2.0f) {
                         @Override

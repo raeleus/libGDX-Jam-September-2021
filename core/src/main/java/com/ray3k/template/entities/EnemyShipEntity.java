@@ -4,6 +4,7 @@ import com.badlogic.gdx.math.MathUtils;
 import com.dongbat.jbump.Collisions;
 import com.dongbat.jbump.Response.Result;
 import com.ray3k.template.*;
+import com.ray3k.template.entities.EnemyEntity.*;
 import com.ray3k.template.screens.*;
 
 import static com.ray3k.template.Core.*;
@@ -17,6 +18,7 @@ public class EnemyShipEntity extends Entity {
     public boolean triggered;
     public int count;
     private float timer;
+    public EnemyType enemyType;
     
     @Override
     public void create() {
@@ -50,6 +52,7 @@ public class EnemyShipEntity extends Entity {
             if (timer <= 0 && count > 0) {
                 Resources.sfx_troopDeploy.play(sfx);
                 var enemy = new EnemyEntity();
+                enemy.enemyType = enemyType;
                 gameScreen.enemies.add(enemy);
                 enemy.setPosition(x, y);
                 entityController.add(enemy);

@@ -29,18 +29,59 @@ public class EnemyEntity extends Entity {
     public float hurtTimer;
     public float friction;
     public float moveSpeed;
+    public int damage;
+    public enum EnemyType {
+        ZOMBIE, POUNCER, TANK, WITCH, SPITTER, EXPLODER
+    }
+    public EnemyType enemyType;
     
     private static final Vector2 temp = new Vector2();
     
     @Override
     public void create() {
-        health = zombieHealth;
-        moveSpeed = zombieMoveSpeed;
-        
         setSkeletonData(skeletonData, animationData);
+        
+        switch (enemyType) {
+            case ZOMBIE:
+                health = zombieHealth;
+                moveSpeed = zombieMoveSpeed;
+                damage = zombieDamage;
+                skeleton.setSkin(skinZombie);
+                break;
+            case EXPLODER:
+                health = exploderHealth;
+                moveSpeed = exploderMoveSpeed;
+                damage = exploderDamage;
+                skeleton.setSkin(skinExploder);
+                break;
+            case SPITTER:
+                health = spitterHealth;
+                moveSpeed = spitterMoveSpeed;
+                damage = spitterDamage;
+                skeleton.setSkin(skinSpitter);
+                break;
+            case POUNCER:
+                health = pouncerHealth;
+                moveSpeed = pouncerMoveSpeed;
+                damage = pouncerDamage;
+                skeleton.setSkin(skinPouncer);
+                break;
+            case WITCH:
+                health = witchHealth;
+                moveSpeed = witchMoveSpeed;
+                damage = witchDamage;
+                skeleton.setSkin(skinWitch);
+                break;
+            case TANK:
+                health = tankHealth;
+                moveSpeed = tankMoveSpeed;
+                damage = tankDamage;
+                skeleton.setSkin(skinZombie);//todo: fix this
+                break;
+        }
+        
         animationState.setAnimation(0, animationStand, false);
         animationState.setAnimation(1, animationFlagNone, false);
-        skeleton.setSkin(skinZombie);
         skeleton.setScale(.25f, .25f);
         depth = GameScreen.ACTOR_DEPTH;
         
@@ -189,9 +230,25 @@ public class EnemyEntity extends Entity {
     @Override
     public void destroy() {
         gameScreen.enemies.removeValue(this, true);
-        var cloud = new BloodCloudEntity();
-        cloud.setPosition(x, y);
-        entityController.add(cloud);
+        if (enemyType != EnemyType.EXPLODER) {
+            var cloud = new BloodCloudEntity();
+            cloud.setPosition(x, y);
+            entityController.add(cloud);
+        } else {
+            var cloud = new PoisonCloudEntity();
+            cloud.setPosition(x, y);
+            entityController.add(cloud);
+            sfx_explosion2.play(sfx);
+            
+            for (var soldier : gameScreen.soldiers) {
+                float distance = Utils.pointDistance(x, y, soldier.x, soldier.y);
+                if (distance < exploderRange) {
+                    if (soldier.hurtTimer <= 0) {
+                        soldier.hurt(damage, Utils.pointDirection(x, y, soldier.x, soldier.y));
+                    }
+                }
+            }
+        }
     }
     
     @Override
@@ -215,13 +272,17 @@ public class EnemyEntity extends Entity {
             } else if (other instanceof SoldierEntity) {
                 var otherSoldier = (SoldierEntity) other;
                 if (otherSoldier.hurtTimer <= 0) {
-                    otherSoldier.hurt(zombieDamage, Utils.pointDirection(x, y, otherSoldier.x, otherSoldier.y));
-                    sfx_slash.play(sfx);
+                    if (enemyType != EnemyType.EXPLODER) {
+                        otherSoldier.hurt(damage, Utils.pointDirection(x, y, otherSoldier.x, otherSoldier.y));
+                        sfx_slash.play(sfx);
+                    } else {
+                        destroy = true;
+                    }
                 }
             } else if (other instanceof HouseEntity) {
                 var otherHouse = (HouseEntity) other;
                 if (targetingHouse && otherHouse.hurtTimer <= 0) {
-                    otherHouse.hurt(zombieDamage);
+                    otherHouse.hurt(damage);
                     sfx_slash.play(sfx);
                 }
             }
