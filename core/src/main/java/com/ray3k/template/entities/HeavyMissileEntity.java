@@ -41,6 +41,7 @@ public class HeavyMissileEntity extends Entity {
             var explosion = new ExplosionEntity();
             explosion.setPosition(target.x, target.y);
             entityController.add(explosion);
+            explosion.skeleton.setScale(explosion.skeleton.getScaleX() * splashRange / Values.heavySplashRange, explosion.skeleton.getScaleY() * splashRange / Values.heavySplashRange);
             switch (MathUtils.random(2)) {
                 case 0:
                     sfx_explosion.play(sfx);

@@ -736,6 +736,24 @@ public class Resources {
 
         public static int soldierHealth = 10;
 
+        public static Range soldierImproveSpeedRange = new Range(0.0f, 400.0f);
+
+        public static float soldierImproveSpeed = 25.0f;
+
+        public static int soldierImproveDamage = 2;
+
+        public static Range soldierImproveRangeRange = new Range(0.0f, 400.0f);
+
+        public static float soldierImproveRange = 50.0f;
+
+        public static int soldierImproveHealth = 1;
+
+        public static Range soldierImproveSplashRange = new Range(0.0f, 400.0f);
+
+        public static float soldierImproveSplash = 10.0f;
+
+        public static int soldierImproveSquadSize = 1;
+
         public static Range zombieMoveSpeedRange = new Range(0.0f, 1000.0f);
 
         public static float zombieMoveSpeed = 75.0f;

@@ -186,7 +186,7 @@
           "nodes": [
             {"x": 680, "y": 376}
           ],
-          "values": {"count": 7, "delay": 40}
+          "values": {"count": 5, "delay": 40}
         },
         {
           "name": "zombie",
@@ -238,7 +238,7 @@
           "nodes": [
             {"x": 312, "y": 376}
           ],
-          "values": {"count": 7, "delay": 40}
+          "values": {"count": 5, "delay": 40}
         },
         {
           "name": "zombie",
@@ -251,7 +251,7 @@
           "nodes": [
             {"x": 688, "y": 432}
           ],
-          "values": {"count": 7, "delay": 40}
+          "values": {"count": 5, "delay": 40}
         },
         {
           "name": "zombie",
@@ -264,7 +264,7 @@
           "nodes": [
             {"x": 320, "y": 432}
           ],
-          "values": {"count": 7, "delay": 40}
+          "values": {"count": 5, "delay": 40}
         }
       ]
     },

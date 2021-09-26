@@ -277,7 +277,7 @@ public class GameScreen extends JamScreen {
                         soldiers.add(leader);
     
                         temp.set(20, 0);
-                        float squadSize;
+                        int squadSize;
                         switch (soldierType) {
                             case ASSAULT:
                                 squadSize = assaultSquadSize;
@@ -640,6 +640,105 @@ public class GameScreen extends JamScreen {
             
             root.row();
             var textButton = new TextButton("Cancel", skin);
+            root.add(textButton);
+            onChange(textButton, () -> {
+                sfx_click.play(sfx);
+                dialog.hide();
+            });
+        } else if (saveData.types[team - 1] == SoldierType.ASSAULT && saveData.coins >= 3) {
+            var table = new Table();
+            root.add(table);
+    
+            if (saveData.moveSpeed[team - 1] < 4) {
+                var textButton = new TextButton("Speed " + (saveData.moveSpeed[team - 1] + 1), skin);
+                table.add(textButton);
+                onChange(textButton, () -> {
+                    saveData.moveSpeed[team - 1]++;
+                    saveData.coins -= 3;
+                    sfx_click.play(sfx);
+                    dialog.hide();
+                });
+            }
+    
+            if (saveData.health[team - 1] < 4) {
+                var textButton = new TextButton("Health " + (saveData.health[team - 1] + 1), skin);
+                table.add(textButton);
+                onChange(textButton, () -> {
+                    saveData.health[team - 1]++;
+                    saveData.coins -= 3;
+                    sfx_click.play(sfx);
+                    dialog.hide();
+                });
+            }
+    
+            root.row();
+            var textButton = new TextButton("OK", skin);
+            root.add(textButton);
+            onChange(textButton, () -> {
+                sfx_click.play(sfx);
+                dialog.hide();
+            });
+        } else if (saveData.types[team - 1] == SoldierType.SNIPER && saveData.coins >= 3) {
+            var table = new Table();
+            root.add(table);
+    
+            if (saveData.damage[team - 1] < 4) {
+                var textButton = new TextButton("Damage " + (saveData.damage[team - 1] + 1), skin);
+                table.add(textButton);
+                onChange(textButton, () -> {
+                    saveData.damage[team - 1]++;
+                    saveData.coins -= 3;
+                    sfx_click.play(sfx);
+                    dialog.hide();
+                });
+            }
+    
+            if (saveData.range[team - 1] < 4) {
+                var textButton = new TextButton("Range " + (saveData.range[team - 1] + 1), skin);
+                table.add(textButton);
+                onChange(textButton, () -> {
+                    saveData.range[team - 1]++;
+                    saveData.coins -= 3;
+                    sfx_click.play(sfx);
+                    dialog.hide();
+                });
+            }
+    
+            root.row();
+            var textButton = new TextButton("OK", skin);
+            root.add(textButton);
+            onChange(textButton, () -> {
+                sfx_click.play(sfx);
+                dialog.hide();
+            });
+        } else if (saveData.types[team - 1] == SoldierType.HEAVY && saveData.coins >= 3) {
+            var table = new Table();
+            root.add(table);
+    
+            if (saveData.splash[team - 1] < 4) {
+                var textButton = new TextButton("Splash " + (saveData.splash[team - 1] + 1), skin);
+                table.add(textButton);
+                onChange(textButton, () -> {
+                    saveData.splash[team - 1]++;
+                    saveData.coins -= 3;
+                    sfx_click.play(sfx);
+                    dialog.hide();
+                });
+            }
+    
+            if (saveData.squadSize[team - 1] < 4) {
+                var textButton = new TextButton("Squad Size " + (saveData.squadSize[team - 1] + 1), skin);
+                table.add(textButton);
+                onChange(textButton, () -> {
+                    saveData.squadSize[team - 1]++;
+                    saveData.coins -= 3;
+                    sfx_click.play(sfx);
+                    dialog.hide();
+                });
+            }
+    
+            root.row();
+            var textButton = new TextButton("OK", skin);
             root.add(textButton);
             onChange(textButton, () -> {
                 sfx_click.play(sfx);

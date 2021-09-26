@@ -60,7 +60,6 @@ public class SoldierEntity extends Entity {
     public void create() {
         targetX = x;
         targetY = y;
-        health = soldierHealth;
         setSkeletonData(skeletonData, animationData);
         animationState.setAnimation(0, animationStand, false);
         switch (soldierType) {
@@ -101,6 +100,11 @@ public class SoldierEntity extends Entity {
                 damage = sniperDamage;
                 break;
         }
+        moveSpeed += saveData.moveSpeed[team -1] * soldierImproveSpeed;
+        damage += saveData.damage[team -1] * soldierImproveDamage;
+        shotRange += saveData.range[team -1] * soldierImproveRange;
+        health = soldierHealth + saveData.health[team - 1] * soldierImproveHealth;
+        
         shotTimer = MathUtils.random(shotDelay);
         
         skeleton.setScale(.25f, .25f);
@@ -288,7 +292,7 @@ public class SoldierEntity extends Entity {
                         animationState.setAnimation(3, animationShoot, false);
                         var missile = new HeavyMissileEntity();
                         missile.damage = heavyDamage;
-                        missile.splashRange = heavySplashRange;
+                        missile.splashRange = heavySplashRange + saveData.splash[team - 1] * soldierImproveSplash;
                         missile.target = targetedEnemy;
                         missile.timer = heavyMissileDelay;
                         entityController.add(missile);
