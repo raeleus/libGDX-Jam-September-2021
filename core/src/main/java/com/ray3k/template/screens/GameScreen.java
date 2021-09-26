@@ -290,14 +290,12 @@ public class GameScreen extends JamScreen {
             if (isBindingJustPressed(Binding.ZOOM_IN)) {
                 if (zoomIndex < ZOOMS.length - 1) {
                     zoomIndex++;
-                    if (zoomIndex >= ZOOMS.length) zoomIndex = ZOOMS.length - 1;
                     updateZoom = true;
                 }
                 
             } else if (isBindingJustPressed(Binding.ZOOM_OUT)) {
                 if (zoomIndex > 0) {
                     zoomIndex--;
-                    if (zoomIndex < 0) zoomIndex = 0;
                     updateZoom = true;
                 }
             }
@@ -324,6 +322,7 @@ public class GameScreen extends JamScreen {
             vfxManager.update(delta);
             
             if (!levelComplete && enemies.size == 0 && ships == 0) {
+                Gdx.input.setInputProcessor(stage);
                 levelComplete = true;
                 saveData.level++;
                 stage.addAction(Actions.sequence(new TemporalAction(2.0f) {

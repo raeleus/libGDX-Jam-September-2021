@@ -189,6 +189,9 @@ public class EnemyEntity extends Entity {
     @Override
     public void destroy() {
         gameScreen.enemies.removeValue(this, true);
+        var cloud = new BloodCloudEntity();
+        cloud.setPosition(x, y);
+        entityController.add(cloud);
     }
     
     @Override
@@ -248,9 +251,9 @@ public class EnemyEntity extends Entity {
             setMotion(soldierHurtSpeed, direction);
             friction = soldierHurtFriction;
             if (direction > 90 && direction < 270) {
-                animationState.setAnimation(1, animationHurtLeft, false);
+                animationState.setAnimation(2, animationHurtLeft, false);
             } else {
-                animationState.setAnimation(1, animationHurtRight, false);
+                animationState.setAnimation(2, animationHurtRight, false);
             }
         }
     }

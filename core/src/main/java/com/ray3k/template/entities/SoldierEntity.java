@@ -111,6 +111,10 @@ public class SoldierEntity extends Entity {
         skeletonBounds.update(skeleton, true);
         setCollisionBox(-5, -5, 10, 10, soldierCollisionFilter);
     
+        setAnimationFlag();
+    }
+    
+    public void setAnimationFlag() {
         if (parent == null) {
             if (team == 1) {
                 animationState.setAnimation(1, animationFlagBlue, true);
@@ -260,7 +264,7 @@ public class SoldierEntity extends Entity {
             }
         }
     
-        if (targetedEnemy != null) {
+        if (targetedEnemy != null && hurtTimer <= 0) {
             if (shotTimer > 0) {
                 shotTimer -= delta;
             }
@@ -314,6 +318,26 @@ public class SoldierEntity extends Entity {
     @Override
     public void destroy() {
         gameScreen.soldiers.removeValue(this, true);
+        if (parent == null) {
+            SoldierEntity newParent = null;
+            for (var child : children) {
+                if (!child.destroy) {
+                    newParent = child;
+                    break;
+                }
+            }
+            
+            if (newParent != null) {
+                if (gameScreen.selectedSoldier == this) gameScreen.selectedSoldier = newParent;
+                newParent.parent = null;
+                children.removeValue(newParent, true);
+                newParent.children = children;
+                for (var child : children) {
+                    child.parent = newParent;
+                }
+                newParent.setAnimationFlag();
+            }
+        }
     }
     
     @Override
