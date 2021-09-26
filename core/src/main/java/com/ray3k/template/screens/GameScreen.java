@@ -9,13 +9,11 @@ import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas.AtlasSprite;
 import com.badlogic.gdx.math.*;
-import com.badlogic.gdx.scenes.scene2d.Action;
-import com.badlogic.gdx.scenes.scene2d.InputEvent;
-import com.badlogic.gdx.scenes.scene2d.InputListener;
-import com.badlogic.gdx.scenes.scene2d.Stage;
+import com.badlogic.gdx.scenes.scene2d.*;
 import com.badlogic.gdx.scenes.scene2d.actions.Actions;
 import com.badlogic.gdx.scenes.scene2d.actions.TemporalAction;
 import com.badlogic.gdx.scenes.scene2d.ui.*;
+import com.badlogic.gdx.scenes.scene2d.utils.ChangeListener;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.scenes.scene2d.utils.DragListener;
 import com.badlogic.gdx.utils.*;
@@ -25,12 +23,15 @@ import com.dongbat.walkable.PathHelper;
 import com.ray3k.template.*;
 import com.ray3k.template.OgmoReader.*;
 import com.ray3k.template.entities.*;
+import com.ray3k.template.entities.SoldierEntity.*;
 import com.ray3k.template.screens.DialogPause.*;
 import space.earlygrey.shapedrawer.ShapeDrawer;
 
 import static com.ray3k.template.Core.*;
 import static com.ray3k.template.Resources.*;
+import static com.ray3k.template.Resources.SkinSkinStyles.*;
 import static com.ray3k.template.Resources.Values.*;
+import static com.ray3k.template.Utils.*;
 
 public class GameScreen extends JamScreen {
     public static GameScreen gameScreen;
@@ -368,22 +369,62 @@ public class GameScreen extends JamScreen {
                     table = new Table();
                     root.add(table);
                     
-                    var textButton = new TextButton("Upgrade Team 1\nCost: 3", skin);
+                    var textButton = new TextButton("Upgrade Team 1", skin);
                     table.add(textButton);
-                    if (saveData.teams < 1 || saveData.coins < 3) textButton.setDisabled(true);
+                    if (saveData.teams < 1) textButton.setDisabled(true);
+                    textButton.addListener(new ChangeListener() {
+                        @Override
+                        public void changed(ChangeEvent event, Actor actor) {
+                            dialog.hide();
+                            showUpgradeDialog(1, () -> {
+                                dialog.show(stage);
+                                label.setText("x" + saveData.coins);
+                            });
+                        }
+                    });
                     
-                    textButton = new TextButton("Upgrade Team 2\nCost: 3", skin);
+                    textButton = new TextButton("Upgrade Team 2", skin);
                     table.add(textButton);
-                    if (saveData.teams < 2 || saveData.coins < 3) textButton.setDisabled(true);
+                    if (saveData.teams < 2) textButton.setDisabled(true);
+                    textButton.addListener(new ChangeListener() {
+                        @Override
+                        public void changed(ChangeEvent event, Actor actor) {
+                            dialog.hide();
+                            showUpgradeDialog(2, () -> {
+                                dialog.show(stage);
+                                label.setText("x" + saveData.coins);
+                            });
+                        }
+                    });
     
                     table.row();
-                    textButton = new TextButton("Upgrade Team 3\nCost: 3", skin);
+                    textButton = new TextButton("Upgrade Team 3", skin);
                     table.add(textButton);
-                    if (saveData.teams < 3 || saveData.coins < 3) textButton.setDisabled(true);
+                    if (saveData.teams < 3) textButton.setDisabled(true);
+                    textButton.addListener(new ChangeListener() {
+                        @Override
+                        public void changed(ChangeEvent event, Actor actor) {
+                            dialog.hide();
+                            showUpgradeDialog(3, () -> {
+                                dialog.show(stage);
+                                label.setText("x" + saveData.coins);
+                            });
+                        }
+                    });
                     
-                    textButton = new TextButton("Upgrade Team 4\nCost: 3", skin);
+                    textButton = new TextButton("Upgrade Team 4", skin);
                     table.add(textButton);
-                    if (saveData.teams < 4 || saveData.coins < 3) textButton.setDisabled(true);
+                    if (saveData.teams < 4) textButton.setDisabled(true);
+                    textButton.addListener(new ChangeListener() {
+                        @Override
+                        public void changed(ChangeEvent event, Actor actor) {
+                            dialog.hide();
+                            showUpgradeDialog(4, () -> {
+                                dialog.show(stage);
+                                label.setText("x" + saveData.coins);
+                            });
+                        }
+                    });
                     
                     dialog.button("Next Level");
                     
@@ -414,6 +455,60 @@ public class GameScreen extends JamScreen {
         stage.act(delta);
         
         fpsLabel.setText(Gdx.graphics.getFramesPerSecond());
+    }
+    
+    private void showUpgradeDialog(int team, Runnable runnable) {
+        Dialog dialog = new Dialog("", skin) {
+            @Override
+            public void hide(Action action) {
+                super.hide(action);
+                if (runnable != null) runnable.run();
+            }
+        };
+        var root = dialog.getContentTable();
+        
+        if (saveData.types[team - 1] == SoldierType.MILITIA && saveData.coins >= 3) {
+            var table = new Table();
+            root.add(table);
+            
+            var imageButton = new ImageButton(ibAssault);
+            table.add(imageButton);
+            onChange(imageButton, () -> {
+                saveData.types[team - 1] = SoldierType.ASSAULT;
+                saveData.coins -= 3;
+                dialog.hide();
+            });
+            
+            imageButton = new ImageButton(ibSniper);
+            table.add(imageButton);
+            onChange(imageButton, () -> {
+                saveData.types[team - 1] = SoldierType.SNIPER;
+                saveData.coins -= 3;
+                dialog.hide();
+            });
+            
+            imageButton = new ImageButton(ibHeavy);
+            table.add(imageButton);
+            onChange(imageButton, () -> {
+                saveData.types[team - 1] = SoldierType.HEAVY;
+                saveData.coins -= 3;
+                dialog.hide();
+            });
+            
+            root.row();
+            var textButton = new TextButton("Cancel", skin);
+            root.add(textButton);
+            onChange(textButton, dialog::hide);
+        } else {
+            var label = new Label("Not enough coinage!", skin);
+            root.add(label);
+            
+            root.row();
+            var textButton = new TextButton("OK THAAAAAAANKS", skin);
+            root.add(textButton);
+            onChange(textButton, dialog::hide);
+        }
+        dialog.show(stage);
     }
     
     @Override
