@@ -684,7 +684,7 @@ public class Resources {
 
         public static Range sniperMoveSpeedRange = new Range(0.0f, 1000.0f);
 
-        public static float sniperMoveSpeed = 100.0f;
+        public static float sniperMoveSpeed = 130.0f;
 
         public static int sniperDamage = 20;
 
@@ -780,11 +780,11 @@ public class Resources {
 
         public static Range witchMoveSpeedRange = new Range(0.0f, 1000.0f);
 
-        public static float witchMoveSpeed = 75.0f;
+        public static float witchMoveSpeed = 20.0f;
 
-        public static int witchDamage = 2;
+        public static int witchDamage = 10;
 
-        public static int witchHealth = 6;
+        public static int witchHealth = 2000;
 
         public static Range spitterMoveSpeedRange = new Range(0.0f, 1000.0f);
 

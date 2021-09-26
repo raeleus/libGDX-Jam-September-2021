@@ -4,7 +4,7 @@
   "height": 576,
   "offsetX": 0,
   "offsetY": 0,
-  "values": {"reinforcements": false},
+  "values": {"reinforcements": true},
   "layers": [
     {
       "name": "entities",
@@ -63,6 +63,274 @@
             {"x": 112, "y": 264},
             {"x": 128, "y": 264}
           ]
+        },
+        {
+          "name": "house",
+          "id": 4,
+          "_eid": "57925105",
+          "x": 456,
+          "y": 296,
+          "originX": 58,
+          "originY": 24,
+          "values": {"skin": "house1"}
+        },
+        {
+          "name": "zombie",
+          "id": 5,
+          "_eid": "35988912",
+          "x": 1064,
+          "y": 224,
+          "originX": 13,
+          "originY": 14,
+          "nodes": [
+            {"x": 888, "y": 272}
+          ],
+          "values": {"count": 70, "delay": 5}
+        },
+        {
+          "name": "zombie",
+          "id": 6,
+          "_eid": "35988912",
+          "x": 1056,
+          "y": 392,
+          "originX": 13,
+          "originY": 14,
+          "nodes": [
+            {"x": 888, "y": 312}
+          ],
+          "values": {"count": 70, "delay": 5}
+        },
+        {
+          "name": "zombie",
+          "id": 7,
+          "_eid": "35988912",
+          "x": -64,
+          "y": 216,
+          "originX": 13,
+          "originY": 14,
+          "nodes": [
+            {"x": 144, "y": 288}
+          ],
+          "values": {"count": 70, "delay": 5}
+        },
+        {
+          "name": "zombie",
+          "id": 8,
+          "_eid": "35988912",
+          "x": -72,
+          "y": 384,
+          "originX": 13,
+          "originY": 14,
+          "nodes": [
+            {"x": 144, "y": 320}
+          ],
+          "values": {"count": 70, "delay": 5}
+        },
+        {
+          "name": "player",
+          "id": 9,
+          "_eid": "36091488",
+          "x": 304,
+          "y": 296,
+          "originX": 15,
+          "originY": 22,
+          "values": {"team": 1}
+        },
+        {
+          "name": "player",
+          "id": 10,
+          "_eid": "36091488",
+          "x": 384,
+          "y": 288,
+          "originX": 15,
+          "originY": 22,
+          "values": {"team": 2}
+        },
+        {
+          "name": "player",
+          "id": 11,
+          "_eid": "36091488",
+          "x": 592,
+          "y": 288,
+          "originX": 15,
+          "originY": 22,
+          "values": {"team": 3}
+        },
+        {
+          "name": "player",
+          "id": 12,
+          "_eid": "36091488",
+          "x": 672,
+          "y": 288,
+          "originX": 15,
+          "originY": 22,
+          "values": {"team": 4}
+        },
+        {
+          "name": "zombie",
+          "id": 13,
+          "_eid": "35988912",
+          "x": 840,
+          "y": 80,
+          "originX": 13,
+          "originY": 14,
+          "nodes": [
+            {"x": 840, "y": 280}
+          ],
+          "values": {"count": 35, "delay": 15}
+        },
+        {
+          "name": "zombie",
+          "id": 14,
+          "_eid": "35988912",
+          "x": 848,
+          "y": 632,
+          "originX": 13,
+          "originY": 14,
+          "nodes": [
+            {"x": 840, "y": 304}
+          ],
+          "values": {"count": 35, "delay": 15}
+        },
+        {
+          "name": "zombie",
+          "id": 15,
+          "_eid": "35988912",
+          "x": 200,
+          "y": 96,
+          "originX": 13,
+          "originY": 14,
+          "nodes": [
+            {"x": 208, "y": 288}
+          ],
+          "values": {"count": 35, "delay": 15}
+        },
+        {
+          "name": "zombie",
+          "id": 16,
+          "_eid": "35988912",
+          "x": 208,
+          "y": 608,
+          "originX": 13,
+          "originY": 14,
+          "nodes": [
+            {"x": 208, "y": 312}
+          ],
+          "values": {"count": 35, "delay": 15}
+        },
+        {
+          "name": "zombie",
+          "id": 17,
+          "_eid": "35988912",
+          "x": 744,
+          "y": 80,
+          "originX": 13,
+          "originY": 14,
+          "nodes": [
+            {"x": 744, "y": 280}
+          ],
+          "values": {"count": 35, "delay": 35}
+        },
+        {
+          "name": "zombie",
+          "id": 18,
+          "_eid": "35988912",
+          "x": 752,
+          "y": 640,
+          "originX": 13,
+          "originY": 14,
+          "nodes": [
+            {"x": 744, "y": 312}
+          ],
+          "values": {"count": 35, "delay": 35}
+        },
+        {
+          "name": "zombie",
+          "id": 19,
+          "_eid": "35988912",
+          "x": 296,
+          "y": 96,
+          "originX": 13,
+          "originY": 14,
+          "nodes": [
+            {"x": 304, "y": 288}
+          ],
+          "values": {"count": 35, "delay": 35}
+        },
+        {
+          "name": "zombie",
+          "id": 20,
+          "_eid": "35988912",
+          "x": 304,
+          "y": 616,
+          "originX": 13,
+          "originY": 14,
+          "nodes": [
+            {"x": 304, "y": 320}
+          ],
+          "values": {"count": 35, "delay": 35}
+        },
+        {
+          "name": "zombie",
+          "id": 21,
+          "_eid": "35988912",
+          "x": 656,
+          "y": 80,
+          "originX": 13,
+          "originY": 14,
+          "nodes": [
+            {"x": 656, "y": 280}
+          ],
+          "values": {"count": 15, "delay": 40}
+        },
+        {
+          "name": "zombie",
+          "id": 22,
+          "_eid": "35988912",
+          "x": 664,
+          "y": 640,
+          "originX": 13,
+          "originY": 14,
+          "nodes": [
+            {"x": 656, "y": 312}
+          ],
+          "values": {"count": 15, "delay": 40}
+        },
+        {
+          "name": "zombie",
+          "id": 23,
+          "_eid": "35988912",
+          "x": 384,
+          "y": 96,
+          "originX": 13,
+          "originY": 14,
+          "nodes": [
+            {"x": 392, "y": 288}
+          ],
+          "values": {"count": 15, "delay": 40}
+        },
+        {
+          "name": "zombie",
+          "id": 24,
+          "_eid": "35988912",
+          "x": 392,
+          "y": 616,
+          "originX": 13,
+          "originY": 14,
+          "nodes": [
+            {"x": 392, "y": 320}
+          ],
+          "values": {"count": 15, "delay": 40}
+        },
+        {
+          "name": "house",
+          "id": 25,
+          "_eid": "57925105",
+          "x": 544,
+          "y": 296,
+          "originX": 58,
+          "originY": 24,
+          "values": {"skin": "house2"}
         }
       ]
     },
