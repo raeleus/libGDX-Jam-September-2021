@@ -17,9 +17,9 @@ import com.ray3k.template.screens.*;
 import space.earlygrey.shapedrawer.JoinType;
 
 import static com.ray3k.template.Core.*;
-import static com.ray3k.template.Resources.*;
 import static com.ray3k.template.Resources.SpineActor.*;
 import static com.ray3k.template.Resources.Values.*;
+import static com.ray3k.template.Resources.*;
 import static com.ray3k.template.screens.GameScreen.*;
 
 public class SoldierEntity extends Entity {
@@ -200,6 +200,7 @@ public class SoldierEntity extends Entity {
                 }
             } catch (Exception e) {
                 e.printStackTrace();
+                x += .1f;
             }
         }
         
@@ -223,6 +224,7 @@ public class SoldierEntity extends Entity {
                 }
             } catch (Exception e) {
                 e.printStackTrace();
+                x += .1f;
             }
         }
         
@@ -245,13 +247,18 @@ public class SoldierEntity extends Entity {
             if (hurtTimer <= 0) {
                 hurtTimer = 0;
                 friction = 0;
-                gameScreen.pathHelper.findPath(x, y, targetX, targetY, 8, floatArray);
+                try {
+                    gameScreen.pathHelper.findPath(x, y, targetX, targetY, 8, floatArray);
     
-                if (floatArray.size > 0) {
-                    if (movePath == null) movePath = new FloatArray();
-                    movePath.clear();
-                    movePath.addAll(floatArray);
-                    movePath.removeRange(0, 1);
+                    if (floatArray.size > 0) {
+                        if (movePath == null) movePath = new FloatArray();
+                        movePath.clear();
+                        movePath.addAll(floatArray);
+                        movePath.removeRange(0, 1);
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                    x += .1f;
                 }
             }
         }

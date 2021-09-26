@@ -764,11 +764,11 @@ public class Resources {
 
         public static Range pouncerMoveSpeedRange = new Range(0.0f, 1000.0f);
 
-        public static float pouncerMoveSpeed = 75.0f;
+        public static float pouncerMoveSpeed = 300.0f;
 
         public static int pouncerDamage = 2;
 
-        public static int pouncerHealth = 6;
+        public static int pouncerHealth = 25;
 
         public static Range tankMoveSpeedRange = new Range(0.0f, 1000.0f);
 
