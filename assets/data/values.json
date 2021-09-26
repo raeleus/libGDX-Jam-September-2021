@@ -48,7 +48,7 @@
   "tank health" : 6,
   "witch move speed" : [0.0, 1000.0, 20.0],
   "witch damage" : 10,
-  "witch health" : 2000,
+  "witch health" : 1500,
   "spitter move speed" : [0.0, 1000.0, 55.0],
   "spitter damage" : 3,
   "spitter health" : 20,

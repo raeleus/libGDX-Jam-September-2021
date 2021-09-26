@@ -784,7 +784,7 @@ public class Resources {
 
         public static int witchDamage = 10;
 
-        public static int witchHealth = 2000;
+        public static int witchHealth = 1500;
 
         public static Range spitterMoveSpeedRange = new Range(0.0f, 1000.0f);
 
