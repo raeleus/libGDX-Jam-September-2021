@@ -4,6 +4,7 @@
   "height": 576,
   "offsetX": 0,
   "offsetY": 0,
+  "values": {"reinforcements": true},
   "layers": [
     {
       "name": "entities",
@@ -110,6 +111,294 @@
             {"x": 360, "y": 80},
             {"x": 360, "y": 40}
           ]
+        },
+        {
+          "name": "player",
+          "id": 8,
+          "_eid": "36091488",
+          "x": 328,
+          "y": 264,
+          "originX": 15,
+          "originY": 22,
+          "values": {"team": 1}
+        },
+        {
+          "name": "player",
+          "id": 9,
+          "_eid": "36091488",
+          "x": 648,
+          "y": 264,
+          "originX": 15,
+          "originY": 22,
+          "values": {"team": 3}
+        },
+        {
+          "name": "player",
+          "id": 10,
+          "_eid": "36091488",
+          "x": 496,
+          "y": 120,
+          "originX": 15,
+          "originY": 22,
+          "values": {"team": 2}
+        },
+        {
+          "name": "player",
+          "id": 11,
+          "_eid": "36091488",
+          "x": 496,
+          "y": 416,
+          "originX": 15,
+          "originY": 22,
+          "values": {"team": 4}
+        },
+        {
+          "name": "house",
+          "id": 12,
+          "_eid": "57925105",
+          "x": 576,
+          "y": 264,
+          "originX": 58,
+          "originY": 24,
+          "values": {"skin": "house2"}
+        },
+        {
+          "name": "house",
+          "id": 13,
+          "_eid": "57925105",
+          "x": 496,
+          "y": 200,
+          "originX": 58,
+          "originY": 24,
+          "values": {"skin": "house2"}
+        },
+        {
+          "name": "house",
+          "id": 14,
+          "_eid": "57925105",
+          "x": 408,
+          "y": 256,
+          "originX": 58,
+          "originY": 24,
+          "values": {"skin": "house2"}
+        },
+        {
+          "name": "house",
+          "id": 15,
+          "_eid": "57925105",
+          "x": 504,
+          "y": 320,
+          "originX": 58,
+          "originY": 24,
+          "values": {"skin": "house2"}
+        },
+        {
+          "name": "zombie",
+          "id": 16,
+          "_eid": "35988912",
+          "x": -144,
+          "y": 160,
+          "originX": 13,
+          "originY": 14,
+          "nodes": [
+            {"x": 296, "y": 216}
+          ],
+          "values": {"count": 5, "delay": 5}
+        },
+        {
+          "name": "zombie",
+          "id": 17,
+          "_eid": "35988912",
+          "x": -144,
+          "y": 376,
+          "originX": 13,
+          "originY": 14,
+          "nodes": [
+            {"x": 296, "y": 328}
+          ],
+          "values": {"count": 5, "delay": 5}
+        },
+        {
+          "name": "exploder",
+          "id": 18,
+          "_eid": "36084604",
+          "x": -144,
+          "y": 256,
+          "originX": 12,
+          "originY": 16,
+          "nodes": [
+            {"x": 296, "y": 272}
+          ],
+          "values": {"count": 2, "delay": 5}
+        },
+        {
+          "name": "zombie",
+          "id": 19,
+          "_eid": "35988912",
+          "x": 1136,
+          "y": 184,
+          "originX": 13,
+          "originY": 14,
+          "nodes": [
+            {"x": 704, "y": 208}
+          ],
+          "values": {"count": 5, "delay": 15}
+        },
+        {
+          "name": "zombie",
+          "id": 20,
+          "_eid": "35988912",
+          "x": 1136,
+          "y": 336,
+          "originX": 13,
+          "originY": 14,
+          "nodes": [
+            {"x": 704, "y": 320}
+          ],
+          "values": {"count": 5, "delay": 15}
+        },
+        {
+          "name": "exploder",
+          "id": 21,
+          "_eid": "36084604",
+          "x": 1136,
+          "y": 256,
+          "originX": 12,
+          "originY": 16,
+          "nodes": [
+            {"x": 704, "y": 264}
+          ],
+          "values": {"count": 2, "delay": 15}
+        },
+        {
+          "name": "zombie",
+          "id": 22,
+          "_eid": "35988912",
+          "x": 824,
+          "y": -80,
+          "originX": 13,
+          "originY": 14,
+          "nodes": [
+            {"x": 648, "y": 216}
+          ],
+          "values": {"count": 6, "delay": 25}
+        },
+        {
+          "name": "zombie",
+          "id": 23,
+          "_eid": "35988912",
+          "x": 160,
+          "y": -64,
+          "originX": 13,
+          "originY": 14,
+          "nodes": [
+            {"x": 352, "y": 224}
+          ],
+          "values": {"count": 6, "delay": 25}
+        },
+        {
+          "name": "zombie",
+          "id": 24,
+          "_eid": "35988912",
+          "x": 200,
+          "y": 688,
+          "originX": 13,
+          "originY": 14,
+          "nodes": [
+            {"x": 344, "y": 336}
+          ],
+          "values": {"count": 6, "delay": 25}
+        },
+        {
+          "name": "zombie",
+          "id": 25,
+          "_eid": "35988912",
+          "x": 824,
+          "y": 680,
+          "originX": 13,
+          "originY": 14,
+          "nodes": [
+            {"x": 648, "y": 336}
+          ],
+          "values": {"count": 6, "delay": 25}
+        },
+        {
+          "name": "exploder",
+          "id": 26,
+          "_eid": "36084604",
+          "x": 608,
+          "y": -88,
+          "originX": 12,
+          "originY": 16,
+          "nodes": [
+            {"x": 576, "y": 104}
+          ],
+          "values": {"count": 1, "delay": 40}
+        },
+        {
+          "name": "exploder",
+          "id": 27,
+          "_eid": "36084604",
+          "x": 520,
+          "y": -88,
+          "originX": 12,
+          "originY": 16,
+          "nodes": [
+            {"x": 496, "y": 104}
+          ],
+          "values": {"count": 1, "delay": 40}
+        },
+        {
+          "name": "exploder",
+          "id": 28,
+          "_eid": "36084604",
+          "x": 424,
+          "y": -88,
+          "originX": 12,
+          "originY": 16,
+          "nodes": [
+            {"x": 408, "y": 96}
+          ],
+          "values": {"count": 1, "delay": 40}
+        },
+        {
+          "name": "exploder",
+          "id": 29,
+          "_eid": "36084604",
+          "x": 408,
+          "y": 688,
+          "originX": 12,
+          "originY": 16,
+          "nodes": [
+            {"x": 416, "y": 416}
+          ],
+          "values": {"count": 1, "delay": 40}
+        },
+        {
+          "name": "exploder",
+          "id": 30,
+          "_eid": "36084604",
+          "x": 496,
+          "y": 688,
+          "originX": 12,
+          "originY": 16,
+          "nodes": [
+            {"x": 496, "y": 416}
+          ],
+          "values": {"count": 1, "delay": 40}
+        },
+        {
+          "name": "exploder",
+          "id": 31,
+          "_eid": "36084604",
+          "x": 584,
+          "y": 688,
+          "originX": 12,
+          "originY": 16,
+          "nodes": [
+            {"x": 568, "y": 416}
+          ],
+          "values": {"count": 1, "delay": 40}
         }
       ]
     },
@@ -129,7 +418,7 @@
           "texture": "starfield.png",
           "originX": 0.5,
           "originY": 0.5,
-          "values": {"panning": true}
+          "values": {"panning": false}
         },
         {
           "x": 504,

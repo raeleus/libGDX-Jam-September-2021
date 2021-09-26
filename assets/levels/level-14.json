@@ -4,6 +4,7 @@
   "height": 576,
   "offsetX": 0,
   "offsetY": 0,
+  "values": {"reinforcements": false},
   "layers": [
     {
       "name": "entities",
@@ -15,7 +16,16 @@
       "gridCellsX": 128,
       "gridCellsY": 72,
       "entities": [
-        {"name": "player", "id": 0, "_eid": "36091488", "x": 160, "y": 216, "originX": 15, "originY": 22},
+        {
+          "name": "player",
+          "id": 0,
+          "_eid": "36091488",
+          "x": 160,
+          "y": 216,
+          "originX": 15,
+          "originY": 22,
+          "values": {"team": 1}
+        },
         {
           "name": "level-bounds",
           "id": 1,

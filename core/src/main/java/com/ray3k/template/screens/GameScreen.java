@@ -233,6 +233,23 @@ public class GameScreen extends JamScreen {
             }
     
             @Override
+            public void level(String ogmoVersion, int width, int height, int offsetX, int offsetY,
+                              ObjectMap<String, OgmoValue> valuesMap) {
+                if (valuesMap.get("reinforcements").asBoolean()) {
+                    sfx_reinforcementsHaveArrived.play(sfx);
+                    if (saveData.reinforcedLevel != saveData.level) {
+                        saveData.reinforcedLevel = saveData.level;
+                        for (int i = 0; i < 4; i++) {
+                            if (saveData.types[i] == null) {
+                                saveData.types[i] = SoldierType.MILITIA;
+                                break;
+                            }
+                        }
+                    }
+                }
+            }
+    
+            @Override
             public void entity(String name, int id, int x, int y, int width, int height, boolean flippedX,
                                boolean flippedY, int originX, int originY, int rotation, Array<EntityNode> nodes,
                                ObjectMap<String, OgmoValue> valuesMap) {
