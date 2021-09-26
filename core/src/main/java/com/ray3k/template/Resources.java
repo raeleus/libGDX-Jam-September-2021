@@ -154,6 +154,7 @@ public class Resources {
         SpineActor.animationSelectedOrange = SpineActor.skeletonData.findAnimation("selected-orange");
         SpineActor.animationSelectedPurple = SpineActor.skeletonData.findAnimation("selected-purple");
         SpineActor.animationShoot = SpineActor.skeletonData.findAnimation("shoot");
+        SpineActor.animationSpit = SpineActor.skeletonData.findAnimation("spit");
         SpineActor.animationStand = SpineActor.skeletonData.findAnimation("stand");
         SpineActor.animationWalk = SpineActor.skeletonData.findAnimation("walk");
         SpineActor.skinDefault = SpineActor.skeletonData.findSkin("default");
@@ -364,6 +365,8 @@ public class Resources {
         public static Animation animationSelectedPurple;
 
         public static Animation animationShoot;
+
+        public static Animation animationSpit;
 
         public static Animation animationStand;
 
@@ -683,7 +686,7 @@ public class Resources {
 
         public static float sniperMoveSpeed = 100.0f;
 
-        public static int sniperDamage = 8;
+        public static int sniperDamage = 20;
 
         public static float sniperShotDelayBottom = 1.2f;
 
@@ -699,7 +702,7 @@ public class Resources {
 
         public static float heavyMoveSpeed = 40.0f;
 
-        public static int heavyDamage = 6;
+        public static int heavyDamage = 10;
 
         public static float heavyShotDelayBottom = 1.3f;
 
@@ -767,15 +770,19 @@ public class Resources {
 
         public static Range spitterMoveSpeedRange = new Range(0.0f, 1000.0f);
 
-        public static float spitterMoveSpeed = 75.0f;
+        public static float spitterMoveSpeed = 55.0f;
 
-        public static int spitterDamage = 2;
+        public static int spitterDamage = 3;
 
-        public static int spitterHealth = 6;
+        public static int spitterHealth = 20;
 
         public static Range spitterRangeRange = new Range(0.0f, 1000.0f);
 
-        public static float spitterRange = 50.0f;
+        public static float spitterRange = 200.0f;
+
+        public static Range spitterDelayRange = new Range(0.0f, 5.0f);
+
+        public static float spitterDelay = 1.9f;
 
         public static Range exploderMoveSpeedRange = new Range(0.0f, 1000.0f);
 
@@ -783,7 +790,7 @@ public class Resources {
 
         public static int exploderDamage = 2;
 
-        public static int exploderHealth = 6;
+        public static int exploderHealth = 1;
 
         public static Range exploderRangeRange = new Range(0.0f, 1000.0f);
 

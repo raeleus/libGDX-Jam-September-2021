@@ -1,6 +1,6 @@
 {
 "skeleton": {
-	"hash": "p26x4VShsKA",
+	"hash": "b662mgojolI",
 	"spine": "4.0.37",
 	"x": -32,
 	"y": -20.5,
@@ -33,6 +33,15 @@
 		"x": 26.8,
 		"y": -3.06,
 		"transform": "noRotationOrReflection"
+	},
+	{
+		"name": "spit",
+		"parent": "head",
+		"length": 46.07,
+		"rotation": -0.95,
+		"x": 5.79,
+		"y": -5.54,
+		"transform": "noRotationOrReflection"
 	}
 ],
 "slots": [
@@ -47,7 +56,8 @@
 	{ "name": "flash", "bone": "hand-left" },
 	{ "name": "projectile", "bone": "hand-left", "attachment": "projectile" },
 	{ "name": "bbox", "bone": "root", "attachment": "bbox" },
-	{ "name": "game/blood-splatter-01", "bone": "splatter" }
+	{ "name": "game/blood-splatter-01", "bone": "splatter" },
+	{ "name": "game/spit-01", "bone": "spit" }
 ],
 "skins": [
 	{
@@ -92,6 +102,19 @@
 			},
 			"game/shadow": {
 				"game/shadow": { "x": 1.5, "y": 2, "width": 67, "height": 45 }
+			},
+			"game/spit-01": {
+				"game/spit-01": { "x": 40.88, "y": 3.65, "rotation": -0.91, "width": 88, "height": 96 },
+				"game/spit-02": { "x": 40.88, "y": 3.65, "rotation": -0.91, "width": 88, "height": 96 },
+				"game/spit-03": { "x": 40.88, "y": 3.65, "rotation": -0.91, "width": 88, "height": 96 },
+				"game/spit-04": { "x": 40.88, "y": 3.65, "rotation": -0.91, "width": 88, "height": 96 },
+				"game/spit-05": { "x": 40.88, "y": 3.65, "rotation": -0.91, "width": 88, "height": 96 },
+				"game/spit-06": { "x": 40.88, "y": 3.65, "rotation": -0.91, "width": 88, "height": 96 },
+				"game/spit-07": { "x": 40.88, "y": 3.65, "rotation": -0.91, "width": 88, "height": 96 },
+				"game/spit-08": { "x": 40.88, "y": 3.65, "rotation": -0.91, "width": 88, "height": 96 },
+				"game/spit-09": { "x": 40.88, "y": 3.65, "rotation": -0.91, "width": 88, "height": 96 },
+				"game/spit-10": { "x": 40.88, "y": 3.65, "rotation": -0.91, "width": 88, "height": 96 },
+				"game/spit-11": { "x": 40.88, "y": 3.65, "rotation": -0.91, "width": 88, "height": 96 }
 			}
 		}
 	},
@@ -957,6 +980,36 @@
 						"value": 11.95,
 						"curve": [ 0.221, 11.97, 0.27, 4.08 ]
 					},
+					{ "time": 0.3 }
+				]
+			}
+		}
+	},
+	"spit": {
+		"slots": {
+			"game/spit-01": {
+				"attachment": [
+					{ "time": 0.1, "name": "game/spit-01" },
+					{ "time": 0.1333, "name": "game/spit-02" },
+					{ "time": 0.1667, "name": "game/spit-03" },
+					{ "time": 0.2, "name": "game/spit-04" },
+					{ "time": 0.2333, "name": "game/spit-05" },
+					{ "time": 0.2667, "name": "game/spit-06" },
+					{ "time": 0.3, "name": "game/spit-07" },
+					{ "time": 0.3333, "name": "game/spit-08" },
+					{ "time": 0.3667, "name": "game/spit-09" },
+					{ "time": 0.4, "name": "game/spit-10" },
+					{ "time": 0.4333, "name": "game/spit-11" },
+					{ "time": 0.4667, "name": null }
+				]
+			}
+		},
+		"bones": {
+			"body": {
+				"rotate": [
+					{},
+					{ "time": 0.1, "value": 34.75 },
+					{ "time": 0.2, "value": -8.19 },
 					{ "time": 0.3 }
 				]
 			}

@@ -1,5 +1,5 @@
 {
-"skeleton": { "hash": "YXcrpVE4MaQ", "spine": "4.0.37", "images": "", "audio": "" },
+"skeleton": { "hash": "K1UeFFS4ez4", "spine": "4.0.37", "images": "", "audio": "" },
 "bones": [
 	{ "name": "root" }
 ],
@@ -17,7 +17,12 @@
 				"game/poison-cloud-04": { "x": 12.44, "y": -19.65, "width": 269, "height": 276 },
 				"game/poison-cloud-05": { "x": 12.44, "y": -19.65, "width": 269, "height": 276 },
 				"game/poison-cloud-06": { "x": 12.44, "y": -19.65, "width": 269, "height": 276 },
-				"game/poison-cloud-07": { "x": 12.44, "y": -19.65, "width": 269, "height": 276 }
+				"game/poison-cloud-07": { "x": 12.44, "y": -19.65, "width": 269, "height": 276 },
+				"game/poison-cloud-08": { "x": 12.44, "y": -19.65, "width": 269, "height": 276 },
+				"game/poison-cloud-09": { "x": 12.44, "y": -19.65, "width": 269, "height": 276 },
+				"game/poison-cloud-10": { "x": 12.44, "y": -19.65, "width": 269, "height": 276 },
+				"game/poison-cloud-11": { "x": 12.44, "y": -19.65, "width": 269, "height": 276 },
+				"game/poison-cloud-12": { "x": 12.44, "y": -19.65, "width": 269, "height": 276 }
 			}
 		}
 	}
@@ -27,14 +32,20 @@
 		"slots": {
 			"game/poison-cloud-01": {
 				"attachment": [
-					{ "time": 0.0667, "name": "game/poison-cloud-01" },
-					{ "time": 0.1333, "name": "game/poison-cloud-02" },
-					{ "time": 0.1667, "name": "game/poison-cloud-03" },
-					{ "time": 0.2333, "name": "game/poison-cloud-04" },
-					{ "time": 0.3, "name": "game/poison-cloud-05" },
-					{ "time": 0.3667, "name": "game/poison-cloud-06" },
-					{ "time": 0.4, "name": "game/poison-cloud-07" },
-					{ "time": 0.4667, "name": null }
+					{ "name": "game/poison-cloud-12" },
+					{ "time": 0.0333, "name": "game/poison-cloud-01" },
+					{ "time": 0.0667, "name": "game/poison-cloud-02" },
+					{ "time": 0.1, "name": "game/poison-cloud-03" },
+					{ "time": 0.1333, "name": "game/poison-cloud-04" },
+					{ "time": 0.1667, "name": "game/poison-cloud-05" },
+					{ "time": 0.2, "name": "game/poison-cloud-06" },
+					{ "time": 0.2333, "name": "game/poison-cloud-07" },
+					{ "time": 0.2667, "name": "game/poison-cloud-08" },
+					{ "time": 0.3, "name": "game/poison-cloud-09" },
+					{ "time": 0.3333, "name": "game/poison-cloud-10" },
+					{ "time": 0.3667, "name": "game/poison-cloud-11" },
+					{ "time": 0.4, "name": "game/poison-cloud-12" },
+					{ "time": 0.4333, "name": null }
 				]
 			}
 		}

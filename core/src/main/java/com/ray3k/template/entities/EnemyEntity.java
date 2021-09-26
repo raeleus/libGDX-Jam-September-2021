@@ -19,6 +19,11 @@ import static com.ray3k.template.Resources.SpineActor.*;
 import static com.ray3k.template.Resources.Values.*;
 import static com.ray3k.template.screens.GameScreen.*;
 
+/*
+0 = stand, walk
+1 = flag
+2 = spit
+ */
 public class EnemyEntity extends Entity {
     private static final FloatArray floatArray = new FloatArray();
     private FloatArray movePath;
@@ -34,6 +39,7 @@ public class EnemyEntity extends Entity {
         ZOMBIE, POUNCER, TANK, WITCH, SPITTER, EXPLODER
     }
     public EnemyType enemyType;
+    public float shotTimer;
     
     private static final Vector2 temp = new Vector2();
     
@@ -47,42 +53,47 @@ public class EnemyEntity extends Entity {
                 moveSpeed = zombieMoveSpeed;
                 damage = zombieDamage;
                 skeleton.setSkin(skinZombie);
+                skeleton.setScale(.25f, .25f);
                 break;
             case EXPLODER:
                 health = exploderHealth;
                 moveSpeed = exploderMoveSpeed;
                 damage = exploderDamage;
                 skeleton.setSkin(skinExploder);
+                skeleton.setScale(.3f, .3f);
                 break;
             case SPITTER:
                 health = spitterHealth;
                 moveSpeed = spitterMoveSpeed;
                 damage = spitterDamage;
                 skeleton.setSkin(skinSpitter);
+                skeleton.setScale(.4f, .4f);
                 break;
             case POUNCER:
                 health = pouncerHealth;
                 moveSpeed = pouncerMoveSpeed;
                 damage = pouncerDamage;
                 skeleton.setSkin(skinPouncer);
+                skeleton.setScale(.25f, .25f);
                 break;
             case WITCH:
                 health = witchHealth;
                 moveSpeed = witchMoveSpeed;
                 damage = witchDamage;
                 skeleton.setSkin(skinWitch);
+                skeleton.setScale(.25f, .25f);
                 break;
             case TANK:
                 health = tankHealth;
                 moveSpeed = tankMoveSpeed;
                 damage = tankDamage;
                 skeleton.setSkin(skinZombie);//todo: fix this
+                skeleton.setScale(.25f, .25f);
                 break;
         }
         
         animationState.setAnimation(0, animationStand, false);
         animationState.setAnimation(1, animationFlagNone, false);
-        skeleton.setScale(.25f, .25f);
         depth = GameScreen.ACTOR_DEPTH;
         
         animationState.apply(skeleton);
@@ -205,6 +216,36 @@ public class EnemyEntity extends Entity {
                     movePath.clear();
                     movePath.addAll(floatArray);
                     movePath.removeRange(0, 1);
+                }
+            }
+        }
+    
+        if (enemyType == EnemyType.SPITTER) {
+            
+            
+            SoldierEntity closestSoldier = null;
+            var bestSoldierDistance = Float.MAX_VALUE;
+            for (var soldier : gameScreen.soldiers) {
+                var distance = Utils.pointDistance(x, y, soldier.x, soldier.y);
+                if (distance < spitterRange && distance < bestSoldierDistance) {
+                    bestSoldierDistance = distance;
+                    closestSoldier = soldier;
+                }
+            }
+
+            if (closestSolder != null) {
+                moveTowardsTarget(false);
+                setSpeed(0);
+                shotTimer -= delta;
+    
+                if (shotTimer < 0) {
+                    float direction = Utils.pointDirection(x, y, closestSoldier.x, closestSoldier.y);
+                    sfx_spit.play(sfx);
+                    shotTimer = spitterDelay;
+                    animationState.setAnimation(2, animationSpit, false);
+                    if (direction > 90 && direction < 270) skeleton.setScale(-1 * Math.abs(skeleton.getScaleX()),skeleton.getScaleY());
+                    else skeleton.setScale(Math.abs(skeleton.getScaleX()),skeleton.getScaleY());
+                    closestSoldier.hurt(damage, direction);
                 }
             }
         }

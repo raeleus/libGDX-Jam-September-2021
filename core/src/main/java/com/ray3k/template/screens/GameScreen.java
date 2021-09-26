@@ -345,6 +345,46 @@ public class GameScreen extends JamScreen {
                     spawner.targetY = nodes.first().y;
                     entityController.add(spawner);
                     ships++;
+                } else if (name.equals("spitter")) {
+                    var spawner = new EnemyShipSpawner();
+                    spawner.setPosition(x, y);
+                    spawner.count = valuesMap.get("count").asInt();
+                    spawner.delay = valuesMap.get("delay").asFloat();
+                    spawner.enemyType = EnemyType.SPITTER;
+                    spawner.targetX = nodes.first().x;
+                    spawner.targetY = nodes.first().y;
+                    entityController.add(spawner);
+                    ships++;
+                } else if (name.equals("pouncer")) {
+                    var spawner = new EnemyShipSpawner();
+                    spawner.setPosition(x, y);
+                    spawner.count = valuesMap.get("count").asInt();
+                    spawner.delay = valuesMap.get("delay").asFloat();
+                    spawner.enemyType = EnemyType.POUNCER;
+                    spawner.targetX = nodes.first().x;
+                    spawner.targetY = nodes.first().y;
+                    entityController.add(spawner);
+                    ships++;
+                } else if (name.equals("witch")) {
+                    var spawner = new EnemyShipSpawner();
+                    spawner.setPosition(x, y);
+                    spawner.count = valuesMap.get("count").asInt();
+                    spawner.delay = valuesMap.get("delay").asFloat();
+                    spawner.enemyType = EnemyType.WITCH;
+                    spawner.targetX = nodes.first().x;
+                    spawner.targetY = nodes.first().y;
+                    entityController.add(spawner);
+                    ships++;
+                } else if (name.equals("tank")) {
+                    var spawner = new EnemyShipSpawner();
+                    spawner.setPosition(x, y);
+                    spawner.count = valuesMap.get("count").asInt();
+                    spawner.delay = valuesMap.get("delay").asFloat();
+                    spawner.enemyType = EnemyType.TANK;
+                    spawner.targetX = nodes.first().x;
+                    spawner.targetY = nodes.first().y;
+                    entityController.add(spawner);
+                    ships++;
                 }
             }
         });
