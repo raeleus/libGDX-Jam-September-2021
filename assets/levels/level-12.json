@@ -63,6 +63,368 @@
             {"x": 320, "y": 128},
             {"x": 632, "y": 128}
           ]
+        },
+        {
+          "name": "house",
+          "id": 4,
+          "_eid": "57925105",
+          "x": 512,
+          "y": 264,
+          "originX": 58,
+          "originY": 24,
+          "values": {"skin": "house1"}
+        },
+        {
+          "name": "player",
+          "id": 5,
+          "_eid": "36091488",
+          "x": 424,
+          "y": 200,
+          "originX": 15,
+          "originY": 22,
+          "values": {"team": 1}
+        },
+        {
+          "name": "player",
+          "id": 6,
+          "_eid": "36091488",
+          "x": 600,
+          "y": 200,
+          "originX": 15,
+          "originY": 22,
+          "values": {"team": 2}
+        },
+        {
+          "name": "player",
+          "id": 7,
+          "_eid": "36091488",
+          "x": 600,
+          "y": 320,
+          "originX": 15,
+          "originY": 22,
+          "values": {"team": 3}
+        },
+        {
+          "name": "player",
+          "id": 8,
+          "_eid": "36091488",
+          "x": 424,
+          "y": 328,
+          "originX": 15,
+          "originY": 22,
+          "values": {"team": 4}
+        },
+        {
+          "name": "zombie",
+          "id": 9,
+          "_eid": "35988912",
+          "x": 432,
+          "y": -56,
+          "originX": 13,
+          "originY": 14,
+          "nodes": [
+            {"x": 456, "y": 200}
+          ],
+          "values": {"count": 5, "delay": 35}
+        },
+        {
+          "name": "zombie",
+          "id": 11,
+          "_eid": "35988912",
+          "x": 552,
+          "y": -56,
+          "originX": 13,
+          "originY": 14,
+          "nodes": [
+            {"x": 560, "y": 192}
+          ],
+          "values": {"count": 5, "delay": 35}
+        },
+        {
+          "name": "zombie",
+          "id": 13,
+          "_eid": "35988912",
+          "x": 1080,
+          "y": 208,
+          "originX": 13,
+          "originY": 14,
+          "nodes": [
+            {"x": 608, "y": 208}
+          ],
+          "values": {"count": 10, "delay": 25}
+        },
+        {
+          "name": "zombie",
+          "id": 14,
+          "_eid": "35988912",
+          "x": 1080,
+          "y": 256,
+          "originX": 13,
+          "originY": 14,
+          "nodes": [
+            {"x": 608, "y": 240}
+          ],
+          "values": {"count": 10, "delay": 20}
+        },
+        {
+          "name": "zombie",
+          "id": 15,
+          "_eid": "35988912",
+          "x": 1080,
+          "y": 304,
+          "originX": 13,
+          "originY": 14,
+          "nodes": [
+            {"x": 608, "y": 272}
+          ],
+          "values": {"count": 10, "delay": 15}
+        },
+        {
+          "name": "zombie",
+          "id": 16,
+          "_eid": "35988912",
+          "x": 1080,
+          "y": 360,
+          "originX": 13,
+          "originY": 14,
+          "nodes": [
+            {"x": 608, "y": 312}
+          ],
+          "values": {"count": 10, "delay": 10}
+        },
+        {
+          "name": "zombie",
+          "id": 18,
+          "_eid": "35988912",
+          "x": 560,
+          "y": 632,
+          "originX": 13,
+          "originY": 14,
+          "nodes": [
+            {"x": 552, "y": 344}
+          ],
+          "values": {"count": 5, "delay": 35}
+        },
+        {
+          "name": "zombie",
+          "id": 20,
+          "_eid": "35988912",
+          "x": 440,
+          "y": 624,
+          "originX": 13,
+          "originY": 14,
+          "nodes": [
+            {"x": 472, "y": 344}
+          ],
+          "values": {"count": 5, "delay": 35}
+        },
+        {
+          "name": "zombie",
+          "id": 21,
+          "_eid": "35988912",
+          "x": -56,
+          "y": 360,
+          "originX": 13,
+          "originY": 14,
+          "nodes": [
+            {"x": 408, "y": 336}
+          ],
+          "values": {"count": 10, "delay": 10}
+        },
+        {
+          "name": "zombie",
+          "id": 22,
+          "_eid": "35988912",
+          "x": -56,
+          "y": 288,
+          "originX": 13,
+          "originY": 14,
+          "nodes": [
+            {"x": 400, "y": 280}
+          ],
+          "values": {"count": 10, "delay": 15}
+        },
+        {
+          "name": "zombie",
+          "id": 23,
+          "_eid": "35988912",
+          "x": -56,
+          "y": 232,
+          "originX": 13,
+          "originY": 14,
+          "nodes": [
+            {"x": 400, "y": 232}
+          ],
+          "values": {"count": 10, "delay": 20}
+        },
+        {
+          "name": "zombie",
+          "id": 24,
+          "_eid": "35988912",
+          "x": -56,
+          "y": 176,
+          "originX": 13,
+          "originY": 14,
+          "nodes": [
+            {"x": 408, "y": 200}
+          ],
+          "values": {"count": 10, "delay": 25}
+        },
+        {
+          "name": "exploder",
+          "id": 25,
+          "_eid": "36084604",
+          "x": 808,
+          "y": 624,
+          "originX": 12,
+          "originY": 16,
+          "nodes": [
+            {"x": 576, "y": 344}
+          ],
+          "values": {"count": 2, "delay": 20}
+        },
+        {
+          "name": "exploder",
+          "id": 26,
+          "_eid": "36084604",
+          "x": 240,
+          "y": 616,
+          "originX": 12,
+          "originY": 16,
+          "nodes": [
+            {"x": 416, "y": 352}
+          ],
+          "values": {"count": 2, "delay": 5}
+        },
+        {
+          "name": "exploder",
+          "id": 27,
+          "_eid": "36084604",
+          "x": 864,
+          "y": 624,
+          "originX": 12,
+          "originY": 16,
+          "nodes": [
+            {"x": 608, "y": 312}
+          ],
+          "values": {"count": 2, "delay": 20}
+        },
+        {
+          "name": "exploder",
+          "id": 28,
+          "_eid": "36084604",
+          "x": 176,
+          "y": 616,
+          "originX": 12,
+          "originY": 16,
+          "nodes": [
+            {"x": 392, "y": 320}
+          ],
+          "values": {"count": 2, "delay": 5}
+        },
+        {
+          "name": "exploder",
+          "id": 29,
+          "_eid": "36084604",
+          "x": 160,
+          "y": -72,
+          "originX": 12,
+          "originY": 16,
+          "nodes": [
+            {"x": 400, "y": 224}
+          ],
+          "values": {"count": 2, "delay": 10}
+        },
+        {
+          "name": "exploder",
+          "id": 30,
+          "_eid": "36084604",
+          "x": 216,
+          "y": -72,
+          "originX": 12,
+          "originY": 16,
+          "nodes": [
+            {"x": 424, "y": 192}
+          ],
+          "values": {"count": 2, "delay": 10}
+        },
+        {
+          "name": "exploder",
+          "id": 31,
+          "_eid": "36084604",
+          "x": 760,
+          "y": -64,
+          "originX": 12,
+          "originY": 16,
+          "nodes": [
+            {"x": 568, "y": 200}
+          ],
+          "values": {"count": 2, "delay": 15}
+        },
+        {
+          "name": "exploder",
+          "id": 32,
+          "_eid": "36084604",
+          "x": 832,
+          "y": -64,
+          "originX": 12,
+          "originY": 16,
+          "nodes": [
+            {"x": 608, "y": 224}
+          ],
+          "values": {"count": 2, "delay": 15}
+        },
+        {
+          "name": "spitter",
+          "id": 33,
+          "_eid": "36083407",
+          "x": 696,
+          "y": 160,
+          "originX": 20,
+          "originY": 28,
+          "nodes": [
+            {"x": 512, "y": 272}
+          ],
+          "values": {"count": 1, "delay": 45}
+        },
+        {
+          "name": "spitter",
+          "id": 34,
+          "_eid": "36083407",
+          "x": 720,
+          "y": 472,
+          "originX": 20,
+          "originY": 28,
+          "nodes": [
+            {"x": 544, "y": 320}
+          ],
+          "values": {"count": 1, "delay": 45}
+        },
+        {
+          "name": "spitter",
+          "id": 35,
+          "_eid": "36083407",
+          "x": 288,
+          "y": 152,
+          "originX": 20,
+          "originY": 28,
+          "nodes": [
+            {"x": 512, "y": 272}
+          ],
+          "values": {"count": 1, "delay": 45}
+        },
+        {
+          "name": "spitter",
+          "id": 36,
+          "_eid": "36083407",
+          "x": 312,
+          "y": 464,
+          "originX": 20,
+          "originY": 28,
+          "nodes": [
+            {"x": 488, "y": 280}
+          ],
+          "values": {"count": 1, "delay": 45}
         }
       ]
     },
