@@ -771,7 +771,7 @@ public class Resources {
 
         public static int pouncerDamage = 2;
 
-        public static int pouncerHealth = 25;
+        public static int pouncerHealth = 15;
 
         public static Range tankMoveSpeedRange = new Range(0.0f, 1000.0f);
 
@@ -787,7 +787,7 @@ public class Resources {
 
         public static int witchDamage = 10;
 
-        public static int witchHealth = 1500;
+        public static int witchHealth = 1000;
 
         public static Range spitterMoveSpeedRange = new Range(0.0f, 1000.0f);
 

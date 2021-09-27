@@ -176,6 +176,8 @@ public class EnemyEntity extends Entity {
                 }
             } catch (Exception e) {
                 e.printStackTrace();
+                x += 1.1f;
+                y += 1.1f;
             }
         }
         
@@ -209,13 +211,19 @@ public class EnemyEntity extends Entity {
             if (hurtTimer <= 0) {
                 hurtTimer = 0;
                 friction = 0;
-                gameScreen.pathHelper.findPath(x, y, targetX, targetY, 8, floatArray);
-            
-                if (floatArray.size > 0) {
-                    if (movePath == null) movePath = new FloatArray();
-                    movePath.clear();
-                    movePath.addAll(floatArray);
-                    movePath.removeRange(0, 1);
+                try {
+                    gameScreen.pathHelper.findPath(x, y, targetX, targetY, 8, floatArray);
+    
+                    if (floatArray.size > 0) {
+                        if (movePath == null) movePath = new FloatArray();
+                        movePath.clear();
+                        movePath.addAll(floatArray);
+                        movePath.removeRange(0, 1);
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                    x += 1.1f;
+                    y += 1.1f;
                 }
             }
         }
@@ -264,7 +272,7 @@ public class EnemyEntity extends Entity {
         if (debugJbump) {
             shapeDrawer.setColor(Color.BLUE);
             var rect = world.getRect(item);
-            shapeDrawer.rectangle(rect.x, rect.y, rect.w, rect.h);
+            if (rect != null) shapeDrawer.rectangle(rect.x, rect.y, rect.w, rect.h);
         }
     }
     

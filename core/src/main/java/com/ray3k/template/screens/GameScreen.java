@@ -66,6 +66,7 @@ public class GameScreen extends JamScreen {
     @Override
     public void show() {
         super.show();
+        world.reset();
         
         gameScreen = this;
         BG_COLOR.set(Color.PINK);
@@ -82,6 +83,8 @@ public class GameScreen extends JamScreen {
         
         fpsLabel = new Label("test", skin);
         root.add(fpsLabel);
+        
+        bgm_game.stop();
         
         stage.addListener(new InputListener() {
             @Override
@@ -264,6 +267,15 @@ public class GameScreen extends JamScreen {
                     entityController.add(shape);
                     
                     pathHelper.addPolygon(polygon.getTransformedVertices());
+                } else if (name.equals("kill")) {
+                    var verts = new FloatArray();
+                    verts.add(x, y);
+                    for (var node : nodes) {
+                        verts.add(node.x, node.y);
+                    }
+                    Polygon polygon = new Polygon(verts.toArray());
+                    var shape = new KillEntity(polygon);
+                    entityController.add(shape);
                 } else if (name.equals("player")) {
                     int team = valuesMap.get("team").asInt();
                     if (saveData.types[team - 1] != null) {
@@ -393,6 +405,8 @@ public class GameScreen extends JamScreen {
     
     @Override
     public void act(float delta) {
+        System.out.println("enemies = " + enemies.size);
+        System.out.println("ships = " + ships);
         if (!paused) {
             boolean updateZoom = false;
             if (isBindingJustPressed(Binding.ZOOM_IN)) {
@@ -434,6 +448,7 @@ public class GameScreen extends JamScreen {
                 levelComplete = true;
                 
                 if (saveData.level == 15) Gdx.app.postRunnable(() -> Core.core.transition(new CreditsScreen()));
+                
                 else {
                     saveData.level++;
                     stage.getRoot().clearListeners();
@@ -802,5 +817,6 @@ public class GameScreen extends JamScreen {
         super.hide();
         vfxManager.removeAllEffects();
         entityController.dispose();
+        bgm_game.stop();
     }
 }

@@ -200,7 +200,8 @@ public class SoldierEntity extends Entity {
                 }
             } catch (Exception e) {
                 e.printStackTrace();
-                x += .1f;
+                x += 1.1f;
+                y += 1.1f;
             }
         }
         
@@ -224,7 +225,8 @@ public class SoldierEntity extends Entity {
                 }
             } catch (Exception e) {
                 e.printStackTrace();
-                x += .1f;
+                x += 1.1f;
+                y += 1.1f;
             }
         }
         
@@ -258,7 +260,8 @@ public class SoldierEntity extends Entity {
                     }
                 } catch (Exception e) {
                     e.printStackTrace();
-                    x += .1f;
+                    x += 1.1f;
+                    y += 1.1f;
                 }
             }
         }

@@ -38,7 +38,7 @@ public class KillEntity extends Entity {
     @Override
     public void draw(float delta) {
         if (debugJbump) {
-            JamGame.shapeDrawer.setColor(Color.BLUE);
+            JamGame.shapeDrawer.setColor(Color.YELLOW);
             var rect = world.getRect(item);
             shapeDrawer.rectangle(rect.x, rect.y, rect.w, rect.h);
         }

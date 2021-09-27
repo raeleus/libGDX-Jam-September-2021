@@ -21,11 +21,11 @@
           "id": 0,
           "_eid": "36003361",
           "x": 112,
-          "y": 264,
+          "y": 256,
           "nodes": [
             {"x": 112, "y": 240},
             {"x": 912, "y": 240},
-            {"x": 912, "y": 264}
+            {"x": 912, "y": 256}
           ]
         },
         {
@@ -281,7 +281,7 @@
           "nodes": [
             {"x": 656, "y": 280}
           ],
-          "values": {"count": 15, "delay": 40}
+          "values": {"count": 5, "delay": 40}
         },
         {
           "name": "zombie",
@@ -294,7 +294,7 @@
           "nodes": [
             {"x": 656, "y": 312}
           ],
-          "values": {"count": 15, "delay": 40}
+          "values": {"count": 5, "delay": 40}
         },
         {
           "name": "zombie",
@@ -307,7 +307,7 @@
           "nodes": [
             {"x": 392, "y": 288}
           ],
-          "values": {"count": 15, "delay": 40}
+          "values": {"count": 5, "delay": 40}
         },
         {
           "name": "zombie",
@@ -320,7 +320,7 @@
           "nodes": [
             {"x": 392, "y": 320}
           ],
-          "values": {"count": 15, "delay": 40}
+          "values": {"count": 5, "delay": 40}
         },
         {
           "name": "house",
