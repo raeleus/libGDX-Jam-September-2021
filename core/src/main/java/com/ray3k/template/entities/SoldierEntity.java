@@ -405,9 +405,13 @@ public class SoldierEntity extends Entity {
             if (other.userData instanceof SoldierEntity) {
                 var soldier = (SoldierEntity) item.userData;
                 var otherSoldier = (SoldierEntity) other.userData;
-                if (soldier.parent != null && soldier.parent == otherSoldier) {
-                    return Response.bounce;
-                } else return Response.cross;
+                if (soldier.parent != null) {
+                    if (soldier.parent != otherSoldier.parent && soldier.parent != otherSoldier) {
+                        return Response.cross;
+                    }
+                } else {
+                    if (otherSoldier.parent != soldier) return Response.cross;
+                }
             }
             if (other.userData instanceof KillEntity) return Response.cross;
             return null;
